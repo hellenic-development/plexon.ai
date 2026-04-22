@@ -27,21 +27,6 @@ models:
         output: 5
         cache_write: 1.25
         cache_read: 0.1
-    - id: claude-opus-4-6-fast
-      name: Claude Opus 4.6 (Fast)
-      limit: 1000000
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      pricing:
-        input: 30
-        output: 150
-        cache_write: 37.5
-        cache_read: 3
     - id: claude-opus-4-7
       name: Claude Opus 4.7
       limit: 1000000
@@ -59,21 +44,6 @@ models:
         output: 25
         cache_write: 6.25
         cache_read: 0.5
-    - id: claude-sonnet-4-5-20250929-1m
-      name: Claude Sonnet 4.5 [1M]
-      limit: 1000000
-      reserved_tokens: 64000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      pricing:
-        input: 3
-        output: 15
-        cache_write: 3.75
-        cache_read: 0.3
     - id: claude-sonnet-4-6
       name: Claude Sonnet 4.6
       limit: 200000
@@ -104,3 +74,7 @@ models:
         output: 15
         cache_write: 3.75
         cache_read: 0.3
+sync:
+    excluded:
+        - claude-sonnet-4-5-20250929-1m
+        - claude-opus-4-6-fast
