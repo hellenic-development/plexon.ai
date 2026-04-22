@@ -1,89 +1,34 @@
 name: plexon
-displayname: Plexon
+display_name: Plexon
 compatibility: anthropic
-requiresapikey: false
-supportsoauth: false
-supportswebsearch: false
-baseurl: ""
-defaultmodel: plexon-1.0
-builtintools: {}
-regions: []
+default_model: plexon-1.0
 models:
     - id: plexon-1.0
       name: Plexon 1.0
-      baseurl: ""
-      headers: {}
       limit: 204800
-      reservedtokens: 8192
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: true
-      releasedate: ""
+      reserved_tokens: 8192
+      supports_streaming: true
+      supports_image: true
+      default_selection: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: plexon-1.0-image
       name: Plexon 1.0 Image
-      baseurl: ""
-      headers: {}
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: true
-      supportsvideogeneration: false
-      generationtype: sync
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image: true
+      supports_image_generation: true
+      generation_type: sync
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: plexon-1.0-video
       name: Plexon 1.0 Video
-      baseurl: ""
-      headers: {}
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: true
-      generationtype: async
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true

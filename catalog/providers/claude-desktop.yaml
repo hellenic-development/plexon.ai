@@ -1,89 +1,22 @@
 name: claude-desktop
-displayname: Claude Desktop
+display_name: Claude Desktop
 compatibility: anthropic
-requiresapikey: false
-supportsoauth: false
-supportswebsearch: false
-baseurl: ""
-defaultmodel: claude-opus-4-7
-builtintools: {}
-regions: []
+default_model: claude-opus-4-7
 models:
-    - id: claude-opus-4-6
-      name: Claude Opus 4.6
-      baseurl: ""
-      headers: {}
-      limit: 1000000
-      reservedtokens: 128000
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: true
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
-      pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
     - id: claude-opus-4-7
       name: Claude Opus 4.7
-      baseurl: ""
-      headers: {}
       limit: 1000000
-      reservedtokens: 128000
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: true
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: true
-      releasedate: ""
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_tool_search: true
+      default_selection: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: claude-sonnet-4-6
       name: Claude Sonnet 4.6
-      baseurl: ""
-      headers: {}
       limit: 200000
-      reservedtokens: 64000
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: true
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 64000
+      supports_streaming: true
+      supports_tool_search: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true

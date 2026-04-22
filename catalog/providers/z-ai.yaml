@@ -1,297 +1,122 @@
 name: z-ai
-displayname: Z.AI
+display_name: Z.AI
 compatibility: openai
-requiresapikey: true
-supportsoauth: false
-supportswebsearch: false
-baseurl: https://api.z.ai/api/paas/v4
-defaultmodel: glm-5.1 (Subscription)
-builtintools: {}
-regions: []
+requires_api_key: true
+base_url: https://api.z.ai/api/paas/v4
+default_model: glm-5.1 (Subscription)
 models:
     - id: cogvideox-3
       name: CogVideoX 3
-      baseurl: ""
-      headers: {}
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: true
-      generationtype: async
-      perunitcost: 0.2
-      defaultselection: false
-      releasedate: ""
-      pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: false
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      per_unit_cost: 0.2
+      pricing: {}
     - id: cogview-4-250304
       name: CogView 4
-      baseurl: ""
-      headers: {}
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: true
-      supportsvideogeneration: false
-      generationtype: sync
-      perunitcost: 0.015
-      defaultselection: false
-      releasedate: ""
-      pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: false
-    - id: glm-5
-      name: GLM 5
-      baseurl: ""
-      headers: {}
-      limit: 80000
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
-      pricing:
-        input: 0.72
-        output: 2.3
-        cachewrite: 0.72
-        cacheread: 0
-        issubscription: false
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image_generation: true
+      generation_type: sync
+      per_unit_cost: 0.015
+      pricing: {}
     - id: glm-5 (Subscription)
       name: GLM 5 (Subscription)
-      baseurl: https://api.z.ai/api/coding/paas/v4
-      headers: {}
+      base_url: https://api.z.ai/api/coding/paas/v4
       limit: 80000
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: glm-5-turbo
       name: GLM 5 Turbo
-      baseurl: ""
-      headers: {}
       limit: 202752
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
       pricing:
         input: 1.2
         output: 4
-        cachewrite: 1.2
-        cacheread: 0.24
-        issubscription: false
+        cache_write: 1.2
+        cache_read: 0.24
     - id: glm-5-turbo (Subscription)
       name: GLM 5 Turbo (Subscription)
-      baseurl: https://api.z.ai/api/coding/paas/v4
-      headers: {}
+      base_url: https://api.z.ai/api/coding/paas/v4
       limit: 202752
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: glm-5.1
       name: GLM 5.1
-      baseurl: ""
-      headers: {}
       limit: 202752
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
       pricing:
         input: 0.72
         output: 2.3
-        cachewrite: 0.72
-        cacheread: 0
-        issubscription: false
+        cache_write: 0.72
     - id: glm-5.1 (Subscription)
       name: GLM 5.1 (Subscription)
-      baseurl: https://api.z.ai/api/coding/paas/v4
-      headers: {}
+      base_url: https://api.z.ai/api/coding/paas/v4
       limit: 202752
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: true
-      releasedate: ""
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      default_selection: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: glm-5v-turbo
       name: GLM 5V Turbo
-      baseurl: ""
-      headers: {}
       limit: 202752
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: true
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
       pricing:
         input: 1.2
         output: 4
-        cachewrite: 1.2
-        cacheread: 0.24
-        issubscription: false
+        cache_write: 1.2
+        cache_read: 0.24
     - id: glm-5v-turbo (Subscription)
       name: GLM 5V Turbo (Subscription)
-      baseurl: https://api.z.ai/api/coding/paas/v4
-      headers: {}
+      base_url: https://api.z.ai/api/coding/paas/v4
       limit: 202752
-      reservedtokens: 131072
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: true
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: glm-image
       name: GLM Image
-      baseurl: ""
-      headers: {}
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: true
-      supportsvideogeneration: false
-      generationtype: sync
-      perunitcost: 0.015
-      defaultselection: false
-      releasedate: ""
-      pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: false
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image_generation: true
+      generation_type: sync
+      per_unit_cost: 0.015
+      pricing: {}

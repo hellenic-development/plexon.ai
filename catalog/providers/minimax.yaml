@@ -1,219 +1,104 @@
 name: minimax
-displayname: MiniMax
+display_name: MiniMax
 compatibility: anthropic
-requiresapikey: true
-supportsoauth: false
-supportswebsearch: false
-baseurl: https://api.minimax.io/anthropic/v1
-defaultmodel: minimax-m2.7-highspeed-coding-plan
-builtintools: {}
-regions: []
+requires_api_key: true
+base_url: https://api.minimax.io/anthropic/v1
+default_model: minimax-m2.7-highspeed-coding-plan
 models:
     - id: hailuo-2.3
       name: MiniMax Hailuo-2.3
-      baseurl: https://api.minimax.io/v1
-      headers: {}
+      base_url: https://api.minimax.io/v1
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: true
-      generationtype: async
-      perunitcost: 0.21
-      defaultselection: false
-      releasedate: ""
-      pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: false
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      per_unit_cost: 0.21
+      pricing: {}
     - id: hailuo-2.3-coding-plan
       name: MiniMax Hailuo-2.3 (Subscription)
-      baseurl: https://api.minimax.io/v1
-      headers: {}
+      base_url: https://api.minimax.io/v1
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: false
-      supportsvideogeneration: true
-      generationtype: async
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: image-01
       name: MiniMax Image-01
-      baseurl: https://api.minimax.io/v1
-      headers: {}
+      base_url: https://api.minimax.io/v1
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: true
-      supportsvideogeneration: false
-      generationtype: sync
-      perunitcost: 0.02
-      defaultselection: false
-      releasedate: ""
-      pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: false
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image_generation: true
+      generation_type: sync
+      per_unit_cost: 0.02
+      pricing: {}
     - id: image-01-coding-plan
       name: MiniMax Image-01 (Subscription)
-      baseurl: https://api.minimax.io/v1
-      headers: {}
+      base_url: https://api.minimax.io/v1
       limit: 0
-      reservedtokens: 0
-      supportsstreaming: true
-      supportsimage: false
-      supportsvideo: false
-      supportsreasoning: false
-      supportsadaptivethinking: false
-      supportsincludereasoning: false
-      supportstoolsearch: false
-      supportscustomtemperature: false
-      supportsimagegeneration: true
-      supportsvideogeneration: false
-      generationtype: sync
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image_generation: true
+      generation_type: sync
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: minimax-m2.7
       name: MiniMax M2.7
-      baseurl: ""
-      headers: {}
       limit: 204800
-      reservedtokens: 8192
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: true
-      supportsvideogeneration: true
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 8192
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      supports_image_generation: true
+      supports_video_generation: true
       pricing:
         input: 0.3
         output: 1.2
-        cachewrite: 0.375
-        cacheread: 0.03
-        issubscription: false
+        cache_write: 0.375
+        cache_read: 0.03
     - id: minimax-m2.7-coding-plan
       name: MiniMax M2.7 (Subscription)
-      baseurl: ""
-      headers: {}
       limit: 204800
-      reservedtokens: 8192
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 8192
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
     - id: minimax-m2.7-highspeed
       name: MiniMax M2.7 HighSpeed
-      baseurl: ""
-      headers: {}
       limit: 204800
-      reservedtokens: 8192
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: true
-      supportsvideogeneration: true
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: false
-      releasedate: ""
+      reserved_tokens: 8192
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      supports_image_generation: true
+      supports_video_generation: true
       pricing:
         input: 0.6
         output: 2.4
-        cachewrite: 0.375
-        cacheread: 0.03
-        issubscription: false
+        cache_write: 0.375
+        cache_read: 0.03
     - id: minimax-m2.7-highspeed-coding-plan
       name: MiniMax M2.7 HighSpeed (Subscription)
-      baseurl: ""
-      headers: {}
       limit: 204800
-      reservedtokens: 8192
-      supportsstreaming: true
-      supportsimage: true
-      supportsvideo: false
-      supportsreasoning: true
-      supportsadaptivethinking: false
-      supportsincludereasoning: true
-      supportstoolsearch: false
-      supportscustomtemperature: true
-      supportsimagegeneration: false
-      supportsvideogeneration: false
-      generationtype: ""
-      perunitcost: 0
-      defaultselection: true
-      releasedate: ""
+      reserved_tokens: 8192
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      default_selection: true
       pricing:
-        input: 0
-        output: 0
-        cachewrite: 0
-        cacheread: 0
-        issubscription: true
+        is_subscription: true
