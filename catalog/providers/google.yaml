@@ -5,64 +5,6 @@ requires_api_key: true
 base_url: https://generativelanguage.googleapis.com/v1beta/openai
 default_model: gemma-4-31b-it:free
 models:
-    - id: gemini-2.5-flash
-      name: Gemini 2.5 Flash
-      limit: 1048576
-      reserved_tokens: 65535
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.3
-        output: 2.5
-        cache_write: 0.08
-        cache_read: 0.03
-    - id: gemini-2.5-flash-image
-      name: Nano Banana (Gemini 2.5 Flash Image)
-      limit: 32768
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_image: true
-      supports_custom_temperature: true
-      supports_image_generation: true
-      pricing:
-        input: 0.3
-        output: 2.5
-        cache_write: 0.08
-        cache_read: 0.03
-    - id: gemini-2.5-flash-lite-preview-09-2025
-      name: Gemini 2.5 Flash Lite Preview 09-2025
-      limit: 1048576
-      reserved_tokens: 65535
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.1
-        output: 0.4
-        cache_write: 0.08
-        cache_read: 0.01
-    - id: gemini-2.5-pro-preview-05-06
-      name: Gemini 2.5 Pro Preview 05-06
-      limit: 1048576
-      reserved_tokens: 65535
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 1.25
-        output: 10
-        cache_write: 0.38
-        cache_read: 0.12
     - id: gemini-3-flash-preview
       name: Gemini 3 Flash Preview
       limit: 1048576
@@ -204,3 +146,5 @@ models:
       supports_custom_temperature: true
       default_selection: true
       pricing: {}
+sync:
+    family_strip: -\d+(?:\.\d+)?

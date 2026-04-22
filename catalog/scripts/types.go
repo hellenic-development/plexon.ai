@@ -89,6 +89,17 @@ type SyncPolicy struct {
 	// FamilyRegex overrides the default family-key extraction regex.
 	// First capture group == family key. See scripts/sync_models_dev/family.go.
 	FamilyRegex string `yaml:"family_regex,omitempty"`
+	// FamilyStrip is a regex applied to each model ID BEFORE FamilyRegex.
+	// Every match is removed, so mid-string version tokens can be collapsed.
+	//
+	// Examples:
+	//   google    family_strip: '-\d+(\.\d+)?'   → gemini-2.5-flash  → gemini-flash
+	//   openai    family_strip: '-\d+(\.\d+)?'   → gpt-5.1-codex      → gpt-codex
+	//   moonshot  family_strip: '-k\d+(\.\d+)?'  → kimi-k2.5-thinking → kimi-thinking
+	//
+	// Without family_strip these providers leak every minor version into
+	// the UI because the version sits mid-string, not at the end.
+	FamilyStrip string `yaml:"family_strip,omitempty"`
 	// Pinned model IDs are always kept, even if older than a family's latest.
 	Pinned []string `yaml:"pinned,omitempty"`
 	// Excluded model IDs are always dropped.

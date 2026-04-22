@@ -150,20 +150,6 @@ models:
         input: 0.26
         output: 2.08
         cache_write: 0.26
-    - id: qwen3.5-27b
-      name: Qwen3.5-27B
-      limit: 262144
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.2
-        output: 1.56
-        cache_write: 0.2
     - id: qwen3.5-35b-a3b
       name: Qwen3.5-35B-A3B
       limit: 262144
@@ -289,3 +275,5 @@ models:
       default_selection: true
       pricing:
         is_subscription: true
+sync:
+    family_strip: -\d+(?:\.\d+)?

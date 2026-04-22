@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-04-22T06:39:33Z",
+  "generated": "2026-04-22T07:06:04Z",
   "providers": [
     {
       "name": "anthropic",
@@ -170,76 +170,6 @@
       "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
       "default_model": "gemma-4-31b-it:free",
       "models": [
-        {
-          "id": "gemini-2.5-flash",
-          "name": "Gemini 2.5 Flash",
-          "limit": 1048576,
-          "reserved_tokens": 65535,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.3,
-            "output": 2.5,
-            "cache_write": 0.08,
-            "cache_read": 0.03
-          }
-        },
-        {
-          "id": "gemini-2.5-flash-image",
-          "name": "Nano Banana (Gemini 2.5 Flash Image)",
-          "limit": 32768,
-          "reserved_tokens": 32768,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "supports_image_generation": true,
-          "pricing": {
-            "input": 0.3,
-            "output": 2.5,
-            "cache_write": 0.08,
-            "cache_read": 0.03
-          }
-        },
-        {
-          "id": "gemini-2.5-flash-lite-preview-09-2025",
-          "name": "Gemini 2.5 Flash Lite Preview 09-2025",
-          "limit": 1048576,
-          "reserved_tokens": 65535,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.1,
-            "output": 0.4,
-            "cache_write": 0.08,
-            "cache_read": 0.01
-          }
-        },
-        {
-          "id": "gemini-2.5-pro-preview-05-06",
-          "name": "Gemini 2.5 Pro Preview 05-06",
-          "limit": 1048576,
-          "reserved_tokens": 65535,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.25,
-            "output": 10,
-            "cache_write": 0.38,
-            "cache_read": 0.12
-          }
-        },
         {
           "id": "gemini-3-flash-preview",
           "name": "Gemini 3 Flash Preview",
@@ -568,28 +498,6 @@
           }
         },
         {
-          "id": "kimi-k1.5-preview",
-          "name": "Kimi K1.5",
-          "limit": 128000,
-          "reserved_tokens": 16384,
-          "pricing": {}
-        },
-        {
-          "id": "kimi-k2",
-          "name": "Kimi K2",
-          "limit": 256000,
-          "reserved_tokens": 8192,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "pricing": {
-            "input": 0.6,
-            "output": 2.5,
-            "cache_write": 0.6,
-            "cache_read": 0.15
-          }
-        },
-        {
           "id": "kimi-k2-thinking",
           "name": "Kimi K2 Thinking",
           "limit": 256000,
@@ -635,18 +543,21 @@
           }
         },
         {
-          "id": "kimi-k2.5",
-          "name": "Kimi K2.5",
+          "id": "kimi-k2.6",
+          "name": "Kimi K2.6",
+          "base_url": "https://api.moonshot.ai/v1",
           "limit": 262144,
           "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "release_date": "2026-04-21",
           "pricing": {
             "input": 0.6,
-            "output": 3,
-            "cache_write": 0.1
+            "output": 2.5,
+            "cache_write": 0.6,
+            "cache_read": 0.15
           }
         }
       ]
@@ -660,38 +571,6 @@
       "base_url": "https://api.openai.com/v1",
       "default_model": "gpt-5.4-pro",
       "models": [
-        {
-          "id": "gpt-4.1-mini",
-          "name": "GPT-4.1 Mini",
-          "limit": 1047576,
-          "reserved_tokens": 32768,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.4,
-            "output": 1.6,
-            "cache_write": 0.4,
-            "cache_read": 0.1
-          }
-        },
-        {
-          "id": "gpt-4.1-nano",
-          "name": "GPT-4.1 Nano",
-          "limit": 1047576,
-          "reserved_tokens": 32768,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.1,
-            "output": 0.4,
-            "cache_write": 0.1,
-            "cache_read": 0.02
-          }
-        },
         {
           "id": "gpt-4o",
           "name": "GPT-4o",
@@ -750,39 +629,6 @@
           }
         },
         {
-          "id": "gpt-5-chat",
-          "name": "GPT-5 Chat",
-          "limit": 128000,
-          "reserved_tokens": 16384,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.25,
-            "output": 10,
-            "cache_write": 1.25,
-            "cache_read": 0.12
-          }
-        },
-        {
-          "id": "gpt-5-codex",
-          "name": "GPT-5 Codex",
-          "limit": 400000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.25,
-            "output": 10,
-            "cache_write": 1.25,
-            "cache_read": 0.12
-          }
-        },
-        {
           "id": "gpt-5-image",
           "name": "GPT-5 Image",
           "limit": 400000,
@@ -819,93 +665,6 @@
           }
         },
         {
-          "id": "gpt-5-mini",
-          "name": "GPT-5 Mini",
-          "limit": 400000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.25,
-            "output": 2,
-            "cache_write": 0.25,
-            "cache_read": 0.02
-          }
-        },
-        {
-          "id": "gpt-5-nano",
-          "name": "GPT-5 Nano",
-          "limit": 400000,
-          "reserved_tokens": 8192,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.05,
-            "output": 0.4,
-            "cache_write": 0.05,
-            "cache_read": 0.01
-          }
-        },
-        {
-          "id": "gpt-5-pro",
-          "name": "GPT-5 Pro",
-          "limit": 400000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 15,
-            "output": 120,
-            "cache_write": 15
-          }
-        },
-        {
-          "id": "gpt-5.1-chat",
-          "name": "GPT-5.1 Chat",
-          "limit": 128000,
-          "reserved_tokens": 16384,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.25,
-            "output": 10,
-            "cache_write": 1.25,
-            "cache_read": 0.12
-          }
-        },
-        {
-          "id": "gpt-5.1-codex",
-          "name": "GPT-5.1-Codex",
-          "limit": 400000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.25,
-            "output": 10,
-            "cache_write": 1.25,
-            "cache_read": 0.12
-          }
-        },
-        {
           "id": "gpt-5.1-codex-max",
           "name": "GPT-5.1-Codex-Max",
           "limit": 400000,
@@ -939,57 +698,6 @@
             "output": 2,
             "cache_write": 0.25,
             "cache_read": 0.03
-          }
-        },
-        {
-          "id": "gpt-5.2-chat",
-          "name": "GPT-5.2 Chat",
-          "limit": 128000,
-          "reserved_tokens": 32000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.75,
-            "output": 14,
-            "cache_write": 1.75,
-            "cache_read": 0.17
-          }
-        },
-        {
-          "id": "gpt-5.2-codex",
-          "name": "GPT-5.2-Codex",
-          "limit": 400000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.75,
-            "output": 14,
-            "cache_write": 1.75,
-            "cache_read": 0.17
-          }
-        },
-        {
-          "id": "gpt-5.2-pro",
-          "name": "GPT-5.2 Pro",
-          "limit": 400000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 21,
-            "output": 168,
-            "cache_write": 21
           }
         },
         {
@@ -5808,23 +5516,6 @@
           }
         },
         {
-          "id": "qwen3.5-27b",
-          "name": "Qwen3.5-27B",
-          "limit": 262144,
-          "reserved_tokens": 65536,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.2,
-            "output": 1.56,
-            "cache_write": 0.2
-          }
-        },
-        {
           "id": "qwen3.5-35b-a3b",
           "name": "Qwen3.5-35B-A3B",
           "limit": 262144,
@@ -6004,20 +5695,6 @@
           "generation_type": "sync",
           "per_unit_cost": 0.015,
           "pricing": {}
-        },
-        {
-          "id": "glm-5 (Subscription)",
-          "name": "GLM 5 (Subscription)",
-          "base_url": "https://api.z.ai/api/coding/paas/v4",
-          "limit": 80000,
-          "reserved_tokens": 131072,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "is_subscription": true
-          }
         },
         {
           "id": "glm-5-turbo",

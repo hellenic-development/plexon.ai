@@ -24,17 +24,6 @@ models:
       generation_type: sync
       per_unit_cost: 0.015
       pricing: {}
-    - id: glm-5 (Subscription)
-      name: GLM 5 (Subscription)
-      base_url: https://api.z.ai/api/coding/paas/v4
-      limit: 80000
-      reserved_tokens: 131072
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        is_subscription: true
     - id: glm-5-turbo
       name: GLM 5 Turbo
       limit: 202752
@@ -120,3 +109,5 @@ models:
       generation_type: sync
       per_unit_cost: 0.015
       pricing: {}
+sync:
+    family_strip: -\d+(?:\.\d+)?

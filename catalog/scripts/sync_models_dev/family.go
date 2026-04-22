@@ -26,15 +26,25 @@ var DefaultFamilyRegex = regexp.MustCompile(
 	`^(.*?)(?:-\d{4}-\d{2}-\d{2}|-\d{4,8}|-v?\d+(?:[.-]\d+)+|-preview|-beta|-latest)+$`,
 )
 
-// familyKey returns the family group for a model ID using the provided
-// regex. If no match, the full ID is returned — pruning then only removes
-// exact duplicates.
-func familyKey(re *regexp.Regexp, id string) string {
-	m := re.FindStringSubmatch(id)
-	if len(m) >= 2 && m[1] != "" {
+// familyKey returns the family group for a model ID.
+//
+// The input is first passed through `stripRe` (per-provider mid-string
+// version stripper — optional) to collapse conventions like Google's
+// `gemini-2.5-flash` / `gemini-3-flash` or OpenAI's `gpt-5.4-codex`. The
+// cleaned string is then matched against `re` to strip trailing date /
+// version / preview suffixes.
+//
+// If neither pass changes anything the full ID is returned, so pruning
+// only removes exact duplicates rather than collapsing unrelated models.
+func familyKey(re *regexp.Regexp, stripRe *regexp.Regexp, id string) string {
+	cleaned := id
+	if stripRe != nil {
+		cleaned = stripRe.ReplaceAllString(cleaned, "")
+	}
+	if m := re.FindStringSubmatch(cleaned); len(m) >= 2 && m[1] != "" {
 		return m[1]
 	}
-	return id
+	return cleaned
 }
 
 // pickLatest picks the newest model from a family by release_date, falling

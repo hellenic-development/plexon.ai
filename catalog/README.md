@@ -52,6 +52,74 @@ shipped in the binary if the network is unavailable. Details in
 3. Open a PR. The catalog sync workflow will validate the schema and block
    merge on errors.
 
+## Running the Go tools locally
+
+All commands below are run from `catalog/`. The scripts live in their own
+Go module (`catalog/go.mod`) so they don't depend on the main plexon.ai
+site code.
+
+### Rebuild the bundled snapshot
+
+Walks `providers/*.yaml` and emits `snapshots/latest.json`. Run this after
+every manual YAML edit before committing. Doubles as a schema validator.
+
+```bash
+cd catalog
+go run ./scripts/build_snapshot
+```
+
+### Pull fresh data from models.dev (what the weekly CI runs)
+
+Fetches `https://models.dev/api.json`, applies the latest-per-family
+filter per provider, and merges into each `providers/*.yaml`. Preserves
+hand-edited `headers`, `base_url`, `regions`, `builtin_tools`,
+`default_model`, and anything under `sync:`. Skips providers listed in
+`.sync-exclude`.
+
+```bash
+cd catalog
+
+# Normal sync — writes back to providers/*.yaml
+go run ./scripts/sync_models_dev
+
+# Preview only — prints the diff, no writes
+go run ./scripts/sync_models_dev -dry-run
+
+# Use a local fixture instead of hitting models.dev
+go run ./scripts/sync_models_dev -fixture ./testdata/models-dev.json
+```
+
+### Typical maintainer flow
+
+```bash
+cd catalog
+
+# 1. Pull any upstream changes + preview
+go run ./scripts/sync_models_dev -dry-run
+
+# 2. Apply them
+go run ./scripts/sync_models_dev
+
+# 3. Rebuild the snapshot clients actually fetch
+go run ./scripts/build_snapshot
+
+# 4. Commit and push
+git add providers/*.yaml snapshots/latest.json
+git commit -m "chore(catalog): weekly models.dev sync"
+git push
+```
+
+### Flag reference
+
+| Script              | Flag           | Default              | Purpose                                                   |
+| ------------------- | -------------- | -------------------- | --------------------------------------------------------- |
+| `build_snapshot`    | `-providers`   | `providers`          | Directory of provider YAMLs to read                       |
+| `build_snapshot`    | `-out`         | `snapshots/latest.json` | Output path for the bundled JSON                       |
+| `sync_models_dev`   | `-providers`   | `providers`          | Directory of provider YAMLs to merge into                 |
+| `sync_models_dev`   | `-exclude`     | `.sync-exclude`      | File listing provider names the sync must never touch    |
+| `sync_models_dev`   | `-fixture`     | _(none)_             | Read from local JSON instead of hitting models.dev       |
+| `sync_models_dev`   | `-dry-run`     | `false`              | Print changes without writing                             |
+
 ### Subscription models
 
 Subscription-based models (e.g. `kimi-for-coding`) are fully supported via

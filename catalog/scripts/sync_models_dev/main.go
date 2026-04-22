@@ -222,6 +222,10 @@ func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *c
 	} else {
 		re = DefaultFamilyRegex
 	}
+	var stripRe *regexp.Regexp
+	if policy.FamilyStrip != "" {
+		stripRe = regexp.MustCompile(policy.FamilyStrip)
+	}
 
 	// Convert upstream to our shape first (so manual pin/exclude can work on
 	// the same data representation).
@@ -259,7 +263,7 @@ func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *c
 	case "manual":
 		kept = filterToPinned(converted, policy.Pinned)
 	default: // "" | "latest_per_family"
-		kept = keepLatestPerFamily(converted, policy.Pinned, re)
+		kept = keepLatestPerFamily(converted, policy.Pinned, re, stripRe)
 	}
 
 	sort.Slice(kept, func(i, j int) bool { return kept[i].ID < kept[j].ID })
@@ -315,7 +319,8 @@ func filterToPinned(models []catalogtypes.CatalogModel, pinned []string) []catal
 
 // keepLatestPerFamily groups models by their family key and keeps only the
 // newest-dated one per group. Pinned IDs bypass the filter entirely.
-func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re *regexp.Regexp) []catalogtypes.CatalogModel {
+// stripRe (optional) is applied to each ID before family-key extraction.
+func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re *regexp.Regexp, stripRe *regexp.Regexp) []catalogtypes.CatalogModel {
 	pinSet := make(map[string]struct{}, len(pinned))
 	for _, id := range pinned {
 		pinSet[id] = struct{}{}
@@ -323,7 +328,7 @@ func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re
 
 	families := make(map[string][]modelWithMeta)
 	for i, m := range models {
-		fam := familyKey(re, m.ID)
+		fam := familyKey(re, stripRe, m.ID)
 		families[fam] = append(families[fam], modelWithMeta{
 			ID:          m.ID,
 			ReleaseDate: m.ReleaseDate,
