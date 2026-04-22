@@ -1,0 +1,4083 @@
+{
+  "version": 1,
+  "generated": "2026-04-21T18:59:07Z",
+  "providers": [
+    {
+      "name": "anthropic",
+      "compatibility": "anthropic",
+      "models": [
+        {
+          "id": "claude-haiku-4-5",
+          "name": "Claude Haiku 4.5",
+          "limit": 200000,
+          "pricing": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        {
+          "id": "claude-opus-4",
+          "name": "Claude Opus 4",
+          "limit": 200000,
+          "pricing": {
+            "input": 15,
+            "output": 75
+          }
+        },
+        {
+          "id": "claude-opus-4-1",
+          "name": "Claude Opus 4.1",
+          "limit": 200000,
+          "pricing": {
+            "input": 15,
+            "output": 75
+          }
+        },
+        {
+          "id": "claude-opus-4-5",
+          "name": "Claude Opus 4.5",
+          "limit": 200000,
+          "pricing": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "id": "claude-opus-4-6",
+          "name": "Claude Opus 4.6",
+          "limit": 1000000,
+          "pricing": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "id": "claude-opus-4-6-fast",
+          "name": "Claude Opus 4.6 (Fast)",
+          "limit": 1000000,
+          "pricing": {
+            "input": 30,
+            "output": 150
+          }
+        },
+        {
+          "id": "claude-opus-4-7",
+          "name": "Claude Opus 4.7",
+          "limit": 1000000,
+          "pricing": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "id": "claude-sonnet-4",
+          "name": "Claude Sonnet 4",
+          "limit": 1000000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "claude-sonnet-4-5-20250929",
+          "name": "Claude Sonnet 4.5",
+          "limit": 200000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "claude-sonnet-4-5-20250929-1m",
+          "name": "Claude Sonnet 4.5 [1M]",
+          "limit": 1000000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "name": "Claude Sonnet 4.6",
+          "limit": 200000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "claude-sonnet-4-6 [1M]",
+          "name": "Claude Sonnet 4.6 [1M]",
+          "limit": 1000000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        }
+      ]
+    },
+    {
+      "name": "claude-desktop",
+      "compatibility": "anthropic",
+      "models": [
+        {
+          "id": "claude-opus-4-6",
+          "name": "Claude Opus 4.6",
+          "limit": 1000000,
+          "pricing": {}
+        },
+        {
+          "id": "claude-opus-4-7",
+          "name": "Claude Opus 4.7",
+          "limit": 1000000,
+          "pricing": {}
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "name": "Claude Sonnet 4.6",
+          "limit": 200000,
+          "pricing": {}
+        }
+      ]
+    },
+    {
+      "name": "google",
+      "compatibility": "openai",
+      "models": [
+        {
+          "id": "gemini-2.5-flash",
+          "name": "Gemini 2.5 Flash",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.3,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "gemini-2.5-flash-image",
+          "name": "Nano Banana (Gemini 2.5 Flash Image)",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.3,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "gemini-2.5-flash-lite",
+          "name": "Gemini 2.5 Flash Lite",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "gemini-2.5-flash-lite-preview-09-2025",
+          "name": "Gemini 2.5 Flash Lite Preview 09-2025",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "gemini-2.5-pro",
+          "name": "Gemini 2.5 Pro",
+          "limit": 1048576,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gemini-2.5-pro-preview",
+          "name": "Gemini 2.5 Pro Preview 06-05",
+          "limit": 1048576,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gemini-2.5-pro-preview-05-06",
+          "name": "Gemini 2.5 Pro Preview 05-06",
+          "limit": 1048576,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gemini-3-flash-preview",
+          "name": "Gemini 3 Flash Preview",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.5,
+            "output": 3
+          }
+        },
+        {
+          "id": "gemini-3-pro-image-preview",
+          "name": "Nano Banana Pro (Gemini 3 Pro Image Preview)",
+          "limit": 65536,
+          "pricing": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "id": "gemini-3.1-flash-image-preview",
+          "name": "Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
+          "limit": 65536,
+          "pricing": {
+            "input": 0.5,
+            "output": 3
+          }
+        },
+        {
+          "id": "gemini-3.1-flash-lite-preview",
+          "name": "Gemini 3.1 Flash Lite Preview",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.25,
+            "output": 1.5
+          }
+        },
+        {
+          "id": "gemini-3.1-pro-preview",
+          "name": "Gemini 3.1 Pro Preview",
+          "limit": 1048576,
+          "pricing": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "id": "gemini-3.1-pro-preview-customtools",
+          "name": "Gemini 3.1 Pro Preview Custom Tools",
+          "limit": 1048576,
+          "pricing": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "id": "gemma-4-26b-a4b-it",
+          "name": "Gemma 4 26B A4B ",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "gemma-4-26b-a4b-it:free",
+          "name": "Gemma 4 26B A4B  (free)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "gemma-4-31b-it",
+          "name": "Gemma 4 31B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.13,
+            "output": 0.38
+          }
+        },
+        {
+          "id": "gemma-4-31b-it:free",
+          "name": "Gemma 4 31B (free)",
+          "limit": 262144,
+          "pricing": {}
+        }
+      ]
+    },
+    {
+      "name": "minimax",
+      "compatibility": "anthropic",
+      "models": [
+        {
+          "id": "hailuo-2.3",
+          "name": "MiniMax Hailuo-2.3",
+          "pricing": {}
+        },
+        {
+          "id": "hailuo-2.3-coding-plan",
+          "name": "MiniMax Hailuo-2.3 (Subscription)",
+          "pricing": {}
+        },
+        {
+          "id": "image-01",
+          "name": "MiniMax Image-01",
+          "pricing": {}
+        },
+        {
+          "id": "image-01-coding-plan",
+          "name": "MiniMax Image-01 (Subscription)",
+          "pricing": {}
+        },
+        {
+          "id": "minimax-m2.7",
+          "name": "MiniMax M2.7",
+          "limit": 204800,
+          "pricing": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "minimax-m2.7-coding-plan",
+          "name": "MiniMax M2.7 (Subscription)",
+          "limit": 204800,
+          "pricing": {}
+        },
+        {
+          "id": "minimax-m2.7-highspeed",
+          "name": "MiniMax M2.7 HighSpeed",
+          "limit": 204800,
+          "pricing": {
+            "input": 0.6,
+            "output": 2.4
+          }
+        },
+        {
+          "id": "minimax-m2.7-highspeed-coding-plan",
+          "name": "MiniMax M2.7 HighSpeed (Subscription)",
+          "limit": 204800,
+          "pricing": {}
+        }
+      ]
+    },
+    {
+      "name": "moonshot",
+      "compatibility": "openai",
+      "models": [
+        {
+          "id": "kimi-for-coding",
+          "name": "Kimi For Coding",
+          "headers": {
+            "HTTP-Referer": "https://plexon.ai",
+            "User-Agent": "Kilo-Code/4.110.0",
+            "X-PlexonAI-Version": "4.110.0",
+            "X-Stainless-Runtime": "node",
+            "X-Stainless-Runtime-Version": "v22.19.0",
+            "X-Title": "Plexon AI"
+          },
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "kimi-k1.5-preview",
+          "name": "Kimi K1.5",
+          "limit": 128000,
+          "pricing": {}
+        },
+        {
+          "id": "kimi-k2",
+          "name": "Kimi K2",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.6,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "kimi-k2-thinking",
+          "name": "Kimi K2 Thinking",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.6,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "kimi-k2-thinking-turbo",
+          "name": "Kimi K2 Thinking Turbo",
+          "limit": 262144,
+          "pricing": {
+            "input": 1.15,
+            "output": 8
+          }
+        },
+        {
+          "id": "kimi-k2-turbo",
+          "name": "Kimi K2 Turbo",
+          "limit": 256000,
+          "pricing": {
+            "input": 1.15,
+            "output": 8
+          }
+        },
+        {
+          "id": "kimi-k2.5",
+          "name": "Kimi K2.5",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.6,
+            "output": 3
+          }
+        }
+      ]
+    },
+    {
+      "name": "openai",
+      "compatibility": "openai",
+      "models": [
+        {
+          "id": "gpt-4",
+          "name": "GPT-4",
+          "limit": 8191,
+          "pricing": {
+            "input": 30,
+            "output": 60
+          }
+        },
+        {
+          "id": "gpt-4.1",
+          "name": "GPT-4.1",
+          "limit": 1047576,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "gpt-4.1-mini",
+          "name": "GPT-4.1 Mini",
+          "limit": 1047576,
+          "pricing": {
+            "input": 0.4,
+            "output": 1.6
+          }
+        },
+        {
+          "id": "gpt-4.1-nano",
+          "name": "GPT-4.1 Nano",
+          "limit": 1047576,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "gpt-4o",
+          "name": "GPT-4o",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-4o-mini",
+          "name": "GPT-4o-mini",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "gpt-4o-mini-search-preview",
+          "name": "GPT-4o-mini Search Preview",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "gpt-4o-search-preview",
+          "name": "GPT-4o Search Preview",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5",
+          "name": "GPT-5",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5-chat",
+          "name": "GPT-5 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5-codex",
+          "name": "GPT-5 Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5-image",
+          "name": "GPT-5 Image",
+          "limit": 400000,
+          "pricing": {
+            "input": 10,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5-image-mini",
+          "name": "GPT-5 Image Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 2.5,
+            "output": 2
+          }
+        },
+        {
+          "id": "gpt-5-mini",
+          "name": "GPT-5 Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.25,
+            "output": 2
+          }
+        },
+        {
+          "id": "gpt-5-nano",
+          "name": "GPT-5 Nano",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "gpt-5-pro",
+          "name": "GPT-5 Pro",
+          "limit": 400000,
+          "pricing": {
+            "input": 15,
+            "output": 120
+          }
+        },
+        {
+          "id": "gpt-5.1",
+          "name": "GPT-5.1",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5.1-chat",
+          "name": "GPT-5.1 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5.1-codex",
+          "name": "GPT-5.1-Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5.1-codex-max",
+          "name": "GPT-5.1-Codex-Max",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "gpt-5.1-codex-mini",
+          "name": "GPT-5.1-Codex-Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.25,
+            "output": 2
+          }
+        },
+        {
+          "id": "gpt-5.2",
+          "name": "GPT-5.2",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "gpt-5.2-chat",
+          "name": "GPT-5.2 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "gpt-5.2-codex",
+          "name": "GPT-5.2-Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "gpt-5.2-pro",
+          "name": "GPT-5.2 Pro",
+          "limit": 400000,
+          "pricing": {
+            "input": 21,
+            "output": 168
+          }
+        },
+        {
+          "id": "gpt-5.3-chat",
+          "name": "GPT-5.3 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "gpt-5.3-codex",
+          "name": "GPT-5.3-Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "gpt-5.4",
+          "name": "GPT-5.4",
+          "limit": 1050000,
+          "pricing": {
+            "input": 2.5,
+            "output": 15
+          }
+        },
+        {
+          "id": "gpt-5.4-mini",
+          "name": "GPT-5.4 Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.75,
+            "output": 4.5
+          }
+        },
+        {
+          "id": "gpt-5.4-nano",
+          "name": "GPT-5.4 Nano",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.2,
+            "output": 1.25
+          }
+        },
+        {
+          "id": "gpt-5.4-pro",
+          "name": "GPT-5.4 Pro",
+          "limit": 1050000,
+          "pricing": {
+            "input": 30,
+            "output": 180
+          }
+        },
+        {
+          "id": "o3",
+          "name": "o3",
+          "limit": 200000,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "o3-deep-research",
+          "name": "o3 Deep Research",
+          "limit": 200000,
+          "pricing": {
+            "input": 10,
+            "output": 40
+          }
+        },
+        {
+          "id": "o3-pro",
+          "name": "o3 Pro",
+          "limit": 200000,
+          "pricing": {
+            "input": 20,
+            "output": 80
+          }
+        },
+        {
+          "id": "o4-mini",
+          "name": "o4 Mini",
+          "limit": 200000,
+          "pricing": {
+            "input": 1.1,
+            "output": 4.4
+          }
+        },
+        {
+          "id": "o4-mini-deep-research",
+          "name": "o4 Mini Deep Research",
+          "limit": 200000,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "o4-mini-high",
+          "name": "o4 Mini High",
+          "limit": 200000,
+          "pricing": {
+            "input": 1.1,
+            "output": 4.4
+          }
+        }
+      ]
+    },
+    {
+      "name": "openrouter",
+      "compatibility": "openai",
+      "models": [
+        {
+          "id": "ai21/jamba-large-1.7",
+          "name": "AI21: Jamba Large 1.7",
+          "limit": 256000,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "aion-labs/aion-1.0",
+          "name": "AionLabs: Aion-1.0",
+          "limit": 131072,
+          "pricing": {
+            "input": 4,
+            "output": 8
+          }
+        },
+        {
+          "id": "aion-labs/aion-1.0-mini",
+          "name": "AionLabs: Aion-1.0-Mini",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.7,
+            "output": 1.4
+          }
+        },
+        {
+          "id": "aion-labs/aion-2.0",
+          "name": "AionLabs: Aion-2.0",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.8,
+            "output": 1.6
+          }
+        },
+        {
+          "id": "aion-labs/aion-rp-llama-3.1-8b",
+          "name": "AionLabs: Aion-RP 1.0 (8B)",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.8,
+            "output": 1.6
+          }
+        },
+        {
+          "id": "alfredpros/codellama-7b-instruct-solidity",
+          "name": "AlfredPros: CodeLLaMa 7B Instruct Solidity",
+          "limit": 4096,
+          "pricing": {
+            "input": 0.8,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "alibaba/tongyi-deepresearch-30b-a3b",
+          "name": "Tongyi DeepResearch 30B A3B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.09,
+            "output": 0.45
+          }
+        },
+        {
+          "id": "allenai/olmo-2-0325-32b-instruct",
+          "name": "AllenAI: Olmo 2 32B Instruct",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.2
+          }
+        },
+        {
+          "id": "allenai/olmo-3-32b-think",
+          "name": "AllenAI: Olmo 3 32B Think",
+          "limit": 65536,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "allenai/olmo-3.1-32b-instruct",
+          "name": "AllenAI: Olmo 3.1 32B Instruct",
+          "limit": 65536,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "alpindale/goliath-120b",
+          "name": "Goliath 120B",
+          "limit": 6144,
+          "pricing": {
+            "input": 3.75,
+            "output": 7.5
+          }
+        },
+        {
+          "id": "amazon/nova-2-lite-v1",
+          "name": "Amazon: Nova 2 Lite",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.3,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "amazon/nova-lite-v1",
+          "name": "Amazon: Nova Lite 1.0",
+          "limit": 300000,
+          "pricing": {
+            "input": 0.06,
+            "output": 0.24
+          }
+        },
+        {
+          "id": "amazon/nova-micro-v1",
+          "name": "Amazon: Nova Micro 1.0",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.14
+          }
+        },
+        {
+          "id": "amazon/nova-premier-v1",
+          "name": "Amazon: Nova Premier 1.0",
+          "limit": 1000000,
+          "pricing": {
+            "input": 2.5,
+            "output": 12.5
+          }
+        },
+        {
+          "id": "amazon/nova-pro-v1",
+          "name": "Amazon: Nova Pro 1.0",
+          "limit": 300000,
+          "pricing": {
+            "input": 0.8,
+            "output": 3.2
+          }
+        },
+        {
+          "id": "anthracite-org/magnum-v4-72b",
+          "name": "Magnum v4 72B",
+          "limit": 16384,
+          "pricing": {
+            "input": 3,
+            "output": 5
+          }
+        },
+        {
+          "id": "anthropic/claude-3-haiku",
+          "name": "Anthropic: Claude 3 Haiku",
+          "limit": 200000,
+          "pricing": {
+            "input": 0.25,
+            "output": 1.25
+          }
+        },
+        {
+          "id": "anthropic/claude-3.5-haiku",
+          "name": "Anthropic: Claude 3.5 Haiku",
+          "limit": 200000,
+          "pricing": {
+            "input": 0.8,
+            "output": 4
+          }
+        },
+        {
+          "id": "anthropic/claude-3.7-sonnet",
+          "name": "Anthropic: Claude 3.7 Sonnet",
+          "limit": 200000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "anthropic/claude-3.7-sonnet:thinking",
+          "name": "Anthropic: Claude 3.7 Sonnet (thinking)",
+          "limit": 200000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "anthropic/claude-haiku-4.5",
+          "name": "Anthropic: Claude Haiku 4.5",
+          "limit": 200000,
+          "pricing": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4",
+          "name": "Anthropic: Claude Opus 4",
+          "limit": 200000,
+          "pricing": {
+            "input": 15,
+            "output": 75
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4.1",
+          "name": "Anthropic: Claude Opus 4.1",
+          "limit": 200000,
+          "pricing": {
+            "input": 15,
+            "output": 75
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4.5",
+          "name": "Anthropic: Claude Opus 4.5",
+          "limit": 200000,
+          "pricing": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4.6",
+          "name": "Anthropic: Claude Opus 4.6",
+          "limit": 1000000,
+          "pricing": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4.6-fast",
+          "name": "Anthropic: Claude Opus 4.6 (Fast)",
+          "limit": 1000000,
+          "pricing": {
+            "input": 30,
+            "output": 150
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4.7",
+          "name": "Anthropic: Claude Opus 4.7",
+          "limit": 1000000,
+          "pricing": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "id": "anthropic/claude-sonnet-4",
+          "name": "Anthropic: Claude Sonnet 4",
+          "limit": 1000000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "anthropic/claude-sonnet-4.5",
+          "name": "Anthropic: Claude Sonnet 4.5",
+          "limit": 1000000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "anthropic/claude-sonnet-4.6",
+          "name": "Anthropic: Claude Sonnet 4.6",
+          "limit": 1000000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "arcee-ai/coder-large",
+          "name": "Arcee AI: Coder Large",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.5,
+            "output": 0.8
+          }
+        },
+        {
+          "id": "arcee-ai/maestro-reasoning",
+          "name": "Arcee AI: Maestro Reasoning",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.9,
+            "output": 3.3
+          }
+        },
+        {
+          "id": "arcee-ai/spotlight",
+          "name": "Arcee AI: Spotlight",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.18,
+            "output": 0.18
+          }
+        },
+        {
+          "id": "arcee-ai/trinity-large-preview:free",
+          "name": "Arcee AI: Trinity Large Preview (free)",
+          "limit": 131000,
+          "pricing": {}
+        },
+        {
+          "id": "arcee-ai/trinity-large-thinking",
+          "name": "Arcee AI: Trinity Large Thinking",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.22,
+            "output": 0.85
+          }
+        },
+        {
+          "id": "arcee-ai/trinity-mini",
+          "name": "Arcee AI: Trinity Mini",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.15
+          }
+        },
+        {
+          "id": "arcee-ai/virtuoso-large",
+          "name": "Arcee AI: Virtuoso Large",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.75,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "baidu/ernie-4.5-21b-a3b",
+          "name": "Baidu: ERNIE 4.5 21B A3B",
+          "limit": 120000,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.28
+          }
+        },
+        {
+          "id": "baidu/ernie-4.5-21b-a3b-thinking",
+          "name": "Baidu: ERNIE 4.5 21B A3B Thinking",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.28
+          }
+        },
+        {
+          "id": "baidu/ernie-4.5-300b-a47b",
+          "name": "Baidu: ERNIE 4.5 300B A47B ",
+          "limit": 123000,
+          "pricing": {
+            "input": 0.28,
+            "output": 1.1
+          }
+        },
+        {
+          "id": "baidu/ernie-4.5-vl-28b-a3b",
+          "name": "Baidu: ERNIE 4.5 VL 28B A3B",
+          "limit": 30000,
+          "pricing": {
+            "input": 0.14,
+            "output": 0.56
+          }
+        },
+        {
+          "id": "baidu/ernie-4.5-vl-424b-a47b",
+          "name": "Baidu: ERNIE 4.5 VL 424B A47B ",
+          "limit": 123000,
+          "pricing": {
+            "input": 0.42,
+            "output": 1.25
+          }
+        },
+        {
+          "id": "bytedance-seed/seed-1.6",
+          "name": "ByteDance Seed: Seed 1.6",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.25,
+            "output": 2
+          }
+        },
+        {
+          "id": "bytedance-seed/seed-1.6-flash",
+          "name": "ByteDance Seed: Seed 1.6 Flash",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "bytedance-seed/seed-2.0-lite",
+          "name": "ByteDance Seed: Seed-2.0-Lite",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.25,
+            "output": 2
+          }
+        },
+        {
+          "id": "bytedance-seed/seed-2.0-mini",
+          "name": "ByteDance Seed: Seed-2.0-Mini",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "bytedance/ui-tars-1.5-7b",
+          "name": "ByteDance: UI-TARS 7B ",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.2
+          }
+        },
+        {
+          "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+          "name": "Venice: Uncensored (free)",
+          "limit": 32768,
+          "pricing": {}
+        },
+        {
+          "id": "cohere/command-a",
+          "name": "Cohere: Command A",
+          "limit": 256000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "cohere/command-r-08-2024",
+          "name": "Cohere: Command R (08-2024)",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "cohere/command-r-plus-08-2024",
+          "name": "Cohere: Command R+ (08-2024)",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "cohere/command-r7b-12-2024",
+          "name": "Cohere: Command R7B (12-2024)",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.15
+          }
+        },
+        {
+          "id": "deepcogito/cogito-v2.1-671b",
+          "name": "Deep Cogito: Cogito v2.1 671B",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.25,
+            "output": 1.25
+          }
+        },
+        {
+          "id": "deepseek/deepseek-chat",
+          "name": "DeepSeek: DeepSeek V3",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.32,
+            "output": 0.89
+          }
+        },
+        {
+          "id": "deepseek/deepseek-chat-v3-0324",
+          "name": "DeepSeek: DeepSeek V3 0324",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.77
+          }
+        },
+        {
+          "id": "deepseek/deepseek-chat-v3.1",
+          "name": "DeepSeek: DeepSeek V3.1",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.75
+          }
+        },
+        {
+          "id": "deepseek/deepseek-r1",
+          "name": "DeepSeek: R1",
+          "limit": 64000,
+          "pricing": {
+            "input": 0.7,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "deepseek/deepseek-r1-0528",
+          "name": "DeepSeek: R1 0528",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.5,
+            "output": 2.15
+          }
+        },
+        {
+          "id": "deepseek/deepseek-r1-distill-llama-70b",
+          "name": "DeepSeek: R1 Distill Llama 70B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.7,
+            "output": 0.8
+          }
+        },
+        {
+          "id": "deepseek/deepseek-r1-distill-qwen-32b",
+          "name": "DeepSeek: R1 Distill Qwen 32B",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.29,
+            "output": 0.29
+          }
+        },
+        {
+          "id": "deepseek/deepseek-v3.1-terminus",
+          "name": "DeepSeek: DeepSeek V3.1 Terminus",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.21,
+            "output": 0.79
+          }
+        },
+        {
+          "id": "deepseek/deepseek-v3.2",
+          "name": "DeepSeek: DeepSeek V3.2",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.26,
+            "output": 0.38
+          }
+        },
+        {
+          "id": "deepseek/deepseek-v3.2-exp",
+          "name": "DeepSeek: DeepSeek V3.2 Exp",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.27,
+            "output": 0.41
+          }
+        },
+        {
+          "id": "deepseek/deepseek-v3.2-speciale",
+          "name": "DeepSeek: DeepSeek V3.2 Speciale",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.4,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "essentialai/rnj-1-instruct",
+          "name": "EssentialAI: Rnj 1 Instruct",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.15
+          }
+        },
+        {
+          "id": "google/gemini-2.0-flash-001",
+          "name": "Google: Gemini 2.0 Flash",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "google/gemini-2.0-flash-lite-001",
+          "name": "Google: Gemini 2.0 Flash Lite",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "google/gemini-2.5-flash",
+          "name": "Google: Gemini 2.5 Flash",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.3,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "google/gemini-2.5-flash-image",
+          "name": "Google: Nano Banana (Gemini 2.5 Flash Image)",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.3,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "google/gemini-2.5-flash-lite",
+          "name": "Google: Gemini 2.5 Flash Lite",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "google/gemini-2.5-flash-lite-preview-09-2025",
+          "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "google/gemini-2.5-pro",
+          "name": "Google: Gemini 2.5 Pro",
+          "limit": 1048576,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "google/gemini-2.5-pro-preview",
+          "name": "Google: Gemini 2.5 Pro Preview 06-05",
+          "limit": 1048576,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "google/gemini-2.5-pro-preview-05-06",
+          "name": "Google: Gemini 2.5 Pro Preview 05-06",
+          "limit": 1048576,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "google/gemini-3-flash-preview",
+          "name": "Google: Gemini 3 Flash Preview",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.5,
+            "output": 3
+          }
+        },
+        {
+          "id": "google/gemini-3-pro-image-preview",
+          "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
+          "limit": 65536,
+          "pricing": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "id": "google/gemini-3.1-flash-image-preview",
+          "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
+          "limit": 65536,
+          "pricing": {
+            "input": 0.5,
+            "output": 3
+          }
+        },
+        {
+          "id": "google/gemini-3.1-flash-lite-preview",
+          "name": "Google: Gemini 3.1 Flash Lite Preview",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.25,
+            "output": 1.5
+          }
+        },
+        {
+          "id": "google/gemini-3.1-pro-preview",
+          "name": "Google: Gemini 3.1 Pro Preview",
+          "limit": 1048576,
+          "pricing": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "id": "google/gemini-3.1-pro-preview-customtools",
+          "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
+          "limit": 1048576,
+          "pricing": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "id": "google/gemma-2-27b-it",
+          "name": "Google: Gemma 2 27B",
+          "limit": 8192,
+          "pricing": {
+            "input": 0.65,
+            "output": 0.65
+          }
+        },
+        {
+          "id": "google/gemma-3-12b-it",
+          "name": "Google: Gemma 3 12B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.13
+          }
+        },
+        {
+          "id": "google/gemma-3-12b-it:free",
+          "name": "Google: Gemma 3 12B (free)",
+          "limit": 32768,
+          "pricing": {}
+        },
+        {
+          "id": "google/gemma-3-27b-it",
+          "name": "Google: Gemma 3 27B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.08,
+            "output": 0.16
+          }
+        },
+        {
+          "id": "google/gemma-3-27b-it:free",
+          "name": "Google: Gemma 3 27B (free)",
+          "limit": 131072,
+          "pricing": {}
+        },
+        {
+          "id": "google/gemma-3-4b-it",
+          "name": "Google: Gemma 3 4B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.08
+          }
+        },
+        {
+          "id": "google/gemma-3-4b-it:free",
+          "name": "Google: Gemma 3 4B (free)",
+          "limit": 32768,
+          "pricing": {}
+        },
+        {
+          "id": "google/gemma-3n-e2b-it:free",
+          "name": "Google: Gemma 3n 2B (free)",
+          "limit": 8192,
+          "pricing": {}
+        },
+        {
+          "id": "google/gemma-3n-e4b-it",
+          "name": "Google: Gemma 3n 4B",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.06,
+            "output": 0.12
+          }
+        },
+        {
+          "id": "google/gemma-3n-e4b-it:free",
+          "name": "Google: Gemma 3n 4B (free)",
+          "limit": 8192,
+          "pricing": {}
+        },
+        {
+          "id": "google/gemma-4-26b-a4b-it",
+          "name": "Google: Gemma 4 26B A4B ",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "google/gemma-4-26b-a4b-it:free",
+          "name": "Google: Gemma 4 26B A4B  (free)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "google/gemma-4-31b-it",
+          "name": "Google: Gemma 4 31B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.13,
+            "output": 0.38
+          }
+        },
+        {
+          "id": "google/gemma-4-31b-it:free",
+          "name": "Google: Gemma 4 31B (free)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "google/lyria-3-clip-preview",
+          "name": "Google: Lyria 3 Clip Preview",
+          "limit": 1048576,
+          "pricing": {}
+        },
+        {
+          "id": "google/lyria-3-pro-preview",
+          "name": "Google: Lyria 3 Pro Preview",
+          "limit": 1048576,
+          "pricing": {}
+        },
+        {
+          "id": "gryphe/mythomax-l2-13b",
+          "name": "MythoMax 13B",
+          "limit": 4096,
+          "pricing": {
+            "input": 0.06,
+            "output": 0.06
+          }
+        },
+        {
+          "id": "ibm-granite/granite-4.0-h-micro",
+          "name": "IBM: Granite 4.0 Micro",
+          "limit": 131000,
+          "pricing": {
+            "input": 0.02,
+            "output": 0.11
+          }
+        },
+        {
+          "id": "inception/mercury-2",
+          "name": "Inception: Mercury 2",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.25,
+            "output": 0.75
+          }
+        },
+        {
+          "id": "inflection/inflection-3-pi",
+          "name": "Inflection: Inflection 3 Pi",
+          "limit": 8000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "inflection/inflection-3-productivity",
+          "name": "Inflection: Inflection 3 Productivity",
+          "limit": 8000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "kwaipilot/kat-coder-pro-v2",
+          "name": "Kwaipilot: KAT-Coder-Pro V2",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "liquid/lfm-2-24b-a2b",
+          "name": "LiquidAI: LFM2-24B-A2B",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.03,
+            "output": 0.12
+          }
+        },
+        {
+          "id": "liquid/lfm-2.5-1.2b-instruct:free",
+          "name": "LiquidAI: LFM2.5-1.2B-Instruct (free)",
+          "limit": 32768,
+          "pricing": {}
+        },
+        {
+          "id": "liquid/lfm-2.5-1.2b-thinking:free",
+          "name": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
+          "limit": 32768,
+          "pricing": {}
+        },
+        {
+          "id": "mancer/weaver",
+          "name": "Mancer: Weaver (alpha)",
+          "limit": 8000,
+          "pricing": {
+            "input": 0.75,
+            "output": 1
+          }
+        },
+        {
+          "id": "meta-llama/llama-3-70b-instruct",
+          "name": "Meta: Llama 3 70B Instruct",
+          "limit": 8192,
+          "pricing": {
+            "input": 0.51,
+            "output": 0.74
+          }
+        },
+        {
+          "id": "meta-llama/llama-3-8b-instruct",
+          "name": "Meta: Llama 3 8B Instruct",
+          "limit": 8192,
+          "pricing": {
+            "input": 0.03,
+            "output": 0.04
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.1-70b-instruct",
+          "name": "Meta: Llama 3.1 70B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.4,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.1-8b-instruct",
+          "name": "Meta: Llama 3.1 8B Instruct",
+          "limit": 16384,
+          "pricing": {
+            "input": 0.02,
+            "output": 0.05
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.2-11b-vision-instruct",
+          "name": "Meta: Llama 3.2 11B Vision Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.24,
+            "output": 0.24
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.2-1b-instruct",
+          "name": "Meta: Llama 3.2 1B Instruct",
+          "limit": 60000,
+          "pricing": {
+            "input": 0.03,
+            "output": 0.2
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.2-3b-instruct",
+          "name": "Meta: Llama 3.2 3B Instruct",
+          "limit": 80000,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.34
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.2-3b-instruct:free",
+          "name": "Meta: Llama 3.2 3B Instruct (free)",
+          "limit": 131072,
+          "pricing": {}
+        },
+        {
+          "id": "meta-llama/llama-3.3-70b-instruct",
+          "name": "Meta: Llama 3.3 70B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.32
+          }
+        },
+        {
+          "id": "meta-llama/llama-3.3-70b-instruct:free",
+          "name": "Meta: Llama 3.3 70B Instruct (free)",
+          "limit": 65536,
+          "pricing": {}
+        },
+        {
+          "id": "meta-llama/llama-4-maverick",
+          "name": "Meta: Llama 4 Maverick",
+          "limit": 1048576,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "meta-llama/llama-4-scout",
+          "name": "Meta: Llama 4 Scout",
+          "limit": 327680,
+          "pricing": {
+            "input": 0.08,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "meta-llama/llama-guard-3-8b",
+          "name": "Llama Guard 3 8B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.48,
+            "output": 0.03
+          }
+        },
+        {
+          "id": "meta-llama/llama-guard-4-12b",
+          "name": "Meta: Llama Guard 4 12B",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.18,
+            "output": 0.18
+          }
+        },
+        {
+          "id": "meta-llama/llama-guard-4-12b:free",
+          "name": "Meta: Llama Guard 4 12B (free)",
+          "limit": 163840,
+          "pricing": {}
+        },
+        {
+          "id": "microsoft/phi-4",
+          "name": "Microsoft: Phi 4",
+          "limit": 16384,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.14
+          }
+        },
+        {
+          "id": "microsoft/wizardlm-2-8x22b",
+          "name": "WizardLM-2 8x22B",
+          "limit": 65535,
+          "pricing": {
+            "input": 0.62,
+            "output": 0.62
+          }
+        },
+        {
+          "id": "minimax/minimax-01",
+          "name": "MiniMax: MiniMax-01",
+          "limit": 1000192,
+          "pricing": {
+            "input": 0.2,
+            "output": 1.1
+          }
+        },
+        {
+          "id": "minimax/minimax-m1",
+          "name": "MiniMax: MiniMax M1",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.4,
+            "output": 2.2
+          }
+        },
+        {
+          "id": "minimax/minimax-m2",
+          "name": "MiniMax: MiniMax M2",
+          "limit": 196608,
+          "pricing": {
+            "input": 0.26,
+            "output": 1
+          }
+        },
+        {
+          "id": "minimax/minimax-m2-her",
+          "name": "MiniMax: MiniMax M2-her",
+          "limit": 65536,
+          "pricing": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "minimax/minimax-m2.1",
+          "name": "MiniMax: MiniMax M2.1",
+          "limit": 196608,
+          "pricing": {
+            "input": 0.29,
+            "output": 0.95
+          }
+        },
+        {
+          "id": "minimax/minimax-m2.5",
+          "name": "MiniMax: MiniMax M2.5",
+          "limit": 196608,
+          "pricing": {
+            "input": 0.12,
+            "output": 0.99
+          }
+        },
+        {
+          "id": "minimax/minimax-m2.5:free",
+          "name": "MiniMax: MiniMax M2.5 (free)",
+          "limit": 196608,
+          "pricing": {}
+        },
+        {
+          "id": "minimax/minimax-m2.7",
+          "name": "MiniMax: MiniMax M2.7",
+          "limit": 196608,
+          "pricing": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "mistralai/codestral-2508",
+          "name": "Mistral: Codestral 2508",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.3,
+            "output": 0.9
+          }
+        },
+        {
+          "id": "mistralai/devstral-2512",
+          "name": "Mistral: Devstral 2 2512",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.4,
+            "output": 2
+          }
+        },
+        {
+          "id": "mistralai/devstral-medium",
+          "name": "Mistral: Devstral Medium",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.4,
+            "output": 2
+          }
+        },
+        {
+          "id": "mistralai/devstral-small",
+          "name": "Mistral: Devstral Small 1.1",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "mistralai/ministral-14b-2512",
+          "name": "Mistral: Ministral 3 14B 2512",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.2
+          }
+        },
+        {
+          "id": "mistralai/ministral-3b-2512",
+          "name": "Mistral: Ministral 3 3B 2512",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.1
+          }
+        },
+        {
+          "id": "mistralai/ministral-8b-2512",
+          "name": "Mistral: Ministral 3 8B 2512",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.15
+          }
+        },
+        {
+          "id": "mistralai/mistral-7b-instruct-v0.1",
+          "name": "Mistral: Mistral 7B Instruct v0.1",
+          "limit": 2824,
+          "pricing": {
+            "input": 0.11,
+            "output": 0.19
+          }
+        },
+        {
+          "id": "mistralai/mistral-large",
+          "name": "Mistral Large",
+          "limit": 128000,
+          "pricing": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "id": "mistralai/mistral-large-2407",
+          "name": "Mistral Large 2407",
+          "limit": 131072,
+          "pricing": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "id": "mistralai/mistral-large-2411",
+          "name": "Mistral Large 2411",
+          "limit": 131072,
+          "pricing": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "id": "mistralai/mistral-large-2512",
+          "name": "Mistral: Mistral Large 3 2512",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.5,
+            "output": 1.5
+          }
+        },
+        {
+          "id": "mistralai/mistral-medium-3",
+          "name": "Mistral: Mistral Medium 3",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.4,
+            "output": 2
+          }
+        },
+        {
+          "id": "mistralai/mistral-medium-3.1",
+          "name": "Mistral: Mistral Medium 3.1",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.4,
+            "output": 2
+          }
+        },
+        {
+          "id": "mistralai/mistral-nemo",
+          "name": "Mistral: Mistral Nemo",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.02,
+            "output": 0.04
+          }
+        },
+        {
+          "id": "mistralai/mistral-saba",
+          "name": "Mistral: Saba",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "mistralai/mistral-small-24b-instruct-2501",
+          "name": "Mistral: Mistral Small 3",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.08
+          }
+        },
+        {
+          "id": "mistralai/mistral-small-2603",
+          "name": "Mistral: Mistral Small 4",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "mistralai/mistral-small-3.1-24b-instruct",
+          "name": "Mistral: Mistral Small 3.1 24B",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.35,
+            "output": 0.56
+          }
+        },
+        {
+          "id": "mistralai/mistral-small-3.2-24b-instruct",
+          "name": "Mistral: Mistral Small 3.2 24B",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.2
+          }
+        },
+        {
+          "id": "mistralai/mistral-small-creative",
+          "name": "Mistral: Mistral Small Creative",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "mistralai/mixtral-8x22b-instruct",
+          "name": "Mistral: Mixtral 8x22B Instruct",
+          "limit": 65536,
+          "pricing": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "id": "mistralai/mixtral-8x7b-instruct",
+          "name": "Mistral: Mixtral 8x7B Instruct",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.54,
+            "output": 0.54
+          }
+        },
+        {
+          "id": "mistralai/pixtral-large-2411",
+          "name": "Mistral: Pixtral Large 2411",
+          "limit": 131072,
+          "pricing": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "id": "mistralai/voxtral-small-24b-2507",
+          "name": "Mistral: Voxtral Small 24B 2507",
+          "limit": 32000,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "moonshotai/kimi-k2",
+          "name": "MoonshotAI: Kimi K2 0711",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.57,
+            "output": 2.3
+          }
+        },
+        {
+          "id": "moonshotai/kimi-k2-0905",
+          "name": "MoonshotAI: Kimi K2 0905",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.4,
+            "output": 2
+          }
+        },
+        {
+          "id": "moonshotai/kimi-k2-thinking",
+          "name": "MoonshotAI: Kimi K2 Thinking",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.6,
+            "output": 2.5
+          }
+        },
+        {
+          "id": "moonshotai/kimi-k2.5",
+          "name": "MoonshotAI: Kimi K2.5",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.38,
+            "output": 1.72
+          }
+        },
+        {
+          "id": "morph/morph-v3-fast",
+          "name": "Morph: Morph V3 Fast",
+          "limit": 81920,
+          "pricing": {
+            "input": 0.8,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "morph/morph-v3-large",
+          "name": "Morph: Morph V3 Large",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.9,
+            "output": 1.9
+          }
+        },
+        {
+          "id": "nex-agi/deepseek-v3.1-nex-n1",
+          "name": "Nex AGI: DeepSeek V3.1 Nex N1",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.14,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "nousresearch/hermes-2-pro-llama-3-8b",
+          "name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
+          "limit": 8192,
+          "pricing": {
+            "input": 0.14,
+            "output": 0.14
+          }
+        },
+        {
+          "id": "nousresearch/hermes-3-llama-3.1-405b",
+          "name": "Nous: Hermes 3 405B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 1,
+            "output": 1
+          }
+        },
+        {
+          "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+          "name": "Nous: Hermes 3 405B Instruct (free)",
+          "limit": 131072,
+          "pricing": {}
+        },
+        {
+          "id": "nousresearch/hermes-3-llama-3.1-70b",
+          "name": "Nous: Hermes 3 70B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.3,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "nousresearch/hermes-4-405b",
+          "name": "Nous: Hermes 4 405B",
+          "limit": 131072,
+          "pricing": {
+            "input": 1,
+            "output": 3
+          }
+        },
+        {
+          "id": "nousresearch/hermes-4-70b",
+          "name": "Nous: Hermes 4 70B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.13,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "nvidia/llama-3.1-nemotron-70b-instruct",
+          "name": "NVIDIA: Llama 3.1 Nemotron 70B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 1.2,
+            "output": 1.2
+          }
+        },
+        {
+          "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+          "name": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-30b-a3b",
+          "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.2
+          }
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+          "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
+          "limit": 256000,
+          "pricing": {}
+        },
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b",
+          "name": "NVIDIA: Nemotron 3 Super",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "nvidia/nemotron-3-super-120b-a12b:free",
+          "name": "NVIDIA: Nemotron 3 Super (free)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "nvidia/nemotron-nano-12b-v2-vl",
+          "name": "NVIDIA: Nemotron Nano 12B 2 VL",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+          "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
+          "limit": 128000,
+          "pricing": {}
+        },
+        {
+          "id": "nvidia/nemotron-nano-9b-v2",
+          "name": "NVIDIA: Nemotron Nano 9B V2",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.16
+          }
+        },
+        {
+          "id": "nvidia/nemotron-nano-9b-v2:free",
+          "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
+          "limit": 128000,
+          "pricing": {}
+        },
+        {
+          "id": "openai/gpt-3.5-turbo",
+          "name": "OpenAI: GPT-3.5 Turbo",
+          "limit": 16385,
+          "pricing": {
+            "input": 0.5,
+            "output": 1.5
+          }
+        },
+        {
+          "id": "openai/gpt-3.5-turbo-0613",
+          "name": "OpenAI: GPT-3.5 Turbo (older v0613)",
+          "limit": 4095,
+          "pricing": {
+            "input": 1,
+            "output": 2
+          }
+        },
+        {
+          "id": "openai/gpt-3.5-turbo-16k",
+          "name": "OpenAI: GPT-3.5 Turbo 16k",
+          "limit": 16385,
+          "pricing": {
+            "input": 3,
+            "output": 4
+          }
+        },
+        {
+          "id": "openai/gpt-3.5-turbo-instruct",
+          "name": "OpenAI: GPT-3.5 Turbo Instruct",
+          "limit": 4095,
+          "pricing": {
+            "input": 1.5,
+            "output": 2
+          }
+        },
+        {
+          "id": "openai/gpt-4",
+          "name": "OpenAI: GPT-4",
+          "limit": 8191,
+          "pricing": {
+            "input": 30,
+            "output": 60
+          }
+        },
+        {
+          "id": "openai/gpt-4-0314",
+          "name": "OpenAI: GPT-4 (older v0314)",
+          "limit": 8191,
+          "pricing": {
+            "input": 30,
+            "output": 60
+          }
+        },
+        {
+          "id": "openai/gpt-4-1106-preview",
+          "name": "OpenAI: GPT-4 Turbo (older v1106)",
+          "limit": 128000,
+          "pricing": {
+            "input": 10,
+            "output": 30
+          }
+        },
+        {
+          "id": "openai/gpt-4-turbo",
+          "name": "OpenAI: GPT-4 Turbo",
+          "limit": 128000,
+          "pricing": {
+            "input": 10,
+            "output": 30
+          }
+        },
+        {
+          "id": "openai/gpt-4-turbo-preview",
+          "name": "OpenAI: GPT-4 Turbo Preview",
+          "limit": 128000,
+          "pricing": {
+            "input": 10,
+            "output": 30
+          }
+        },
+        {
+          "id": "openai/gpt-4.1",
+          "name": "OpenAI: GPT-4.1",
+          "limit": 1047576,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "openai/gpt-4.1-mini",
+          "name": "OpenAI: GPT-4.1 Mini",
+          "limit": 1047576,
+          "pricing": {
+            "input": 0.4,
+            "output": 1.6
+          }
+        },
+        {
+          "id": "openai/gpt-4.1-nano",
+          "name": "OpenAI: GPT-4.1 Nano",
+          "limit": 1047576,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "openai/gpt-4o",
+          "name": "OpenAI: GPT-4o",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-4o-2024-05-13",
+          "name": "OpenAI: GPT-4o (2024-05-13)",
+          "limit": 128000,
+          "pricing": {
+            "input": 5,
+            "output": 15
+          }
+        },
+        {
+          "id": "openai/gpt-4o-2024-08-06",
+          "name": "OpenAI: GPT-4o (2024-08-06)",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-4o-2024-11-20",
+          "name": "OpenAI: GPT-4o (2024-11-20)",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-4o-audio-preview",
+          "name": "OpenAI: GPT-4o Audio",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-4o-mini",
+          "name": "OpenAI: GPT-4o-mini",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "openai/gpt-4o-mini-2024-07-18",
+          "name": "OpenAI: GPT-4o-mini (2024-07-18)",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "openai/gpt-4o-mini-search-preview",
+          "name": "OpenAI: GPT-4o-mini Search Preview",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "openai/gpt-4o-search-preview",
+          "name": "OpenAI: GPT-4o Search Preview",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-4o:extended",
+          "name": "OpenAI: GPT-4o (extended)",
+          "limit": 128000,
+          "pricing": {
+            "input": 6,
+            "output": 18
+          }
+        },
+        {
+          "id": "openai/gpt-5",
+          "name": "OpenAI: GPT-5",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5-chat",
+          "name": "OpenAI: GPT-5 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5-codex",
+          "name": "OpenAI: GPT-5 Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5-image",
+          "name": "OpenAI: GPT-5 Image",
+          "limit": 400000,
+          "pricing": {
+            "input": 10,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5-image-mini",
+          "name": "OpenAI: GPT-5 Image Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 2.5,
+            "output": 2
+          }
+        },
+        {
+          "id": "openai/gpt-5-mini",
+          "name": "OpenAI: GPT-5 Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.25,
+            "output": 2
+          }
+        },
+        {
+          "id": "openai/gpt-5-nano",
+          "name": "OpenAI: GPT-5 Nano",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "openai/gpt-5-pro",
+          "name": "OpenAI: GPT-5 Pro",
+          "limit": 400000,
+          "pricing": {
+            "input": 15,
+            "output": 120
+          }
+        },
+        {
+          "id": "openai/gpt-5.1",
+          "name": "OpenAI: GPT-5.1",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5.1-chat",
+          "name": "OpenAI: GPT-5.1 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5.1-codex",
+          "name": "OpenAI: GPT-5.1-Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5.1-codex-max",
+          "name": "OpenAI: GPT-5.1-Codex-Max",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-5.1-codex-mini",
+          "name": "OpenAI: GPT-5.1-Codex-Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.25,
+            "output": 2
+          }
+        },
+        {
+          "id": "openai/gpt-5.2",
+          "name": "OpenAI: GPT-5.2",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "openai/gpt-5.2-chat",
+          "name": "OpenAI: GPT-5.2 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "openai/gpt-5.2-codex",
+          "name": "OpenAI: GPT-5.2-Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "openai/gpt-5.2-pro",
+          "name": "OpenAI: GPT-5.2 Pro",
+          "limit": 400000,
+          "pricing": {
+            "input": 21,
+            "output": 168
+          }
+        },
+        {
+          "id": "openai/gpt-5.3-chat",
+          "name": "OpenAI: GPT-5.3 Chat",
+          "limit": 128000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "openai/gpt-5.3-codex",
+          "name": "OpenAI: GPT-5.3-Codex",
+          "limit": 400000,
+          "pricing": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "id": "openai/gpt-5.4",
+          "name": "OpenAI: GPT-5.4",
+          "limit": 1050000,
+          "pricing": {
+            "input": 2.5,
+            "output": 15
+          }
+        },
+        {
+          "id": "openai/gpt-5.4-mini",
+          "name": "OpenAI: GPT-5.4 Mini",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.75,
+            "output": 4.5
+          }
+        },
+        {
+          "id": "openai/gpt-5.4-nano",
+          "name": "OpenAI: GPT-5.4 Nano",
+          "limit": 400000,
+          "pricing": {
+            "input": 0.2,
+            "output": 1.25
+          }
+        },
+        {
+          "id": "openai/gpt-5.4-pro",
+          "name": "OpenAI: GPT-5.4 Pro",
+          "limit": 1050000,
+          "pricing": {
+            "input": 30,
+            "output": 180
+          }
+        },
+        {
+          "id": "openai/gpt-audio",
+          "name": "OpenAI: GPT Audio",
+          "limit": 128000,
+          "pricing": {
+            "input": 2.5,
+            "output": 10
+          }
+        },
+        {
+          "id": "openai/gpt-audio-mini",
+          "name": "OpenAI: GPT Audio Mini",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.6,
+            "output": 2.4
+          }
+        },
+        {
+          "id": "openai/gpt-oss-120b",
+          "name": "OpenAI: gpt-oss-120b",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.19
+          }
+        },
+        {
+          "id": "openai/gpt-oss-120b:free",
+          "name": "OpenAI: gpt-oss-120b (free)",
+          "limit": 131072,
+          "pricing": {}
+        },
+        {
+          "id": "openai/gpt-oss-20b",
+          "name": "OpenAI: gpt-oss-20b",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.03,
+            "output": 0.14
+          }
+        },
+        {
+          "id": "openai/gpt-oss-20b:free",
+          "name": "OpenAI: gpt-oss-20b (free)",
+          "limit": 131072,
+          "pricing": {}
+        },
+        {
+          "id": "openai/gpt-oss-safeguard-20b",
+          "name": "OpenAI: gpt-oss-safeguard-20b",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "openai/o1",
+          "name": "OpenAI: o1",
+          "limit": 200000,
+          "pricing": {
+            "input": 15,
+            "output": 60
+          }
+        },
+        {
+          "id": "openai/o1-pro",
+          "name": "OpenAI: o1-pro",
+          "limit": 200000,
+          "pricing": {
+            "input": 150,
+            "output": 600
+          }
+        },
+        {
+          "id": "openai/o3",
+          "name": "OpenAI: o3",
+          "limit": 200000,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "openai/o3-deep-research",
+          "name": "OpenAI: o3 Deep Research",
+          "limit": 200000,
+          "pricing": {
+            "input": 10,
+            "output": 40
+          }
+        },
+        {
+          "id": "openai/o3-mini",
+          "name": "OpenAI: o3 Mini",
+          "limit": 200000,
+          "pricing": {
+            "input": 1.1,
+            "output": 4.4
+          }
+        },
+        {
+          "id": "openai/o3-mini-high",
+          "name": "OpenAI: o3 Mini High",
+          "limit": 200000,
+          "pricing": {
+            "input": 1.1,
+            "output": 4.4
+          }
+        },
+        {
+          "id": "openai/o3-pro",
+          "name": "OpenAI: o3 Pro",
+          "limit": 200000,
+          "pricing": {
+            "input": 20,
+            "output": 80
+          }
+        },
+        {
+          "id": "openai/o4-mini",
+          "name": "OpenAI: o4 Mini",
+          "limit": 200000,
+          "pricing": {
+            "input": 1.1,
+            "output": 4.4
+          }
+        },
+        {
+          "id": "openai/o4-mini-deep-research",
+          "name": "OpenAI: o4 Mini Deep Research",
+          "limit": 200000,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "openai/o4-mini-high",
+          "name": "OpenAI: o4 Mini High",
+          "limit": 200000,
+          "pricing": {
+            "input": 1.1,
+            "output": 4.4
+          }
+        },
+        {
+          "id": "openrouter/elephant-alpha",
+          "name": "Elephant",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "openrouter/free",
+          "name": "Free Models Router",
+          "limit": 200000,
+          "pricing": {}
+        },
+        {
+          "id": "perplexity/sonar",
+          "name": "Perplexity: Sonar",
+          "limit": 127072,
+          "pricing": {
+            "input": 1,
+            "output": 1
+          }
+        },
+        {
+          "id": "perplexity/sonar-deep-research",
+          "name": "Perplexity: Sonar Deep Research",
+          "limit": 128000,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "perplexity/sonar-pro",
+          "name": "Perplexity: Sonar Pro",
+          "limit": 200000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "perplexity/sonar-pro-search",
+          "name": "Perplexity: Sonar Pro Search",
+          "limit": 200000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "perplexity/sonar-reasoning-pro",
+          "name": "Perplexity: Sonar Reasoning Pro",
+          "limit": 128000,
+          "pricing": {
+            "input": 2,
+            "output": 8
+          }
+        },
+        {
+          "id": "prime-intellect/intellect-3",
+          "name": "Prime Intellect: INTELLECT-3",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.2,
+            "output": 1.1
+          }
+        },
+        {
+          "id": "qwen/qwen-2.5-72b-instruct",
+          "name": "Qwen2.5 72B Instruct",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.12,
+            "output": 0.39
+          }
+        },
+        {
+          "id": "qwen/qwen-2.5-7b-instruct",
+          "name": "Qwen: Qwen2.5 7B Instruct",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.1
+          }
+        },
+        {
+          "id": "qwen/qwen-2.5-coder-32b-instruct",
+          "name": "Qwen2.5 Coder 32B Instruct",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.66,
+            "output": 1
+          }
+        },
+        {
+          "id": "qwen/qwen-max",
+          "name": "Qwen: Qwen-Max ",
+          "limit": 32768,
+          "pricing": {
+            "input": 1.04,
+            "output": 4.16
+          }
+        },
+        {
+          "id": "qwen/qwen-plus",
+          "name": "Qwen: Qwen-Plus",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.26,
+            "output": 0.78
+          }
+        },
+        {
+          "id": "qwen/qwen-plus-2025-07-28",
+          "name": "Qwen: Qwen Plus 0728",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.26,
+            "output": 0.78
+          }
+        },
+        {
+          "id": "qwen/qwen-plus-2025-07-28:thinking",
+          "name": "Qwen: Qwen Plus 0728 (thinking)",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.26,
+            "output": 0.78
+          }
+        },
+        {
+          "id": "qwen/qwen-turbo",
+          "name": "Qwen: Qwen-Turbo",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.03,
+            "output": 0.13
+          }
+        },
+        {
+          "id": "qwen/qwen-vl-max",
+          "name": "Qwen: Qwen VL Max",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.52,
+            "output": 2.08
+          }
+        },
+        {
+          "id": "qwen/qwen-vl-plus",
+          "name": "Qwen: Qwen VL Plus",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.14,
+            "output": 0.41
+          }
+        },
+        {
+          "id": "qwen/qwen2.5-vl-32b-instruct",
+          "name": "Qwen: Qwen2.5 VL 32B Instruct",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "qwen/qwen2.5-vl-72b-instruct",
+          "name": "Qwen: Qwen2.5 VL 72B Instruct",
+          "limit": 32000,
+          "pricing": {
+            "input": 0.25,
+            "output": 0.75
+          }
+        },
+        {
+          "id": "qwen/qwen3-14b",
+          "name": "Qwen: Qwen3 14B",
+          "limit": 40960,
+          "pricing": {
+            "input": 0.06,
+            "output": 0.24
+          }
+        },
+        {
+          "id": "qwen/qwen3-235b-a22b",
+          "name": "Qwen: Qwen3 235B A22B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.45,
+            "output": 1.82
+          }
+        },
+        {
+          "id": "qwen/qwen3-235b-a22b-2507",
+          "name": "Qwen: Qwen3 235B A22B Instruct 2507",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.1
+          }
+        },
+        {
+          "id": "qwen/qwen3-235b-a22b-thinking-2507",
+          "name": "Qwen: Qwen3 235B A22B Thinking 2507",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.13,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "qwen/qwen3-30b-a3b",
+          "name": "Qwen: Qwen3 30B A3B",
+          "limit": 40960,
+          "pricing": {
+            "input": 0.08,
+            "output": 0.28
+          }
+        },
+        {
+          "id": "qwen/qwen3-30b-a3b-instruct-2507",
+          "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.09,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "qwen/qwen3-30b-a3b-thinking-2507",
+          "name": "Qwen: Qwen3 30B A3B Thinking 2507",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.08,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "qwen/qwen3-32b",
+          "name": "Qwen: Qwen3 32B",
+          "limit": 40960,
+          "pricing": {
+            "input": 0.08,
+            "output": 0.24
+          }
+        },
+        {
+          "id": "qwen/qwen3-8b",
+          "name": "Qwen: Qwen3 8B",
+          "limit": 40960,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "qwen/qwen3-coder",
+          "name": "Qwen: Qwen3 Coder 480B A35B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.22,
+            "output": 1
+          }
+        },
+        {
+          "id": "qwen/qwen3-coder-30b-a3b-instruct",
+          "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
+          "limit": 160000,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.27
+          }
+        },
+        {
+          "id": "qwen/qwen3-coder-flash",
+          "name": "Qwen: Qwen3 Coder Flash",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.97
+          }
+        },
+        {
+          "id": "qwen/qwen3-coder-next",
+          "name": "Qwen: Qwen3 Coder Next",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.8
+          }
+        },
+        {
+          "id": "qwen/qwen3-coder-plus",
+          "name": "Qwen: Qwen3 Coder Plus",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.65,
+            "output": 3.25
+          }
+        },
+        {
+          "id": "qwen/qwen3-coder:free",
+          "name": "Qwen: Qwen3 Coder 480B A35B (free)",
+          "limit": 262000,
+          "pricing": {}
+        },
+        {
+          "id": "qwen/qwen3-max",
+          "name": "Qwen: Qwen3 Max",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.78,
+            "output": 3.9
+          }
+        },
+        {
+          "id": "qwen/qwen3-max-thinking",
+          "name": "Qwen: Qwen3 Max Thinking",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.78,
+            "output": 3.9
+          }
+        },
+        {
+          "id": "qwen/qwen3-next-80b-a3b-instruct",
+          "name": "Qwen: Qwen3 Next 80B A3B Instruct",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.09,
+            "output": 1.1
+          }
+        },
+        {
+          "id": "qwen/qwen3-next-80b-a3b-instruct:free",
+          "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "qwen/qwen3-next-80b-a3b-thinking",
+          "name": "Qwen: Qwen3 Next 80B A3B Thinking",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.78
+          }
+        },
+        {
+          "id": "qwen/qwen3-vl-235b-a22b-instruct",
+          "name": "Qwen: Qwen3 VL 235B A22B Instruct",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.88
+          }
+        },
+        {
+          "id": "qwen/qwen3-vl-235b-a22b-thinking",
+          "name": "Qwen: Qwen3 VL 235B A22B Thinking",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.26,
+            "output": 2.6
+          }
+        },
+        {
+          "id": "qwen/qwen3-vl-30b-a3b-instruct",
+          "name": "Qwen: Qwen3 VL 30B A3B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.13,
+            "output": 0.52
+          }
+        },
+        {
+          "id": "qwen/qwen3-vl-30b-a3b-thinking",
+          "name": "Qwen: Qwen3 VL 30B A3B Thinking",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.13,
+            "output": 1.56
+          }
+        },
+        {
+          "id": "qwen/qwen3-vl-32b-instruct",
+          "name": "Qwen: Qwen3 VL 32B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.42
+          }
+        },
+        {
+          "id": "qwen/qwen3-vl-8b-instruct",
+          "name": "Qwen: Qwen3 VL 8B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.08,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "qwen/qwen3-vl-8b-thinking",
+          "name": "Qwen: Qwen3 VL 8B Thinking",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.12,
+            "output": 1.36
+          }
+        },
+        {
+          "id": "qwen/qwen3.5-122b-a10b",
+          "name": "Qwen: Qwen3.5-122B-A10B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.26,
+            "output": 2.08
+          }
+        },
+        {
+          "id": "qwen/qwen3.5-27b",
+          "name": "Qwen: Qwen3.5-27B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.2,
+            "output": 1.56
+          }
+        },
+        {
+          "id": "qwen/qwen3.5-35b-a3b",
+          "name": "Qwen: Qwen3.5-35B-A3B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.16,
+            "output": 1.3
+          }
+        },
+        {
+          "id": "qwen/qwen3.5-397b-a17b",
+          "name": "Qwen: Qwen3.5 397B A17B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.39,
+            "output": 2.34
+          }
+        },
+        {
+          "id": "qwen/qwen3.5-9b",
+          "name": "Qwen: Qwen3.5-9B",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.15
+          }
+        },
+        {
+          "id": "qwen/qwen3.5-flash-02-23",
+          "name": "Qwen: Qwen3.5-Flash",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.26
+          }
+        },
+        {
+          "id": "qwen/qwen3.5-plus-02-15",
+          "name": "Qwen: Qwen3.5 Plus 2026-02-15",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.26,
+            "output": 1.56
+          }
+        },
+        {
+          "id": "qwen/qwen3.6-plus",
+          "name": "Qwen: Qwen3.6 Plus",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.33,
+            "output": 1.95
+          }
+        },
+        {
+          "id": "qwen/qwq-32b",
+          "name": "Qwen: QwQ 32B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.58
+          }
+        },
+        {
+          "id": "rekaai/reka-edge",
+          "name": "Reka Edge",
+          "limit": 16384,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.1
+          }
+        },
+        {
+          "id": "rekaai/reka-flash-3",
+          "name": "Reka Flash 3",
+          "limit": 65536,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.2
+          }
+        },
+        {
+          "id": "relace/relace-apply-3",
+          "name": "Relace: Relace Apply 3",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.85,
+            "output": 1.25
+          }
+        },
+        {
+          "id": "relace/relace-search",
+          "name": "Relace: Relace Search",
+          "limit": 256000,
+          "pricing": {
+            "input": 1,
+            "output": 3
+          }
+        },
+        {
+          "id": "sao10k/l3-euryale-70b",
+          "name": "Sao10k: Llama 3 Euryale 70B v2.1",
+          "limit": 8192,
+          "pricing": {
+            "input": 1.48,
+            "output": 1.48
+          }
+        },
+        {
+          "id": "sao10k/l3-lunaris-8b",
+          "name": "Sao10K: Llama 3 8B Lunaris",
+          "limit": 8192,
+          "pricing": {
+            "input": 0.04,
+            "output": 0.05
+          }
+        },
+        {
+          "id": "sao10k/l3.1-70b-hanami-x1",
+          "name": "Sao10K: Llama 3.1 70B Hanami x1",
+          "limit": 16000,
+          "pricing": {
+            "input": 3,
+            "output": 3
+          }
+        },
+        {
+          "id": "sao10k/l3.1-euryale-70b",
+          "name": "Sao10K: Llama 3.1 Euryale 70B v2.2",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.85,
+            "output": 0.85
+          }
+        },
+        {
+          "id": "sao10k/l3.3-euryale-70b",
+          "name": "Sao10K: Llama 3.3 Euryale 70B",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.65,
+            "output": 0.75
+          }
+        },
+        {
+          "id": "stepfun/step-3.5-flash",
+          "name": "StepFun: Step 3.5 Flash",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.3
+          }
+        },
+        {
+          "id": "switchpoint/router",
+          "name": "Switchpoint Router",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.85,
+            "output": 3.4
+          }
+        },
+        {
+          "id": "tencent/hunyuan-a13b-instruct",
+          "name": "Tencent: Hunyuan A13B Instruct",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.14,
+            "output": 0.57
+          }
+        },
+        {
+          "id": "thedrummer/cydonia-24b-v4.1",
+          "name": "TheDrummer: Cydonia 24B V4.1",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.3,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "thedrummer/rocinante-12b",
+          "name": "TheDrummer: Rocinante 12B",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.17,
+            "output": 0.43
+          }
+        },
+        {
+          "id": "thedrummer/skyfall-36b-v2",
+          "name": "TheDrummer: Skyfall 36B V2",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.55,
+            "output": 0.8
+          }
+        },
+        {
+          "id": "thedrummer/unslopnemo-12b",
+          "name": "TheDrummer: UnslopNemo 12B",
+          "limit": 32768,
+          "pricing": {
+            "input": 0.4,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "tngtech/deepseek-r1t2-chimera",
+          "name": "TNG: DeepSeek R1T2 Chimera",
+          "limit": 163840,
+          "pricing": {
+            "input": 0.3,
+            "output": 1.1
+          }
+        },
+        {
+          "id": "undi95/remm-slerp-l2-13b",
+          "name": "ReMM SLERP 13B",
+          "limit": 6144,
+          "pricing": {
+            "input": 0.45,
+            "output": 0.65
+          }
+        },
+        {
+          "id": "upstage/solar-pro-3",
+          "name": "Upstage: Solar Pro 3",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6
+          }
+        },
+        {
+          "id": "writer/palmyra-x5",
+          "name": "Writer: Palmyra X5",
+          "limit": 1040000,
+          "pricing": {
+            "input": 0.6,
+            "output": 6
+          }
+        },
+        {
+          "id": "x-ai/grok-3",
+          "name": "xAI: Grok 3",
+          "limit": 131072,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "x-ai/grok-3-beta",
+          "name": "xAI: Grok 3 Beta",
+          "limit": 131072,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "x-ai/grok-3-mini",
+          "name": "xAI: Grok 3 Mini",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.3,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "x-ai/grok-3-mini-beta",
+          "name": "xAI: Grok 3 Mini Beta",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.3,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "x-ai/grok-4",
+          "name": "xAI: Grok 4",
+          "limit": 256000,
+          "pricing": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "id": "x-ai/grok-4-fast",
+          "name": "xAI: Grok 4 Fast",
+          "limit": 2000000,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "x-ai/grok-4.1-fast",
+          "name": "xAI: Grok 4.1 Fast",
+          "limit": 2000000,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.5
+          }
+        },
+        {
+          "id": "x-ai/grok-4.20",
+          "name": "xAI: Grok 4.20",
+          "limit": 2000000,
+          "pricing": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "id": "x-ai/grok-4.20-multi-agent",
+          "name": "xAI: Grok 4.20 Multi-Agent",
+          "limit": 2000000,
+          "pricing": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "id": "x-ai/grok-code-fast-1",
+          "name": "xAI: Grok Code Fast 1",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.2,
+            "output": 1.5
+          }
+        },
+        {
+          "id": "xiaomi/mimo-v2-flash",
+          "name": "Xiaomi: MiMo-V2-Flash",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.09,
+            "output": 0.29
+          }
+        },
+        {
+          "id": "xiaomi/mimo-v2-omni",
+          "name": "Xiaomi: MiMo-V2-Omni",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.4,
+            "output": 2
+          }
+        },
+        {
+          "id": "xiaomi/mimo-v2-pro",
+          "name": "Xiaomi: MiMo-V2-Pro",
+          "limit": 1048576,
+          "pricing": {
+            "input": 1,
+            "output": 3
+          }
+        },
+        {
+          "id": "z-ai/glm-4-32b",
+          "name": "Z.ai: GLM 4 32B ",
+          "limit": 128000,
+          "pricing": {
+            "input": 0.1,
+            "output": 0.1
+          }
+        },
+        {
+          "id": "z-ai/glm-4.5",
+          "name": "Z.ai: GLM 4.5",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.6,
+            "output": 2.2
+          }
+        },
+        {
+          "id": "z-ai/glm-4.5-air",
+          "name": "Z.ai: GLM 4.5 Air",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.13,
+            "output": 0.85
+          }
+        },
+        {
+          "id": "z-ai/glm-4.5-air:free",
+          "name": "Z.ai: GLM 4.5 Air (free)",
+          "limit": 131072,
+          "pricing": {}
+        },
+        {
+          "id": "z-ai/glm-4.5v",
+          "name": "Z.ai: GLM 4.5V",
+          "limit": 65536,
+          "pricing": {
+            "input": 0.6,
+            "output": 1.8
+          }
+        },
+        {
+          "id": "z-ai/glm-4.6",
+          "name": "Z.ai: GLM 4.6",
+          "limit": 204800,
+          "pricing": {
+            "input": 0.39,
+            "output": 1.9
+          }
+        },
+        {
+          "id": "z-ai/glm-4.6v",
+          "name": "Z.ai: GLM 4.6V",
+          "limit": 131072,
+          "pricing": {
+            "input": 0.3,
+            "output": 0.9
+          }
+        },
+        {
+          "id": "z-ai/glm-4.7",
+          "name": "Z.ai: GLM 4.7",
+          "limit": 202752,
+          "pricing": {
+            "input": 0.39,
+            "output": 1.75
+          }
+        },
+        {
+          "id": "z-ai/glm-4.7-flash",
+          "name": "Z.ai: GLM 4.7 Flash",
+          "limit": 202752,
+          "pricing": {
+            "input": 0.06,
+            "output": 0.4
+          }
+        },
+        {
+          "id": "z-ai/glm-5",
+          "name": "Z.ai: GLM 5",
+          "limit": 80000,
+          "pricing": {
+            "input": 0.72,
+            "output": 2.3
+          }
+        },
+        {
+          "id": "z-ai/glm-5-turbo",
+          "name": "Z.ai: GLM 5 Turbo",
+          "limit": 202752,
+          "pricing": {
+            "input": 1.2,
+            "output": 4
+          }
+        },
+        {
+          "id": "z-ai/glm-5.1",
+          "name": "Z.ai: GLM 5.1",
+          "limit": 202752,
+          "pricing": {
+            "input": 0.95,
+            "output": 3.15
+          }
+        },
+        {
+          "id": "z-ai/glm-5v-turbo",
+          "name": "Z.ai: GLM 5V Turbo",
+          "limit": 202752,
+          "pricing": {
+            "input": 1.2,
+            "output": 4
+          }
+        }
+      ]
+    },
+    {
+      "name": "plexon",
+      "compatibility": "anthropic",
+      "models": [
+        {
+          "id": "plexon-1.0",
+          "name": "Plexon 1.0",
+          "limit": 204800,
+          "pricing": {}
+        },
+        {
+          "id": "plexon-1.0-image",
+          "name": "Plexon 1.0 Image",
+          "pricing": {}
+        },
+        {
+          "id": "plexon-1.0-video",
+          "name": "Plexon 1.0 Video",
+          "pricing": {}
+        }
+      ]
+    },
+    {
+      "name": "qwen",
+      "compatibility": "openai",
+      "regions": [
+        {
+          "id": "international",
+          "label": "International (Singapore)",
+          "base_url": ""
+        },
+        {
+          "id": "us",
+          "label": "US (Virginia)",
+          "base_url": ""
+        },
+        {
+          "id": "cn",
+          "label": "Chinese Mainland (Beijing)",
+          "base_url": ""
+        },
+        {
+          "id": "hk",
+          "label": "Hong Kong (China)",
+          "base_url": ""
+        }
+      ],
+      "models": [
+        {
+          "id": "qwen3-coder",
+          "name": "Qwen3 Coder 480B A35B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.22,
+            "output": 1
+          }
+        },
+        {
+          "id": "qwen3-coder-flash",
+          "name": "Qwen3 Coder Flash",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.2,
+            "output": 0.97
+          }
+        },
+        {
+          "id": "qwen3-coder-flash (Coding Plan)",
+          "name": "Qwen3 Coder Flash (Coding Plan)",
+          "limit": 1000000,
+          "pricing": {}
+        },
+        {
+          "id": "qwen3-coder-next",
+          "name": "Qwen3 Coder Next",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.15,
+            "output": 0.8
+          }
+        },
+        {
+          "id": "qwen3-coder-next (Coding Plan)",
+          "name": "Qwen3 Coder Next (Coding Plan)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "qwen3-coder-plus",
+          "name": "Qwen3 Coder Plus",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.65,
+            "output": 3.25
+          }
+        },
+        {
+          "id": "qwen3-coder-plus (Coding Plan)",
+          "name": "Qwen3 Coder Plus (Coding Plan)",
+          "limit": 1000000,
+          "pricing": {}
+        },
+        {
+          "id": "qwen3-max",
+          "name": "Qwen3 Max",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.78,
+            "output": 3.9
+          }
+        },
+        {
+          "id": "qwen3-max (Coding Plan)",
+          "name": "Qwen3 Max (Coding Plan)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "qwen3-max-thinking",
+          "name": "Qwen3 Max Thinking",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.78,
+            "output": 3.9
+          }
+        },
+        {
+          "id": "qwen3-max-thinking (Coding Plan)",
+          "name": "Qwen3 Max Thinking (Coding Plan)",
+          "limit": 262144,
+          "pricing": {}
+        },
+        {
+          "id": "qwen3.5-122b-a10b",
+          "name": "Qwen3.5-122B-A10B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.26,
+            "output": 2.08
+          }
+        },
+        {
+          "id": "qwen3.5-27b",
+          "name": "Qwen3.5-27B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.2,
+            "output": 1.56
+          }
+        },
+        {
+          "id": "qwen3.5-35b-a3b",
+          "name": "Qwen3.5-35B-A3B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.16,
+            "output": 1.3
+          }
+        },
+        {
+          "id": "qwen3.5-397b-a17b",
+          "name": "Qwen3.5 397B A17B",
+          "limit": 262144,
+          "pricing": {
+            "input": 0.39,
+            "output": 2.34
+          }
+        },
+        {
+          "id": "qwen3.5-9b",
+          "name": "Qwen3.5-9B",
+          "limit": 256000,
+          "pricing": {
+            "input": 0.05,
+            "output": 0.15
+          }
+        },
+        {
+          "id": "qwen3.5-flash-02-23",
+          "name": "Qwen3.5-Flash",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.07,
+            "output": 0.26
+          }
+        },
+        {
+          "id": "qwen3.5-flash-02-23 (Coding Plan)",
+          "name": "Qwen3.5-Flash (Coding Plan)",
+          "limit": 1000000,
+          "pricing": {}
+        },
+        {
+          "id": "qwen3.5-plus-02-15",
+          "name": "Qwen3.5 Plus 2026-02-15",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.26,
+            "output": 1.56
+          }
+        },
+        {
+          "id": "qwen3.5-plus-02-15 (Coding Plan)",
+          "name": "Qwen3.5 Plus 2026-02-15 (Coding Plan)",
+          "limit": 1000000,
+          "pricing": {}
+        },
+        {
+          "id": "qwen3.6-plus",
+          "name": "Qwen3.6 Plus",
+          "limit": 1000000,
+          "pricing": {
+            "input": 0.28,
+            "output": 1.66
+          }
+        },
+        {
+          "id": "qwen3.6-plus (Coding Plan)",
+          "name": "Qwen3.6 Plus (Coding Plan)",
+          "limit": 1000000,
+          "pricing": {}
+        }
+      ]
+    },
+    {
+      "name": "z-ai",
+      "compatibility": "openai",
+      "models": [
+        {
+          "id": "cogvideox-3",
+          "name": "CogVideoX 3",
+          "pricing": {}
+        },
+        {
+          "id": "cogview-4-250304",
+          "name": "CogView 4",
+          "pricing": {}
+        },
+        {
+          "id": "glm-5",
+          "name": "GLM 5",
+          "limit": 80000,
+          "pricing": {
+            "input": 0.72,
+            "output": 2.3
+          }
+        },
+        {
+          "id": "glm-5 (Subscription)",
+          "name": "GLM 5 (Subscription)",
+          "limit": 80000,
+          "pricing": {}
+        },
+        {
+          "id": "glm-5-turbo",
+          "name": "GLM 5 Turbo",
+          "limit": 202752,
+          "pricing": {
+            "input": 1.2,
+            "output": 4
+          }
+        },
+        {
+          "id": "glm-5-turbo (Subscription)",
+          "name": "GLM 5 Turbo (Subscription)",
+          "limit": 202752,
+          "pricing": {}
+        },
+        {
+          "id": "glm-5.1",
+          "name": "GLM 5.1",
+          "limit": 202752,
+          "pricing": {
+            "input": 0.72,
+            "output": 2.3
+          }
+        },
+        {
+          "id": "glm-5.1 (Subscription)",
+          "name": "GLM 5.1 (Subscription)",
+          "limit": 202752,
+          "pricing": {}
+        },
+        {
+          "id": "glm-5v-turbo",
+          "name": "GLM 5V Turbo",
+          "limit": 202752,
+          "pricing": {
+            "input": 1.2,
+            "output": 4
+          }
+        },
+        {
+          "id": "glm-5v-turbo (Subscription)",
+          "name": "GLM 5V Turbo (Subscription)",
+          "limit": 202752,
+          "pricing": {}
+        },
+        {
+          "id": "glm-image",
+          "name": "GLM Image",
+          "pricing": {}
+        }
+      ]
+    }
+  ]
+}

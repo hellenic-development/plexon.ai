@@ -1,0 +1,328 @@
+name: anthropic
+displayname: Anthropic
+compatibility: anthropic
+requiresapikey: true
+supportsoauth: false
+supportswebsearch: true
+baseurl: https://api.anthropic.com/v1
+defaultmodel: claude-opus-4-7
+builtintools:
+    web_search:
+        - max_uses
+        - allowed_domains
+        - blocked_domains
+        - user_location
+regions: []
+models:
+    - id: claude-haiku-4-5
+      name: Claude Haiku 4.5
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 64000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1
+        output: 5
+        cachewrite: 1.25
+        cacheread: 0.1
+        issubscription: false
+    - id: claude-opus-4
+      name: Claude Opus 4
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 32000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 15
+        output: 75
+        cachewrite: 18.75
+        cacheread: 1.5
+        issubscription: false
+    - id: claude-opus-4-1
+      name: Claude Opus 4.1
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 32000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 15
+        output: 75
+        cachewrite: 18.75
+        cacheread: 1.5
+        issubscription: false
+    - id: claude-opus-4-5
+      name: Claude Opus 4.5
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 64000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 5
+        output: 25
+        cachewrite: 6.25
+        cacheread: 0.5
+        issubscription: false
+    - id: claude-opus-4-6
+      name: Claude Opus 4.6
+      baseurl: ""
+      headers: {}
+      limit: 1000000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: true
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 5
+        output: 25
+        cachewrite: 6.25
+        cacheread: 0.5
+        issubscription: false
+    - id: claude-opus-4-6-fast
+      name: Claude Opus 4.6 (Fast)
+      baseurl: ""
+      headers: {}
+      limit: 1000000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 30
+        output: 150
+        cachewrite: 37.5
+        cacheread: 3
+        issubscription: false
+    - id: claude-opus-4-7
+      name: Claude Opus 4.7
+      baseurl: ""
+      headers: {}
+      limit: 1000000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: true
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: true
+      releasedate: ""
+      pricing:
+        input: 5
+        output: 25
+        cachewrite: 6.25
+        cacheread: 0.5
+        issubscription: false
+    - id: claude-sonnet-4
+      name: Claude Sonnet 4
+      baseurl: ""
+      headers: {}
+      limit: 1000000
+      reservedtokens: 64000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 3
+        output: 15
+        cachewrite: 3.75
+        cacheread: 0.3
+        issubscription: false
+    - id: claude-sonnet-4-5-20250929
+      name: Claude Sonnet 4.5
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 64000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 3
+        output: 15
+        cachewrite: 3.75
+        cacheread: 0.3
+        issubscription: false
+    - id: claude-sonnet-4-5-20250929-1m
+      name: Claude Sonnet 4.5 [1M]
+      baseurl: ""
+      headers: {}
+      limit: 1000000
+      reservedtokens: 64000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 3
+        output: 15
+        cachewrite: 3.75
+        cacheread: 0.3
+        issubscription: false
+    - id: claude-sonnet-4-6
+      name: Claude Sonnet 4.6
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 3
+        output: 15
+        cachewrite: 3.75
+        cacheread: 0.3
+        issubscription: false
+    - id: claude-sonnet-4-6 [1M]
+      name: Claude Sonnet 4.6 [1M]
+      baseurl: ""
+      headers: {}
+      limit: 1000000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 3
+        output: 15
+        cachewrite: 3.75
+        cacheread: 0.3
+        issubscription: false

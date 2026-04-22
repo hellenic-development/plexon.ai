@@ -1,0 +1,89 @@
+name: plexon
+displayname: Plexon
+compatibility: anthropic
+requiresapikey: false
+supportsoauth: false
+supportswebsearch: false
+baseurl: ""
+defaultmodel: plexon-1.0
+builtintools: {}
+regions: []
+models:
+    - id: plexon-1.0
+      name: Plexon 1.0
+      baseurl: ""
+      headers: {}
+      limit: 204800
+      reservedtokens: 8192
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: false
+      supportscustomtemperature: false
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: true
+      releasedate: ""
+      pricing:
+        input: 0
+        output: 0
+        cachewrite: 0
+        cacheread: 0
+        issubscription: true
+    - id: plexon-1.0-image
+      name: Plexon 1.0 Image
+      baseurl: ""
+      headers: {}
+      limit: 0
+      reservedtokens: 0
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: false
+      supportscustomtemperature: false
+      supportsimagegeneration: true
+      supportsvideogeneration: false
+      generationtype: sync
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0
+        output: 0
+        cachewrite: 0
+        cacheread: 0
+        issubscription: true
+    - id: plexon-1.0-video
+      name: Plexon 1.0 Video
+      baseurl: ""
+      headers: {}
+      limit: 0
+      reservedtokens: 0
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: false
+      supportscustomtemperature: false
+      supportsimagegeneration: false
+      supportsvideogeneration: true
+      generationtype: async
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0
+        output: 0
+        cachewrite: 0
+        cacheread: 0
+        issubscription: true

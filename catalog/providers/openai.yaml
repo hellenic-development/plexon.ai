@@ -1,0 +1,973 @@
+name: openai
+displayname: OpenAI
+compatibility: openai
+requiresapikey: true
+supportsoauth: true
+supportswebsearch: false
+baseurl: https://api.openai.com/v1
+defaultmodel: gpt-5.4-pro
+builtintools: {}
+regions: []
+models:
+    - id: gpt-4
+      name: GPT-4
+      baseurl: ""
+      headers: {}
+      limit: 8191
+      reservedtokens: 4096
+      supportsstreaming: true
+      supportsimage: false
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 30
+        output: 60
+        cachewrite: 30
+        cacheread: 0
+        issubscription: false
+    - id: gpt-4.1
+      name: GPT-4.1
+      baseurl: ""
+      headers: {}
+      limit: 1047576
+      reservedtokens: 8192
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2
+        output: 8
+        cachewrite: 2
+        cacheread: 0.5
+        issubscription: false
+    - id: gpt-4.1-mini
+      name: GPT-4.1 Mini
+      baseurl: ""
+      headers: {}
+      limit: 1047576
+      reservedtokens: 32768
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.4
+        output: 1.6
+        cachewrite: 0.4
+        cacheread: 0.1
+        issubscription: false
+    - id: gpt-4.1-nano
+      name: GPT-4.1 Nano
+      baseurl: ""
+      headers: {}
+      limit: 1047576
+      reservedtokens: 32768
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.1
+        output: 0.4
+        cachewrite: 0.1
+        cacheread: 0.02
+        issubscription: false
+    - id: gpt-4o
+      name: GPT-4o
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 16384
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2.5
+        output: 10
+        cachewrite: 2.5
+        cacheread: 0
+        issubscription: false
+    - id: gpt-4o-mini
+      name: GPT-4o-mini
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 16384
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.15
+        output: 0.6
+        cachewrite: 0.15
+        cacheread: 0.07
+        issubscription: false
+    - id: gpt-4o-mini-search-preview
+      name: GPT-4o-mini Search Preview
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 16384
+      supportsstreaming: true
+      supportsimage: false
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.15
+        output: 0.6
+        cachewrite: 0.15
+        cacheread: 0
+        issubscription: false
+    - id: gpt-4o-search-preview
+      name: GPT-4o Search Preview
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 16384
+      supportsstreaming: true
+      supportsimage: false
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2.5
+        output: 10
+        cachewrite: 2.5
+        cacheread: 0
+        issubscription: false
+    - id: gpt-5
+      name: GPT-5
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 1.25
+        cacheread: 0.12
+        issubscription: false
+    - id: gpt-5-chat
+      name: GPT-5 Chat
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 16384
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 1.25
+        cacheread: 0.12
+        issubscription: false
+    - id: gpt-5-codex
+      name: GPT-5 Codex
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 1.25
+        cacheread: 0.12
+        issubscription: false
+    - id: gpt-5-image
+      name: GPT-5 Image
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 10
+        output: 10
+        cachewrite: 10
+        cacheread: 1.25
+        issubscription: false
+    - id: gpt-5-image-mini
+      name: GPT-5 Image Mini
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2.5
+        output: 2
+        cachewrite: 2.5
+        cacheread: 0.25
+        issubscription: false
+    - id: gpt-5-mini
+      name: GPT-5 Mini
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.25
+        output: 2
+        cachewrite: 0.25
+        cacheread: 0.02
+        issubscription: false
+    - id: gpt-5-nano
+      name: GPT-5 Nano
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 8192
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.05
+        output: 0.4
+        cachewrite: 0.05
+        cacheread: 0.01
+        issubscription: false
+    - id: gpt-5-pro
+      name: GPT-5 Pro
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 15
+        output: 120
+        cachewrite: 15
+        cacheread: 0
+        issubscription: false
+    - id: gpt-5.1
+      name: GPT-5.1
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 1.25
+        cacheread: 0.13
+        issubscription: false
+    - id: gpt-5.1-chat
+      name: GPT-5.1 Chat
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 16384
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 1.25
+        cacheread: 0.12
+        issubscription: false
+    - id: gpt-5.1-codex
+      name: GPT-5.1-Codex
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 1.25
+        cacheread: 0.12
+        issubscription: false
+    - id: gpt-5.1-codex-max
+      name: GPT-5.1-Codex-Max
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 1.25
+        cacheread: 0.12
+        issubscription: false
+    - id: gpt-5.1-codex-mini
+      name: GPT-5.1-Codex-Mini
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.25
+        output: 2
+        cachewrite: 0.25
+        cacheread: 0.03
+        issubscription: false
+    - id: gpt-5.2
+      name: GPT-5.2
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.75
+        output: 14
+        cachewrite: 1.75
+        cacheread: 0.17
+        issubscription: false
+    - id: gpt-5.2-chat
+      name: GPT-5.2 Chat
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 32000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.75
+        output: 14
+        cachewrite: 1.75
+        cacheread: 0.17
+        issubscription: false
+    - id: gpt-5.2-codex
+      name: GPT-5.2-Codex
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.75
+        output: 14
+        cachewrite: 1.75
+        cacheread: 0.17
+        issubscription: false
+    - id: gpt-5.2-pro
+      name: GPT-5.2 Pro
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 21
+        output: 168
+        cachewrite: 21
+        cacheread: 0
+        issubscription: false
+    - id: gpt-5.3-chat
+      name: GPT-5.3 Chat
+      baseurl: ""
+      headers: {}
+      limit: 128000
+      reservedtokens: 16384
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.75
+        output: 14
+        cachewrite: 1.75
+        cacheread: 0.17
+        issubscription: false
+    - id: gpt-5.3-codex
+      name: GPT-5.3-Codex
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.75
+        output: 14
+        cachewrite: 1.75
+        cacheread: 0.17
+        issubscription: false
+    - id: gpt-5.4
+      name: GPT-5.4
+      baseurl: ""
+      headers: {}
+      limit: 1050000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2.5
+        output: 15
+        cachewrite: 2.5
+        cacheread: 0.25
+        issubscription: false
+    - id: gpt-5.4-mini
+      name: GPT-5.4 Mini
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.75
+        output: 4.5
+        cachewrite: 0.75
+        cacheread: 0.07
+        issubscription: false
+    - id: gpt-5.4-nano
+      name: GPT-5.4 Nano
+      baseurl: ""
+      headers: {}
+      limit: 400000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.2
+        output: 1.25
+        cachewrite: 0.2
+        cacheread: 0.02
+        issubscription: false
+    - id: gpt-5.4-pro
+      name: GPT-5.4 Pro
+      baseurl: ""
+      headers: {}
+      limit: 1050000
+      reservedtokens: 128000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: true
+      releasedate: ""
+      pricing:
+        input: 30
+        output: 180
+        cachewrite: 30
+        cacheread: 0
+        issubscription: false
+    - id: o3
+      name: o3
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 100000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2
+        output: 8
+        cachewrite: 2
+        cacheread: 0.5
+        issubscription: false
+    - id: o3-deep-research
+      name: o3 Deep Research
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 100000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 10
+        output: 40
+        cachewrite: 10
+        cacheread: 2.5
+        issubscription: false
+    - id: o3-pro
+      name: o3 Pro
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 100000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 20
+        output: 80
+        cachewrite: 20
+        cacheread: 0
+        issubscription: false
+    - id: o4-mini
+      name: o4 Mini
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 100000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.1
+        output: 4.4
+        cachewrite: 1.1
+        cacheread: 0.28
+        issubscription: false
+    - id: o4-mini-deep-research
+      name: o4 Mini Deep Research
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 100000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2
+        output: 8
+        cachewrite: 2
+        cacheread: 0.5
+        issubscription: false
+    - id: o4-mini-high
+      name: o4 Mini High
+      baseurl: ""
+      headers: {}
+      limit: 200000
+      reservedtokens: 100000
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: true
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.1
+        output: 4.4
+        cachewrite: 1.1
+        cacheread: 0.28
+        issubscription: false

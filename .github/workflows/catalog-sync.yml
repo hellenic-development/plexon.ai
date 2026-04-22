@@ -1,0 +1,73 @@
+name: Catalog Sync
+
+on:
+  schedule:
+    # Every Monday at 04:00 UTC — when models.dev has usually settled after
+    # the weekend's edits. Manual dispatch available via the Actions tab.
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+# Cancel in-flight runs when a newer one is queued; the latest upstream data
+# is always what we want.
+concurrency:
+  group: catalog-sync
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: catalog
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+          cache: true
+          cache-dependency-path: catalog/go.sum
+
+      - name: Sync from models.dev
+        run: go run ./scripts/sync_models_dev
+
+      - name: Rebuild snapshot
+        run: go run ./scripts/build_snapshot
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'chore(catalog): weekly models.dev sync'
+          title: 'chore(catalog): weekly models.dev sync'
+          branch: catalog/sync-models-dev
+          body: |
+            Automated weekly sync from [models.dev/api.json](https://models.dev/api.json).
+
+            - Latest-per-family filter applied (see `catalog/README.md` for rules).
+            - `plexon` and `claude-desktop` untouched (hand-authored).
+            - `snapshots/latest.json` regenerated.
+
+            Review the model diffs per provider before merging. Empty diffs
+            mean upstream didn't change anything we care about this week.
+          delete-branch: true
+
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: catalog
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26'
+          cache: true
+          cache-dependency-path: catalog/go.sum
+      # `build_snapshot` doubles as a schema validator: any YAML that fails
+      # to parse into the Go catalog types will fail the build.
+      - name: Validate provider YAMLs
+        run: go run ./scripts/build_snapshot -out /tmp/validate.json

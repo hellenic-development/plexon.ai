@@ -1,0 +1,453 @@
+name: google
+displayname: Google Gemini
+compatibility: openai
+requiresapikey: true
+supportsoauth: false
+supportswebsearch: false
+baseurl: https://generativelanguage.googleapis.com/v1beta/openai
+defaultmodel: gemma-4-31b-it:free
+builtintools: {}
+regions: []
+models:
+    - id: gemini-2.5-flash
+      name: Gemini 2.5 Flash
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65535
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.3
+        output: 2.5
+        cachewrite: 0.08
+        cacheread: 0.03
+        issubscription: false
+    - id: gemini-2.5-flash-image
+      name: Nano Banana (Gemini 2.5 Flash Image)
+      baseurl: ""
+      headers: {}
+      limit: 32768
+      reservedtokens: 32768
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: false
+      supportsadaptivethinking: false
+      supportsincludereasoning: false
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: true
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.3
+        output: 2.5
+        cachewrite: 0.08
+        cacheread: 0.03
+        issubscription: false
+    - id: gemini-2.5-flash-lite
+      name: Gemini 2.5 Flash Lite
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65535
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.1
+        output: 0.4
+        cachewrite: 0.08
+        cacheread: 0.01
+        issubscription: false
+    - id: gemini-2.5-flash-lite-preview-09-2025
+      name: Gemini 2.5 Flash Lite Preview 09-2025
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65535
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.1
+        output: 0.4
+        cachewrite: 0.08
+        cacheread: 0.01
+        issubscription: false
+    - id: gemini-2.5-pro
+      name: Gemini 2.5 Pro
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65536
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 0.38
+        cacheread: 0.12
+        issubscription: false
+    - id: gemini-2.5-pro-preview
+      name: Gemini 2.5 Pro Preview 06-05
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65536
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 0.38
+        cacheread: 0.12
+        issubscription: false
+    - id: gemini-2.5-pro-preview-05-06
+      name: Gemini 2.5 Pro Preview 05-06
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65535
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 1.25
+        output: 10
+        cachewrite: 0.38
+        cacheread: 0.12
+        issubscription: false
+    - id: gemini-3-flash-preview
+      name: Gemini 3 Flash Preview
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65536
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.5
+        output: 3
+        cachewrite: 0.08
+        cacheread: 0.05
+        issubscription: false
+    - id: gemini-3-pro-image-preview
+      name: Nano Banana Pro (Gemini 3 Pro Image Preview)
+      baseurl: ""
+      headers: {}
+      limit: 65536
+      reservedtokens: 32768
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: true
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2
+        output: 12
+        cachewrite: 0.38
+        cacheread: 0.2
+        issubscription: false
+    - id: gemini-3.1-flash-image-preview
+      name: Nano Banana 2 (Gemini 3.1 Flash Image Preview)
+      baseurl: ""
+      headers: {}
+      limit: 65536
+      reservedtokens: 65536
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: false
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.5
+        output: 3
+        cachewrite: 0.5
+        cacheread: 0
+        issubscription: false
+    - id: gemini-3.1-flash-lite-preview
+      name: Gemini 3.1 Flash Lite Preview
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65536
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.25
+        output: 1.5
+        cachewrite: 0.08
+        cacheread: 0.02
+        issubscription: false
+    - id: gemini-3.1-pro-preview
+      name: Gemini 3.1 Pro Preview
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65536
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2
+        output: 12
+        cachewrite: 0.38
+        cacheread: 0.2
+        issubscription: false
+    - id: gemini-3.1-pro-preview-customtools
+      name: Gemini 3.1 Pro Preview Custom Tools
+      baseurl: ""
+      headers: {}
+      limit: 1048576
+      reservedtokens: 65536
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 2
+        output: 12
+        cachewrite: 0.38
+        cacheread: 0.2
+        issubscription: false
+    - id: gemma-4-26b-a4b-it
+      name: 'Gemma 4 26B A4B '
+      baseurl: ""
+      headers: {}
+      limit: 262144
+      reservedtokens: 262144
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.07
+        output: 0.4
+        cachewrite: 0.07
+        cacheread: 0.04
+        issubscription: false
+    - id: gemma-4-26b-a4b-it:free
+      name: Gemma 4 26B A4B  (free)
+      baseurl: ""
+      headers: {}
+      limit: 262144
+      reservedtokens: 32768
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0
+        output: 0
+        cachewrite: 0
+        cacheread: 0
+        issubscription: false
+    - id: gemma-4-31b-it
+      name: Gemma 4 31B
+      baseurl: ""
+      headers: {}
+      limit: 262144
+      reservedtokens: 8192
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: false
+      releasedate: ""
+      pricing:
+        input: 0.13
+        output: 0.38
+        cachewrite: 0.13
+        cacheread: 0.02
+        issubscription: false
+    - id: gemma-4-31b-it:free
+      name: Gemma 4 31B (free)
+      baseurl: ""
+      headers: {}
+      limit: 262144
+      reservedtokens: 32768
+      supportsstreaming: true
+      supportsimage: true
+      supportsvideo: true
+      supportsreasoning: true
+      supportsadaptivethinking: false
+      supportsincludereasoning: true
+      supportstoolsearch: false
+      supportscustomtemperature: true
+      supportsimagegeneration: false
+      supportsvideogeneration: false
+      generationtype: ""
+      perunitcost: 0
+      defaultselection: true
+      releasedate: ""
+      pricing:
+        input: 0
+        output: 0
+        cachewrite: 0
+        cacheread: 0
+        issubscription: false
