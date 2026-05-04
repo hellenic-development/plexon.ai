@@ -5,100 +5,89 @@ requires_api_key: true
 base_url: https://api.minimax.io/anthropic/v1
 default_model: minimax-m2.7-highspeed-coding-plan
 models:
-    - id: hailuo-2.3
-      name: MiniMax Hailuo-2.3
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
+    - id: MiniMax-M2
+      name: MiniMax-M2
+      limit: 196608
+      reserved_tokens: 128000
       supports_streaming: true
-      supports_image: true
-      supports_video_generation: true
-      generation_type: async
-      per_unit_cost: 0.21
-      pricing: {}
-    - id: hailuo-2.3-coding-plan
-      name: MiniMax Hailuo-2.3 (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image: true
-      supports_video_generation: true
-      generation_type: async
-      pricing:
-        is_subscription: true
-    - id: image-01
-      name: MiniMax Image-01
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image_generation: true
-      generation_type: sync
-      per_unit_cost: 0.02
-      pricing: {}
-    - id: image-01-coding-plan
-      name: MiniMax Image-01 (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image_generation: true
-      generation_type: sync
-      pricing:
-        is_subscription: true
-    - id: minimax-m2.7
-      name: MiniMax M2.7
-      limit: 204800
-      reserved_tokens: 8192
-      supports_streaming: true
-      supports_image: true
       supports_reasoning: true
-      supports_include_reasoning: true
+      supports_tool_search: true
       supports_custom_temperature: true
-      supports_image_generation: true
-      supports_video_generation: true
+      release_date: "2025-10-27"
+      last_updated: "2025-10-27"
+      pricing:
+        input: 0.3
+        output: 1.2
+    - id: MiniMax-M2.1
+      name: MiniMax-M2.1
+      limit: 204800
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2025-12-23"
+      last_updated: "2025-12-23"
+      pricing:
+        input: 0.3
+        output: 1.2
+    - id: MiniMax-M2.5
+      name: MiniMax-M2.5
+      limit: 204800
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-02-12"
+      last_updated: "2026-02-12"
       pricing:
         input: 0.3
         output: 1.2
         cache_write: 0.375
         cache_read: 0.03
-    - id: minimax-m2.7-coding-plan
-      name: MiniMax M2.7 (Subscription)
+    - id: MiniMax-M2.5-highspeed
+      name: MiniMax-M2.5-highspeed
       limit: 204800
-      reserved_tokens: 8192
+      reserved_tokens: 131072
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
-      supports_include_reasoning: true
+      supports_tool_search: true
       supports_custom_temperature: true
-      pricing:
-        is_subscription: true
-    - id: minimax-m2.7-highspeed
-      name: MiniMax M2.7 HighSpeed
-      limit: 204800
-      reserved_tokens: 8192
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      supports_image_generation: true
-      supports_video_generation: true
+      release_date: "2026-02-13"
+      last_updated: "2026-02-13"
       pricing:
         input: 0.6
         output: 2.4
         cache_write: 0.375
-        cache_read: 0.03
-    - id: minimax-m2.7-highspeed-coding-plan
-      name: MiniMax M2.7 HighSpeed (Subscription)
+        cache_read: 0.06
+    - id: MiniMax-M2.7
+      name: MiniMax-M2.7
       limit: 204800
-      reserved_tokens: 8192
+      reserved_tokens: 131072
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
-      supports_include_reasoning: true
+      supports_tool_search: true
       supports_custom_temperature: true
-      default_selection: true
+      release_date: "2026-03-18"
+      last_updated: "2026-03-18"
       pricing:
-        is_subscription: true
+        input: 0.3
+        output: 1.2
+        cache_write: 0.375
+        cache_read: 0.06
+    - id: MiniMax-M2.7-highspeed
+      name: MiniMax-M2.7-highspeed
+      limit: 204800
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-03-18"
+      last_updated: "2026-03-18"
+      pricing:
+        input: 0.6
+        output: 2.4
+        cache_write: 0.375
+        cache_read: 0.06
