@@ -39,10 +39,28 @@ emits `snapshots/latest.json`.
 
 The Plexon desktop app fetches
 `https://raw.githubusercontent.com/hellenic-development/plexon.ai/main/catalog/snapshots/latest.json`
-with an `If-None-Match` header, caches it for 24 hours at
-`~/.plexon/catalog/catalog.json`, and falls back to an embedded snapshot
-shipped in the binary if the network is unavailable. Details in
-`docs/providers/DYNAMIC_CATALOG.md` inside the plexon repo.
+and caches it for 24 hours at `~/.plexon/catalog/catalog.json`. Two
+fetch modes:
+
+- **Background (every 24h):** `If-None-Match` with the saved ETag. The
+  server answers 304 when nothing changed → cheap no-op.
+- **Manual (☁ Refresh Catalog button):** ETag is *deliberately not* sent
+  and a unique query string + `Cache-Control: no-cache` is added, so the
+  CDN edge can't answer 304 with stale content. This matters right after
+  a push: `raw.githubusercontent.com` caches per-edge for up to 5 min,
+  and a user hitting Refresh within that window used to see no change.
+
+If the fetch fails entirely (offline / blocked / GitHub down), the
+client falls back to an embedded snapshot shipped inside the binary, and
+if even the daemon isn't up yet, the UI has a tiny hardcoded
+**Plexon 1.0** placeholder so the Settings dropdown is never empty.
+
+The client then sends every chat request through the Plexon cloud server
+with `Provider.InlineModel` attached — i.e. the client is the source of
+truth for what models exist and what they support. The server does
+**not** run its own catalog loader; missing `InlineModel` returns HTTP
+426 `client_outdated` with a `plexon.ai/download` upgrade link. Full
+mechanics in `docs/providers/DYNAMIC_CATALOG.md` inside the plexon repo.
 
 ## Adding or editing a provider
 
@@ -130,11 +148,52 @@ calculation for these models, falling back to your provider's quota.
 
 `scripts/sync_models_dev` pulls fresh data from `models.dev/api.json` every
 Monday. For each provider not in `.sync-exclude`, it groups models by their
-"family key" (the model ID with trailing date / version / preview suffixes
-stripped) and keeps only the newest model per family (by `release_date`).
-Pinned model IDs survive this pruning — see the `sync.pinned` array in each
-provider YAML. Models explicitly listed in `sync.excluded` are always
-dropped.
+"family key" (the model ID after optional `family_strip` removal, with
+trailing date / version / preview suffixes stripped by `family_regex`) and
+keeps only the newest model per family (by `release_date`).
+
+Per-provider `sync:` block supports four knobs:
+
+| Knob | Purpose |
+| --- | --- |
+| `family_strip` | Regex removed from the model ID **before** grouping. Handles providers with mid-string versions: google uses `-\d+(?:\.\d+)?` so `gemini-2.5-flash` and `gemini-3-flash-preview` collapse to the same `gemini-flash` family; moonshot uses `-k\d+(?:\.\d+)?` so `kimi-k2.5-thinking` becomes `kimi-thinking`. |
+| `family_regex` | Override the default trailing-match regex (rarely needed). |
+| `pinned` | Model IDs always kept, even if older. Useful when you've hand-authored a model upstream hasn't indexed yet (e.g. Kimi K2.6 when Moonshot wasn't a models.dev provider). |
+| `excluded` | Model IDs always dropped. Curate these when a new flagship supersedes variant lineages — e.g. Kimi K2 Thinking/Turbo get excluded once K2.6 ships, until K2.6-thinking / K2.6-turbo ship. |
+
+### Hand-authored models
+
+When a provider releases a flagship before models.dev (or some other
+upstream registry) adds it, seed the YAML manually and add the ID to
+`sync.pinned`. Example — after the Kimi K2.6 launch on 2026-04-21:
+
+```yaml
+# providers/moonshot.yaml
+models:
+  - id: kimi-k2.6
+    name: Kimi K2.6
+    base_url: https://api.moonshot.ai/v1
+    limit: 262144
+    reserved_tokens: 32768
+    supports_streaming: true
+    supports_image: true
+    supports_reasoning: true
+    release_date: "2026-04-21"
+    pricing: { input: 0.60, output: 2.50, cache_write: 0.60, cache_read: 0.15 }
+
+sync:
+  family_strip: -k\d+(?:\.\d+)?
+  pinned: [kimi-k2.6]              # survives the filter even if upstream drops it
+  excluded:                        # K2 variants deprecated by K2.6
+    - kimi-k2-thinking
+    - kimi-k2-thinking-turbo
+    - kimi-k2-turbo
+```
+
+Once models.dev catches up, the next sync will merge upstream pricing /
+capability data over the hand-authored entry (the merge preserves
+hand-edited `headers`, `base_url`, `regions`, and the whole `sync:` block
+— see the merge rule above).
 
 ## Hand-authored providers (`.sync-exclude`)
 

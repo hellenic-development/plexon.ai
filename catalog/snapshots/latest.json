@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-04-22T07:36:33Z",
+  "generated": "2026-05-22T08:43:56Z",
   "providers": [
     {
       "name": "anthropic",
@@ -5239,7 +5239,7 @@
       "requires_api_key": true,
       "supports_web_search": true,
       "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
-      "default_model": "qwen3.6-plus (Coding Plan)",
+      "default_model": "qwen3.7-max (Coding Plan)",
       "builtin_tools": {
         "web_search": [
           "search_strategy"
@@ -5579,6 +5579,41 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "qwen3.7-max",
+          "name": "Qwen3.7 Max",
+          "limit": 1000000,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "supports_image_generation": true,
+          "pricing": {
+            "input": 2.5,
+            "output": 7.5,
+            "cache_write": 2.5
+          }
+        },
+        {
+          "id": "qwen3.7-max (Coding Plan)",
+          "name": "Qwen3.7 Max (Coding Plan)",
+          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "limit": 1000000,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "supports_image_generation": true,
           "default_selection": true,
           "pricing": {
             "is_subscription": true
