@@ -235,14 +235,13 @@ func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *c
 			continue
 		}
 		cm := convertUpstream(id, um)
-		// Preserve per-model hand-edited overrides (base_url, headers).
+		// Make sync additive: every non-zero field from the hand-authored
+		// entry wins over upstream. Upstream only fills in where local is
+		// silent, so a sync run can introduce new fields models.dev knows
+		// about (release_date, last_updated, brand-new capability flags) but
+		// can never overwrite curated names, pricing, or overrides.
 		if existing, ok := existingByID[id]; ok {
-			if existing.BaseURL != "" {
-				cm.BaseURL = existing.BaseURL
-			}
-			if len(existing.Headers) > 0 {
-				cm.Headers = existing.Headers
-			}
+			cm = preferLocal(cm, existing)
 		}
 		converted = append(converted, cm)
 	}
@@ -294,6 +293,84 @@ func convertUpstream(id string, um upstreamModel) catalogtypes.CatalogModel {
 	}
 }
 
+// preferLocal returns a CatalogModel where every non-zero field of `local`
+// shadows `upstream`. For booleans, only `true` is treated as "set" — local
+// can never force a flag off, only on. Pricing is all-or-nothing: if local
+// has any rate set (or marks subscription), the whole local Pricing block
+// wins; otherwise upstream's rates come through. This keeps weekly sync
+// strictly additive over hand-authored data.
+func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.CatalogModel {
+	result := upstream
+	if local.Name != "" {
+		result.Name = local.Name
+	}
+	if local.BaseURL != "" {
+		result.BaseURL = local.BaseURL
+	}
+	if len(local.Headers) > 0 {
+		result.Headers = local.Headers
+	}
+	if local.Limit != 0 {
+		result.Limit = local.Limit
+	}
+	if local.ReservedTokens != 0 {
+		result.ReservedTokens = local.ReservedTokens
+	}
+	if local.SupportsStreaming {
+		result.SupportsStreaming = true
+	}
+	if local.SupportsImage {
+		result.SupportsImage = true
+	}
+	if local.SupportsVideo {
+		result.SupportsVideo = true
+	}
+	if local.SupportsReasoning {
+		result.SupportsReasoning = true
+	}
+	if local.SupportsAdaptiveThinking {
+		result.SupportsAdaptiveThinking = true
+	}
+	if local.SupportsIncludeReasoning {
+		result.SupportsIncludeReasoning = true
+	}
+	if local.SupportsToolSearch {
+		result.SupportsToolSearch = true
+	}
+	if local.SupportsCustomTemperature {
+		result.SupportsCustomTemperature = true
+	}
+	if local.SupportsImageGeneration {
+		result.SupportsImageGeneration = true
+	}
+	if local.SupportsVideoGeneration {
+		result.SupportsVideoGeneration = true
+	}
+	if local.DefaultSelection {
+		result.DefaultSelection = true
+	}
+	if local.GenerationType != "" {
+		result.GenerationType = local.GenerationType
+	}
+	if local.PerUnitCost != 0 {
+		result.PerUnitCost = local.PerUnitCost
+	}
+	if local.ReleaseDate != "" {
+		result.ReleaseDate = local.ReleaseDate
+	}
+	if local.LastUpdated != "" {
+		result.LastUpdated = local.LastUpdated
+	}
+	if !isZeroPricing(local.Pricing) {
+		result.Pricing = local.Pricing
+	}
+	return result
+}
+
+func isZeroPricing(p catalogtypes.CatalogPricing) bool {
+	return p.Input == 0 && p.Output == 0 && p.CacheRead == 0 && p.CacheWrite == 0 && !p.IsSubscription
+}
+
 func containsModel(ms []catalogtypes.CatalogModel, id string) bool {
 	for _, m := range ms {
 		if m.ID == id {
@@ -339,6 +416,21 @@ func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re
 
 	kept := make(map[string]struct{})
 	for _, group := range families {
+		// Pinned IDs shadow their family: if any member of the group is
+		// pinned, every non-pinned sibling is dropped. This lets a hand-
+		// authored undated ID (e.g. `claude-haiku-4-5`) win over a dated
+		// upstream variant (e.g. `claude-haiku-4-5-20251001`) without
+		// needing an exhaustive `excluded` list.
+		anyPinned := false
+		for _, m := range group {
+			if _, ok := pinSet[m.ID]; ok {
+				anyPinned = true
+				kept[m.ID] = struct{}{}
+			}
+		}
+		if anyPinned {
+			continue
+		}
 		best := pickLatest(group)
 		kept[best.ID] = struct{}{}
 	}

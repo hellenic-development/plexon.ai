@@ -307,3 +307,27 @@ models:
         is_subscription: true
 sync:
     family_strip: -\d+(?:\.\d+)?
+    pinned:
+        - qwen3-coder
+        - qwen3-coder-flash
+        - qwen3-coder-flash (Coding Plan)
+        - qwen3-coder-next
+        - qwen3-coder-next (Coding Plan)
+        - qwen3-coder-plus
+        - qwen3-coder-plus (Coding Plan)
+        - qwen3-max
+        - qwen3-max (Coding Plan)
+        - qwen3-max-thinking
+        - qwen3-max-thinking (Coding Plan)
+        - qwen3.5-122b-a10b
+        - qwen3.5-35b-a3b
+        - qwen3.5-397b-a17b
+        - qwen3.5-9b
+        - qwen3.5-flash-02-23
+        - qwen3.5-flash-02-23 (Coding Plan)
+        - qwen3.5-plus-02-15
+        - qwen3.5-plus-02-15 (Coding Plan)
+        - qwen3.6-plus
+        - qwen3.6-plus (Coding Plan)
+        - qwen3.7-max
+        - qwen3.7-max (Coding Plan)

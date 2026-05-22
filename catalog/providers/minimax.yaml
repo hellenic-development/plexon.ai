@@ -102,3 +102,20 @@ models:
       default_selection: true
       pricing:
         is_subscription: true
+sync:
+    pinned:
+        - hailuo-2.3
+        - hailuo-2.3-coding-plan
+        - image-01
+        - image-01-coding-plan
+        - minimax-m2.7
+        - minimax-m2.7-coding-plan
+        - minimax-m2.7-highspeed
+        - minimax-m2.7-highspeed-coding-plan
+    excluded:
+        - MiniMax-M2
+        - MiniMax-M2.1
+        - MiniMax-M2.5
+        - MiniMax-M2.5-highspeed
+        - MiniMax-M2.7
+        - MiniMax-M2.7-highspeed

@@ -75,6 +75,12 @@ models:
         cache_write: 3.75
         cache_read: 0.3
 sync:
+    family_strip: (-\d+)+
+    pinned:
+        - claude-haiku-4-5
+        - claude-opus-4-7
+        - claude-sonnet-4-6
+        - claude-sonnet-4-6 [1M]
     excluded:
         - claude-sonnet-4-5-20250929-1m
         - claude-opus-4-6-fast

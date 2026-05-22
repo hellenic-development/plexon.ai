@@ -111,3 +111,13 @@ models:
       pricing: {}
 sync:
     family_strip: -\d+(?:\.\d+)?
+    pinned:
+        - cogvideox-3
+        - cogview-4-250304
+        - glm-5-turbo
+        - glm-5-turbo (Subscription)
+        - glm-5.1
+        - glm-5.1 (Subscription)
+        - glm-5v-turbo
+        - glm-5v-turbo (Subscription)
+        - glm-image
