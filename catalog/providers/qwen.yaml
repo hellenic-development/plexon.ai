@@ -45,8 +45,9 @@ models:
         cache_write: 0.24
         cache_read: 0.04
     - id: qwen3-coder-flash (Coding Plan)
+      wire_id: qwen3-coder-flash
       name: Qwen3 Coder Flash (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
@@ -65,8 +66,9 @@ models:
         cache_write: 0.15
         cache_read: 0.12
     - id: qwen3-coder-next (Coding Plan)
+      wire_id: qwen3-coder-next
       name: Qwen3 Coder Next (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 262144
       reserved_tokens: 262144
       supports_streaming: true
@@ -85,8 +87,9 @@ models:
         cache_write: 0.81
         cache_read: 0.13
     - id: qwen3-coder-plus (Coding Plan)
+      wire_id: qwen3-coder-plus
       name: Qwen3 Coder Plus (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
@@ -105,8 +108,9 @@ models:
         cache_write: 0.97
         cache_read: 0.16
     - id: qwen3-max (Coding Plan)
+      wire_id: qwen3-max
       name: Qwen3 Max (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 262144
       reserved_tokens: 32768
       supports_streaming: true
@@ -126,8 +130,9 @@ models:
         output: 3.9
         cache_write: 0.78
     - id: qwen3-max-thinking (Coding Plan)
+      wire_id: qwen3-max-thinking
       name: Qwen3 Max Thinking (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 262144
       reserved_tokens: 32768
       supports_streaming: true
@@ -208,8 +213,9 @@ models:
         output: 0.26
         cache_write: 0.08
     - id: qwen3.5-flash-02-23 (Coding Plan)
+      wire_id: qwen3.5-flash-02-23
       name: Qwen3.5-Flash (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
@@ -235,8 +241,9 @@ models:
         output: 1.56
         cache_write: 0.33
     - id: qwen3.5-plus-02-15 (Coding Plan)
+      wire_id: qwen3.5-plus-02-15
       name: Qwen3.5 Plus 2026-02-15 (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
@@ -262,8 +269,9 @@ models:
         output: 1.66
         cache_write: 0.28
     - id: qwen3.6-plus (Coding Plan)
+      wire_id: qwen3.6-plus
       name: Qwen3.6 Plus (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
@@ -279,9 +287,6 @@ models:
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_image_generation: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
@@ -291,14 +296,12 @@ models:
         cache_write: 2.5
         cache_read: 0
     - id: qwen3.7-max (Coding Plan)
+      wire_id: qwen3.7-max
       name: Qwen3.7 Max (Coding Plan)
-      base_url: https://coding-intl.dashscope.aliyuncs.com/v1
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_image_generation: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true

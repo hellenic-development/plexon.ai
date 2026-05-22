@@ -40,7 +40,13 @@ type CatalogProvider struct {
 
 // CatalogModel mirrors the PricingModel fields the Plexon client consumes.
 type CatalogModel struct {
-	ID                        string            `json:"id" yaml:"id"`
+	ID string `json:"id" yaml:"id"`
+	// WireID, when set, overrides ID as the value sent in the API request body's
+	// `model` field. Use when one upstream model id needs to appear as multiple
+	// catalog entries (e.g. Qwen Coding Plan reuses `qwen3.7-max` on a different
+	// base URL — catalog id stays unique as `qwen3.7-max (Coding Plan)` while
+	// the wire id remains `qwen3.7-max`).
+	WireID                    string            `json:"wire_id,omitempty" yaml:"wire_id,omitempty"`
 	Name                      string            `json:"name,omitempty" yaml:"name,omitempty"`
 	BaseURL                   string            `json:"base_url,omitempty" yaml:"base_url,omitempty"`
 	Headers                   map[string]string `json:"headers,omitempty" yaml:"headers,omitempty"`

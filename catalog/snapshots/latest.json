@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-05-22T08:43:56Z",
+  "generated": "2026-05-22T09:45:26Z",
   "providers": [
     {
       "name": "anthropic",
@@ -5298,8 +5298,9 @@
         },
         {
           "id": "qwen3-coder-flash (Coding Plan)",
+          "wire_id": "qwen3-coder-flash",
           "name": "Qwen3 Coder Flash (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 1000000,
           "reserved_tokens": 65536,
           "supports_streaming": true,
@@ -5324,8 +5325,9 @@
         },
         {
           "id": "qwen3-coder-next (Coding Plan)",
+          "wire_id": "qwen3-coder-next",
           "name": "Qwen3 Coder Next (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 262144,
           "reserved_tokens": 262144,
           "supports_streaming": true,
@@ -5350,8 +5352,9 @@
         },
         {
           "id": "qwen3-coder-plus (Coding Plan)",
+          "wire_id": "qwen3-coder-plus",
           "name": "Qwen3 Coder Plus (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 1000000,
           "reserved_tokens": 65536,
           "supports_streaming": true,
@@ -5376,8 +5379,9 @@
         },
         {
           "id": "qwen3-max (Coding Plan)",
+          "wire_id": "qwen3-max",
           "name": "Qwen3 Max (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 262144,
           "reserved_tokens": 32768,
           "supports_streaming": true,
@@ -5403,8 +5407,9 @@
         },
         {
           "id": "qwen3-max-thinking (Coding Plan)",
+          "wire_id": "qwen3-max-thinking",
           "name": "Qwen3 Max Thinking (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 262144,
           "reserved_tokens": 32768,
           "supports_streaming": true,
@@ -5503,8 +5508,9 @@
         },
         {
           "id": "qwen3.5-flash-02-23 (Coding Plan)",
+          "wire_id": "qwen3.5-flash-02-23",
           "name": "Qwen3.5-Flash (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 1000000,
           "reserved_tokens": 65536,
           "supports_streaming": true,
@@ -5536,8 +5542,9 @@
         },
         {
           "id": "qwen3.5-plus-02-15 (Coding Plan)",
+          "wire_id": "qwen3.5-plus-02-15",
           "name": "Qwen3.5 Plus 2026-02-15 (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 1000000,
           "reserved_tokens": 65536,
           "supports_streaming": true,
@@ -5569,8 +5576,9 @@
         },
         {
           "id": "qwen3.6-plus (Coding Plan)",
+          "wire_id": "qwen3.6-plus",
           "name": "Qwen3.6 Plus (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 1000000,
           "reserved_tokens": 65536,
           "supports_streaming": true,
@@ -5589,12 +5597,9 @@
           "limit": 1000000,
           "reserved_tokens": 65536,
           "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
-          "supports_image_generation": true,
           "pricing": {
             "input": 2.5,
             "output": 7.5,
@@ -5603,17 +5608,15 @@
         },
         {
           "id": "qwen3.7-max (Coding Plan)",
+          "wire_id": "qwen3.7-max",
           "name": "Qwen3.7 Max (Coding Plan)",
-          "base_url": "https://coding-intl.dashscope.aliyuncs.com/v1",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
           "limit": 1000000,
           "reserved_tokens": 65536,
           "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
-          "supports_image_generation": true,
           "default_selection": true,
           "pricing": {
             "is_subscription": true
