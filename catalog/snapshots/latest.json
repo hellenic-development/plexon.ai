@@ -326,6 +326,7 @@
         },
         {
           "id": "hailuo-2.3-coding-plan",
+          "wire_id": "hailuo-2.3",
           "name": "MiniMax Hailuo-2.3 (Subscription)",
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,
@@ -348,6 +349,7 @@
         },
         {
           "id": "image-01-coding-plan",
+          "wire_id": "image-01",
           "name": "MiniMax Image-01 (Subscription)",
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,

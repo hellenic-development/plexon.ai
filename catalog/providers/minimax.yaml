@@ -17,6 +17,11 @@ models:
       per_unit_cost: 0.21
       pricing: {}
     - id: hailuo-2.3-coding-plan
+      # Coding Plan entries carry an internal "-coding-plan" suffix for key-pool
+      # labelling, but the upstream MiniMax API only knows the bare model id.
+      # PricingModel.APIModel() returns wire_id when set, so the actual upstream
+      # request body's `model` field is "hailuo-2.3", not the catalog id.
+      wire_id: hailuo-2.3
       name: MiniMax Hailuo-2.3 (Subscription)
       base_url: https://api.minimax.io/v1
       limit: 0
@@ -38,6 +43,10 @@ models:
       per_unit_cost: 0.02
       pricing: {}
     - id: image-01-coding-plan
+      # See the wire_id comment on hailuo-2.3-coding-plan above — same reason
+      # applies here. MiniMax rejects "image-01-coding-plan" with "unsupported
+      # model"; the actual upstream id is just "image-01".
+      wire_id: image-01
       name: MiniMax Image-01 (Subscription)
       base_url: https://api.minimax.io/v1
       limit: 0
