@@ -5,7 +5,7 @@ default_model: plexon-1.0
 models:
     - id: plexon-1.0
       name: Plexon 1.0
-      limit: 204800
+      limit: 1000000
       reserved_tokens: 8192
       supports_streaming: true
       supports_image: true

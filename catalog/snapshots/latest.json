@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-05-22T09:45:26Z",
+  "generated": "2026-06-02T07:11:09Z",
   "providers": [
     {
       "name": "anthropic",
@@ -311,7 +311,7 @@
       "compatibility": "anthropic",
       "requires_api_key": true,
       "base_url": "https://api.minimax.io/anthropic/v1",
-      "default_model": "minimax-m2.7-highspeed-coding-plan",
+      "default_model": "minimax-m3-coding-plan",
       "models": [
         {
           "id": "hailuo-2.3",
@@ -415,6 +415,41 @@
           "id": "minimax-m2.7-highspeed-coding-plan",
           "name": "MiniMax M2.7 HighSpeed (Subscription)",
           "limit": 204800,
+          "reserved_tokens": 8192,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "minimax-m3",
+          "wire_id": "MiniMax-M3",
+          "name": "MiniMax M3",
+          "limit": 1000000,
+          "reserved_tokens": 8192,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "supports_image_generation": true,
+          "supports_video_generation": true,
+          "pricing": {
+            "input": 1.2,
+            "output": 4.8,
+            "cache_write": 1.5,
+            "cache_read": 0.24
+          }
+        },
+        {
+          "id": "minimax-m3-coding-plan",
+          "wire_id": "MiniMax-M3",
+          "name": "MiniMax M3 (Subscription)",
+          "limit": 1000000,
           "reserved_tokens": 8192,
           "supports_streaming": true,
           "supports_image": true,
@@ -5201,7 +5236,7 @@
         {
           "id": "plexon-1.0",
           "name": "Plexon 1.0",
-          "limit": 204800,
+          "limit": 1000000,
           "reserved_tokens": 8192,
           "supports_streaming": true,
           "supports_image": true,
