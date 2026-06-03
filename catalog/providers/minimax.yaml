@@ -126,6 +126,9 @@ models:
       supports_custom_temperature: true
       supports_image_generation: true
       supports_video_generation: true
+      # M3 supports Anthropic-style deferred tool loading via the native
+      # tool_search helper, so the client may flag heavy tools defer_loading.
+      supports_tool_search: true
       pricing:
         # Pay-as-you-go standard tier. cache_write is unpublished by MiniMax;
         # 1.5 mirrors the M2.7 1.25x-input ratio (0.3 -> 0.375). Confirm later.
@@ -143,6 +146,7 @@ models:
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
+      supports_tool_search: true
       default_selection: true
       pricing:
         is_subscription: true
