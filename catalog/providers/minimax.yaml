@@ -126,9 +126,14 @@ models:
       supports_custom_temperature: true
       supports_image_generation: true
       supports_video_generation: true
-      # M3 supports Anthropic-style deferred tool loading via the native
-      # tool_search helper, so the client may flag heavy tools defer_loading.
-      supports_tool_search: true
+      # supports_tool_search is OFF: empirically, M3's /anthropic/v1 endpoint
+      # validates EVERY tool as a function (name + parameters) and rejects the
+      # parameterless tool_search server tool with 400 "function name or
+      # parameters is empty (2013)" — confirmed by logging the outgoing tools
+      # (the only rejected entry was {type:tool_search, name:"", properties:0}).
+      # That's the irreducible shape of a tool-search helper, so deferred tooling
+      # is not usable via this endpoint. (M3's OpenAI-compatible endpoint documents
+      # {"type":"tool_search"}, so a future option is routing M3 through that.)
       pricing:
         # Pay-as-you-go standard tier. cache_write is unpublished by MiniMax;
         # 1.5 mirrors the M2.7 1.25x-input ratio (0.3 -> 0.375). Confirm later.
@@ -146,7 +151,8 @@ models:
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
-      supports_tool_search: true
+      # Same wire model + endpoint as minimax-m3 above: tool_search is rejected
+      # with 2013, so supports_tool_search stays OFF here too.
       default_selection: true
       pricing:
         is_subscription: true
