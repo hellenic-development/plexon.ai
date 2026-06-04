@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-03T11:13:11Z",
+  "generated": "2026-06-04T14:07:57Z",
   "providers": [
     {
       "name": "anthropic",
@@ -430,7 +430,7 @@
           "wire_id": "MiniMax-M3",
           "name": "MiniMax M3",
           "limit": 1000000,
-          "reserved_tokens": 8192,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
@@ -450,7 +450,7 @@
           "wire_id": "MiniMax-M3",
           "name": "MiniMax M3 (Subscription)",
           "limit": 1000000,
-          "reserved_tokens": 8192,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
@@ -5237,7 +5237,7 @@
           "id": "plexon-1.0",
           "name": "Plexon 1.0",
           "limit": 1000000,
-          "reserved_tokens": 8192,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "default_selection": true,

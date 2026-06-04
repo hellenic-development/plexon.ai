@@ -118,7 +118,9 @@ models:
       wire_id: MiniMax-M3
       name: MiniMax M3
       limit: 1000000
-      reserved_tokens: 8192
+      # 128000 output tokens on M3's 1M context: fits a one-shot ~200 KB file
+      # write (~57K tokens) plus reasoning headroom. 8192 capped writes at ~30 KB.
+      reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
@@ -145,7 +147,8 @@ models:
       wire_id: MiniMax-M3
       name: MiniMax M3 (Subscription)
       limit: 1000000
-      reserved_tokens: 8192
+      # See minimax-m3 above: 128000 enables one-shot ~200 KB writes + reasoning.
+      reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       supports_reasoning: true

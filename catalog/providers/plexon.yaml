@@ -6,7 +6,10 @@ models:
     - id: plexon-1.0
       name: Plexon 1.0
       limit: 1000000
-      reserved_tokens: 8192
+      # M3 (the model Plexon resolves to) has a 1M context. 128000 output
+      # tokens fits a one-shot ~200 KB file write (~57K tokens) PLUS reasoning
+      # headroom. 8192 capped single writes at ~30 KB and forced append-chunking.
+      reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       default_selection: true
