@@ -4,7 +4,7 @@ compatibility: anthropic
 requires_api_key: true
 supports_web_search: true
 base_url: https://api.anthropic.com/v1
-default_model: claude-opus-4-7
+default_model: claude-opus-4-8
 builtin_tools:
     web_search:
         - max_uses
@@ -12,6 +12,22 @@ builtin_tools:
         - blocked_domains
         - user_location
 models:
+    - id: claude-fable-5
+      name: Claude Fable 5
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      release_date: "2026-06-09"
+      pricing:
+        input: 10
+        output: 50
+        cache_write: 12.5
+        cache_read: 1
     - id: claude-haiku-4-5
       name: Claude Haiku 4.5
       limit: 200000
@@ -38,6 +54,21 @@ models:
       supports_include_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
+      pricing:
+        input: 5
+        output: 25
+        cache_write: 6.25
+        cache_read: 0.5
+    - id: claude-opus-4-8
+      name: Claude Opus 4.8
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      supports_include_reasoning: true
+      supports_tool_search: true
       default_selection: true
       pricing:
         input: 5
@@ -77,8 +108,10 @@ models:
 sync:
     family_strip: (-\d+)+
     pinned:
+        - claude-fable-5
         - claude-haiku-4-5
         - claude-opus-4-7
+        - claude-opus-4-8
         - claude-sonnet-4-6
         - claude-sonnet-4-6 [1M]
     excluded:

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-04T14:07:57Z",
+  "generated": "2026-06-10T13:26:01Z",
   "providers": [
     {
       "name": "anthropic",
@@ -9,7 +9,7 @@
       "requires_api_key": true,
       "supports_web_search": true,
       "base_url": "https://api.anthropic.com/v1",
-      "default_model": "claude-opus-4-7",
+      "default_model": "claude-opus-4-8",
       "builtin_tools": {
         "web_search": [
           "max_uses",
@@ -19,6 +19,25 @@
         ]
       },
       "models": [
+        {
+          "id": "claude-fable-5",
+          "name": "Claude Fable 5",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_adaptive_thinking": true,
+          "supports_include_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-06-09",
+          "pricing": {
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
+          }
+        },
         {
           "id": "claude-haiku-4-5",
           "name": "Claude Haiku 4.5",
@@ -49,6 +68,24 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "pricing": {
+            "input": 5,
+            "output": 25,
+            "cache_write": 6.25,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "claude-opus-4-8",
+          "name": "Claude Opus 4.8",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_adaptive_thinking": true,
+          "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "default_selection": true,
           "pricing": {
             "input": 5,
@@ -99,11 +136,33 @@
       "name": "claude-desktop",
       "display_name": "Claude Desktop",
       "compatibility": "anthropic",
-      "default_model": "claude-opus-4-7",
+      "default_model": "claude-opus-4-8",
       "models": [
+        {
+          "id": "claude-fable-5",
+          "name": "Claude Fable 5",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
         {
           "id": "claude-opus-4-7",
           "name": "Claude Opus 4.7",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "claude-opus-4-8",
+          "name": "Claude Opus 4.8",
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
