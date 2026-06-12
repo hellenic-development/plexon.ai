@@ -22,6 +22,7 @@ models:
       supports_adaptive_thinking: true
       supports_include_reasoning: true
       supports_tool_search: true
+      fallback_model: claude-opus-4-8
       release_date: "2026-06-09"
       pricing:
         input: 10

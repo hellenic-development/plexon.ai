@@ -65,7 +65,11 @@ type CatalogModel struct {
 	GenerationType            string            `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
 	PerUnitCost               float64           `json:"per_unit_cost,omitempty" yaml:"per_unit_cost,omitempty"`
 	DefaultSelection          bool              `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
-	ReleaseDate               string            `json:"release_date,omitempty" yaml:"release_date,omitempty"`
+	// FallbackModel names a sibling model of the same provider that the API
+	// retries on when this model's safety classifiers decline a request
+	// (Anthropic server-side fallback beta, e.g. Fable 5 → Opus 4.8).
+	FallbackModel string `json:"fallback_model,omitempty" yaml:"fallback_model,omitempty"`
+	ReleaseDate   string `json:"release_date,omitempty" yaml:"release_date,omitempty"`
 	LastUpdated               string            `json:"last_updated,omitempty" yaml:"last_updated,omitempty"`
 	Pricing                   CatalogPricing    `json:"pricing,omitempty" yaml:"pricing,omitempty"`
 }
