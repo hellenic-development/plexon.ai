@@ -11,7 +11,6 @@ models:
       # headroom. 8192 capped single writes at ~30 KB and forced append-chunking.
       reserved_tokens: 128000
       supports_streaming: true
-      supports_image: true
       default_selection: true
       pricing:
         is_subscription: true

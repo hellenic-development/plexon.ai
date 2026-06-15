@@ -61,7 +61,6 @@ models:
       limit: 204800
       reserved_tokens: 8192
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
@@ -77,7 +76,6 @@ models:
       limit: 204800
       reserved_tokens: 8192
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
@@ -88,7 +86,6 @@ models:
       limit: 204800
       reserved_tokens: 8192
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
@@ -104,7 +101,6 @@ models:
       limit: 204800
       reserved_tokens: 8192
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
@@ -122,7 +118,6 @@ models:
       # write (~57K tokens) plus reasoning headroom. 8192 capped writes at ~30 KB.
       reserved_tokens: 128000
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
@@ -150,7 +145,6 @@ models:
       # See minimax-m3 above: 128000 enables one-shot ~200 KB writes + reasoning.
       reserved_tokens: 128000
       supports_streaming: true
-      supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true

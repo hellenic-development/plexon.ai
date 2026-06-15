@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-10T14:15:47Z",
+  "generated": "2026-06-15T08:29:18Z",
   "providers": [
     {
       "name": "anthropic",
@@ -425,7 +425,6 @@
           "limit": 204800,
           "reserved_tokens": 8192,
           "supports_streaming": true,
-          "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
@@ -444,7 +443,6 @@
           "limit": 204800,
           "reserved_tokens": 8192,
           "supports_streaming": true,
-          "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
@@ -458,7 +456,6 @@
           "limit": 204800,
           "reserved_tokens": 8192,
           "supports_streaming": true,
-          "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
@@ -477,7 +474,6 @@
           "limit": 204800,
           "reserved_tokens": 8192,
           "supports_streaming": true,
-          "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
@@ -492,7 +488,6 @@
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
-          "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
@@ -512,7 +507,6 @@
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
-          "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
@@ -5299,7 +5293,6 @@
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
-          "supports_image": true,
           "default_selection": true,
           "pricing": {
             "is_subscription": true
