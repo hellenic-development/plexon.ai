@@ -4,148 +4,6 @@ compatibility: openai
 requires_api_key: true
 base_url: https://generativelanguage.googleapis.com/v1beta/openai
 default_model: gemma-4-31b-it:free
-models:
-    - id: gemini-3-flash-preview
-      name: Gemini 3 Flash Preview
-      limit: 1048576
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.5
-        output: 3
-        cache_write: 0.08
-        cache_read: 0.05
-    - id: gemini-3-pro-image-preview
-      name: Nano Banana Pro (Gemini 3 Pro Image Preview)
-      limit: 65536
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      supports_image_generation: true
-      pricing:
-        input: 2
-        output: 12
-        cache_write: 0.38
-        cache_read: 0.2
-    - id: gemini-3.1-flash-image-preview
-      name: Nano Banana 2 (Gemini 3.1 Flash Image Preview)
-      limit: 65536
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.5
-        output: 3
-        cache_write: 0.5
-    - id: gemini-3.1-flash-lite-preview
-      name: Gemini 3.1 Flash Lite Preview
-      limit: 1048576
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.25
-        output: 1.5
-        cache_write: 0.08
-        cache_read: 0.02
-    - id: gemini-3.1-pro-preview
-      name: Gemini 3.1 Pro Preview
-      limit: 1048576
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 2
-        output: 12
-        cache_write: 0.38
-        cache_read: 0.2
-    - id: gemini-3.1-pro-preview-customtools
-      name: Gemini 3.1 Pro Preview Custom Tools
-      limit: 1048576
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 2
-        output: 12
-        cache_write: 0.38
-        cache_read: 0.2
-    - id: gemma-4-26b-a4b-it
-      name: 'Gemma 4 26B A4B '
-      limit: 262144
-      reserved_tokens: 262144
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.07
-        output: 0.4
-        cache_write: 0.07
-        cache_read: 0.04
-    - id: gemma-4-26b-a4b-it:free
-      name: Gemma 4 26B A4B  (free)
-      limit: 262144
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing: {}
-    - id: gemma-4-31b-it
-      name: Gemma 4 31B
-      limit: 262144
-      reserved_tokens: 8192
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.13
-        output: 0.38
-        cache_write: 0.13
-        cache_read: 0.02
-    - id: gemma-4-31b-it:free
-      name: Gemma 4 31B (free)
-      limit: 262144
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      default_selection: true
-      pricing: {}
 sync:
     family_strip: -\d+(?:\.\d+)?
     pinned:
@@ -162,3 +20,174 @@ sync:
     excluded:
         - gemini-2.5-flash-preview-tts
         - gemini-2.5-pro-preview-tts
+models:
+    - id: gemini-3-flash-preview
+      name: Gemini 3 Flash Preview
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2025-12-17"
+      last_updated: "2025-12-17"
+      pricing:
+        input: 0.5
+        output: 3
+        cache_write: 0.08
+        cache_read: 0.05
+    - id: gemini-3-pro-image-preview
+      name: Nano Banana Pro (Gemini 3 Pro Image Preview)
+      limit: 65536
+      reserved_tokens: 32768
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      supports_image_generation: true
+      release_date: "2025-11-20"
+      last_updated: "2025-11-20"
+      pricing:
+        input: 2
+        output: 12
+        cache_write: 0.38
+        cache_read: 0.2
+    - id: gemini-3.1-flash-image-preview
+      name: Nano Banana 2 (Gemini 3.1 Flash Image Preview)
+      limit: 65536
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-02-26"
+      last_updated: "2026-02-26"
+      pricing:
+        input: 0.5
+        output: 3
+        cache_write: 0.5
+    - id: gemini-3.1-flash-lite-preview
+      name: Gemini 3.1 Flash Lite Preview
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-03-03"
+      last_updated: "2026-03-03"
+      pricing:
+        input: 0.25
+        output: 1.5
+        cache_write: 0.08
+        cache_read: 0.02
+    - id: gemini-3.1-pro-preview
+      name: Gemini 3.1 Pro Preview
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-02-19"
+      last_updated: "2026-02-19"
+      pricing:
+        input: 2
+        output: 12
+        cache_write: 0.38
+        cache_read: 0.2
+    - id: gemini-3.1-pro-preview-customtools
+      name: Gemini 3.1 Pro Preview Custom Tools
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-02-19"
+      last_updated: "2026-02-19"
+      pricing:
+        input: 2
+        output: 12
+        cache_write: 0.38
+        cache_read: 0.2
+    - id: gemini-embedding-001
+      name: Gemini Embedding 001
+      limit: 2048
+      reserved_tokens: 1
+      supports_streaming: true
+      release_date: "2025-05-20"
+      last_updated: "2025-05-20"
+      pricing:
+        input: 0.15
+    - id: gemma-4-26b-a4b-it
+      name: 'Gemma 4 26B A4B '
+      limit: 262144
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-04-02"
+      last_updated: "2026-04-02"
+      pricing:
+        input: 0.07
+        output: 0.4
+        cache_write: 0.07
+        cache_read: 0.04
+    - id: gemma-4-26b-a4b-it:free
+      name: Gemma 4 26B A4B  (free)
+      limit: 262144
+      reserved_tokens: 32768
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+    - id: gemma-4-31b-it
+      name: Gemma 4 31B
+      limit: 262144
+      reserved_tokens: 8192
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-04-02"
+      last_updated: "2026-04-02"
+      pricing:
+        input: 0.13
+        output: 0.38
+        cache_write: 0.13
+        cache_read: 0.02
+    - id: gemma-4-31b-it:free
+      name: Gemma 4 31B (free)
+      limit: 262144
+      reserved_tokens: 32768
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      default_selection: true
