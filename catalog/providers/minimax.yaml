@@ -119,6 +119,11 @@ models:
       reserved_tokens: 128000
       supports_streaming: true
       supports_reasoning: true
+      # M3 has native adaptive thinking: thinking:{type:"adaptive"} lets the
+      # model decide when a task needs deep reasoning. Its /anthropic/v1 endpoint
+      # exposes only adaptive/disabled (no budget_tokens/output_config), so the
+      # server sends the bare adaptive directive and skips the fixed-budget path.
+      supports_adaptive_thinking: true
       supports_include_reasoning: true
       supports_custom_temperature: true
       supports_image_generation: true
@@ -146,6 +151,8 @@ models:
       reserved_tokens: 128000
       supports_streaming: true
       supports_reasoning: true
+      # Native adaptive thinking — see minimax-m3 above.
+      supports_adaptive_thinking: true
       supports_include_reasoning: true
       supports_custom_temperature: true
       # Same wire model + endpoint as minimax-m3 above: tool_search is rejected
