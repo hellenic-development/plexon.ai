@@ -11,6 +11,18 @@ builtin_tools:
         - allowed_domains
         - blocked_domains
         - user_location
+sync:
+    family_strip: (-\d+)+
+    pinned:
+        - claude-fable-5
+        - claude-haiku-4-5
+        - claude-opus-4-7
+        - claude-opus-4-8
+        - claude-sonnet-4-6
+        - claude-sonnet-4-6 [1M]
+    excluded:
+        - claude-sonnet-4-5-20250929-1m
+        - claude-opus-4-6-fast
 models:
     - id: claude-fable-5
       name: Claude Fable 5
@@ -22,8 +34,8 @@ models:
       supports_adaptive_thinking: true
       supports_include_reasoning: true
       supports_tool_search: true
-      fallback_model: claude-opus-4-8
       release_date: "2026-06-09"
+      last_updated: "2026-06-09"
       pricing:
         input: 10
         output: 50
@@ -39,6 +51,8 @@ models:
       supports_include_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
+      release_date: "2025-10-15"
+      last_updated: "2025-10-15"
       pricing:
         input: 1
         output: 5
@@ -55,6 +69,8 @@ models:
       supports_include_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
+      release_date: "2026-04-14"
+      last_updated: "2026-04-16"
       pricing:
         input: 5
         output: 25
@@ -71,6 +87,8 @@ models:
       supports_include_reasoning: true
       supports_tool_search: true
       default_selection: true
+      release_date: "2026-05-28"
+      last_updated: "2026-05-28"
       pricing:
         input: 5
         output: 25
@@ -86,6 +104,8 @@ models:
       supports_include_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
+      release_date: "2026-02-17"
+      last_updated: "2026-03-13"
       pricing:
         input: 3
         output: 15
@@ -106,15 +126,3 @@ models:
         output: 15
         cache_write: 3.75
         cache_read: 0.3
-sync:
-    family_strip: (-\d+)+
-    pinned:
-        - claude-fable-5
-        - claude-haiku-4-5
-        - claude-opus-4-7
-        - claude-opus-4-8
-        - claude-sonnet-4-6
-        - claude-sonnet-4-6 [1M]
-    excluded:
-        - claude-sonnet-4-5-20250929-1m
-        - claude-opus-4-6-fast

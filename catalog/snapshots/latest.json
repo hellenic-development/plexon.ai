@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-04T20:03:09Z",
+  "generated": "2026-07-13T06:44:21Z",
   "providers": [
     {
       "name": "anthropic",
@@ -30,8 +30,8 @@
           "supports_adaptive_thinking": true,
           "supports_include_reasoning": true,
           "supports_tool_search": true,
-          "fallback_model": "claude-opus-4-8",
           "release_date": "2026-06-09",
+          "last_updated": "2026-06-09",
           "pricing": {
             "input": 10,
             "output": 50,
@@ -50,6 +50,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-15",
+          "last_updated": "2025-10-15",
           "pricing": {
             "input": 1,
             "output": 5,
@@ -69,6 +71,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-14",
+          "last_updated": "2026-04-16",
           "pricing": {
             "input": 5,
             "output": 25,
@@ -88,6 +92,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "default_selection": true,
+          "release_date": "2026-05-28",
+          "last_updated": "2026-05-28",
           "pricing": {
             "input": 5,
             "output": 25,
@@ -106,6 +112,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-17",
+          "last_updated": "2026-03-13",
           "pricing": {
             "input": 3,
             "output": 15,
@@ -204,7 +212,10 @@
           "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-17",
+          "last_updated": "2025-12-17",
           "pricing": {
             "input": 0.5,
             "output": 3,
@@ -223,6 +234,8 @@
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
           "supports_image_generation": true,
+          "release_date": "2025-11-20",
+          "last_updated": "2025-11-20",
           "pricing": {
             "input": 2,
             "output": 12,
@@ -240,6 +253,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-26",
+          "last_updated": "2026-02-26",
           "pricing": {
             "input": 0.5,
             "output": 3,
@@ -256,7 +271,10 @@
           "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-03",
+          "last_updated": "2026-03-03",
           "pricing": {
             "input": 0.25,
             "output": 1.5,
@@ -274,7 +292,10 @@
           "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-19",
+          "last_updated": "2026-02-19",
           "pricing": {
             "input": 2,
             "output": 12,
@@ -292,12 +313,44 @@
           "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-19",
+          "last_updated": "2026-02-19",
           "pricing": {
             "input": 2,
             "output": 12,
             "cache_write": 0.38,
             "cache_read": 0.2
+          }
+        },
+        {
+          "id": "gemini-embedding-001",
+          "name": "Gemini Embedding 001",
+          "limit": 2048,
+          "reserved_tokens": 1,
+          "supports_streaming": true,
+          "release_date": "2025-05-20",
+          "last_updated": "2025-05-20",
+          "pricing": {
+            "input": 0.15
+          }
+        },
+        {
+          "id": "gemini-omni-flash-preview",
+          "name": "Gemini Omni Flash Preview",
+          "limit": 131072,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-30",
+          "last_updated": "2026-06-30",
+          "pricing": {
+            "input": 1.5,
+            "output": 17.5
           }
         },
         {
@@ -310,7 +363,10 @@
           "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-02",
+          "last_updated": "2026-04-02",
           "pricing": {
             "input": 0.07,
             "output": 0.4,
@@ -341,7 +397,10 @@
           "supports_video": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-02",
+          "last_updated": "2026-04-02",
           "pricing": {
             "input": 0.13,
             "output": 0.38,
@@ -582,6 +641,15 @@
       "default_model": "gpt-5.4-pro",
       "models": [
         {
+          "id": "chatgpt-image-latest",
+          "name": "chatgpt-image-latest",
+          "supports_streaming": true,
+          "supports_image": true,
+          "release_date": "2025-12-16",
+          "last_updated": "2025-12-16",
+          "pricing": {}
+        },
+        {
           "id": "gpt-4o",
           "name": "GPT-4o",
           "limit": 128000,
@@ -590,6 +658,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-05-13",
+          "last_updated": "2024-08-06",
           "pricing": {
             "input": 2.5,
             "output": 10,
@@ -605,6 +675,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-07-18",
+          "last_updated": "2024-07-18",
           "pricing": {
             "input": 0.15,
             "output": 0.6,
@@ -685,6 +757,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-13",
+          "last_updated": "2025-11-13",
           "pricing": {
             "input": 1.25,
             "output": 10,
@@ -703,6 +777,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-13",
+          "last_updated": "2025-11-13",
           "pricing": {
             "input": 0.25,
             "output": 2,
@@ -737,11 +813,30 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-05",
+          "last_updated": "2026-02-05",
           "pricing": {
             "input": 1.75,
             "output": 14,
             "cache_write": 1.75,
             "cache_read": 0.17
+          }
+        },
+        {
+          "id": "gpt-5.3-codex-spark",
+          "name": "GPT-5.3 Codex Spark",
+          "limit": 128000,
+          "reserved_tokens": 32000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-02-05",
+          "last_updated": "2026-02-05",
+          "pricing": {
+            "input": 1.75,
+            "output": 14,
+            "cache_read": 0.175
           }
         },
         {
@@ -755,6 +850,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-05",
+          "last_updated": "2026-03-05",
           "pricing": {
             "input": 2.5,
             "output": 15,
@@ -773,6 +870,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-17",
+          "last_updated": "2026-03-17",
           "pricing": {
             "input": 0.75,
             "output": 4.5,
@@ -791,6 +890,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-17",
+          "last_updated": "2026-03-17",
           "pricing": {
             "input": 0.2,
             "output": 1.25,
@@ -810,10 +911,83 @@
           "supports_tool_search": true,
           "supports_custom_temperature": true,
           "default_selection": true,
+          "release_date": "2026-03-05",
+          "last_updated": "2026-03-05",
           "pricing": {
             "input": 30,
             "output": 180,
             "cache_write": 30
+          }
+        },
+        {
+          "id": "gpt-5.6-luna",
+          "name": "GPT-5.6 Luna",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 1,
+            "output": 6,
+            "cache_write": 1.25,
+            "cache_read": 0.1
+          }
+        },
+        {
+          "id": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 5,
+            "output": 30,
+            "cache_write": 6.25,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "gpt-5.6-terra",
+          "name": "GPT-5.6 Terra",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 2.5,
+            "output": 15,
+            "cache_write": 3.125,
+            "cache_read": 0.25
+          }
+        },
+        {
+          "id": "gpt-realtime-2.1",
+          "name": "GPT-Realtime-2.1",
+          "limit": 128000,
+          "reserved_tokens": 32000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-06",
+          "last_updated": "2026-07-06",
+          "pricing": {
+            "input": 4,
+            "output": 24,
+            "cache_read": 0.4
           }
         },
         {
@@ -827,6 +1001,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-16",
+          "last_updated": "2025-04-16",
           "pricing": {
             "input": 2,
             "output": 8,
@@ -845,6 +1021,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-06-26",
+          "last_updated": "2024-06-26",
           "pricing": {
             "input": 10,
             "output": 40,
@@ -863,6 +1041,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-10",
+          "last_updated": "2025-06-10",
           "pricing": {
             "input": 20,
             "output": 80,
@@ -880,6 +1060,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-16",
+          "last_updated": "2025-04-16",
           "pricing": {
             "input": 1.1,
             "output": 4.4,
@@ -898,6 +1080,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-06-26",
+          "last_updated": "2024-06-26",
           "pricing": {
             "input": 2,
             "output": 8,
@@ -940,38 +1124,45 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-08",
+          "last_updated": "2025-08-08",
           "pricing": {
             "input": 2,
             "output": 8
           }
         },
         {
-          "id": "aion-labs/aion-1.0-mini",
-          "name": "AionLabs: Aion-1.0-Mini",
+          "id": "aion-labs/aion-3.0",
+          "name": "Aion-3.0",
           "limit": 131072,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-07-07",
+          "last_updated": "2026-07-07",
           "pricing": {
-            "input": 0.7,
-            "output": 1.4
+            "input": 3,
+            "output": 6,
+            "cache_read": 0.75
           }
         },
         {
-          "id": "aion-labs/aion-2.0",
-          "name": "AionLabs: Aion-2.0",
+          "id": "aion-labs/aion-3.0-mini",
+          "name": "Aion-3.0-Mini",
           "limit": 131072,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-07-07",
+          "last_updated": "2026-07-07",
           "pricing": {
-            "input": 0.8,
-            "output": 1.6,
-            "cache_read": 0.2
+            "input": 0.7,
+            "output": 1.4,
+            "cache_read": 0.18
           }
         },
         {
@@ -981,49 +1172,11 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-02-04",
+          "last_updated": "2025-02-04",
           "pricing": {
             "input": 0.8,
             "output": 1.6
-          }
-        },
-        {
-          "id": "alfredpros/codellama-7b-instruct-solidity",
-          "name": "AlfredPros: CodeLLaMa 7B Instruct Solidity",
-          "limit": 4096,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.8,
-            "output": 1.2
-          }
-        },
-        {
-          "id": "alibaba/tongyi-deepresearch-30b-a3b",
-          "name": "Tongyi DeepResearch 30B A3B",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.09,
-            "output": 0.45,
-            "cache_read": 0.09
-          }
-        },
-        {
-          "id": "allenai/olmo-2-0325-32b-instruct",
-          "name": "AllenAI: Olmo 2 32B Instruct",
-          "limit": 128000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.05,
-            "output": 0.2
           }
         },
         {
@@ -1035,34 +1188,11 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-21",
+          "last_updated": "2025-11-21",
           "pricing": {
             "input": 0.15,
             "output": 0.5
-          }
-        },
-        {
-          "id": "allenai/olmo-3.1-32b-instruct",
-          "name": "AllenAI: Olmo 3.1 32B Instruct",
-          "limit": 65536,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.2,
-            "output": 0.6
-          }
-        },
-        {
-          "id": "alpindale/goliath-120b",
-          "name": "Goliath 120B",
-          "limit": 6144,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 3.75,
-            "output": 7.5
           }
         },
         {
@@ -1077,6 +1207,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-02",
+          "last_updated": "2025-12-02",
           "pricing": {
             "input": 0.3,
             "output": 2.5
@@ -1091,6 +1223,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-05",
+          "last_updated": "2024-12-05",
           "pricing": {
             "input": 0.06,
             "output": 0.24
@@ -1104,6 +1238,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-05",
+          "last_updated": "2024-12-05",
           "pricing": {
             "input": 0.04,
             "output": 0.14
@@ -1118,6 +1254,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-31",
+          "last_updated": "2025-10-31",
           "pricing": {
             "input": 2.5,
             "output": 12.5,
@@ -1133,6 +1271,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-05",
+          "last_updated": "2024-12-05",
           "pricing": {
             "input": 0.8,
             "output": 3.2
@@ -1145,6 +1285,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-10-22",
+          "last_updated": "2024-10-22",
           "pricing": {
             "input": 3,
             "output": 5
@@ -1159,6 +1301,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-03-13",
+          "last_updated": "2024-03-13",
           "pricing": {
             "input": 0.25,
             "output": 1.25,
@@ -1167,55 +1311,21 @@
           }
         },
         {
-          "id": "anthropic/claude-3.5-haiku",
-          "name": "Anthropic: Claude 3.5 Haiku",
-          "limit": 200000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.8,
-            "output": 4,
-            "cache_write": 1,
-            "cache_read": 0.08
-          }
-        },
-        {
-          "id": "anthropic/claude-3.7-sonnet",
-          "name": "Anthropic: Claude 3.7 Sonnet",
-          "limit": 200000,
-          "reserved_tokens": 4096,
+          "id": "anthropic/claude-fable-5",
+          "name": "Claude Fable 5",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
-          "supports_custom_temperature": true,
+          "release_date": "2026-06-09",
+          "last_updated": "2026-06-09",
           "pricing": {
-            "input": 3,
-            "output": 15,
-            "cache_write": 3.75,
-            "cache_read": 0.3
-          }
-        },
-        {
-          "id": "anthropic/claude-3.7-sonnet:thinking",
-          "name": "Anthropic: Claude 3.7 Sonnet (thinking)",
-          "limit": 200000,
-          "reserved_tokens": 30000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 3,
-            "output": 15,
-            "cache_write": 3.75,
-            "cache_read": 0.3
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
           }
         },
         {
@@ -1229,6 +1339,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-15",
+          "last_updated": "2025-10-15",
           "pricing": {
             "input": 1,
             "output": 5,
@@ -1237,16 +1349,35 @@
           }
         },
         {
-          "id": "anthropic/claude-opus-4.6-fast",
-          "name": "Anthropic: Claude Opus 4.6 (Fast)",
-          "limit": 1000000,
+          "id": "anthropic/claude-opus-4",
+          "name": "Claude Opus 4",
+          "limit": 200000,
           "reserved_tokens": 32000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-05-22",
+          "last_updated": "2025-05-22",
+          "pricing": {
+            "input": 15,
+            "output": 75,
+            "cache_write": 18.75,
+            "cache_read": 1.5
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4.7-fast",
+          "name": "Claude Opus 4.7 (Fast)",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-05-12",
+          "last_updated": "2026-05-12",
           "pricing": {
             "input": 30,
             "output": 150,
@@ -1255,21 +1386,59 @@
           }
         },
         {
-          "id": "anthropic/claude-opus-4.7",
-          "name": "Anthropic: Claude Opus 4.7",
+          "id": "anthropic/claude-opus-4.8",
+          "name": "Claude Opus 4.8",
           "limit": 1000000,
-          "reserved_tokens": 32000,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-05-28",
+          "last_updated": "2026-05-28",
           "pricing": {
             "input": 5,
             "output": 25,
             "cache_write": 6.25,
             "cache_read": 0.5
+          }
+        },
+        {
+          "id": "anthropic/claude-opus-4.8-fast",
+          "name": "Claude Opus 4.8 (Fast)",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-05-27",
+          "last_updated": "2026-05-27",
+          "pricing": {
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
+          }
+        },
+        {
+          "id": "anthropic/claude-sonnet-4",
+          "name": "Claude Sonnet 4",
+          "limit": 1000000,
+          "reserved_tokens": 64000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2025-05-22",
+          "last_updated": "2025-05-22",
+          "pricing": {
+            "input": 3,
+            "output": 15,
+            "cache_write": 3.75,
+            "cache_read": 0.3
           }
         },
         {
@@ -1283,11 +1452,31 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-17",
+          "last_updated": "2026-03-13",
           "pricing": {
             "input": 3,
             "output": 15,
             "cache_write": 3.75,
             "cache_read": 0.3
+          }
+        },
+        {
+          "id": "anthropic/claude-sonnet-5",
+          "name": "Claude Sonnet 5",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-06-30",
+          "last_updated": "2026-06-30",
+          "pricing": {
+            "input": 2,
+            "output": 10,
+            "cache_write": 2.5,
+            "cache_read": 0.2
           }
         },
         {
@@ -1297,45 +1486,12 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-05-05",
+          "last_updated": "2025-05-05",
           "pricing": {
             "input": 0.5,
             "output": 0.8
           }
-        },
-        {
-          "id": "arcee-ai/maestro-reasoning",
-          "name": "Arcee AI: Maestro Reasoning",
-          "limit": 131072,
-          "reserved_tokens": 19660,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.9,
-            "output": 3.3
-          }
-        },
-        {
-          "id": "arcee-ai/spotlight",
-          "name": "Arcee AI: Spotlight",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.18,
-            "output": 0.18
-          }
-        },
-        {
-          "id": "arcee-ai/trinity-large-preview:free",
-          "name": "Arcee AI: Trinity Large Preview (free)",
-          "limit": 131000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "arcee-ai/trinity-large-thinking",
@@ -1347,25 +1503,12 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-01",
+          "last_updated": "2026-04-01",
           "pricing": {
             "input": 0.22,
             "output": 0.85,
             "cache_read": 0.06
-          }
-        },
-        {
-          "id": "arcee-ai/trinity-mini",
-          "name": "Arcee AI: Trinity Mini",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.04,
-            "output": 0.15
           }
         },
         {
@@ -1376,64 +1519,11 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-05-05",
+          "last_updated": "2025-05-05",
           "pricing": {
             "input": 0.75,
             "output": 1.2
-          }
-        },
-        {
-          "id": "baidu/ernie-4.5-21b-a3b",
-          "name": "Baidu: ERNIE 4.5 21B A3B",
-          "limit": 120000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.07,
-            "output": 0.28
-          }
-        },
-        {
-          "id": "baidu/ernie-4.5-21b-a3b-thinking",
-          "name": "Baidu: ERNIE 4.5 21B A3B Thinking",
-          "limit": 131072,
-          "reserved_tokens": 19660,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.07,
-            "output": 0.28
-          }
-        },
-        {
-          "id": "baidu/ernie-4.5-300b-a47b",
-          "name": "Baidu: ERNIE 4.5 300B A47B ",
-          "limit": 123000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.28,
-            "output": 1.1
-          }
-        },
-        {
-          "id": "baidu/ernie-4.5-vl-28b-a3b",
-          "name": "Baidu: ERNIE 4.5 VL 28B A3B",
-          "limit": 30000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.14,
-            "output": 0.56
           }
         },
         {
@@ -1446,6 +1536,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-30",
+          "last_updated": "2025-06-30",
           "pricing": {
             "input": 0.42,
             "output": 1.25
@@ -1463,6 +1555,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-23",
+          "last_updated": "2025-12-23",
           "pricing": {
             "input": 0.25,
             "output": 2
@@ -1480,6 +1574,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-23",
+          "last_updated": "2025-12-23",
           "pricing": {
             "input": 0.07,
             "output": 0.3
@@ -1497,6 +1593,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-10",
+          "last_updated": "2026-03-10",
           "pricing": {
             "input": 0.25,
             "output": 2
@@ -1514,6 +1612,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-26",
+          "last_updated": "2026-02-26",
           "pricing": {
             "input": 0.1,
             "output": 0.4
@@ -1527,10 +1627,26 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-22",
+          "last_updated": "2025-07-22",
           "pricing": {
             "input": 0.1,
             "output": 0.2,
             "cache_read": 0.1
+          }
+        },
+        {
+          "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition",
+          "name": "Uncensored",
+          "limit": 128000,
+          "reserved_tokens": 8192,
+          "supports_streaming": true,
+          "supports_custom_temperature": true,
+          "release_date": "2025-07-09",
+          "last_updated": "2025-07-09",
+          "pricing": {
+            "input": 0.2,
+            "output": 0.9
           }
         },
         {
@@ -1540,6 +1656,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-09",
+          "last_updated": "2025-07-09",
           "pricing": {}
         },
         {
@@ -1549,6 +1667,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-13",
+          "last_updated": "2025-03-13",
           "pricing": {
             "input": 2.5,
             "output": 10
@@ -1562,6 +1682,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-08-30",
+          "last_updated": "2024-08-30",
           "pricing": {
             "input": 0.15,
             "output": 0.6
@@ -1575,6 +1697,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-08-30",
+          "last_updated": "2024-08-30",
           "pricing": {
             "input": 2.5,
             "output": 10
@@ -1587,10 +1711,25 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-02",
+          "last_updated": "2024-12-02",
           "pricing": {
             "input": 0.04,
             "output": 0.15
           }
+        },
+        {
+          "id": "cohere/north-mini-code:free",
+          "name": "North Mini Code (free)",
+          "limit": 256000,
+          "reserved_tokens": 64000,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-17",
+          "last_updated": "2026-06-17",
+          "pricing": {}
         },
         {
           "id": "deepcogito/cogito-v2.1-671b",
@@ -1601,24 +1740,26 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-13",
+          "last_updated": "2025-11-13",
           "pricing": {
             "input": 1.25,
             "output": 1.25
           }
         },
         {
-          "id": "deepseek/deepseek-chat-v3.1",
-          "name": "DeepSeek: DeepSeek V3.1",
-          "limit": 32768,
-          "reserved_tokens": 4096,
+          "id": "deepseek/deepseek-chat",
+          "name": "DeepSeek Chat",
+          "limit": 131072,
+          "reserved_tokens": 16000,
           "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-01",
+          "last_updated": "2026-02-28",
           "pricing": {
-            "input": 0.15,
-            "output": 0.75
+            "input": 0.2002,
+            "output": 0.8001
           }
         },
         {
@@ -1631,6 +1772,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-05-28",
+          "last_updated": "2025-05-28",
           "pricing": {
             "input": 0.5,
             "output": 2.15,
@@ -1646,23 +1789,11 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-01-23",
+          "last_updated": "2025-01-23",
           "pricing": {
             "input": 0.7,
             "output": 0.8
-          }
-        },
-        {
-          "id": "deepseek/deepseek-r1-distill-qwen-32b",
-          "name": "DeepSeek: R1 Distill Qwen 32B",
-          "limit": 32768,
-          "reserved_tokens": 4915,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.29,
-            "output": 0.29
           }
         },
         {
@@ -1675,6 +1806,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-22",
+          "last_updated": "2025-09-22",
           "pricing": {
             "input": 0.21,
             "output": 0.79,
@@ -1691,6 +1824,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-01",
+          "last_updated": "2025-12-01",
           "pricing": {
             "input": 0.26,
             "output": 0.38,
@@ -1707,69 +1842,45 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-29",
+          "last_updated": "2025-09-29",
           "pricing": {
             "input": 0.27,
             "output": 0.41
           }
         },
         {
-          "id": "deepseek/deepseek-v3.2-speciale",
-          "name": "DeepSeek: DeepSeek V3.2 Speciale",
-          "limit": 163840,
-          "reserved_tokens": 4096,
+          "id": "deepseek/deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "limit": 1048576,
+          "reserved_tokens": 384000,
           "supports_streaming": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.4,
-            "output": 1.2,
-            "cache_read": 0.2
-          }
-        },
-        {
-          "id": "essentialai/rnj-1-instruct",
-          "name": "EssentialAI: Rnj 1 Instruct",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-24",
+          "last_updated": "2026-04-24",
           "pricing": {
-            "input": 0.15,
-            "output": 0.15
+            "input": 0.077,
+            "output": 0.154,
+            "cache_read": 0.0154
           }
         },
         {
-          "id": "google/gemini-2.0-flash-001",
-          "name": "Google: Gemini 2.0 Flash",
+          "id": "deepseek/deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
           "limit": 1048576,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 384000,
           "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-24",
+          "last_updated": "2026-04-24",
           "pricing": {
-            "input": 0.1,
-            "output": 0.4,
-            "cache_write": 0.08,
-            "cache_read": 0.02
-          }
-        },
-        {
-          "id": "google/gemini-2.0-flash-lite-001",
-          "name": "Google: Gemini 2.0 Flash Lite",
-          "limit": 1048576,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.07,
-            "output": 0.3
+            "input": 0.435,
+            "output": 0.87,
+            "cache_read": 0.003625
           }
         },
         {
@@ -1784,6 +1895,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-17",
+          "last_updated": "2025-06-17",
           "pricing": {
             "input": 0.3,
             "output": 2.5,
@@ -1799,6 +1912,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-26",
+          "last_updated": "2025-08-26",
           "pricing": {
             "input": 0.3,
             "output": 2.5,
@@ -1807,41 +1922,43 @@
           }
         },
         {
-          "id": "google/gemini-2.5-flash-lite-preview-09-2025",
-          "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
+          "id": "google/gemini-2.5-flash-lite",
+          "name": "Gemini 2.5 Flash-Lite",
           "limit": 1048576,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 65535,
           "supports_streaming": true,
           "supports_image": true,
           "supports_video": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-17",
+          "last_updated": "2025-06-17",
           "pricing": {
             "input": 0.1,
             "output": 0.4,
-            "cache_write": 0.08,
+            "cache_write": 0.083333,
             "cache_read": 0.01
           }
         },
         {
-          "id": "google/gemini-2.5-pro-preview-05-06",
-          "name": "Google: Gemini 2.5 Pro Preview 05-06",
+          "id": "google/gemini-2.5-pro",
+          "name": "Gemini 2.5 Pro",
           "limit": 1048576,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 65536,
           "supports_streaming": true,
           "supports_image": true,
           "supports_video": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-17",
+          "last_updated": "2025-06-17",
           "pricing": {
             "input": 1.25,
             "output": 10,
-            "cache_write": 0.38,
-            "cache_read": 0.12
+            "cache_write": 0.375,
+            "cache_read": 0.125
           }
         },
         {
@@ -1856,6 +1973,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-17",
+          "last_updated": "2025-12-17",
           "pricing": {
             "input": 0.5,
             "output": 3,
@@ -1864,54 +1983,74 @@
           }
         },
         {
-          "id": "google/gemini-3-pro-image-preview",
-          "name": "Google: Nano Banana Pro (Gemini 3 Pro Image Preview)",
+          "id": "google/gemini-3-pro-image",
+          "name": "Nano Banana Pro",
           "limit": 65536,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-05-28",
+          "last_updated": "2026-05-28",
           "pricing": {
             "input": 2,
             "output": 12,
-            "cache_write": 0.38,
+            "cache_write": 0.375,
             "cache_read": 0.2
           }
         },
         {
-          "id": "google/gemini-3.1-flash-image-preview",
-          "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
-          "limit": 65536,
-          "reserved_tokens": 4096,
+          "id": "google/gemini-3.1-flash-image",
+          "name": "Nano Banana 2",
+          "limit": 131072,
+          "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-05-28",
+          "last_updated": "2026-05-28",
           "pricing": {
             "input": 0.5,
             "output": 3
           }
         },
         {
-          "id": "google/gemini-3.1-flash-lite-preview",
-          "name": "Google: Gemini 3.1 Flash Lite Preview",
+          "id": "google/gemini-3.1-flash-lite",
+          "name": "Gemini 3.1 Flash Lite",
           "limit": 1048576,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 65536,
           "supports_streaming": true,
           "supports_image": true,
           "supports_video": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-05-07",
+          "last_updated": "2026-05-07",
           "pricing": {
             "input": 0.25,
             "output": 1.5,
-            "cache_write": 0.08,
-            "cache_read": 0.02
+            "cache_write": 0.083333,
+            "cache_read": 0.025
+          }
+        },
+        {
+          "id": "google/gemini-3.1-flash-lite-image",
+          "name": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+          "limit": 65536,
+          "reserved_tokens": 66000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-30",
+          "last_updated": "2026-06-30",
+          "pricing": {
+            "input": 0.25,
+            "output": 1.5
           }
         },
         {
@@ -1926,6 +2065,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-19",
+          "last_updated": "2026-02-19",
           "pricing": {
             "input": 2,
             "output": 12,
@@ -1945,11 +2086,33 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-19",
+          "last_updated": "2026-02-19",
           "pricing": {
             "input": 2,
             "output": 12,
             "cache_write": 0.38,
             "cache_read": 0.2
+          }
+        },
+        {
+          "id": "google/gemini-3.5-flash",
+          "name": "Gemini 3.5 Flash",
+          "limit": 1048576,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-05-19",
+          "last_updated": "2026-05-19",
+          "pricing": {
+            "input": 1.5,
+            "output": 9,
+            "cache_write": 0.083333,
+            "cache_read": 0.15
           }
         },
         {
@@ -1959,6 +2122,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-07-13",
+          "last_updated": "2024-07-13",
           "pricing": {
             "input": 0.65,
             "output": 0.65
@@ -1971,21 +2136,14 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_image": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-13",
+          "last_updated": "2025-03-13",
           "pricing": {
             "input": 0.04,
             "output": 0.13
           }
-        },
-        {
-          "id": "google/gemma-3-12b-it:free",
-          "name": "Google: Gemma 3 12B (free)",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "google/gemma-3-27b-it",
@@ -1994,21 +2152,14 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_image": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-12",
+          "last_updated": "2025-03-12",
           "pricing": {
             "input": 0.08,
             "output": 0.16
           }
-        },
-        {
-          "id": "google/gemma-3-27b-it:free",
-          "name": "Google: Gemma 3 27B (free)",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "google/gemma-3-4b-it",
@@ -2018,29 +2169,12 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-13",
+          "last_updated": "2025-03-13",
           "pricing": {
             "input": 0.04,
             "output": 0.08
           }
-        },
-        {
-          "id": "google/gemma-3-4b-it:free",
-          "name": "Google: Gemma 3 4B (free)",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
-        },
-        {
-          "id": "google/gemma-3n-e2b-it:free",
-          "name": "Google: Gemma 3n 2B (free)",
-          "limit": 8192,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "google/gemma-3n-e4b-it",
@@ -2049,19 +2183,12 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-05-20",
+          "last_updated": "2025-05-20",
           "pricing": {
             "input": 0.06,
             "output": 0.12
           }
-        },
-        {
-          "id": "google/gemma-3n-e4b-it:free",
-          "name": "Google: Gemma 3n 4B (free)",
-          "limit": 8192,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "google/gemma-4-26b-a4b-it",
@@ -2075,6 +2202,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-02",
+          "last_updated": "2026-04-02",
           "pricing": {
             "input": 0.07,
             "output": 0.4,
@@ -2093,6 +2222,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-02",
+          "last_updated": "2026-04-02",
           "pricing": {}
         },
         {
@@ -2107,6 +2238,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-02",
+          "last_updated": "2026-04-02",
           "pricing": {
             "input": 0.13,
             "output": 0.38,
@@ -2125,6 +2258,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-02",
+          "last_updated": "2026-04-02",
           "pricing": {}
         },
         {
@@ -2135,6 +2270,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-30",
+          "last_updated": "2026-03-30",
           "pricing": {}
         },
         {
@@ -2145,6 +2282,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-30",
+          "last_updated": "2026-03-30",
           "pricing": {}
         },
         {
@@ -2154,6 +2293,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2023-07-02",
+          "last_updated": "2023-07-02",
           "pricing": {
             "input": 0.06,
             "output": 0.06
@@ -2166,9 +2307,27 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-20",
+          "last_updated": "2025-10-20",
           "pricing": {
             "input": 0.02,
             "output": 0.11
+          }
+        },
+        {
+          "id": "ibm-granite/granite-4.1-8b",
+          "name": "Granite 4.1 8B",
+          "limit": 131072,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-30",
+          "last_updated": "2026-04-30",
+          "pricing": {
+            "input": 0.05,
+            "output": 0.1,
+            "cache_read": 0.05
           }
         },
         {
@@ -2181,10 +2340,61 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-04",
+          "last_updated": "2026-03-04",
           "pricing": {
             "input": 0.25,
             "output": 0.75,
             "cache_read": 0.02
+          }
+        },
+        {
+          "id": "inclusionai/ling-2.6-1t",
+          "name": "Ling-2.6-1T",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-23",
+          "last_updated": "2026-04-23",
+          "pricing": {
+            "input": 0.075,
+            "output": 0.625,
+            "cache_read": 0.015
+          }
+        },
+        {
+          "id": "inclusionai/ling-2.6-flash",
+          "name": "Ling-2.6-flash",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-21",
+          "last_updated": "2026-04-21",
+          "pricing": {
+            "input": 0.01,
+            "output": 0.03,
+            "cache_read": 0.002
+          }
+        },
+        {
+          "id": "inclusionai/ring-2.6-1t",
+          "name": "Ring-2.6-1T",
+          "limit": 262144,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-05-08",
+          "last_updated": "2026-05-08",
+          "pricing": {
+            "input": 0.075,
+            "output": 0.625,
+            "cache_read": 0.015
           }
         },
         {
@@ -2194,6 +2404,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-10-11",
+          "last_updated": "2024-10-11",
           "pricing": {
             "input": 2.5,
             "output": 10
@@ -2206,6 +2418,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-10-11",
+          "last_updated": "2024-10-11",
           "pricing": {
             "input": 2.5,
             "output": 10
@@ -2219,22 +2433,12 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-27",
+          "last_updated": "2026-03-27",
           "pricing": {
             "input": 0.3,
             "output": 1.2,
             "cache_read": 0.06
-          }
-        },
-        {
-          "id": "liquid/lfm-2-24b-a2b",
-          "name": "LiquidAI: LFM2-24B-A2B",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.03,
-            "output": 0.12
           }
         },
         {
@@ -2244,6 +2448,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-20",
+          "last_updated": "2026-01-20",
           "pricing": {}
         },
         {
@@ -2254,7 +2460,10 @@
           "supports_streaming": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-20",
+          "last_updated": "2026-01-20",
           "pricing": {}
         },
         {
@@ -2264,34 +2473,11 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2023-08-02",
+          "last_updated": "2023-08-02",
           "pricing": {
             "input": 0.75,
             "output": 1
-          }
-        },
-        {
-          "id": "meta-llama/llama-3-70b-instruct",
-          "name": "Meta: Llama 3 70B Instruct",
-          "limit": 8192,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.51,
-            "output": 0.74
-          }
-        },
-        {
-          "id": "meta-llama/llama-3-8b-instruct",
-          "name": "Meta: Llama 3 8B Instruct",
-          "limit": 8192,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.03,
-            "output": 0.04
           }
         },
         {
@@ -2302,6 +2488,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-07-23",
+          "last_updated": "2024-07-23",
           "pricing": {
             "input": 0.4,
             "output": 0.4
@@ -2315,6 +2503,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-07-23",
+          "last_updated": "2024-07-23",
           "pricing": {
             "input": 0.02,
             "output": 0.05
@@ -2328,6 +2518,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-09-25",
+          "last_updated": "2024-09-25",
           "pricing": {
             "input": 0.24,
             "output": 0.24
@@ -2340,6 +2532,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-09-25",
+          "last_updated": "2024-09-25",
           "pricing": {
             "input": 0.03,
             "output": 0.2
@@ -2352,6 +2546,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-09-25",
+          "last_updated": "2024-09-25",
           "pricing": {
             "input": 0.05,
             "output": 0.34
@@ -2364,6 +2560,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-09-25",
+          "last_updated": "2024-09-25",
           "pricing": {}
         },
         {
@@ -2374,6 +2572,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-06",
+          "last_updated": "2024-12-06",
           "pricing": {
             "input": 0.1,
             "output": 0.32
@@ -2387,6 +2587,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-06",
+          "last_updated": "2024-12-06",
           "pricing": {}
         },
         {
@@ -2398,6 +2600,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-05",
+          "last_updated": "2025-04-05",
           "pricing": {
             "input": 0.15,
             "output": 0.6
@@ -2412,21 +2616,11 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-05",
+          "last_updated": "2025-04-05",
           "pricing": {
             "input": 0.08,
             "output": 0.3
-          }
-        },
-        {
-          "id": "meta-llama/llama-guard-3-8b",
-          "name": "Llama Guard 3 8B",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.48,
-            "output": 0.03
           }
         },
         {
@@ -2437,20 +2631,12 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-30",
+          "last_updated": "2025-04-30",
           "pricing": {
             "input": 0.18,
             "output": 0.18
           }
-        },
-        {
-          "id": "meta-llama/llama-guard-4-12b:free",
-          "name": "Meta: Llama Guard 4 12B (free)",
-          "limit": 163840,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "microsoft/phi-4",
@@ -2459,6 +2645,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-01-10",
+          "last_updated": "2025-01-10",
           "pricing": {
             "input": 0.07,
             "output": 0.14
@@ -2471,6 +2659,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-04-16",
+          "last_updated": "2024-04-16",
           "pricing": {
             "input": 0.62,
             "output": 0.62
@@ -2484,6 +2674,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-01-15",
+          "last_updated": "2025-01-15",
           "pricing": {
             "input": 0.2,
             "output": 1.1
@@ -2499,6 +2691,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-17",
+          "last_updated": "2025-06-17",
           "pricing": {
             "input": 0.4,
             "output": 2.2
@@ -2514,6 +2708,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-27",
+          "last_updated": "2025-10-27",
           "pricing": {
             "input": 0.26,
             "output": 1,
@@ -2527,6 +2723,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-23",
+          "last_updated": "2026-01-23",
           "pricing": {
             "input": 0.3,
             "output": 1.2,
@@ -2543,6 +2741,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-23",
+          "last_updated": "2025-12-23",
           "pricing": {
             "input": 0.29,
             "output": 0.95,
@@ -2559,23 +2759,13 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-12",
+          "last_updated": "2026-02-12",
           "pricing": {
             "input": 0.12,
             "output": 0.99,
             "cache_read": 0.06
           }
-        },
-        {
-          "id": "minimax/minimax-m2.5:free",
-          "name": "MiniMax: MiniMax M2.5 (free)",
-          "limit": 196608,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "minimax/minimax-m2.7",
@@ -2587,6 +2777,27 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-18",
+          "last_updated": "2026-03-18",
+          "pricing": {
+            "input": 0.3,
+            "output": 1.2,
+            "cache_read": 0.06
+          }
+        },
+        {
+          "id": "minimax/minimax-m3",
+          "name": "MiniMax-M3",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-01",
+          "last_updated": "2026-06-01",
           "pricing": {
             "input": 0.3,
             "output": 1.2,
@@ -2601,6 +2812,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-01",
+          "last_updated": "2025-08-01",
           "pricing": {
             "input": 0.3,
             "output": 0.9,
@@ -2615,38 +2828,12 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-09",
+          "last_updated": "2025-12-09",
           "pricing": {
             "input": 0.4,
             "output": 2,
             "cache_read": 0.04
-          }
-        },
-        {
-          "id": "mistralai/devstral-medium",
-          "name": "Mistral: Devstral Medium",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.4,
-            "output": 2,
-            "cache_read": 0.04
-          }
-        },
-        {
-          "id": "mistralai/devstral-small",
-          "name": "Mistral: Devstral Small 1.1",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.1,
-            "output": 0.3,
-            "cache_read": 0.01
           }
         },
         {
@@ -2658,6 +2845,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-02",
+          "last_updated": "2025-12-02",
           "pricing": {
             "input": 0.2,
             "output": 0.2,
@@ -2673,6 +2862,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-02",
+          "last_updated": "2025-12-02",
           "pricing": {
             "input": 0.1,
             "output": 0.1,
@@ -2688,6 +2879,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-02",
+          "last_updated": "2025-12-02",
           "pricing": {
             "input": 0.15,
             "output": 0.15,
@@ -2695,45 +2888,53 @@
           }
         },
         {
-          "id": "mistralai/mistral-7b-instruct-v0.1",
-          "name": "Mistral: Mistral 7B Instruct v0.1",
-          "limit": 2824,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.11,
-            "output": 0.19
-          }
-        },
-        {
-          "id": "mistralai/mistral-large-2512",
-          "name": "Mistral: Mistral Large 3 2512",
-          "limit": 262144,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.5,
-            "output": 1.5,
-            "cache_read": 0.05
-          }
-        },
-        {
-          "id": "mistralai/mistral-medium-3.1",
-          "name": "Mistral: Mistral Medium 3.1",
+          "id": "mistralai/mistral-large-2407",
+          "name": "Mistral Large 2407",
           "limit": 131072,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2024-11-19",
+          "last_updated": "2024-11-19",
+          "pricing": {
+            "input": 2,
+            "output": 6,
+            "cache_read": 0.2
+          }
+        },
+        {
+          "id": "mistralai/mistral-medium-3",
+          "name": "Mistral Medium 3",
+          "limit": 131072,
+          "reserved_tokens": 131072,
           "supports_streaming": true,
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-05-07",
+          "last_updated": "2025-05-07",
           "pricing": {
             "input": 0.4,
             "output": 2,
             "cache_read": 0.04
+          }
+        },
+        {
+          "id": "mistralai/mistral-medium-3-5",
+          "name": "Mistral Medium 3.5",
+          "limit": 262144,
+          "reserved_tokens": 262144,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-30",
+          "last_updated": "2026-04-30",
+          "pricing": {
+            "input": 1.5,
+            "output": 7.5
           }
         },
         {
@@ -2744,6 +2945,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-07-01",
+          "last_updated": "2024-07-01",
           "pricing": {
             "input": 0.02,
             "output": 0.04
@@ -2757,6 +2960,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-02-17",
+          "last_updated": "2025-02-17",
           "pricing": {
             "input": 0.2,
             "output": 0.6,
@@ -2770,6 +2975,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-01-30",
+          "last_updated": "2025-01-30",
           "pricing": {
             "input": 0.05,
             "output": 0.08
@@ -2786,6 +2993,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-16",
+          "last_updated": "2026-03-16",
           "pricing": {
             "input": 0.15,
             "output": 0.6,
@@ -2800,6 +3009,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-17",
+          "last_updated": "2025-03-17",
           "pricing": {
             "input": 0.35,
             "output": 0.56
@@ -2814,23 +3025,11 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-20",
+          "last_updated": "2025-06-20",
           "pricing": {
             "input": 0.07,
             "output": 0.2
-          }
-        },
-        {
-          "id": "mistralai/mistral-small-creative",
-          "name": "Mistral: Mistral Small Creative",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.1,
-            "output": 0.3,
-            "cache_read": 0.01
           }
         },
         {
@@ -2841,34 +3040,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "pricing": {
-            "input": 2,
-            "output": 6,
-            "cache_read": 0.2
-          }
-        },
-        {
-          "id": "mistralai/mixtral-8x7b-instruct",
-          "name": "Mistral: Mixtral 8x7B Instruct",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.54,
-            "output": 0.54
-          }
-        },
-        {
-          "id": "mistralai/pixtral-large-2411",
-          "name": "Mistral: Pixtral Large 2411",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
+          "release_date": "2024-04-17",
+          "last_updated": "2024-04-17",
           "pricing": {
             "input": 2,
             "output": 6,
@@ -2883,6 +3056,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-30",
+          "last_updated": "2025-10-30",
           "pricing": {
             "input": 0.1,
             "output": 0.3,
@@ -2897,6 +3072,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-04",
+          "last_updated": "2025-09-04",
           "pricing": {
             "input": 0.4,
             "output": 2
@@ -2912,6 +3089,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-06",
+          "last_updated": "2025-11-06",
           "pricing": {
             "input": 0.6,
             "output": 2.5,
@@ -2929,10 +3108,48 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01",
+          "last_updated": "2026-01",
           "pricing": {
             "input": 0.38,
             "output": 1.72,
             "cache_read": 0.19
+          }
+        },
+        {
+          "id": "moonshotai/kimi-k2.6",
+          "name": "Kimi K2.6",
+          "limit": 262144,
+          "reserved_tokens": 262144,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-21",
+          "last_updated": "2026-04-21",
+          "pricing": {
+            "input": 0.66,
+            "output": 3.41,
+            "cache_read": 0.15
+          }
+        },
+        {
+          "id": "moonshotai/kimi-k2.7-code",
+          "name": "Kimi K2.7 Code",
+          "limit": 262144,
+          "reserved_tokens": 262144,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-12",
+          "last_updated": "2026-06-12",
+          "pricing": {
+            "input": 0.72,
+            "output": 3.5,
+            "cache_read": 0.15
           }
         },
         {
@@ -2942,6 +3159,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-07",
+          "last_updated": "2025-07-07",
           "pricing": {
             "input": 0.8,
             "output": 1.2
@@ -2954,34 +3173,47 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-07",
+          "last_updated": "2025-07-07",
           "pricing": {
             "input": 0.9,
             "output": 1.9
           }
         },
         {
-          "id": "nex-agi/deepseek-v3.1-nex-n1",
-          "name": "Nex AGI: DeepSeek V3.1 Nex N1",
-          "limit": 131072,
-          "reserved_tokens": 4096,
+          "id": "nex-agi/nex-n2-mini",
+          "name": "Nex-N2-Mini",
+          "limit": 262144,
+          "reserved_tokens": 262144,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-06-24",
+          "last_updated": "2026-06-24",
           "pricing": {
-            "input": 0.14,
-            "output": 0.5
+            "input": 0.025,
+            "output": 0.1,
+            "cache_read": 0.0025
           }
         },
         {
-          "id": "nousresearch/hermes-2-pro-llama-3-8b",
-          "name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
-          "limit": 8192,
-          "reserved_tokens": 4096,
+          "id": "nex-agi/nex-n2-pro",
+          "name": "Nex-N2-Pro",
+          "limit": 262144,
+          "reserved_tokens": 262144,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-06-08",
+          "last_updated": "2026-06-08",
           "pricing": {
-            "input": 0.14,
-            "output": 0.14
+            "input": 0.25,
+            "output": 1,
+            "cache_read": 0.025
           }
         },
         {
@@ -2991,6 +3223,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-08-16",
+          "last_updated": "2024-08-16",
           "pricing": {
             "input": 1,
             "output": 1
@@ -3003,6 +3237,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-08-16",
+          "last_updated": "2024-08-16",
           "pricing": {}
         },
         {
@@ -3012,6 +3248,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-08-18",
+          "last_updated": "2024-08-18",
           "pricing": {
             "input": 0.3,
             "output": 0.3
@@ -3026,6 +3264,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-26",
+          "last_updated": "2025-08-26",
           "pricing": {
             "input": 1,
             "output": 3
@@ -3040,22 +3280,11 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-26",
+          "last_updated": "2025-08-26",
           "pricing": {
             "input": 0.13,
             "output": 0.4
-          }
-        },
-        {
-          "id": "nvidia/llama-3.1-nemotron-70b-instruct",
-          "name": "NVIDIA: Llama 3.1 Nemotron 70B Instruct",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.2,
-            "output": 1.2
           }
         },
         {
@@ -3068,6 +3297,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-25",
+          "last_updated": "2025-07-25",
           "pricing": {
             "input": 0.1,
             "output": 0.4
@@ -3083,6 +3314,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-15",
+          "last_updated": "2025-12-15",
           "pricing": {
             "input": 0.05,
             "output": 0.2
@@ -3098,6 +3331,23 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-15",
+          "last_updated": "2025-12-15",
+          "pricing": {}
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "name": "Nemotron 3 Nano Omni (free)",
+          "limit": 256000,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-28",
+          "last_updated": "2026-04-28",
           "pricing": {}
         },
         {
@@ -3110,6 +3360,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-11",
+          "last_updated": "2026-03-11",
           "pricing": {
             "input": 0.1,
             "output": 0.5,
@@ -3126,23 +3378,52 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-11",
+          "last_updated": "2026-03-11",
           "pricing": {}
         },
         {
-          "id": "nvidia/nemotron-nano-12b-v2-vl",
-          "name": "NVIDIA: Nemotron Nano 12B 2 VL",
-          "limit": 131072,
-          "reserved_tokens": 4096,
+          "id": "nvidia/nemotron-3-ultra-550b-a55b",
+          "name": "Nemotron 3 Ultra 550B A55B",
+          "limit": 1000000,
+          "reserved_tokens": 16384,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-04",
+          "last_updated": "2026-06-04",
+          "pricing": {
+            "input": 0.5,
+            "output": 2.2,
+            "cache_read": 0.1
+          }
+        },
+        {
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "name": "Nemotron 3 Ultra (free)",
+          "limit": 1000000,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-04",
+          "last_updated": "2026-06-04",
+          "pricing": {}
+        },
+        {
+          "id": "nvidia/nemotron-3.5-content-safety:free",
+          "name": "Nemotron 3.5 Content Safety (free)",
+          "limit": 128000,
+          "reserved_tokens": 8192,
           "supports_streaming": true,
           "supports_image": true,
-          "supports_video": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.2,
-            "output": 0.6
-          }
+          "release_date": "2026-06-04",
+          "last_updated": "2026-06-04",
+          "pricing": {}
         },
         {
           "id": "nvidia/nemotron-nano-12b-v2-vl:free",
@@ -3156,22 +3437,9 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-28",
+          "last_updated": "2025-10-28",
           "pricing": {}
-        },
-        {
-          "id": "nvidia/nemotron-nano-9b-v2",
-          "name": "NVIDIA: Nemotron Nano 9B V2",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.04,
-            "output": 0.16
-          }
         },
         {
           "id": "nvidia/nemotron-nano-9b-v2:free",
@@ -3183,6 +3451,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-18",
+          "last_updated": "2025-08-18",
           "pricing": {}
         },
         {
@@ -3193,6 +3463,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-01-25",
+          "last_updated": "2024-01-25",
           "pricing": {
             "input": 1,
             "output": 2
@@ -3206,6 +3478,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2023-08-28",
+          "last_updated": "2023-08-28",
           "pricing": {
             "input": 3,
             "output": 4
@@ -3218,9 +3492,26 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2023-09-28",
+          "last_updated": "2023-09-28",
           "pricing": {
             "input": 1.5,
             "output": 2
+          }
+        },
+        {
+          "id": "openai/gpt-4",
+          "name": "GPT-4",
+          "limit": 8191,
+          "reserved_tokens": 4096,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2023-11-06",
+          "last_updated": "2024-04-09",
+          "pricing": {
+            "input": 30,
+            "output": 60
           }
         },
         {
@@ -3231,6 +3522,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-01-25",
+          "last_updated": "2024-01-25",
           "pricing": {
             "input": 10,
             "output": 30
@@ -3245,6 +3538,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-14",
+          "last_updated": "2025-04-14",
           "pricing": {
             "input": 0.4,
             "output": 1.6,
@@ -3260,6 +3555,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-14",
+          "last_updated": "2025-04-14",
           "pricing": {
             "input": 0.1,
             "output": 0.4,
@@ -3275,23 +3572,12 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-11-20",
+          "last_updated": "2024-11-20",
           "pricing": {
             "input": 2.5,
             "output": 10,
             "cache_read": 1.25
-          }
-        },
-        {
-          "id": "openai/gpt-4o-audio-preview",
-          "name": "OpenAI: GPT-4o Audio",
-          "limit": 128000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 2.5,
-            "output": 10
           }
         },
         {
@@ -3303,6 +3589,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-07-18",
+          "last_updated": "2024-07-18",
           "pricing": {
             "input": 0.15,
             "output": 0.6,
@@ -3316,6 +3604,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-12",
+          "last_updated": "2025-03-12",
           "pricing": {
             "input": 0.15,
             "output": 0.6
@@ -3328,23 +3618,28 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-12",
+          "last_updated": "2025-03-12",
           "pricing": {
             "input": 2.5,
             "output": 10
           }
         },
         {
-          "id": "openai/gpt-4o:extended",
-          "name": "OpenAI: GPT-4o (extended)",
-          "limit": 128000,
-          "reserved_tokens": 4096,
+          "id": "openai/gpt-5",
+          "name": "GPT-5",
+          "limit": 400000,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
-          "supports_custom_temperature": true,
+          "release_date": "2025-08-07",
+          "last_updated": "2025-08-07",
           "pricing": {
-            "input": 6,
-            "output": 18
+            "input": 1.25,
+            "output": 10,
+            "cache_read": 0.125
           }
         },
         {
@@ -3355,6 +3650,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-07",
+          "last_updated": "2025-08-07",
           "pricing": {
             "input": 1.25,
             "output": 10,
@@ -3372,6 +3669,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-15",
+          "last_updated": "2025-09-15",
           "pricing": {
             "input": 1.25,
             "output": 10,
@@ -3389,6 +3688,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-14",
+          "last_updated": "2025-10-14",
           "pricing": {
             "input": 10,
             "output": 10,
@@ -3406,6 +3707,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-16",
+          "last_updated": "2025-10-16",
           "pricing": {
             "input": 2.5,
             "output": 2,
@@ -3423,6 +3726,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-07",
+          "last_updated": "2025-08-07",
           "pricing": {
             "input": 0.25,
             "output": 2,
@@ -3440,6 +3745,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-07",
+          "last_updated": "2025-08-07",
           "pricing": {
             "input": 0.05,
             "output": 0.4,
@@ -3457,6 +3764,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-06",
+          "last_updated": "2025-10-06",
           "pricing": {
             "input": 15,
             "output": 120
@@ -3471,6 +3780,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-13",
+          "last_updated": "2025-11-13",
           "pricing": {
             "input": 1.25,
             "output": 10,
@@ -3488,6 +3799,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-13",
+          "last_updated": "2025-11-13",
           "pricing": {
             "input": 1.25,
             "output": 10,
@@ -3505,6 +3818,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-13",
+          "last_updated": "2025-11-13",
           "pricing": {
             "input": 1.25,
             "output": 10,
@@ -3522,6 +3837,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-11-13",
+          "last_updated": "2025-11-13",
           "pricing": {
             "input": 0.25,
             "output": 2,
@@ -3537,6 +3854,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-10",
+          "last_updated": "2025-12-10",
           "pricing": {
             "input": 1.75,
             "output": 14,
@@ -3554,6 +3873,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-11",
+          "last_updated": "2025-12-11",
           "pricing": {
             "input": 1.75,
             "output": 14,
@@ -3571,6 +3892,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-11",
+          "last_updated": "2025-12-11",
           "pricing": {
             "input": 21,
             "output": 168
@@ -3585,6 +3908,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-03",
+          "last_updated": "2026-03-03",
           "pricing": {
             "input": 1.75,
             "output": 14,
@@ -3602,6 +3927,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-05",
+          "last_updated": "2026-02-05",
           "pricing": {
             "input": 1.75,
             "output": 14,
@@ -3609,20 +3936,19 @@
           }
         },
         {
-          "id": "openai/gpt-5.4",
-          "name": "OpenAI: GPT-5.4",
-          "limit": 1050000,
-          "reserved_tokens": 4096,
+          "id": "openai/gpt-5.4-image-2",
+          "name": "GPT-5.4 Image 2",
+          "limit": 272000,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
+          "release_date": "2026-04-21",
+          "last_updated": "2026-04-21",
           "pricing": {
-            "input": 2.5,
+            "input": 8,
             "output": 15,
-            "cache_read": 0.25
+            "cache_read": 2
           }
         },
         {
@@ -3636,6 +3962,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-17",
+          "last_updated": "2026-03-17",
           "pricing": {
             "input": 0.75,
             "output": 4.5,
@@ -3653,6 +3981,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-17",
+          "last_updated": "2026-03-17",
           "pricing": {
             "input": 0.2,
             "output": 1.25,
@@ -3670,9 +4000,152 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-05",
+          "last_updated": "2026-03-05",
           "pricing": {
             "input": 30,
             "output": 180
+          }
+        },
+        {
+          "id": "openai/gpt-5.5",
+          "name": "GPT-5.5",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-04-23",
+          "last_updated": "2026-04-23",
+          "pricing": {
+            "input": 5,
+            "output": 30,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "openai/gpt-5.5-pro",
+          "name": "GPT-5.5 Pro",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-04-23",
+          "last_updated": "2026-04-23",
+          "pricing": {
+            "input": 30,
+            "output": 180
+          }
+        },
+        {
+          "id": "openai/gpt-5.6-luna",
+          "name": "GPT-5.6 Luna",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 1,
+            "output": 6,
+            "cache_write": 1.25,
+            "cache_read": 0.1
+          }
+        },
+        {
+          "id": "openai/gpt-5.6-luna-pro",
+          "name": "GPT-5.6 Luna Pro",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 1,
+            "output": 6,
+            "cache_write": 1.25,
+            "cache_read": 0.1
+          }
+        },
+        {
+          "id": "openai/gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 5,
+            "output": 30,
+            "cache_write": 6.25,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "openai/gpt-5.6-sol-pro",
+          "name": "GPT-5.6 Sol Pro",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 5,
+            "output": 30,
+            "cache_write": 6.25,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "openai/gpt-5.6-terra",
+          "name": "GPT-5.6 Terra",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 2.5,
+            "output": 15,
+            "cache_write": 3.125,
+            "cache_read": 0.25
+          }
+        },
+        {
+          "id": "openai/gpt-5.6-terra-pro",
+          "name": "GPT-5.6 Terra Pro",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-07-09",
+          "last_updated": "2026-07-09",
+          "pricing": {
+            "input": 2.5,
+            "output": 15,
+            "cache_write": 3.125,
+            "cache_read": 0.25
           }
         },
         {
@@ -3683,6 +4156,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-19",
+          "last_updated": "2026-01-19",
           "pricing": {
             "input": 2.5,
             "output": 10
@@ -3696,9 +4171,27 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-19",
+          "last_updated": "2026-01-19",
           "pricing": {
             "input": 0.6,
             "output": 2.4
+          }
+        },
+        {
+          "id": "openai/gpt-chat-latest",
+          "name": "GPT Chat Latest",
+          "limit": 400000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_tool_search": true,
+          "release_date": "2026-05-05",
+          "last_updated": "2026-05-05",
+          "pricing": {
+            "input": 5,
+            "output": 30,
+            "cache_read": 0.5
           }
         },
         {
@@ -3711,6 +4204,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-05",
+          "last_updated": "2025-08-05",
           "pricing": {
             "input": 0.04,
             "output": 0.19
@@ -3726,6 +4221,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-05",
+          "last_updated": "2025-08-05",
           "pricing": {}
         },
         {
@@ -3738,6 +4235,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-05",
+          "last_updated": "2025-08-05",
           "pricing": {
             "input": 0.03,
             "output": 0.14
@@ -3753,6 +4252,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-05",
+          "last_updated": "2025-08-05",
           "pricing": {}
         },
         {
@@ -3765,6 +4266,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-29",
+          "last_updated": "2025-10-29",
           "pricing": {
             "input": 0.07,
             "output": 0.3,
@@ -3782,6 +4285,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-05",
+          "last_updated": "2024-12-05",
           "pricing": {
             "input": 15,
             "output": 60,
@@ -3798,6 +4303,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-19",
+          "last_updated": "2025-03-19",
           "pricing": {
             "input": 150,
             "output": 600
@@ -3814,6 +4321,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-16",
+          "last_updated": "2025-04-16",
           "pricing": {
             "input": 2,
             "output": 8,
@@ -3831,6 +4340,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-06-26",
+          "last_updated": "2024-06-26",
           "pricing": {
             "input": 10,
             "output": 40,
@@ -3847,6 +4358,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-20",
+          "last_updated": "2025-01-29",
           "pricing": {
             "input": 1.1,
             "output": 4.4,
@@ -3863,6 +4376,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-02-12",
+          "last_updated": "2025-02-12",
           "pricing": {
             "input": 1.1,
             "output": 4.4,
@@ -3880,6 +4395,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-06-10",
+          "last_updated": "2025-06-10",
           "pricing": {
             "input": 20,
             "output": 80
@@ -3896,6 +4413,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-16",
+          "last_updated": "2025-04-16",
           "pricing": {
             "input": 1.1,
             "output": 4.4,
@@ -3913,6 +4432,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-06-26",
+          "last_updated": "2024-06-26",
           "pricing": {
             "input": 2,
             "output": 8,
@@ -3930,6 +4451,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-16",
+          "last_updated": "2025-04-16",
           "pricing": {
             "input": 1.1,
             "output": 4.4,
@@ -3937,13 +4460,28 @@
           }
         },
         {
-          "id": "openrouter/elephant-alpha",
-          "name": "Elephant",
-          "limit": 262144,
-          "reserved_tokens": 4096,
+          "id": "openrouter/auto",
+          "name": "Auto Router",
+          "limit": 2000000,
+          "reserved_tokens": 2000000,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2023-11-08",
+          "last_updated": "2023-11-08",
+          "pricing": {}
+        },
+        {
+          "id": "openrouter/bodybuilder",
+          "name": "Body Builder (beta)",
+          "limit": 128000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "release_date": "2025-12-05",
+          "last_updated": "2025-12-05",
           "pricing": {}
         },
         {
@@ -3957,7 +4495,46 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-01",
+          "last_updated": "2026-02-01",
           "pricing": {}
+        },
+        {
+          "id": "openrouter/fusion",
+          "name": "Fusion",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "release_date": "2026-06-13",
+          "last_updated": "2026-06-13",
+          "pricing": {}
+        },
+        {
+          "id": "openrouter/pareto-code",
+          "name": "Pareto Code Router",
+          "limit": 2000000,
+          "reserved_tokens": 200000,
+          "supports_streaming": true,
+          "release_date": "2026-04-21",
+          "last_updated": "2026-04-21",
+          "pricing": {}
+        },
+        {
+          "id": "perceptron/perceptron-mk1",
+          "name": "Perceptron Mk1",
+          "limit": 32768,
+          "reserved_tokens": 8192,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-05-12",
+          "last_updated": "2026-05-12",
+          "pricing": {
+            "input": 0.15,
+            "output": 1.5
+          }
         },
         {
           "id": "perplexity/sonar",
@@ -3967,6 +4544,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-01-27",
+          "last_updated": "2025-01-27",
           "pricing": {
             "input": 1,
             "output": 1
@@ -3981,6 +4560,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-07",
+          "last_updated": "2025-03-07",
           "pricing": {
             "input": 2,
             "output": 8
@@ -3994,6 +4575,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-07",
+          "last_updated": "2025-03-07",
           "pricing": {
             "input": 3,
             "output": 15
@@ -4009,6 +4592,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-30",
+          "last_updated": "2025-10-30",
           "pricing": {
             "input": 3,
             "output": 15
@@ -4024,25 +4609,72 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-07",
+          "last_updated": "2025-03-07",
           "pricing": {
             "input": 2,
             "output": 8
           }
         },
         {
-          "id": "prime-intellect/intellect-3",
-          "name": "Prime Intellect: INTELLECT-3",
-          "limit": 131072,
-          "reserved_tokens": 4096,
+          "id": "poolside/laguna-m.1",
+          "name": "Laguna M.1",
+          "limit": 262144,
+          "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-28",
+          "last_updated": "2026-06-13",
           "pricing": {
             "input": 0.2,
-            "output": 1.1
+            "output": 0.4,
+            "cache_read": 0.1
           }
+        },
+        {
+          "id": "poolside/laguna-m.1:free",
+          "name": "Laguna M.1 (free)",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-28",
+          "last_updated": "2026-06-13",
+          "pricing": {}
+        },
+        {
+          "id": "poolside/laguna-xs-2.1",
+          "name": "Laguna XS 2.1",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-07-02",
+          "last_updated": "2026-07-02",
+          "pricing": {
+            "input": 0.06,
+            "output": 0.12,
+            "cache_read": 0.03
+          }
+        },
+        {
+          "id": "poolside/laguna-xs-2.1:free",
+          "name": "Laguna XS 2.1 (free)",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-07-02",
+          "last_updated": "2026-07-02",
+          "pricing": {}
         },
         {
           "id": "qwen/qwen-2.5-72b-instruct",
@@ -4052,6 +4684,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-09-19",
+          "last_updated": "2024-09-19",
           "pricing": {
             "input": 0.12,
             "output": 0.39
@@ -4065,6 +4699,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-10-16",
+          "last_updated": "2024-10-16",
           "pricing": {
             "input": 0.04,
             "output": 0.1
@@ -4077,23 +4713,11 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-11-11",
+          "last_updated": "2024-11-11",
           "pricing": {
             "input": 0.66,
             "output": 1
-          }
-        },
-        {
-          "id": "qwen/qwen-max",
-          "name": "Qwen: Qwen-Max ",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.04,
-            "output": 4.16,
-            "cache_read": 0.21
           }
         },
         {
@@ -4104,6 +4728,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-08",
+          "last_updated": "2025-09-08",
           "pricing": {
             "input": 0.26,
             "output": 0.78,
@@ -4120,65 +4746,12 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-08",
+          "last_updated": "2025-09-08",
           "pricing": {
             "input": 0.26,
             "output": 0.78,
             "cache_write": 0.33
-          }
-        },
-        {
-          "id": "qwen/qwen-turbo",
-          "name": "Qwen: Qwen-Turbo",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.03,
-            "output": 0.13,
-            "cache_read": 0.01
-          }
-        },
-        {
-          "id": "qwen/qwen-vl-max",
-          "name": "Qwen: Qwen VL Max",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.52,
-            "output": 2.08
-          }
-        },
-        {
-          "id": "qwen/qwen-vl-plus",
-          "name": "Qwen: Qwen VL Plus",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.14,
-            "output": 0.41,
-            "cache_read": 0.03
-          }
-        },
-        {
-          "id": "qwen/qwen2.5-vl-32b-instruct",
-          "name": "Qwen: Qwen2.5 VL 32B Instruct",
-          "limit": 128000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.2,
-            "output": 0.6
           }
         },
         {
@@ -4189,6 +4762,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-02-01",
+          "last_updated": "2025-02-01",
           "pricing": {
             "input": 0.25,
             "output": 0.75
@@ -4204,6 +4779,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-28",
+          "last_updated": "2025-04-28",
           "pricing": {
             "input": 0.06,
             "output": 0.24
@@ -4219,6 +4796,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-21",
+          "last_updated": "2025-07-21",
           "pricing": {
             "input": 0.07,
             "output": 0.1
@@ -4234,6 +4813,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-25",
+          "last_updated": "2025-07-25",
           "pricing": {
             "input": 0.13,
             "output": 0.6
@@ -4249,6 +4830,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-28",
+          "last_updated": "2025-04-28",
           "pricing": {
             "input": 0.08,
             "output": 0.28
@@ -4262,6 +4845,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-29",
+          "last_updated": "2025-07-29",
           "pricing": {
             "input": 0.09,
             "output": 0.3
@@ -4277,6 +4862,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-28",
+          "last_updated": "2025-08-28",
           "pricing": {
             "input": 0.08,
             "output": 0.4,
@@ -4293,6 +4880,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04",
+          "last_updated": "2025-04",
           "pricing": {
             "input": 0.08,
             "output": 0.24,
@@ -4309,6 +4898,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04-28",
+          "last_updated": "2025-04-28",
           "pricing": {
             "input": 0.05,
             "output": 0.4,
@@ -4323,6 +4914,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-23",
+          "last_updated": "2025-07-23",
           "pricing": {
             "input": 0.22,
             "output": 1,
@@ -4337,6 +4930,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-04",
+          "last_updated": "2025-04",
           "pricing": {
             "input": 0.07,
             "output": 0.27
@@ -4350,6 +4945,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-28",
+          "last_updated": "2025-07-28",
           "pricing": {
             "input": 0.2,
             "output": 0.97,
@@ -4365,6 +4962,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-04",
+          "last_updated": "2026-02-04",
           "pricing": {
             "input": 0.15,
             "output": 0.8,
@@ -4379,6 +4978,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-23",
+          "last_updated": "2025-07-23",
           "pricing": {
             "input": 0.65,
             "output": 3.25,
@@ -4394,6 +4995,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-23",
+          "last_updated": "2025-07-23",
           "pricing": {}
         },
         {
@@ -4404,6 +5007,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-23",
+          "last_updated": "2025-09-23",
           "pricing": {
             "input": 0.78,
             "output": 3.9,
@@ -4421,6 +5026,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-09",
+          "last_updated": "2026-02-09",
           "pricing": {
             "input": 0.78,
             "output": 3.9
@@ -4434,6 +5041,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09",
+          "last_updated": "2025-09",
           "pricing": {
             "input": 0.09,
             "output": 1.1
@@ -4447,6 +5056,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09",
+          "last_updated": "2025-09",
           "pricing": {}
         },
         {
@@ -4459,6 +5070,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09",
+          "last_updated": "2025-09",
           "pricing": {
             "input": 0.1,
             "output": 0.78
@@ -4473,6 +5086,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-23",
+          "last_updated": "2025-09-23",
           "pricing": {
             "input": 0.2,
             "output": 0.88,
@@ -4490,6 +5105,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-23",
+          "last_updated": "2025-09-23",
           "pricing": {
             "input": 0.26,
             "output": 2.6
@@ -4504,6 +5121,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-06",
+          "last_updated": "2025-10-06",
           "pricing": {
             "input": 0.13,
             "output": 0.52
@@ -4520,6 +5139,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-06",
+          "last_updated": "2025-10-06",
           "pricing": {
             "input": 0.13,
             "output": 1.56
@@ -4534,6 +5155,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-23",
+          "last_updated": "2025-10-23",
           "pricing": {
             "input": 0.1,
             "output": 0.42
@@ -4548,6 +5171,8 @@
           "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-14",
+          "last_updated": "2025-10-14",
           "pricing": {
             "input": 0.08,
             "output": 0.5
@@ -4564,6 +5189,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-10-14",
+          "last_updated": "2025-10-14",
           "pricing": {
             "input": 0.12,
             "output": 1.36
@@ -4581,6 +5208,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-23",
+          "last_updated": "2026-02-23",
           "pricing": {
             "input": 0.26,
             "output": 2.08
@@ -4598,6 +5227,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-23",
+          "last_updated": "2026-02-23",
           "pricing": {
             "input": 0.2,
             "output": 1.56
@@ -4615,6 +5246,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-23",
+          "last_updated": "2026-02-23",
           "pricing": {
             "input": 0.16,
             "output": 1.3
@@ -4632,6 +5265,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-15",
+          "last_updated": "2026-02-15",
           "pricing": {
             "input": 0.39,
             "output": 2.34,
@@ -4650,6 +5285,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-23",
+          "last_updated": "2026-02-23",
           "pricing": {
             "input": 0.05,
             "output": 0.15
@@ -4667,6 +5304,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-02-25",
+          "last_updated": "2026-02-25",
           "pricing": {
             "input": 0.07,
             "output": 0.26,
@@ -4674,21 +5313,95 @@
           }
         },
         {
-          "id": "qwen/qwen3.5-plus-02-15",
-          "name": "Qwen: Qwen3.5 Plus 2026-02-15",
+          "id": "qwen/qwen3.5-plus-20260420",
+          "name": "Qwen3.5 Plus 2026-04-20",
           "limit": 1000000,
-          "reserved_tokens": 4096,
+          "reserved_tokens": 65536,
           "supports_streaming": true,
           "supports_image": true,
           "supports_video": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
           "pricing": {
-            "input": 0.26,
-            "output": 1.56,
-            "cache_write": 0.33
+            "input": 0.3,
+            "output": 1.8,
+            "cache_write": 0.375
+          }
+        },
+        {
+          "id": "qwen/qwen3.6-27b",
+          "name": "Qwen3.6 27B",
+          "limit": 262144,
+          "reserved_tokens": 262140,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-22",
+          "last_updated": "2026-04-22",
+          "pricing": {
+            "input": 0.285,
+            "output": 2.4,
+            "cache_read": 0.15
+          }
+        },
+        {
+          "id": "qwen/qwen3.6-35b-a3b",
+          "name": "Qwen3.6 35B-A3B",
+          "limit": 262144,
+          "reserved_tokens": 262144,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-17",
+          "last_updated": "2026-04-17",
+          "pricing": {
+            "input": 0.14,
+            "output": 1
+          }
+        },
+        {
+          "id": "qwen/qwen3.6-flash",
+          "name": "Qwen3.6 Flash",
+          "limit": 1000000,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 0.1875,
+            "output": 1.125,
+            "cache_write": 0.234375
+          }
+        },
+        {
+          "id": "qwen/qwen3.6-max-preview",
+          "name": "Qwen3.6 Max Preview",
+          "limit": 262144,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-20",
+          "last_updated": "2026-04-20",
+          "pricing": {
+            "input": 1.04,
+            "output": 6.24,
+            "cache_write": 1.3
           }
         },
         {
@@ -4703,6 +5416,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-02",
+          "last_updated": "2026-04-02",
           "pricing": {
             "input": 0.33,
             "output": 1.95,
@@ -4710,18 +5425,40 @@
           }
         },
         {
-          "id": "qwen/qwq-32b",
-          "name": "Qwen: QwQ 32B",
-          "limit": 131072,
-          "reserved_tokens": 4096,
+          "id": "qwen/qwen3.7-max",
+          "name": "Qwen3.7 Max",
+          "limit": 1000000,
+          "reserved_tokens": 65536,
           "supports_streaming": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-05-21",
+          "last_updated": "2026-05-21",
           "pricing": {
-            "input": 0.15,
-            "output": 0.58
+            "input": 1.25,
+            "output": 3.75,
+            "cache_write": 1.5625,
+            "cache_read": 0.25
+          }
+        },
+        {
+          "id": "qwen/qwen3.7-plus",
+          "name": "Qwen3.7 Plus",
+          "limit": 1000000,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-02",
+          "last_updated": "2026-06-02",
+          "pricing": {
+            "input": 0.32,
+            "output": 1.28,
+            "cache_write": 0.4,
+            "cache_read": 0.064
           }
         },
         {
@@ -4734,6 +5471,8 @@
           "supports_video": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-20",
+          "last_updated": "2026-03-20",
           "pricing": {
             "input": 0.1,
             "output": 0.1
@@ -4748,6 +5487,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-12",
+          "last_updated": "2025-03-12",
           "pricing": {
             "input": 0.1,
             "output": 0.2
@@ -4760,6 +5501,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-26",
+          "last_updated": "2025-09-26",
           "pricing": {
             "input": 0.85,
             "output": 1.25
@@ -4773,22 +5516,28 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-08",
+          "last_updated": "2025-12-08",
           "pricing": {
             "input": 1,
             "output": 3
           }
         },
         {
-          "id": "sao10k/l3-euryale-70b",
-          "name": "Sao10k: Llama 3 Euryale 70B v2.1",
-          "limit": 8192,
-          "reserved_tokens": 1228,
+          "id": "sakana/fugu-ultra",
+          "name": "Fugu Ultra",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
-          "supports_custom_temperature": true,
+          "release_date": "2026-06-24",
+          "last_updated": "2026-06-24",
           "pricing": {
-            "input": 1.48,
-            "output": 1.48
+            "input": 5,
+            "output": 30,
+            "cache_read": 0.5
           }
         },
         {
@@ -4798,6 +5547,8 @@
           "reserved_tokens": 1228,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-08-13",
+          "last_updated": "2024-08-13",
           "pricing": {
             "input": 0.04,
             "output": 0.05
@@ -4810,6 +5561,8 @@
           "reserved_tokens": 2400,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-01-08",
+          "last_updated": "2025-01-08",
           "pricing": {
             "input": 3,
             "output": 3
@@ -4823,6 +5576,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-08-28",
+          "last_updated": "2024-08-28",
           "pricing": {
             "input": 0.85,
             "output": 0.85
@@ -4835,6 +5590,8 @@
           "reserved_tokens": 19660,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-12-18",
+          "last_updated": "2024-12-18",
           "pricing": {
             "input": 0.65,
             "output": 0.75
@@ -4850,23 +5607,30 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-29",
+          "last_updated": "2026-02-13",
           "pricing": {
             "input": 0.1,
             "output": 0.3
           }
         },
         {
-          "id": "switchpoint/router",
-          "name": "Switchpoint Router",
-          "limit": 131072,
-          "reserved_tokens": 4096,
+          "id": "stepfun/step-3.7-flash",
+          "name": "Step 3.7 Flash",
+          "limit": 256000,
+          "reserved_tokens": 256000,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-05-29",
+          "last_updated": "2026-05-29",
           "pricing": {
-            "input": 0.85,
-            "output": 3.4
+            "input": 0.2,
+            "output": 1.15,
+            "cache_read": 0.04
           }
         },
         {
@@ -4878,10 +5642,42 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-08",
+          "last_updated": "2025-07-08",
           "pricing": {
             "input": 0.14,
             "output": 0.57
           }
+        },
+        {
+          "id": "tencent/hy3",
+          "name": "Hy3",
+          "limit": 262144,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-07-06",
+          "last_updated": "2026-07-06",
+          "pricing": {
+            "input": 0.14,
+            "output": 0.58,
+            "cache_read": 0.035
+          }
+        },
+        {
+          "id": "tencent/hy3:free",
+          "name": "Hy3 (free)",
+          "limit": 262144,
+          "reserved_tokens": 262144,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-07-06",
+          "last_updated": "2026-07-06",
+          "pricing": {}
         },
         {
           "id": "thedrummer/cydonia-24b-v4.1",
@@ -4890,6 +5686,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-09-27",
+          "last_updated": "2025-09-27",
           "pricing": {
             "input": 0.3,
             "output": 0.5,
@@ -4904,6 +5702,8 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-09-30",
+          "last_updated": "2024-09-30",
           "pricing": {
             "input": 0.17,
             "output": 0.43
@@ -4916,6 +5716,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-03-10",
+          "last_updated": "2025-03-10",
           "pricing": {
             "input": 0.55,
             "output": 0.8,
@@ -4930,25 +5732,11 @@
           "supports_streaming": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2024-11-08",
+          "last_updated": "2024-11-08",
           "pricing": {
             "input": 0.4,
             "output": 0.4
-          }
-        },
-        {
-          "id": "tngtech/deepseek-r1t2-chimera",
-          "name": "TNG: DeepSeek R1T2 Chimera",
-          "limit": 163840,
-          "reserved_tokens": 24576,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.3,
-            "output": 1.1,
-            "cache_read": 0.15
           }
         },
         {
@@ -4958,6 +5746,8 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2023-07-22",
+          "last_updated": "2023-07-22",
           "pricing": {
             "input": 0.45,
             "output": 0.65
@@ -4973,6 +5763,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-27",
+          "last_updated": "2026-01-27",
           "pricing": {
             "input": 0.15,
             "output": 0.6,
@@ -4986,76 +5778,11 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-21",
+          "last_updated": "2026-01-21",
           "pricing": {
             "input": 0.6,
             "output": 6
-          }
-        },
-        {
-          "id": "x-ai/grok-3-mini-beta",
-          "name": "xAI: Grok 3 Mini Beta",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.3,
-            "output": 0.5,
-            "cache_read": 0.07
-          }
-        },
-        {
-          "id": "x-ai/grok-4-fast",
-          "name": "xAI: Grok 4 Fast",
-          "limit": 2000000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.2,
-            "output": 0.5,
-            "cache_read": 0.05
-          }
-        },
-        {
-          "id": "x-ai/grok-4.1-fast",
-          "name": "xAI: Grok 4.1 Fast",
-          "limit": 2000000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.2,
-            "output": 0.5,
-            "cache_read": 0.05
-          }
-        },
-        {
-          "id": "x-ai/grok-4.20",
-          "name": "xAI: Grok 4.20",
-          "limit": 2000000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 2,
-            "output": 6,
-            "cache_read": 0.2
           }
         },
         {
@@ -5068,6 +5795,8 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-31",
+          "last_updated": "2026-03-31",
           "pricing": {
             "input": 2,
             "output": 6,
@@ -5075,82 +5804,75 @@
           }
         },
         {
-          "id": "x-ai/grok-code-fast-1",
-          "name": "xAI: Grok Code Fast 1",
-          "limit": 256000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.2,
-            "output": 1.5,
-            "cache_read": 0.02
-          }
-        },
-        {
-          "id": "xiaomi/mimo-v2-flash",
-          "name": "Xiaomi: MiMo-V2-Flash",
-          "limit": 262144,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 0.09,
-            "output": 0.29,
-            "cache_read": 0.04
-          }
-        },
-        {
-          "id": "xiaomi/mimo-v2-omni",
-          "name": "Xiaomi: MiMo-V2-Omni",
-          "limit": 262144,
-          "reserved_tokens": 4096,
+          "id": "x-ai/grok-4.5",
+          "name": "Grok 4.5",
+          "limit": 500000,
+          "reserved_tokens": 500000,
           "supports_streaming": true,
           "supports_image": true,
-          "supports_video": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-07-08",
+          "last_updated": "2026-07-08",
           "pricing": {
-            "input": 0.4,
-            "output": 2,
-            "cache_read": 0.08
+            "input": 2,
+            "output": 6,
+            "cache_read": 0.5
           }
         },
         {
-          "id": "xiaomi/mimo-v2-pro",
-          "name": "Xiaomi: MiMo-V2-Pro",
-          "limit": 1048576,
-          "reserved_tokens": 4096,
+          "id": "x-ai/grok-build-0.1",
+          "name": "Grok Build 0.1",
+          "limit": 256000,
+          "reserved_tokens": 256000,
           "supports_streaming": true,
+          "supports_image": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-16",
+          "last_updated": "2026-04-16",
           "pricing": {
             "input": 1,
-            "output": 3,
+            "output": 2,
             "cache_read": 0.2
           }
         },
         {
-          "id": "z-ai/glm-4-32b",
-          "name": "Z.ai: GLM 4 32B ",
-          "limit": 128000,
-          "reserved_tokens": 4096,
+          "id": "xiaomi/mimo-v2.5",
+          "name": "MiMo-V2.5",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-22",
+          "last_updated": "2026-04-22",
           "pricing": {
-            "input": 0.1,
-            "output": 0.1
+            "input": 0.105,
+            "output": 0.28,
+            "cache_read": 0.028
+          }
+        },
+        {
+          "id": "xiaomi/mimo-v2.5-pro",
+          "name": "MiMo-V2.5-Pro",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-22",
+          "last_updated": "2026-04-22",
+          "pricing": {
+            "input": 0.435,
+            "output": 0.87,
+            "cache_read": 0.0036
           }
         },
         {
@@ -5163,23 +5885,13 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-07-28",
+          "last_updated": "2025-07-28",
           "pricing": {
             "input": 0.13,
             "output": 0.85,
             "cache_read": 0.02
           }
-        },
-        {
-          "id": "z-ai/glm-4.5-air:free",
-          "name": "Z.ai: GLM 4.5 Air (free)",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "pricing": {}
         },
         {
           "id": "z-ai/glm-4.5v",
@@ -5192,6 +5904,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-08-11",
+          "last_updated": "2025-08-11",
           "pricing": {
             "input": 0.6,
             "output": 1.8,
@@ -5210,6 +5924,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2025-12-08",
+          "last_updated": "2025-12-08",
           "pricing": {
             "input": 0.3,
             "output": 0.9
@@ -5225,10 +5941,29 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-01-19",
+          "last_updated": "2026-01-19",
           "pricing": {
             "input": 0.06,
             "output": 0.4,
             "cache_read": 0.01
+          }
+        },
+        {
+          "id": "z-ai/glm-5",
+          "name": "GLM-5",
+          "limit": 202752,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-02-12",
+          "last_updated": "2026-02-12",
+          "pricing": {
+            "input": 0.6,
+            "output": 1.92,
+            "cache_read": 0.12
           }
         },
         {
@@ -5241,6 +5976,8 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-03-16",
+          "last_updated": "2026-03-16",
           "pricing": {
             "input": 1.2,
             "output": 4,
@@ -5248,19 +5985,20 @@
           }
         },
         {
-          "id": "z-ai/glm-5.1",
-          "name": "Z.ai: GLM 5.1",
-          "limit": 202752,
-          "reserved_tokens": 4096,
+          "id": "z-ai/glm-5.2",
+          "name": "GLM-5.2",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
           "supports_streaming": true,
           "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-06-13",
+          "last_updated": "2026-06-13",
           "pricing": {
-            "input": 0.95,
-            "output": 3.15,
-            "cache_read": 0.47
+            "input": 0.42,
+            "output": 1.32,
+            "cache_read": 0.078
           }
         },
         {
@@ -5275,10 +6013,197 @@
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
+          "release_date": "2026-04-01",
+          "last_updated": "2026-04-01",
           "pricing": {
             "input": 1.2,
             "output": 4,
             "cache_read": 0.24
+          }
+        },
+        {
+          "id": "~anthropic/claude-fable-latest",
+          "name": "Claude Fable Latest",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-06-09",
+          "last_updated": "2026-06-09",
+          "pricing": {
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
+          }
+        },
+        {
+          "id": "~anthropic/claude-haiku-latest",
+          "name": "Anthropic Claude Haiku Latest",
+          "limit": 200000,
+          "reserved_tokens": 64000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 1,
+            "output": 5,
+            "cache_write": 1.25,
+            "cache_read": 0.1
+          }
+        },
+        {
+          "id": "~anthropic/claude-opus-latest",
+          "name": "Claude Opus Latest",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-21",
+          "last_updated": "2026-04-21",
+          "pricing": {
+            "input": 5,
+            "output": 25,
+            "cache_write": 6.25,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "~anthropic/claude-sonnet-latest",
+          "name": "Anthropic Claude Sonnet Latest",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 2,
+            "output": 10,
+            "cache_write": 2.5,
+            "cache_read": 0.2
+          }
+        },
+        {
+          "id": "~google/gemini-flash-latest",
+          "name": "Google Gemini Flash Latest",
+          "limit": 1048576,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 1.5,
+            "output": 9,
+            "cache_write": 0.083333,
+            "cache_read": 0.15
+          }
+        },
+        {
+          "id": "~google/gemini-pro-latest",
+          "name": "Google Gemini Pro Latest",
+          "limit": 1048576,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 2,
+            "output": 12,
+            "cache_write": 0.375,
+            "cache_read": 0.2
+          }
+        },
+        {
+          "id": "~moonshotai/kimi-latest",
+          "name": "MoonshotAI Kimi Latest",
+          "limit": 262144,
+          "reserved_tokens": 262144,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 0.66,
+            "output": 3.41,
+            "cache_read": 0.15
+          }
+        },
+        {
+          "id": "~openai/gpt-latest",
+          "name": "OpenAI GPT Latest",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 5,
+            "output": 30,
+            "cache_write": 6.25,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "~openai/gpt-mini-latest",
+          "name": "OpenAI GPT Mini Latest",
+          "limit": 400000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-04-27",
+          "last_updated": "2026-04-27",
+          "pricing": {
+            "input": 0.75,
+            "output": 4.5,
+            "cache_read": 0.075
+          }
+        },
+        {
+          "id": "~x-ai/grok-latest",
+          "name": "Grok Latest",
+          "limit": 500000,
+          "reserved_tokens": 1000000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-07-08",
+          "last_updated": "2026-07-08",
+          "pricing": {
+            "input": 2,
+            "output": 6,
+            "cache_read": 0.5
           }
         }
       ]
