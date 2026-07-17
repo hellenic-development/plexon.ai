@@ -11,14 +11,6 @@ models:
       supports_tool_search: true
       pricing:
         is_subscription: true
-    - id: claude-opus-4-7
-      name: Claude Opus 4.7
-      limit: 1000000
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_tool_search: true
-      pricing:
-        is_subscription: true
     - id: claude-opus-4-8
       name: Claude Opus 4.8
       limit: 1000000

@@ -16,13 +16,13 @@ sync:
     pinned:
         - claude-fable-5
         - claude-haiku-4-5
-        - claude-opus-4-7
         - claude-opus-4-8
         - claude-sonnet-4-6
         - claude-sonnet-4-6 [1M]
     excluded:
-        - claude-sonnet-4-5-20250929-1m
         - claude-opus-4-6-fast
+        - claude-opus-4-7
+        - claude-sonnet-4-5-20250929-1m
 models:
     - id: claude-fable-5
       name: Claude Fable 5
@@ -58,24 +58,6 @@ models:
         output: 5
         cache_write: 1.25
         cache_read: 0.1
-    - id: claude-opus-4-7
-      name: Claude Opus 4.7
-      limit: 1000000
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_adaptive_thinking: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2026-04-14"
-      last_updated: "2026-04-16"
-      pricing:
-        input: 5
-        output: 25
-        cache_write: 6.25
-        cache_read: 0.5
     - id: claude-opus-4-8
       name: Claude Opus 4.8
       limit: 1000000

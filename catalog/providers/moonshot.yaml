@@ -27,24 +27,25 @@ models:
       default_selection: true
       pricing:
         is_subscription: true
-    - id: kimi-k2.6
-      name: Kimi K2.6
-      limit: 262144
+    - id: kimi-k3
+      name: Kimi K3
+      limit: 1048576
       reserved_tokens: 32768
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
+      release_date: "2026-07-16"
       pricing:
-        input: 0.6
-        output: 2.5
-        cache_write: 0.6
-        cache_read: 0.15
+        input: 3
+        output: 15
+        cache_read: 0.3
 sync:
     family_strip: -k\d+(?:\.\d+)?
     pinned:
-        - kimi-k2.6
+        - kimi-k3
     excluded:
+        - kimi-k2.6
         - kimi-k2-thinking
         - kimi-k2-thinking-turbo
         - kimi-k2-turbo

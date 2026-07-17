@@ -56,56 +56,6 @@ models:
       generation_type: sync
       pricing:
         is_subscription: true
-    - id: minimax-m2.7
-      name: MiniMax M2.7
-      limit: 204800
-      reserved_tokens: 8192
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      supports_image_generation: true
-      supports_video_generation: true
-      pricing:
-        input: 0.3
-        output: 1.2
-        cache_write: 0.375
-        cache_read: 0.03
-    - id: minimax-m2.7-coding-plan
-      name: MiniMax M2.7 (Subscription)
-      limit: 204800
-      reserved_tokens: 8192
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        is_subscription: true
-    - id: minimax-m2.7-highspeed
-      name: MiniMax M2.7 HighSpeed
-      limit: 204800
-      reserved_tokens: 8192
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      supports_image_generation: true
-      supports_video_generation: true
-      pricing:
-        input: 0.6
-        output: 2.4
-        cache_write: 0.375
-        cache_read: 0.03
-    - id: minimax-m2.7-highspeed-coding-plan
-      name: MiniMax M2.7 HighSpeed (Subscription)
-      limit: 204800
-      reserved_tokens: 8192
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        is_subscription: true
     - id: minimax-m3
       # Frontier multimodal coding model with a 1M context window. M3 has no
       # separate "-highspeed" variant (those stop at M2.x). wire_id pins the
@@ -166,10 +116,6 @@ sync:
         - hailuo-2.3-coding-plan
         - image-01
         - image-01-coding-plan
-        - minimax-m2.7
-        - minimax-m2.7-coding-plan
-        - minimax-m2.7-highspeed
-        - minimax-m2.7-highspeed-coding-plan
         - minimax-m3
         - minimax-m3-coding-plan
     excluded:

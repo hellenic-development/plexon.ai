@@ -96,51 +96,6 @@ models:
       supports_custom_temperature: true
       pricing:
         is_subscription: true
-    - id: qwen3-max
-      name: Qwen3 Max
-      limit: 262144
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.78
-        output: 3.9
-        cache_write: 0.97
-        cache_read: 0.16
-    - id: qwen3-max (Coding Plan)
-      wire_id: qwen3-max
-      name: Qwen3 Max (Coding Plan)
-      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
-      limit: 262144
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_custom_temperature: true
-      pricing:
-        is_subscription: true
-    - id: qwen3-max-thinking
-      name: Qwen3 Max Thinking
-      limit: 262144
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.78
-        output: 3.9
-        cache_write: 0.78
-    - id: qwen3-max-thinking (Coding Plan)
-      wire_id: qwen3-max-thinking
-      name: Qwen3 Max Thinking (Coding Plan)
-      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
-      limit: 262144
-      reserved_tokens: 32768
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        is_subscription: true
     - id: qwen3.5-122b-a10b
       name: Qwen3.5-122B-A10B
       limit: 262144
@@ -226,34 +181,6 @@ models:
       supports_custom_temperature: true
       pricing:
         is_subscription: true
-    - id: qwen3.5-plus-02-15
-      name: Qwen3.5 Plus 2026-02-15
-      limit: 1000000
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.26
-        output: 1.56
-        cache_write: 0.33
-    - id: qwen3.5-plus-02-15 (Coding Plan)
-      wire_id: qwen3.5-plus-02-15
-      name: Qwen3.5 Plus 2026-02-15 (Coding Plan)
-      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
-      limit: 1000000
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        is_subscription: true
     - id: qwen3.6-plus
       name: Qwen3.6 Plus
       limit: 1000000
@@ -318,19 +245,17 @@ sync:
         - qwen3-coder-next (Coding Plan)
         - qwen3-coder-plus
         - qwen3-coder-plus (Coding Plan)
-        - qwen3-max
-        - qwen3-max (Coding Plan)
-        - qwen3-max-thinking
-        - qwen3-max-thinking (Coding Plan)
         - qwen3.5-122b-a10b
         - qwen3.5-35b-a3b
         - qwen3.5-397b-a17b
         - qwen3.5-9b
         - qwen3.5-flash-02-23
         - qwen3.5-flash-02-23 (Coding Plan)
-        - qwen3.5-plus-02-15
-        - qwen3.5-plus-02-15 (Coding Plan)
         - qwen3.6-plus
         - qwen3.6-plus (Coding Plan)
         - qwen3.7-max
         - qwen3.7-max (Coding Plan)
+    excluded:
+        - qwen3-max
+        - qwen3-max-thinking
+        - qwen3.5-plus-02-15
