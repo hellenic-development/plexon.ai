@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-22T16:38:50Z",
+  "generated": "2026-07-22T16:48:16Z",
   "providers": [
     {
       "name": "anthropic",
@@ -502,7 +502,7 @@
           "base_url": "https://api.kimi.com/coding/v1",
           "headers": {
             "HTTP-Referer": "https://plexon.ai",
-            "User-Agent": "Kilo-Code/4.110.0",
+            "User-Agent": "Kilo-Code/7.2.26",
             "X-PlexonAI-Version": "4.110.0",
             "X-Stainless-Runtime": "node",
             "X-Stainless-Runtime-Version": "v22.19.0",
@@ -543,7 +543,7 @@
           "compatibility": "anthropic",
           "headers": {
             "HTTP-Referer": "https://plexon.ai",
-            "User-Agent": "Kilo-Code/4.110.0",
+            "User-Agent": "Kilo-Code/7.2.26",
             "X-PlexonAI-Version": "4.110.0",
             "X-Stainless-Runtime": "node",
             "X-Stainless-Runtime-Version": "v22.19.0",
