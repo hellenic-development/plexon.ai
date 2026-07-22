@@ -41,7 +41,9 @@ models:
         output: 15
         cache_read: 0.3
     - id: kimi-k3-coding-plan
-      wire_id: kimi-k3
+      # Wire id per kimi.com/code docs: API requests and third-party tools use
+      # plain "k3" ("k3[1m]" is a Claude Code env-var-only 1M-context alias).
+      wire_id: k3
       name: Kimi K3 (Subscription)
       base_url: https://api.kimi.com/coding/v1
       headers:
