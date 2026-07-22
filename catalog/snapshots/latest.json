@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-22T16:17:25Z",
+  "generated": "2026-07-22T16:28:13Z",
   "providers": [
     {
       "name": "anthropic",
@@ -539,7 +539,7 @@
           "id": "kimi-k3-coding-plan",
           "wire_id": "k3",
           "name": "Kimi K3 (Subscription)",
-          "base_url": "https://api.kimi.com/coding/v1",
+          "base_url": "https://api.moonshot.ai/anthropic/v1",
           "compatibility": "anthropic",
           "headers": {
             "HTTP-Referer": "https://plexon.ai",
