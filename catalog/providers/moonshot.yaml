@@ -53,7 +53,9 @@ models:
         X-Stainless-Runtime: node
         X-Stainless-Runtime-Version: v22.19.0
         X-Title: Plexon AI
-      limit: 262144
+      # 1M context window (Allegretto plan and above; plain "k3" grants the
+      # plan's full window on the API, the "[1m]" suffix is Claude-Code-only).
+      limit: 1048576
       reserved_tokens: 32768
       supports_streaming: true
       supports_image: true
