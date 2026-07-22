@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-17T11:23:51Z",
+  "generated": "2026-07-22T11:33:40Z",
   "providers": [
     {
       "name": "anthropic",
@@ -533,6 +533,29 @@
             "input": 3,
             "output": 15,
             "cache_read": 0.3
+          }
+        },
+        {
+          "id": "kimi-k3-coding-plan",
+          "wire_id": "kimi-k3",
+          "name": "Kimi K3 (Subscription)",
+          "base_url": "https://api.kimi.com/coding/v1",
+          "headers": {
+            "HTTP-Referer": "https://plexon.ai",
+            "User-Agent": "Kilo-Code/4.110.0",
+            "X-PlexonAI-Version": "4.110.0",
+            "X-Stainless-Runtime": "node",
+            "X-Stainless-Runtime-Version": "v22.19.0",
+            "X-Title": "Plexon AI"
+          },
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "pricing": {
+            "is_subscription": true
           }
         }
       ]
