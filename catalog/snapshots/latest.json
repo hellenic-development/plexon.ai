@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-22T14:24:55Z",
+  "generated": "2026-07-22T15:37:21Z",
   "providers": [
     {
       "name": "anthropic",
@@ -540,6 +540,7 @@
           "wire_id": "k3",
           "name": "Kimi K3 (Subscription)",
           "base_url": "https://api.kimi.com/coding/v1",
+          "compatibility": "anthropic",
           "headers": {
             "HTTP-Referer": "https://plexon.ai",
             "User-Agent": "Kilo-Code/4.110.0",

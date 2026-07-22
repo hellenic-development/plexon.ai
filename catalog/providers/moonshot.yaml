@@ -45,6 +45,12 @@ models:
       # plain "k3" ("k3[1m]" is a Claude Code env-var-only 1M-context alias).
       wire_id: k3
       name: Kimi K3 (Subscription)
+      # The Kimi coding endpoint speaks both protocols: OpenAI at
+      # /coding/v1/chat/completions and Anthropic at /coding/v1/messages. Route
+      # through the Anthropic surface (what Claude Code uses) because its tool
+      # schema validation matches MiniMax's; the OpenAI surface rejects tool
+      # schemas MiniMax accepts ("... is not a valid json schema" on default).
+      compatibility: anthropic
       base_url: https://api.kimi.com/coding/v1
       headers:
         HTTP-Referer: https://plexon.ai
