@@ -45,13 +45,18 @@ models:
       # plain "k3" ("k3[1m]" is a Claude Code env-var-only 1M-context alias).
       wire_id: k3
       name: Kimi K3 (Subscription)
-      # The Kimi coding endpoint speaks both protocols: OpenAI at
-      # /coding/v1/chat/completions and Anthropic at /coding/v1/messages. Route
-      # through the Anthropic surface (what Claude Code uses) because its tool
-      # schema validation matches MiniMax's; the OpenAI surface rejects tool
-      # schemas MiniMax accepts ("... is not a valid json schema" on default).
+      # Anthropic-compat, on purpose: the premium->pro fallback re-resolves an
+      # exhausted Kimi to MiniMax M3, which is Anthropic-based, so keeping Kimi
+      # on the SAME protocol keeps a session coherent across the fallback (an
+      # OpenAI-shaped history served to an Anthropic model breaks continuity).
+      # Routes to /coding/v1/messages. Auth is Authorization: Bearer (per
+      # platform.kimi.ai claude-code-kimi = ANTHROPIC_AUTH_TOKEN); the anthropic
+      # client's setAnthropicAuth sends it (alongside x-api-key) for compat
+      # gateways. Sending x-api-key alone returned a 200 with an empty stream.
       compatibility: anthropic
-      base_url: https://api.kimi.com/coding/v1
+      # OpenAI-compatible Base URL:
+      # base_url: https://api.kimi.com/coding/v1
+      base_url: https://api.moonshot.ai/anthropic
       headers:
         HTTP-Referer: https://plexon.ai
         User-Agent: Kilo-Code/4.110.0
