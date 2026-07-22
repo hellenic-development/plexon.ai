@@ -3,7 +3,7 @@ display_name: Z.AI
 compatibility: openai
 requires_api_key: true
 base_url: https://api.z.ai/api/paas/v4
-default_model: glm-5.1 (Subscription)
+default_model: glm-5.2 (Subscription)
 models:
     - id: cogvideox-3
       name: CogVideoX 3
@@ -24,6 +24,30 @@ models:
       generation_type: sync
       per_unit_cost: 0.015
       pricing: {}
+    - id: glm-5.2
+      name: GLM 5.2
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      pricing:
+        input: 1.4
+        output: 4.4
+        cache_read: 0.26
+    - id: glm-5.2 (Subscription)
+      name: GLM 5.2 (Subscription)
+      base_url: https://api.z.ai/api/coding/paas/v4
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      default_selection: true
+      pricing:
+        is_subscription: true
     - id: glm-5-turbo
       name: GLM 5 Turbo
       limit: 202752
@@ -69,7 +93,6 @@ models:
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
-      default_selection: true
       pricing:
         is_subscription: true
     - id: glm-5v-turbo
@@ -114,6 +137,8 @@ sync:
     pinned:
         - cogvideox-3
         - cogview-4-250304
+        - glm-5.2
+        - glm-5.2 (Subscription)
         - glm-5-turbo
         - glm-5-turbo (Subscription)
         - glm-5.1
