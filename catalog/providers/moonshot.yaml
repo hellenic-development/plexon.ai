@@ -66,7 +66,12 @@ models:
         X-Title: Plexon AI
       # 1M context window (Allegretto plan and above; plain "k3" grants the
       # plan's full window on the API, the "[1m]" suffix is Claude-Code-only).
-      limit: 1048576
+      # Held at a round 1,000,000 to match MiniMax M3 exactly. The two back the
+      # premium and pro text cells and the premium->pro fallback re-resolves
+      # between them mid-session, so identical windows mean a conversation that
+      # fits one always fits the other: a downgrade can never land on a
+      # context-length rejection.
+      limit: 1000000
       reserved_tokens: 32768
       supports_streaming: true
       supports_image: true

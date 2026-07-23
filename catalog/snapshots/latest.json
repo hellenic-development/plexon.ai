@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-22T16:48:16Z",
+  "generated": "2026-07-23T14:46:19Z",
   "providers": [
     {
       "name": "anthropic",
@@ -549,7 +549,7 @@
             "X-Stainless-Runtime-Version": "v22.19.0",
             "X-Title": "Plexon AI"
           },
-          "limit": 1048576,
+          "limit": 1000000,
           "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_image": true,
