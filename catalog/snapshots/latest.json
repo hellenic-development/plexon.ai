@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-23T14:46:19Z",
+  "generated": "2026-07-24T16:43:19Z",
   "providers": [
     {
       "name": "anthropic",
@@ -453,6 +453,8 @@
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
           "supports_reasoning": true,
           "supports_adaptive_thinking": true,
           "supports_include_reasoning": true,
@@ -473,6 +475,8 @@
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
           "supports_reasoning": true,
           "supports_adaptive_thinking": true,
           "supports_include_reasoning": true,

@@ -304,6 +304,22 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	if local.Name != "" {
 		result.Name = local.Name
 	}
+	// models.dev has no concept of these three, so upstream can only ever blank
+	// them. They are load-bearing: WireID pins the exact upstream model string,
+	// Compatibility overrides the wire protocol (the Kimi coding plan's
+	// anthropic surface), and FallbackModel names the safety-classifier retry
+	// target. Without these copies a pinned model that upstream also happens to
+	// list (e.g. once models.dev indexes minimax-m3 or kimi-k3) silently loses
+	// them on the next weekly sync.
+	if local.WireID != "" {
+		result.WireID = local.WireID
+	}
+	if local.Compatibility != "" {
+		result.Compatibility = local.Compatibility
+	}
+	if local.FallbackModel != "" {
+		result.FallbackModel = local.FallbackModel
+	}
 	if local.BaseURL != "" {
 		result.BaseURL = local.BaseURL
 	}

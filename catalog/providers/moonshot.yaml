@@ -82,6 +82,7 @@ models:
 sync:
     family_strip: -k\d+(?:\.\d+)?
     pinned:
+        - kimi-for-coding
         - kimi-k3
         - kimi-k3-coding-plan
     excluded:
