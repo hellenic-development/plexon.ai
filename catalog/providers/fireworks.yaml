@@ -1,0 +1,240 @@
+name: fireworks
+display_name: Fireworks AI
+# Fireworks serves BOTH protocols off one host: /chat/completions (OpenAI) and
+# /messages (Anthropic). We take the Anthropic surface because the server builds
+# its URL as `pricingModel.BaseURL + "/messages"` (server/internal/api/anthropic.go),
+# and because that path honours Anthropic `cache_control` breakpoints with a 5m/1h
+# ephemeral TTL. Plexon's prompt is 4 blocks with 3 cache breakpoints, so the
+# OpenAI surface would silently drop all of them: openai.go's isPromptCachingProvider
+# allowlists only anthropic / kimi-k2 / openrouter, and tool schemas would also go
+# through sanitizeOpenAIToolParams for no reason. Fireworks hardened /messages for
+# Claude Code traffic, which sends the same shape Plexon does.
+#
+# Caveat that makes the three "supports_*" omissions below load-bearing: the
+# Fireworks Anthropic schema is additionalProperties:false, so an unsupported body
+# field is a hard 400 rather than a silent ignore.
+compatibility: anthropic
+requires_api_key: true
+base_url: https://api.fireworks.ai/inference/v1
+# GLM is Fireworks' own agentic-coding default: their FireConnect CLI points Claude
+# Code's primary model slots at GLM routers and its subagent slot at deepseek-v4-flash.
+default_model: glm-5p2
+# supports_web_search stays OFF: Fireworks' Anthropic surface rejects server-side
+# tools (web search, code execution, memory).
+#
+# Every entry below deliberately omits three flags that would each produce a 400:
+#   supports_tool_search       — no server-side tool_search helper on this surface.
+#   supports_adaptive_thinking — Fireworks has no thinking.type:"adaptive"; leaving
+#                                this on makes resolveReasoningEffort default compat
+#                                gateways to "adaptive".
+#   supports_*_generation      — Fireworks deprecated image and audio inference on
+#                                2026-06-10.
+#
+# Those omissions have to survive the weekly models.dev sync, which is why this file
+# is shaped the way it is. The sync maps models.dev's `tool_call` onto our
+# SupportsToolSearch (scripts/sync_models_dev convertUpstream), every Fireworks model
+# reports tool_call:true, and preferLocal can only ever force a boolean ON — never
+# off. So an entry the sync can reach would get supports_tool_search:true and start
+# 400ing on every request.
+#
+# Two things keep that from happening. Today the sync skips this provider outright,
+# because models.dev keys it `fireworks-ai` while we call it `fireworks`, so the name
+# lookup misses (verified: `sync_models_dev -dry-run` reports "keep fireworks (not in
+# models.dev — leaving untouched)"). Do not rename this provider to close that gap.
+# Second, defence in depth if anyone ever does: ids here are short and carry wire_id
+# instead of using the upstream `accounts/fireworks/...` path, so even on a name
+# match `policy: manual` filters upstream's long ids out and these entries pass
+# through untouched. Same reason minimax.yaml is shaped this way.
+#
+# reserved_tokens is a chosen output cap, not the model's ceiling: min(max output,
+# 131072). Limits and rates below are Fireworks' published standard-tier serverless
+# figures. cache_write always equals input because Fireworks applies no cache-write
+# surcharge (caching is automatic longest-prefix, not an explicit write), and stating
+# it keeps the cost UI from inventing a premium.
+models:
+    - id: glm-5p2
+      wire_id: accounts/fireworks/models/glm-5p2
+      name: GLM 5.2
+      limit: 1048575
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      default_selection: true
+      release_date: 2026-06-16
+      pricing:
+        input: 1.4
+        output: 4.4
+        cache_write: 1.4
+        cache_read: 0.14
+    - id: glm-5p2-fast
+      # "Fast" is a separate high-throughput serving path (100+ tok/s), reachable
+      # only via its own router id — unlike the Priority tier, which needs a
+      # `service_tier` body field that the Anthropic surface has no slot for.
+      wire_id: accounts/fireworks/routers/glm-5p2-fast
+      name: GLM 5.2 Fast
+      limit: 1048575
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-06-26
+      pricing:
+        input: 2.1
+        output: 6.6
+        cache_write: 2.1
+        cache_read: 0.21
+    - id: glm-5p1
+      wire_id: accounts/fireworks/models/glm-5p1
+      name: GLM 5.1
+      limit: 202800
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-04-01
+      pricing:
+        input: 1.4
+        output: 4.4
+        cache_write: 1.4
+        cache_read: 0.26
+    - id: deepseek-v4-pro
+      wire_id: accounts/fireworks/models/deepseek-v4-pro
+      name: DeepSeek V4 Pro
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-04-24
+      pricing:
+        input: 1.74
+        output: 3.48
+        cache_write: 1.74
+        cache_read: 0.145
+    - id: deepseek-v4-flash
+      # The cheapest capable entry in the catalog by a wide margin, and the model
+      # Fireworks itself assigns to subagent traffic.
+      wire_id: accounts/fireworks/models/deepseek-v4-flash
+      name: DeepSeek V4 Flash
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-04-24
+      pricing:
+        input: 0.14
+        output: 0.28
+        cache_write: 0.14
+        cache_read: 0.028
+    - id: kimi-k2p7-code
+      wire_id: accounts/fireworks/models/kimi-k2p7-code
+      name: Kimi K2.7 Code
+      limit: 262000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-06-12
+      pricing:
+        input: 0.95
+        output: 4
+        cache_write: 0.95
+        cache_read: 0.19
+    - id: kimi-k2p7-code-fast
+      wire_id: accounts/fireworks/routers/kimi-k2p7-code-fast
+      name: Kimi K2.7 Code Fast
+      limit: 262000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-06-12
+      pricing:
+        input: 1.9
+        output: 8
+        cache_write: 1.9
+        cache_read: 0.38
+    - id: kimi-k2p6
+      wire_id: accounts/fireworks/models/kimi-k2p6
+      name: Kimi K2.6
+      limit: 262000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-04-17
+      pricing:
+        input: 0.95
+        output: 4
+        cache_write: 0.95
+        cache_read: 0.16
+    - id: qwen3p7-plus
+      wire_id: accounts/fireworks/models/qwen3p7-plus
+      name: Qwen 3.7 Plus
+      limit: 262144
+      # 65536 is Qwen 3.7 Plus's actual output ceiling, below the 131072 cap.
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2026-06-12
+      pricing:
+        input: 0.4
+        output: 1.6
+        cache_write: 0.4
+        cache_read: 0.08
+    - id: gpt-oss-120b
+      wire_id: accounts/fireworks/models/gpt-oss-120b
+      name: GPT OSS 120B
+      limit: 131072
+      # 32768 is this model's actual output ceiling.
+      reserved_tokens: 32768
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: 2025-08-05
+      pricing:
+        input: 0.15
+        output: 0.6
+        cache_write: 0.15
+        cache_read: 0.015
+sync:
+    # manual + short ids is what keeps the weekly sync from flipping
+    # supports_tool_search on — see the header comment.
+    policy: manual
+    pinned:
+        - glm-5p2
+        - glm-5p2-fast
+        - glm-5p1
+        - deepseek-v4-pro
+        - deepseek-v4-flash
+        - kimi-k2p7-code
+        - kimi-k2p7-code-fast
+        - kimi-k2p6
+        - qwen3p7-plus
+        - gpt-oss-120b
+    # Fireworks also serves MiniMax M2.7 / M3 at roughly a quarter of MiniMax's own
+    # list price, but Plexon already ships a first-party `minimax` provider whose
+    # models back the managed Plexon tier and are pinned in catalog/critical.go.
+    # Listing them twice under two providers would be confusing at best, so they
+    # stay out. gpt-oss-20b is too small to drive an agent loop.
+    excluded:
+        - accounts/fireworks/models/minimax-m2p7
+        - accounts/fireworks/models/minimax-m3
+        - accounts/fireworks/models/gpt-oss-20b

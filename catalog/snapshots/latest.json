@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-24T16:43:19Z",
+  "generated": "2026-07-25T08:41:27Z",
   "providers": [
     {
       "name": "anthropic",
@@ -158,6 +158,201 @@
           "supports_tool_search": true,
           "pricing": {
             "is_subscription": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "fireworks",
+      "display_name": "Fireworks AI",
+      "compatibility": "anthropic",
+      "requires_api_key": true,
+      "base_url": "https://api.fireworks.ai/inference/v1",
+      "default_model": "glm-5p2",
+      "models": [
+        {
+          "id": "glm-5p2",
+          "wire_id": "accounts/fireworks/models/glm-5p2",
+          "name": "GLM 5.2",
+          "limit": 1048575,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "default_selection": true,
+          "release_date": "2026-06-16",
+          "pricing": {
+            "input": 1.4,
+            "output": 4.4,
+            "cache_write": 1.4,
+            "cache_read": 0.14
+          }
+        },
+        {
+          "id": "glm-5p2-fast",
+          "wire_id": "accounts/fireworks/routers/glm-5p2-fast",
+          "name": "GLM 5.2 Fast",
+          "limit": 1048575,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-26",
+          "pricing": {
+            "input": 2.1,
+            "output": 6.6,
+            "cache_write": 2.1,
+            "cache_read": 0.21
+          }
+        },
+        {
+          "id": "glm-5p1",
+          "wire_id": "accounts/fireworks/models/glm-5p1",
+          "name": "GLM 5.1",
+          "limit": 202800,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-01",
+          "pricing": {
+            "input": 1.4,
+            "output": 4.4,
+            "cache_write": 1.4,
+            "cache_read": 0.26
+          }
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "wire_id": "accounts/fireworks/models/deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "limit": 1000000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-24",
+          "pricing": {
+            "input": 1.74,
+            "output": 3.48,
+            "cache_write": 1.74,
+            "cache_read": 0.145
+          }
+        },
+        {
+          "id": "deepseek-v4-flash",
+          "wire_id": "accounts/fireworks/models/deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "limit": 1000000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-24",
+          "pricing": {
+            "input": 0.14,
+            "output": 0.28,
+            "cache_write": 0.14,
+            "cache_read": 0.028
+          }
+        },
+        {
+          "id": "kimi-k2p7-code",
+          "wire_id": "accounts/fireworks/models/kimi-k2p7-code",
+          "name": "Kimi K2.7 Code",
+          "limit": 262000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-12",
+          "pricing": {
+            "input": 0.95,
+            "output": 4,
+            "cache_write": 0.95,
+            "cache_read": 0.19
+          }
+        },
+        {
+          "id": "kimi-k2p7-code-fast",
+          "wire_id": "accounts/fireworks/routers/kimi-k2p7-code-fast",
+          "name": "Kimi K2.7 Code Fast",
+          "limit": 262000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-12",
+          "pricing": {
+            "input": 1.9,
+            "output": 8,
+            "cache_write": 1.9,
+            "cache_read": 0.38
+          }
+        },
+        {
+          "id": "kimi-k2p6",
+          "wire_id": "accounts/fireworks/models/kimi-k2p6",
+          "name": "Kimi K2.6",
+          "limit": 262000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-04-17",
+          "pricing": {
+            "input": 0.95,
+            "output": 4,
+            "cache_write": 0.95,
+            "cache_read": 0.16
+          }
+        },
+        {
+          "id": "qwen3p7-plus",
+          "wire_id": "accounts/fireworks/models/qwen3p7-plus",
+          "name": "Qwen 3.7 Plus",
+          "limit": 262144,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-12",
+          "pricing": {
+            "input": 0.4,
+            "output": 1.6,
+            "cache_write": 0.4,
+            "cache_read": 0.08
+          }
+        },
+        {
+          "id": "gpt-oss-120b",
+          "wire_id": "accounts/fireworks/models/gpt-oss-120b",
+          "name": "GPT OSS 120B",
+          "limit": 131072,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2025-08-05",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6,
+            "cache_write": 0.15,
+            "cache_read": 0.015
           }
         }
       ]
