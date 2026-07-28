@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-28T19:45:53Z",
+  "generated": "2026-07-28T20:35:30Z",
   "providers": [
     {
       "name": "anthropic",
@@ -678,6 +678,50 @@
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,
           "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "music-3.0",
+          "name": "MiniMax Music 3.0",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
+          "generation_type": "sync",
+          "per_unit_cost": 0.15,
+          "pricing": {}
+        },
+        {
+          "id": "music-3.0-coding-plan",
+          "wire_id": "music-3.0",
+          "name": "MiniMax Music 3.0 (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "music-cover",
+          "name": "MiniMax Music Cover",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
+          "generation_type": "sync",
+          "per_unit_cost": 0.15,
+          "pricing": {}
+        },
+        {
+          "id": "music-cover-coding-plan",
+          "wire_id": "music-cover",
+          "name": "MiniMax Music Cover (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
           "generation_type": "sync",
           "pricing": {
             "is_subscription": true
@@ -6210,6 +6254,16 @@
           "name": "Plexon Voice",
           "supports_streaming": true,
           "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "plexon-1.0-music",
+          "name": "Plexon Music",
+          "supports_streaming": true,
+          "supports_music_generation": true,
           "generation_type": "sync",
           "pricing": {
             "is_subscription": true

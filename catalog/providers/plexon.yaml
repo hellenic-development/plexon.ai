@@ -45,3 +45,14 @@ models:
       generation_type: sync
       pricing:
         is_subscription: true
+    - id: plexon-1.0-music
+      # The virtual model the plexon_generate_music tool sends to
+      # /api/v1/music. Never selectable in the chat model picker.
+      name: Plexon Music
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true

@@ -69,6 +69,10 @@ type CatalogModel struct {
 	// Deliberately not part of the client's IsGenerationModel(): speech is
 	// served by the dedicated /api/v1/tts route, never the /chat generation fork.
 	SupportsSpeechGeneration  bool              `json:"supports_speech_generation,omitempty" yaml:"supports_speech_generation,omitempty"`
+	// SupportsMusicGeneration marks music models (e.g. MiniMax Music 3.0).
+	// Deliberately not part of the client's IsGenerationModel(), for the same
+	// reason as speech: music is served by the dedicated /api/v1/music route.
+	SupportsMusicGeneration   bool              `json:"supports_music_generation,omitempty" yaml:"supports_music_generation,omitempty"`
 	GenerationType            string            `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
 	PerUnitCost               float64           `json:"per_unit_cost,omitempty" yaml:"per_unit_cost,omitempty"`
 	DefaultSelection          bool              `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`

@@ -106,6 +106,60 @@ models:
       generation_type: sync
       pricing:
         is_subscription: true
+    - id: music-3.0
+      # MiniMax Music (the Plexon Music backing family). Text-to-song: a style
+      # prompt plus optional lyrics with [verse]/[chorus] tags. Same plain /v1
+      # base as image/video/speech, not /anthropic/v1.
+      name: MiniMax Music 3.0
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      # Flat rate per song up to five minutes.
+      per_unit_cost: 0.15
+      pricing: {}
+    - id: music-3.0-coding-plan
+      # See the wire_id comment on hailuo-2.3-coding-plan above. Verified live
+      # against a real Token Plan key on 2026-07-29: music-3.0 is accepted (the
+      # free tier is a separate "music-3.0-free" id we deliberately do not carry),
+      # and the Token Plan bills music from the same shared quota as text, image
+      # and speech.
+      wire_id: music-3.0
+      name: MiniMax Music 3.0 (Subscription)
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
+    - id: music-cover
+      # Cover generation: re-sings a reference recording in a new style. The
+      # server swaps to this wire id when a request carries reference audio, so
+      # it is never mapped as its own admin task.
+      name: MiniMax Music Cover
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      per_unit_cost: 0.15
+      pricing: {}
+    - id: music-cover-coding-plan
+      wire_id: music-cover
+      name: MiniMax Music Cover (Subscription)
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
     - id: minimax-m3
       # Frontier multimodal coding model with a 1M context window. M3 has no
       # separate "-highspeed" variant (those stop at M2.x). wire_id pins the
@@ -184,6 +238,10 @@ sync:
         - speech-2.8-turbo-coding-plan
         - speech-2.8-hd
         - speech-2.8-hd-coding-plan
+        - music-3.0
+        - music-3.0-coding-plan
+        - music-cover
+        - music-cover-coding-plan
         - minimax-m3
         - minimax-m3-coding-plan
     excluded:

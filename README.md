@@ -103,7 +103,7 @@ The full list lives at [plexon.ai/features](https://plexon.ai/features/).
 
 ## Models and providers
 
-**The Plexon model.** The [Plexon Provider](https://plexon.ai/features/plexon-provider/) is the one-subscription path: sign in and you get **Plexon 1.0** for chat and coding (1M-token context), **Plexon 1.0 Image**, and **Plexon 1.0 Video**, with automatic model routing, key management, and rate-limit recovery handled for you.
+**The Plexon model.** The [Plexon Provider](https://plexon.ai/features/plexon-provider/) is the one-subscription path: sign in and you get **Plexon 1.0** for chat and coding (1M-token context), **Plexon 1.0 Image**, **Plexon 1.0 Video**, **Plexon Voice**, and **Plexon Music**, with automatic model routing, key management, and rate-limit recovery handled for you.
 
 **Bring your own provider.** Plexon is also compatible with the current flagship models through your own API keys:
 
