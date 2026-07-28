@@ -65,6 +65,10 @@ type CatalogModel struct {
 	SupportsCustomTemperature bool              `json:"supports_custom_temperature,omitempty" yaml:"supports_custom_temperature,omitempty"`
 	SupportsImageGeneration   bool              `json:"supports_image_generation,omitempty" yaml:"supports_image_generation,omitempty"`
 	SupportsVideoGeneration   bool              `json:"supports_video_generation,omitempty" yaml:"supports_video_generation,omitempty"`
+	// SupportsSpeechGeneration marks text-to-speech models (e.g. MiniMax T2A).
+	// Deliberately not part of the client's IsGenerationModel(): speech is
+	// served by the dedicated /api/v1/tts route, never the /chat generation fork.
+	SupportsSpeechGeneration  bool              `json:"supports_speech_generation,omitempty" yaml:"supports_speech_generation,omitempty"`
 	GenerationType            string            `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
 	PerUnitCost               float64           `json:"per_unit_cost,omitempty" yaml:"per_unit_cost,omitempty"`
 	DefaultSelection          bool              `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`

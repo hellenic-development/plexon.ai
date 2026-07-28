@@ -56,6 +56,54 @@ models:
       generation_type: sync
       pricing:
         is_subscription: true
+    - id: speech-2.8-turbo
+      # MiniMax T2A text-to-speech (the Plexon Voice backing family). Speech
+      # lives on the plain /v1 base like image/video, not /anthropic/v1.
+      name: MiniMax Speech 2.8 Turbo
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+      pricing: {}
+    - id: speech-2.8-turbo-coding-plan
+      # See the wire_id comment on hailuo-2.3-coding-plan above. One more trap
+      # is speech-specific: Token Plan (coding plan) keys REJECT pre-2.8 speech
+      # models with error 2056 "Token Plan Hs_max (0/0 used)", so the backing
+      # must stay on the 2.8 generation or newer.
+      wire_id: speech-2.8-turbo
+      name: MiniMax Speech 2.8 Turbo (Subscription)
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
+    - id: speech-2.8-hd
+      name: MiniMax Speech 2.8 HD
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+      pricing: {}
+    - id: speech-2.8-hd-coding-plan
+      # Quality sibling of the turbo plan entry: same wire_id rule, same 2.8+
+      # Token Plan requirement. Admin-selectable from the Speech candidates.
+      wire_id: speech-2.8-hd
+      name: MiniMax Speech 2.8 HD (Subscription)
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
     - id: minimax-m3
       # Frontier multimodal coding model with a 1M context window. M3 has no
       # separate "-highspeed" variant (those stop at M2.x). wire_id pins the
@@ -130,6 +178,10 @@ sync:
         - hailuo-2.3-coding-plan
         - image-01
         - image-01-coding-plan
+        - speech-2.8-turbo
+        - speech-2.8-turbo-coding-plan
+        - speech-2.8-hd
+        - speech-2.8-hd-coding-plan
         - minimax-m3
         - minimax-m3-coding-plan
     excluded:

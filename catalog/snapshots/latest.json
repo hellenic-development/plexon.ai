@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-25T08:41:27Z",
+  "generated": "2026-07-28T19:45:53Z",
   "providers": [
     {
       "name": "anthropic",
@@ -636,6 +636,48 @@
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,
           "supports_image_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "speech-2.8-turbo",
+          "name": "MiniMax Speech 2.8 Turbo",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {}
+        },
+        {
+          "id": "speech-2.8-turbo-coding-plan",
+          "wire_id": "speech-2.8-turbo",
+          "name": "MiniMax Speech 2.8 Turbo (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "speech-2.8-hd",
+          "name": "MiniMax Speech 2.8 HD",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {}
+        },
+        {
+          "id": "speech-2.8-hd-coding-plan",
+          "wire_id": "speech-2.8-hd",
+          "name": "MiniMax Speech 2.8 HD (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
           "generation_type": "sync",
           "pricing": {
             "is_subscription": true
@@ -6159,6 +6201,16 @@
           "supports_image": true,
           "supports_video_generation": true,
           "generation_type": "async",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "plexon-1.0-speech",
+          "name": "Plexon Voice",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
           "pricing": {
             "is_subscription": true
           }
