@@ -197,6 +197,17 @@ models:
       # That's the irreducible shape of a tool-search helper, so deferred tooling
       # is not usable via this endpoint. (M3's OpenAI-compatible endpoint documents
       # {"type":"tool_search"}, so a future option is routing M3 through that.)
+      #
+      # RE-VERIFIED LIVE 2026-07-29, still rejected. Two identical requests to
+      # https://api.minimax.io/anthropic/v1/messages (model MiniMax-M3): with one
+      # ordinary function tool -> HTTP 200; adding {"type":"tool_search"} to the
+      # same array -> HTTP 400 "invalid params, function name is empty (2013)".
+      #
+      # The distinction that keeps making this look wrong: M3 THE MODEL does
+      # support tool search, and MiniMax documents {"type":"tool_search"} on the
+      # OpenAI-compatible endpoint. This flag describes the WIRE PATH, not the
+      # model. Re-run that two-request probe before flipping it — turning it on
+      # while the gateway still rejects makes every M3 request 400.
       pricing:
         # Pay-as-you-go standard tier. cache_write is unpublished by MiniMax;
         # 1.5 mirrors the M2.7 1.25x-input ratio (0.3 -> 0.375). Confirm later.
@@ -224,7 +235,12 @@ models:
       supports_image: true
       supports_video: true
       # Same wire model + endpoint as minimax-m3 above: tool_search is rejected
-      # with 2013, so supports_tool_search stays OFF here too.
+      # with 2013, so supports_tool_search stays OFF here too. Re-verified live
+      # 2026-07-29 — see the probe recorded on minimax-m3.
+      #
+      # This is the Plexon pro text backing, so it is also what a premium session
+      # falls back to. Both tiers therefore run Plexon's own managed deferral
+      # rather than a provider-side tool search.
       default_selection: true
       pricing:
         is_subscription: true
