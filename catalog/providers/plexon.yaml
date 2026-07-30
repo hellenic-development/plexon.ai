@@ -4,6 +4,26 @@ compatibility: anthropic
 default_model: plexon-1.0
 models:
     - id: plexon-1.0
+      # Tool deferral OFF for the virtual model, which means every tier.
+      #
+      # Measured on the pro/fallback backing (MiniMax M3): asked "Write me a song
+      # about a lighthouse keeper who never sees a ship. Sad folk.", M3 under
+      # managed deferral wrote lyrics as text and never called
+      # plexon_tool_search — its own reasoning read "No need for tools,
+      # delegation, or planning." The identical prompt with every definition on
+      # the wire called plexon_generate_music immediately. A one-line summary in
+      # the on-demand block is not enough for that model to connect a plain
+      # request to a specific tool.
+      #
+      # It sits on the VIRTUAL model rather than on minimax-m3-coding-plan
+      # because the client picks plexon-1.0 and the server resolves the tier — the
+      # client never sees which backing will serve, so a pin on the backing does
+      # not reach a Plexon session. That also means this hits PREMIUM (Kimi K3),
+      # which reached its tool in 12 of 12 live turns under managed and pays
+      # ~39,000 tokens a turn here for nothing. That is the accepted cost of
+      # making the pro tier correct; per-tier needs the server to report the
+      # resolved backing to the client.
+      tool_deferral: "off"
       name: Plexon 1.0
       limit: 1000000
       # M3 (the model Plexon resolves to) has a 1M context. 128000 output
