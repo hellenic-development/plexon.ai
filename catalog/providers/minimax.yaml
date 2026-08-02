@@ -6,6 +6,15 @@ base_url: https://api.minimax.io/anthropic/v1
 default_model: minimax-m3-coding-plan
 models:
     - id: hailuo-2.3
+      # Catalog ids and MiniMax wire ids are not the same vocabulary, and video
+      # is the family where they diverge most. The image, speech and music
+      # families take the bare id ("image-01", "music-3.0"), but /v1
+      # video_generation rejects both "hailuo-2.3" and "Hailuo-2.3" with
+      # "incorrect model param input" and accepts ONLY the fully qualified
+      # "MiniMax-Hailuo-2.3". Verified live 2026-07-31; this entry previously
+      # carried no wire_id at all and therefore sent its catalog id, which the
+      # API refused. PricingModel.APIModel() returns wire_id when set.
+      wire_id: MiniMax-Hailuo-2.3
       name: MiniMax Hailuo-2.3
       base_url: https://api.minimax.io/v1
       limit: 0
@@ -14,14 +23,20 @@ models:
       supports_image: true
       supports_video_generation: true
       generation_type: async
+      # /v1 video_generation has no ratio field at all, but the clip still comes
+      # out in a shape: the opening frame's when there is one, 16:9 when there is
+      # none. Declaring it is what lets the server accept "render this 16:9" as
+      # an already-satisfied preference rather than refusing it and costing a
+      # round trip. Empty would mean unmeasured, so never copy this onto another
+      # model without measuring that model's output.
+      implied_aspect_ratio: "16:9"
       per_unit_cost: 0.21
       pricing: {}
     - id: hailuo-2.3-coding-plan
       # Coding Plan entries carry an internal "-coding-plan" suffix for key-pool
-      # labelling, but the upstream MiniMax API only knows the bare model id.
-      # PricingModel.APIModel() returns wire_id when set, so the actual upstream
-      # request body's `model` field is "hailuo-2.3", not the catalog id.
-      wire_id: hailuo-2.3
+      # labelling; the wire id strips it. See the hailuo-2.3 comment above for
+      # why video's wire id is the qualified name rather than the bare one.
+      wire_id: MiniMax-Hailuo-2.3
       name: MiniMax Hailuo-2.3 (Subscription)
       base_url: https://api.minimax.io/v1
       limit: 0
@@ -30,6 +45,53 @@ models:
       supports_image: true
       supports_video_generation: true
       generation_type: async
+      # See the hailuo-2.3 comment above: the shape is measured, not assumed.
+      implied_aspect_ratio: "16:9"
+      pricing:
+        is_subscription: true
+    - id: hailuo-3
+      # Hailuo 3.0, branded "MiniMax H3": 2K at 24fps, 4-15s, native audio,
+      # first/last frame and image/video/audio reference input.
+      #
+      # The id keeps "hailuo" on purpose. quotawatch.minimaxScope routes a
+      # backing to the "video" quota family by matching "hailuo" or "video" in
+      # the model id, so an id of "h3" would silently meter against "general".
+      #
+      # "MiniMax-H3" is the only accepted wire string — h3, hailuo-3,
+      # MiniMax-Hailuo-03 and MiniMax-Hailuo-3.0 are all refused (verified live
+      # 2026-07-31). It speaks a different API surface from 2.3 and the two
+      # endpoints reject each other's models, hence generation_api + the /v2
+      # base URL.
+      wire_id: MiniMax-H3
+      name: MiniMax H3 (Hailuo 3.0)
+      base_url: https://api.minimax.io/v2
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      generation_api: minimax-v2
+      # H3 bills per second of output (~$0.13/s at 2K), so this flat per-video
+      # field can only approximate it. Priced here for the 6s default.
+      per_unit_cost: 0.78
+      pricing: {}
+    - id: hailuo-3-coding-plan
+      # Present so the Plexon Video backing can be flipped to H3 as admin data
+      # the day MiniMax opens it to the plan. It is NOT the compiled backing
+      # yet: as of 2026-07-31 a coding-plan key answers "TokenPlan or Credit
+      # does not currently support MiniMax-H3 series models", and
+      # /v1/coding_plan/remains still meters only the 2.x video family.
+      wire_id: MiniMax-H3
+      name: MiniMax H3 (Subscription)
+      base_url: https://api.minimax.io/v2
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      generation_api: minimax-v2
       pricing:
         is_subscription: true
     - id: image-01
@@ -43,9 +105,9 @@ models:
       per_unit_cost: 0.02
       pricing: {}
     - id: image-01-coding-plan
-      # See the wire_id comment on hailuo-2.3-coding-plan above — same reason
-      # applies here. MiniMax rejects "image-01-coding-plan" with "unsupported
-      # model"; the actual upstream id is just "image-01".
+      # Unlike video, the image family DOES take the bare id: MiniMax rejects
+      # "image-01-coding-plan" with "unsupported model" and accepts "image-01"
+      # (and rejects "MiniMax-Image-01"). Verified live 2026-07-31.
       wire_id: image-01
       name: MiniMax Image-01 (Subscription)
       base_url: https://api.minimax.io/v1
@@ -267,6 +329,8 @@ sync:
     pinned:
         - hailuo-2.3
         - hailuo-2.3-coding-plan
+        - hailuo-3
+        - hailuo-3-coding-plan
         - image-01
         - image-01-coding-plan
         - speech-2.8-turbo

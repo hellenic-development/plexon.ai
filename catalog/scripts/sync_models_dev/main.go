@@ -304,13 +304,15 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	if local.Name != "" {
 		result.Name = local.Name
 	}
-	// models.dev has no concept of these three, so upstream can only ever blank
+	// models.dev has no concept of any of these, so upstream can only ever blank
 	// them. They are load-bearing: WireID pins the exact upstream model string,
 	// Compatibility overrides the wire protocol (the Kimi coding plan's
-	// anthropic surface), and FallbackModel names the safety-classifier retry
-	// target. Without these copies a pinned model that upstream also happens to
-	// list (e.g. once models.dev indexes minimax-m3 or kimi-k3) silently loses
-	// them on the next weekly sync.
+	// anthropic surface), FallbackModel names the safety-classifier retry
+	// target, GenerationAPI picks between a vendor's incompatible generation
+	// surfaces (MiniMax /v1 vs /v2 video), and ToolDeferral pins a model's tool
+	// behaviour. Without these copies a pinned model that upstream also happens
+	// to list (e.g. once models.dev indexes minimax-m3 or kimi-k3) silently
+	// loses them on the next weekly sync.
 	if local.WireID != "" {
 		result.WireID = local.WireID
 	}
@@ -319,6 +321,12 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	}
 	if local.FallbackModel != "" {
 		result.FallbackModel = local.FallbackModel
+	}
+	if local.GenerationAPI != "" {
+		result.GenerationAPI = local.GenerationAPI
+	}
+	if local.ToolDeferral != "" {
+		result.ToolDeferral = local.ToolDeferral
 	}
 	if local.BaseURL != "" {
 		result.BaseURL = local.BaseURL
@@ -361,6 +369,12 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	}
 	if local.SupportsVideoGeneration {
 		result.SupportsVideoGeneration = true
+	}
+	if local.SupportsSpeechGeneration {
+		result.SupportsSpeechGeneration = true
+	}
+	if local.SupportsMusicGeneration {
+		result.SupportsMusicGeneration = true
 	}
 	if local.DefaultSelection {
 		result.DefaultSelection = true

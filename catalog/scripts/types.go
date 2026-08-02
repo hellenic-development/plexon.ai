@@ -62,6 +62,15 @@ type CatalogModel struct {
 	SupportsAdaptiveThinking  bool              `json:"supports_adaptive_thinking,omitempty" yaml:"supports_adaptive_thinking,omitempty"`
 	SupportsIncludeReasoning  bool              `json:"supports_include_reasoning,omitempty" yaml:"supports_include_reasoning,omitempty"`
 	SupportsToolSearch        bool              `json:"supports_tool_search,omitempty" yaml:"supports_tool_search,omitempty"`
+	// ToolDeferral pins how this model handles tool deferral, overriding the
+	// client's heuristic: "off", "native", "managed", or "" / "auto" to leave the
+	// decision alone. Mirrors common/catalog.CatalogModel.ToolDeferral.
+	//
+	// It was authored in providers/minimax.yaml before this field existed, and
+	// build_snapshot unmarshals with plain yaml.Unmarshal (no KnownFields), so
+	// the key was silently dropped on every rebuild. Removing it here drops the
+	// pin from the published snapshot again.
+	ToolDeferral              string            `json:"tool_deferral,omitempty" yaml:"tool_deferral,omitempty"`
 	SupportsCustomTemperature bool              `json:"supports_custom_temperature,omitempty" yaml:"supports_custom_temperature,omitempty"`
 	SupportsImageGeneration   bool              `json:"supports_image_generation,omitempty" yaml:"supports_image_generation,omitempty"`
 	SupportsVideoGeneration   bool              `json:"supports_video_generation,omitempty" yaml:"supports_video_generation,omitempty"`
@@ -74,6 +83,30 @@ type CatalogModel struct {
 	// reason as speech: music is served by the dedicated /api/v1/music route.
 	SupportsMusicGeneration   bool              `json:"supports_music_generation,omitempty" yaml:"supports_music_generation,omitempty"`
 	GenerationType            string            `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
+	// GenerationAPI names the vendor API surface this generation model speaks,
+	// when the vendor runs more than one and they are not interchangeable.
+	// Empty means the provider's original surface. "minimax-v2" is MiniMax's
+	// /v2/video_generation: a multimodal content[] array instead of a flat
+	// prompt, required resolution and duration, an Anthropic-shaped error
+	// envelope, and a task query that returns the video URL directly.
+	//
+	// The two MiniMax surfaces reject each other's models outright, so this is
+	// per-model data rather than a provider setting.
+	GenerationAPI             string            `json:"generation_api,omitempty" yaml:"generation_api,omitempty"`
+	// ImpliedAspectRatio is the frame shape a video model produces when its API
+	// takes no aspect-ratio argument at all: the shape of the opening frame when
+	// one is supplied, and this value when there is none.
+	//
+	// Empty means UNKNOWN, not 16:9. A surface with no ratio control still
+	// produces some shape, and knowing which one lets the server honour a
+	// request that names it instead of refusing a preference it already
+	// satisfies. Guessing it wrong does the opposite of a refusal: the caller is
+	// told the clip came out in a shape nobody verified. So a model earns a
+	// value here only once its output has been measured.
+	//
+	// Ignored when generation_api names a surface that takes a ratio
+	// ("minimax-v2"), because there the caller's request is honoured directly.
+	ImpliedAspectRatio        string            `json:"implied_aspect_ratio,omitempty" yaml:"implied_aspect_ratio,omitempty"`
 	PerUnitCost               float64           `json:"per_unit_cost,omitempty" yaml:"per_unit_cost,omitempty"`
 	DefaultSelection          bool              `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
 	// FallbackModel names a sibling model of the same provider that the API

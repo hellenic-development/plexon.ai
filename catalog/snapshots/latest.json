@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-07-28T20:35:30Z",
+  "generated": "2026-08-02T11:41:31Z",
   "providers": [
     {
       "name": "anthropic",
@@ -597,24 +597,54 @@
       "models": [
         {
           "id": "hailuo-2.3",
+          "wire_id": "MiniMax-Hailuo-2.3",
           "name": "MiniMax Hailuo-2.3",
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,
           "supports_image": true,
           "supports_video_generation": true,
           "generation_type": "async",
+          "implied_aspect_ratio": "16:9",
           "per_unit_cost": 0.21,
           "pricing": {}
         },
         {
           "id": "hailuo-2.3-coding-plan",
-          "wire_id": "hailuo-2.3",
+          "wire_id": "MiniMax-Hailuo-2.3",
           "name": "MiniMax Hailuo-2.3 (Subscription)",
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,
           "supports_image": true,
           "supports_video_generation": true,
           "generation_type": "async",
+          "implied_aspect_ratio": "16:9",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "hailuo-3",
+          "wire_id": "MiniMax-H3",
+          "name": "MiniMax H3 (Hailuo 3.0)",
+          "base_url": "https://api.minimax.io/v2",
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video_generation": true,
+          "generation_type": "async",
+          "generation_api": "minimax-v2",
+          "per_unit_cost": 0.78,
+          "pricing": {}
+        },
+        {
+          "id": "hailuo-3-coding-plan",
+          "wire_id": "MiniMax-H3",
+          "name": "MiniMax H3 (Subscription)",
+          "base_url": "https://api.minimax.io/v2",
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video_generation": true,
+          "generation_type": "async",
+          "generation_api": "minimax-v2",
           "pricing": {
             "is_subscription": true
           }
@@ -739,6 +769,7 @@
           "supports_reasoning": true,
           "supports_adaptive_thinking": true,
           "supports_include_reasoning": true,
+          "tool_deferral": "off",
           "supports_custom_temperature": true,
           "supports_image_generation": true,
           "supports_video_generation": true,
@@ -761,6 +792,7 @@
           "supports_reasoning": true,
           "supports_adaptive_thinking": true,
           "supports_include_reasoning": true,
+          "tool_deferral": "off",
           "supports_custom_temperature": true,
           "default_selection": true,
           "pricing": {
