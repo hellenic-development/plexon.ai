@@ -4,327 +4,6 @@ compatibility: anthropic
 requires_api_key: true
 base_url: https://api.minimax.io/anthropic/v1
 default_model: minimax-m3-coding-plan
-models:
-    - id: hailuo-2.3
-      # Catalog ids and MiniMax wire ids are not the same vocabulary, and video
-      # is the family where they diverge most. The image, speech and music
-      # families take the bare id ("image-01", "music-3.0"), but /v1
-      # video_generation rejects both "hailuo-2.3" and "Hailuo-2.3" with
-      # "incorrect model param input" and accepts ONLY the fully qualified
-      # "MiniMax-Hailuo-2.3". Verified live 2026-07-31; this entry previously
-      # carried no wire_id at all and therefore sent its catalog id, which the
-      # API refused. PricingModel.APIModel() returns wire_id when set.
-      wire_id: MiniMax-Hailuo-2.3
-      name: MiniMax Hailuo-2.3
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image: true
-      supports_video_generation: true
-      generation_type: async
-      # /v1 video_generation has no ratio field at all, but the clip still comes
-      # out in a shape: the opening frame's when there is one, 16:9 when there is
-      # none. Declaring it is what lets the server accept "render this 16:9" as
-      # an already-satisfied preference rather than refusing it and costing a
-      # round trip. Empty would mean unmeasured, so never copy this onto another
-      # model without measuring that model's output.
-      implied_aspect_ratio: "16:9"
-      per_unit_cost: 0.21
-      pricing: {}
-    - id: hailuo-2.3-coding-plan
-      # Coding Plan entries carry an internal "-coding-plan" suffix for key-pool
-      # labelling; the wire id strips it. See the hailuo-2.3 comment above for
-      # why video's wire id is the qualified name rather than the bare one.
-      wire_id: MiniMax-Hailuo-2.3
-      name: MiniMax Hailuo-2.3 (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image: true
-      supports_video_generation: true
-      generation_type: async
-      # See the hailuo-2.3 comment above: the shape is measured, not assumed.
-      implied_aspect_ratio: "16:9"
-      pricing:
-        is_subscription: true
-    - id: hailuo-3
-      # Hailuo 3.0, branded "MiniMax H3": 2K at 24fps, 4-15s, native audio,
-      # first/last frame and image/video/audio reference input.
-      #
-      # The id keeps "hailuo" on purpose. quotawatch.minimaxScope routes a
-      # backing to the "video" quota family by matching "hailuo" or "video" in
-      # the model id, so an id of "h3" would silently meter against "general".
-      #
-      # "MiniMax-H3" is the only accepted wire string — h3, hailuo-3,
-      # MiniMax-Hailuo-03 and MiniMax-Hailuo-3.0 are all refused (verified live
-      # 2026-07-31). It speaks a different API surface from 2.3 and the two
-      # endpoints reject each other's models, hence generation_api + the /v2
-      # base URL.
-      wire_id: MiniMax-H3
-      name: MiniMax H3 (Hailuo 3.0)
-      base_url: https://api.minimax.io/v2
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image: true
-      supports_video_generation: true
-      generation_type: async
-      generation_api: minimax-v2
-      # H3 bills per second of output (~$0.13/s at 2K), so this flat per-video
-      # field can only approximate it. Priced here for the 6s default.
-      per_unit_cost: 0.78
-      pricing: {}
-    - id: hailuo-3-coding-plan
-      # Present so the Plexon Video backing can be flipped to H3 as admin data
-      # the day MiniMax opens it to the plan. It is NOT the compiled backing
-      # yet: as of 2026-07-31 a coding-plan key answers "TokenPlan or Credit
-      # does not currently support MiniMax-H3 series models", and
-      # /v1/coding_plan/remains still meters only the 2.x video family.
-      wire_id: MiniMax-H3
-      name: MiniMax H3 (Subscription)
-      base_url: https://api.minimax.io/v2
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image: true
-      supports_video_generation: true
-      generation_type: async
-      generation_api: minimax-v2
-      pricing:
-        is_subscription: true
-    - id: image-01
-      name: MiniMax Image-01
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image_generation: true
-      generation_type: sync
-      per_unit_cost: 0.02
-      pricing: {}
-    - id: image-01-coding-plan
-      # Unlike video, the image family DOES take the bare id: MiniMax rejects
-      # "image-01-coding-plan" with "unsupported model" and accepts "image-01"
-      # (and rejects "MiniMax-Image-01"). Verified live 2026-07-31.
-      wire_id: image-01
-      name: MiniMax Image-01 (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_image_generation: true
-      generation_type: sync
-      pricing:
-        is_subscription: true
-    - id: speech-2.8-turbo
-      # MiniMax T2A text-to-speech (the Plexon Voice backing family). Speech
-      # lives on the plain /v1 base like image/video, not /anthropic/v1.
-      name: MiniMax Speech 2.8 Turbo
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_speech_generation: true
-      generation_type: sync
-      pricing: {}
-    - id: speech-2.8-turbo-coding-plan
-      # See the wire_id comment on hailuo-2.3-coding-plan above. One more note
-      # is speech-specific: some Token Plan tiers have rejected pre-2.8 speech
-      # models with error 2056 "Token Plan Hs_max (0/0 used)" (MiniMax-MCP
-      # issue 80; not reproduced on every account), so backings stay on the
-      # 2.8 generation or newer. speech-2.8-turbo verified live with a real
-      # Token Plan key on 2026-07-28.
-      wire_id: speech-2.8-turbo
-      name: MiniMax Speech 2.8 Turbo (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_speech_generation: true
-      generation_type: sync
-      pricing:
-        is_subscription: true
-    - id: speech-2.8-hd
-      name: MiniMax Speech 2.8 HD
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_speech_generation: true
-      generation_type: sync
-      pricing: {}
-    - id: speech-2.8-hd-coding-plan
-      # Quality sibling of the turbo plan entry: same wire_id rule, same 2.8+
-      # Token Plan requirement. Admin-selectable from the Speech candidates.
-      wire_id: speech-2.8-hd
-      name: MiniMax Speech 2.8 HD (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_speech_generation: true
-      generation_type: sync
-      pricing:
-        is_subscription: true
-    - id: music-3.0
-      # MiniMax Music (the Plexon Music backing family). Text-to-song: a style
-      # prompt plus optional lyrics with [verse]/[chorus] tags. Same plain /v1
-      # base as image/video/speech, not /anthropic/v1.
-      name: MiniMax Music 3.0
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_music_generation: true
-      generation_type: sync
-      # Flat rate per song up to five minutes.
-      per_unit_cost: 0.15
-      pricing: {}
-    - id: music-3.0-coding-plan
-      # See the wire_id comment on hailuo-2.3-coding-plan above. Verified live
-      # against a real Token Plan key on 2026-07-29: music-3.0 is accepted (the
-      # free tier is a separate "music-3.0-free" id we deliberately do not carry),
-      # and the Token Plan bills music from the same shared quota as text, image
-      # and speech.
-      wire_id: music-3.0
-      name: MiniMax Music 3.0 (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_music_generation: true
-      generation_type: sync
-      pricing:
-        is_subscription: true
-    - id: music-cover
-      # Cover generation: re-sings a reference recording in a new style. The
-      # server swaps to this wire id when a request carries reference audio, so
-      # it is never mapped as its own admin task.
-      name: MiniMax Music Cover
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_music_generation: true
-      generation_type: sync
-      per_unit_cost: 0.15
-      pricing: {}
-    - id: music-cover-coding-plan
-      wire_id: music-cover
-      name: MiniMax Music Cover (Subscription)
-      base_url: https://api.minimax.io/v1
-      limit: 0
-      reserved_tokens: 0
-      supports_streaming: true
-      supports_music_generation: true
-      generation_type: sync
-      pricing:
-        is_subscription: true
-    - id: minimax-m3
-      # Tool deferral is pinned OFF for M3, and it is a measured decision rather
-      # than a preference. Asked "Write me a song about a lighthouse keeper who
-      # never sees a ship. Sad folk.", M3 under managed deferral wrote lyrics as
-      # text and never called plexon_tool_search at all — its own reasoning read
-      # "No need for tools, delegation, or planning." The same prompt, same model,
-      # same server, with every definition on the wire called
-      # plexon_generate_music immediately. A one-line summary in the on-demand
-      # block is not enough for this model to connect a plain request to a
-      # specific tool, so it carries the full array instead: more tokens per turn,
-      # one fewer inference step to get wrong.
-      #
-      # This also covers the Plexon meta-provider's FALLBACK and PRO tiers, both
-      # of which resolve to minimax-m3-coding-plan. Premium resolves to Kimi K3
-      # and is deliberately left unpinned: it reached its tool in 12 of 12 live
-      # turns under managed deferral.
-      tool_deferral: "off"
-      # Frontier multimodal coding model with a 1M context window. M3 has no
-      # separate "-highspeed" variant (those stop at M2.x). wire_id pins the
-      # exact upstream model string: MiniMax's API expects the PascalCase id,
-      # not the lowercase catalog id.
-      wire_id: MiniMax-M3
-      name: MiniMax M3
-      limit: 1000000
-      # 128000 output tokens on M3's 1M context: fits a one-shot ~200 KB file
-      # write (~57K tokens) plus reasoning headroom. 8192 capped writes at ~30 KB.
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_reasoning: true
-      # M3 has native adaptive thinking: thinking:{type:"adaptive"} lets the
-      # model decide when a task needs deep reasoning. Its /anthropic/v1 endpoint
-      # exposes only adaptive/disabled (no budget_tokens/output_config), so the
-      # server sends the bare adaptive directive and skips the fixed-budget path.
-      supports_adaptive_thinking: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      # M3 is natively multimodal: image AND video are accepted as INPUT, not
-      # just produced. These two flags are the input capability; the
-      # *_generation pair below is the output side. Missing supports_image here
-      # is what made the server's vision pre-check reject an attached screenshot
-      # on a model that reads images perfectly well.
-      supports_image: true
-      supports_video: true
-      supports_image_generation: true
-      supports_video_generation: true
-      # supports_tool_search is OFF: empirically, M3's /anthropic/v1 endpoint
-      # validates EVERY tool as a function (name + parameters) and rejects the
-      # parameterless tool_search server tool with 400 "function name or
-      # parameters is empty (2013)" — confirmed by logging the outgoing tools
-      # (the only rejected entry was {type:tool_search, name:"", properties:0}).
-      # That's the irreducible shape of a tool-search helper, so deferred tooling
-      # is not usable via this endpoint. (M3's OpenAI-compatible endpoint documents
-      # {"type":"tool_search"}, so a future option is routing M3 through that.)
-      #
-      # RE-VERIFIED LIVE 2026-07-29, still rejected. Two identical requests to
-      # https://api.minimax.io/anthropic/v1/messages (model MiniMax-M3): with one
-      # ordinary function tool -> HTTP 200; adding {"type":"tool_search"} to the
-      # same array -> HTTP 400 "invalid params, function name is empty (2013)".
-      #
-      # The distinction that keeps making this look wrong: M3 THE MODEL does
-      # support tool search, and MiniMax documents {"type":"tool_search"} on the
-      # OpenAI-compatible endpoint. This flag describes the WIRE PATH, not the
-      # model. Re-run that two-request probe before flipping it — turning it on
-      # while the gateway still rejects makes every M3 request 400.
-      pricing:
-        # Pay-as-you-go standard tier. cache_write is unpublished by MiniMax;
-        # 1.5 mirrors the M2.7 1.25x-input ratio (0.3 -> 0.375). Confirm later.
-        input: 1.2
-        output: 4.8
-        cache_write: 1.5
-        cache_read: 0.24
-    - id: minimax-m3-coding-plan
-      # See minimax-m3 above: pinned off on measured evidence. This is the model
-      # behind the Plexon fallback and pro tiers.
-      tool_deferral: "off"
-      wire_id: MiniMax-M3
-      name: MiniMax M3 (Subscription)
-      limit: 1000000
-      # See minimax-m3 above: 128000 enables one-shot ~200 KB writes + reasoning.
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_reasoning: true
-      # Native adaptive thinking — see minimax-m3 above.
-      supports_adaptive_thinking: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      # Same wire model as minimax-m3 above, so the same native multimodal
-      # input. This is the Plexon Text/Plan backing, which makes these two the
-      # flags the server's vision check reads for most Plexon traffic. The
-      # *_generation flags stay OFF on purpose: IsGenerationModel() keys on them
-      # and would route this text backing to the generation handler.
-      supports_image: true
-      supports_video: true
-      # Same wire model + endpoint as minimax-m3 above: tool_search is rejected
-      # with 2013, so supports_tool_search stays OFF here too. Re-verified live
-      # 2026-07-29 — see the probe recorded on minimax-m3.
-      #
-      # This is the Plexon pro text backing, so it is also what a premium session
-      # falls back to. Both tiers therefore run Plexon's own managed deferral
-      # rather than a provider-side tool search.
-      default_selection: true
-      pricing:
-        is_subscription: true
 sync:
     pinned:
         - hailuo-2.3
@@ -351,3 +30,160 @@ sync:
         - MiniMax-M2.7
         - MiniMax-M2.7-highspeed
         - MiniMax-M3
+models:
+    - id: hailuo-2.3
+      wire_id: MiniMax-Hailuo-2.3
+      name: MiniMax Hailuo-2.3
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      implied_aspect_ratio: "16:9"
+      per_unit_cost: 0.21
+    - id: hailuo-2.3-coding-plan
+      wire_id: MiniMax-Hailuo-2.3
+      name: MiniMax Hailuo-2.3 (Subscription)
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      implied_aspect_ratio: "16:9"
+      pricing:
+        is_subscription: true
+    - id: hailuo-3
+      wire_id: MiniMax-H3
+      name: MiniMax H3 (Hailuo 3.0)
+      base_url: https://api.minimax.io/v2
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      generation_api: minimax-v2
+      per_unit_cost: 0.78
+    - id: hailuo-3-coding-plan
+      wire_id: MiniMax-H3
+      name: MiniMax H3 (Subscription)
+      base_url: https://api.minimax.io/v2
+      supports_streaming: true
+      supports_image: true
+      supports_video_generation: true
+      generation_type: async
+      generation_api: minimax-v2
+      pricing:
+        is_subscription: true
+    - id: image-01
+      name: MiniMax Image-01
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_image_generation: true
+      generation_type: sync
+      per_unit_cost: 0.02
+    - id: image-01-coding-plan
+      wire_id: image-01
+      name: MiniMax Image-01 (Subscription)
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_image_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
+    - id: minimax-m3
+      wire_id: MiniMax-M3
+      name: MiniMax M3
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      supports_include_reasoning: true
+      tool_deferral: "off"
+      supports_custom_temperature: true
+      supports_image_generation: true
+      supports_video_generation: true
+      pricing:
+        input: 1.2
+        output: 4.8
+        cache_write: 1.5
+        cache_read: 0.24
+    - id: minimax-m3-coding-plan
+      wire_id: MiniMax-M3
+      name: MiniMax M3 (Subscription)
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      supports_include_reasoning: true
+      tool_deferral: "off"
+      supports_custom_temperature: true
+      default_selection: true
+      pricing:
+        is_subscription: true
+    - id: music-3.0
+      name: MiniMax Music 3.0
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      per_unit_cost: 0.15
+    - id: music-3.0-coding-plan
+      wire_id: music-3.0
+      name: MiniMax Music 3.0 (Subscription)
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
+    - id: music-cover
+      name: MiniMax Music Cover
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      per_unit_cost: 0.15
+    - id: music-cover-coding-plan
+      wire_id: music-cover
+      name: MiniMax Music Cover (Subscription)
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_music_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
+    - id: speech-2.8-hd
+      name: MiniMax Speech 2.8 HD
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+    - id: speech-2.8-hd-coding-plan
+      wire_id: speech-2.8-hd
+      name: MiniMax Speech 2.8 HD (Subscription)
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
+    - id: speech-2.8-turbo
+      name: MiniMax Speech 2.8 Turbo
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+    - id: speech-2.8-turbo-coding-plan
+      wire_id: speech-2.8-turbo
+      name: MiniMax Speech 2.8 Turbo (Subscription)
+      base_url: https://api.minimax.io/v1
+      supports_streaming: true
+      supports_speech_generation: true
+      generation_type: sync
+      pricing:
+        is_subscription: true
