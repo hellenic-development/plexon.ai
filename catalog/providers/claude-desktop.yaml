@@ -1,7 +1,7 @@
 name: claude-desktop
 display_name: Claude Desktop
 compatibility: anthropic
-default_model: claude-opus-4-8
+default_model: claude-opus-5
 models:
     - id: claude-fable-5
       name: Claude Fable 5
@@ -11,8 +11,8 @@ models:
       supports_tool_search: true
       pricing:
         is_subscription: true
-    - id: claude-opus-4-8
-      name: Claude Opus 4.8
+    - id: claude-opus-5
+      name: Claude Opus 5
       limit: 1000000
       reserved_tokens: 128000
       supports_streaming: true
@@ -20,10 +20,10 @@ models:
       default_selection: true
       pricing:
         is_subscription: true
-    - id: claude-sonnet-4-6
-      name: Claude Sonnet 4.6
-      limit: 200000
-      reserved_tokens: 64000
+    - id: claude-sonnet-5
+      name: Claude Sonnet 5
+      limit: 1000000
+      reserved_tokens: 128000
       supports_streaming: true
       supports_tool_search: true
       pricing:
