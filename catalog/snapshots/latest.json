@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-08-02T11:41:31Z",
+  "generated": "2026-08-04T13:22:08Z",
   "providers": [
     {
       "name": "anthropic",
@@ -6598,6 +6598,38 @@
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
           "default_selection": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "qwen3.8-max (Token Plan)",
+          "wire_id": "qwen3.8-max",
+          "name": "Qwen3.8 Max (Token Plan)",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/apps/anthropic/v1",
+          "compatibility": "anthropic",
+          "limit": 983616,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "qwen3.8-max-preview (Token Plan)",
+          "wire_id": "qwen3.8-max-preview",
+          "name": "Qwen3.8 Max Preview (Token Plan)",
+          "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/apps/anthropic/v1",
+          "compatibility": "anthropic",
+          "limit": 983616,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
           "pricing": {
             "is_subscription": true
           }
