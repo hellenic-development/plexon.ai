@@ -4,139 +4,169 @@
   <p><strong>Your assistant. Your apps. Your machine.</strong></p>
   <p>A desktop AI assistant for Windows, macOS, and Linux</p>
 
-  <a href="https://plexon.ai"><img src="https://img.shields.io/badge/Website-plexon.ai-7c3aed?style=flat-square" alt="Website" /></a>
-  <a href="https://github.com/hellenic-development/plexon.ai/releases"><img src="https://img.shields.io/github/v/release/hellenic-development/plexon.ai?style=flat-square&color=7c3aed&label=Download" alt="Download" /></a>
-  <a href="https://github.com/hellenic-development/plexon.ai/issues"><img src="https://img.shields.io/github/issues/hellenic-development/plexon.ai?style=flat-square&color=7c3aed" alt="Issues" /></a>
-  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-7c3aed?style=flat-square" alt="Platform" />
+  <a href="https://plexon.ai"><img src="https://img.shields.io/badge/Website-plexon.ai-729ff0?style=flat-square" alt="Website" /></a>
+  <a href="https://github.com/hellenic-development/plexon.ai/releases"><img src="https://img.shields.io/github/v/release/hellenic-development/plexon.ai?style=flat-square&color=729ff0&label=Download" alt="Download" /></a>
+  <a href="https://github.com/hellenic-development/plexon.ai/issues"><img src="https://img.shields.io/github/issues/hellenic-development/plexon.ai?style=flat-square&color=729ff0" alt="Issues" /></a>
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-729ff0?style=flat-square" alt="Platform" />
 </div>
 
 <br />
 
 <div align="center">
-  <a href="assets/demo.mp4">
-    <img src="assets/demo.png" alt="Plexon AI demo: one request generates an image, writes a Python script, runs it, and shows the output" width="800" />
+  <a href="https://www.youtube.com/watch?v=Nr87tS4K_yk">
+    <img src="https://img.youtube.com/vi/Nr87tS4K_yk/maxresdefault.jpg" alt="Watch the Plexon AI walkthrough on YouTube" width="800" />
   </a>
-  <p><em>One request, end to end: Plexon generates an image, writes a Python script that reads the file, runs it, and shows the output. Click to watch (47 seconds).</em></p>
+  <p><em>A walkthrough of the desktop app: chat, personas, connectors, workflows, and dashboards.</em></p>
 </div>
 
 ## What is Plexon?
 
-Plexon answers questions, writes documents, organizes your files, and does real work inside apps like Slack, Notion, Gmail, and GitHub. Pick a persona and it thinks like a developer, designer, marketer, dietitian, financial analyst, product manager, or writer. It learns how you work as you go, and a built-in marketplace adds thousands more skills, agents, and tools when you want them. Everything runs from your computer, and your data stays on it.
+Plexon answers questions, writes documents, sorts out your files, and does real work inside apps like Slack, Notion, Gmail, and GitHub. Pick a persona and it thinks like a developer, a designer, a dietitian, or a financial analyst, with that role's agents, skills, and tools already switched on. It runs from your computer. Your files, your API keys, and your chat history stay on it, and the server that routes each request keeps nothing.
+
+Before you install a thing, it ships 12 personas, 64 app connectors, 156 agents, 200+ skills, 14 plugins, and 90+ built-in MCP tools.
+
+## One marketplace, five kinds of thing
+
+Skills, agents, plugins, personas, and MCP servers used to sit behind four different dialogs. Now they share one: browse everything, filter by kind, click install. Over 7,100 items are pre-bundled, and every card names its source so you know what you are installing.
+
+A marketplace is a folder in a Git repository. No signup, no proprietary format, no central registry deciding what gets listed. Paste `owner/repo`, point at a `tree/branch/subdir` URL, drop a zip on the Import tab, or double-click a `.plxm` file a colleague emailed you. Plexon previews what is inside before anything reaches your disk, and nothing from a marketplace runs at install time.
+
+Developer Mode builds one from inside the app. An 8-step wizard reads your installed library and fills in each item's name, description, and version for you; linked items are symlinked rather than copied, so edits to `SKILL.md` or a persona YAML go live the moment you save. One Sync button publishes your changes and pulls everyone else's. Conflicts resolve per file: keep mine, take theirs, or let the AI merge. Nobody types a git command.
+
+That is also how a company keeps a team in step. Each department publishes its curated marketplace in a GitHub repo it owns, a new hire pastes one URL, and every install checks that repo on launch and applies what changed. Adding sources and linking local folders needs the Premium plan.
+
+Read more: [the marketplace](https://plexon.ai/features/marketplace/) and [Developer Mode](https://plexon.ai/features/marketplace-developer-mode/).
+
+### For teams and companies
+
+[Plexon for Business](https://plexon.ai/business/) white-labels the app with your branding, pre-loads your own agents and personas, and can ship secret items your clients can use but cannot read or copy.
+
+<!-- Partner organisations run their own assistant on Plexon with a public page and, optionally, a sign-in-gated internal one for staff. [PNOĒ](https://plexon.ai/companies/pnoe/) was the first: a doctor co-pilot for breath-biomarker consultations that loads each patient's report before the visit. The rest are at [plexon.ai/companies](https://plexon.ai/companies/). -->
 
 ## What you can do
 
 **Everyday**
 
-- **Ask and research.** Questions, comparisons, decisions. It searches the web when the answer needs current facts.
-- **Write and edit.** Letters, posts, reports, CVs. It also reads and writes real Word and Excel files.
-- **Sort out your files.** Point it at a folder and it reads, renames, organizes, and summarizes what is inside.
-- **Talk instead of typing.** A hands-free voice conversation in 80+ languages, with local transcription.
+- **Ask and research.** It searches the web out of the box, with no connector to install and no key to paste.
+- **Write and edit.** Letters, posts, reports, CVs. It reads and writes real Word and Excel files without Office installed, and prints a finished draft to a proper PDF.
+- **Sort out your files.** Point it at a folder and it reads, renames, and summarises what is in there. Ask it to clear the screenshots out of a phone backup and it identifies each file by reading it, so an export that renamed everything to `IMG_9084.PNG` does not defeat it. Camera photos are recognised separately and left alone.
+- **Talk instead of typing.** A hands-free voice loop, 400+ voices across 80+ languages, transcribed locally by Whisper.
 
 **At work**
 
-- **Work like a specialist.** Personas switch the AI into your profession, with the right tools pre-activated.
-- **Reach into your apps.** 48 built-in connectors. Turn one on with your own account and the AI reads and acts in it.
-- **Put it on a schedule.** Any job can repeat: a Monday-morning report, an inbox summary every evening.
-- **Build software.** The original Plexon: write, review, debug, and ship with five modes and parallel agents.
+- **Work like a specialist.** Twelve personas, each swapping in its own server-hosted system prompt.
+- **Reach into your apps.** 64 built-in connectors, signed in with your own account.
+- **Put it on a schedule.** A Monday-morning report, an inbox summary every evening. Any sub-agent runs on a cron expression.
+- **Build software.** Six modes, parallel sub-agents in isolated git worktrees, and a review queue holding every diff they produce.
 
-## Seven personas
+## Twelve personas
 
-Each persona swaps in its own server-hosted system prompt, so the AI genuinely thinks like that role, and pre-activates the agents, skills, plugins, and tools that role needs. Build your own with an AI-assisted wizard.
+Each persona swaps in its own server-hosted system prompt, so the AI genuinely thinks like that role, and pre-activates the agents, skills, plugins, and tools it needs. Build your own with an AI-assisted wizard, or install one from a marketplace.
 
 | Persona | What it brings |
 |---------|----------------|
-| [Software Developer](https://plexon.ai/personas/software-developer/) | Correctness first, minimal diffs, git safety by default |
-| [Writer](https://plexon.ai/personas/writer/) | Voice first, show-don't-tell, aggressive fact-checking |
-| [Designer](https://plexon.ai/personas/designer/) | Clarity over cleverness, accessibility non-negotiable |
-| [Marketer](https://plexon.ai/personas/marketer/) | Positioning first, one audience per piece, measure what matters |
-| [Dietitian](https://plexon.ai/personas/dietitian/) | Evidence over trend, whole-diet patterns, individualisation |
-| [Financial Analyst](https://plexon.ai/personas/financial-analyst/) | Conservative assumptions, sensitivity over point estimates |
-| [Product Manager](https://plexon.ai/personas/product-manager/) | Problem before solution, outcomes over outputs |
+| [Software Developer](https://plexon.ai/personas/software-developer/) | Correctness first, minimal diffs, match-the-file style, git safety by default |
+| [Designer](https://plexon.ai/personas/designer/) | Clarity beats cleverness, hierarchy drives attention, accessibility non-negotiable |
+| [Marketer](https://plexon.ai/personas/marketer/) | Positioning first, one audience per piece, specificity instead of superlatives |
+| [Dietitian](https://plexon.ai/personas/dietitian/) | Evidence over trend, whole-diet patterns, supports practitioners and never diagnoses |
+| [Financial Analyst](https://plexon.ai/personas/financial-analyst/) | Data integrity, conservative assumptions, sensitivity over point estimates |
+| [Product Manager](https://plexon.ai/personas/product-manager/) | Problem before solution, outcomes over outputs, decisions written down |
+| [Writer](https://plexon.ai/personas/writer/) | Voice first, show don't tell, cut ruthlessly, fact-check aggressively |
+| [Stock Trader](https://plexon.ai/personas/stock-trader/) | Ticker lookup, live quotes, position sizing from a fixed risk budget. Read-only: it never places an order |
+| [Greek Logistics](https://plexon.ai/personas/greek-logistics/) | Income tax and VAT, EFKA and payroll, gov.gr and TAXISnet, live AADE myDATA. Bilingual, current to 2026 |
+| [Startup Founder](https://plexon.ai/personas/startup-founder/) | Idea validation, SAFEs and term sheets, cap tables and dilution, runway and unit economics |
+| [Personal Shopper](https://plexon.ai/personas/personal-shopper/) | Finds products across stores and compares prices, then hands you a link. It never checks out for you |
+| [Mirror](https://plexon.ai/personas/mirror/) | A private journal that stays on this machine. Not a licensed therapist, and it says so |
 
-## 48 app connectors
+## 64 app connectors
 
 <div align="center">
   <a href="https://plexon.ai/features/app-connectors/">
-    <img src="assets/connectors.png" alt="The 48 app connectors built into Plexon AI: Slack, Discord, Telegram, WhatsApp, Twilio, Instagram, X, Unipile, Notion, Google Drive Suite, Google Workspace, Microsoft 365, Todoist, Asana, Trello, Dropbox, WordPress, Linear, Atlassian, Salesforce, HubSpot, Zendesk, Intercom, GitHub, Vercel, Netlify, Cloudflare, Docker, Supabase, GoDaddy, Brave Search, Perplexity, Exa, n8n, Zapier, Pipedream, Make, Airtable, Database, Stripe, Shopify Dev, WooCommerce, Figma, Meta Ads, Spotify, Reddit, Higgsfield, and Playwright" width="860" />
+    <img src="assets/connectors.png" alt="The 64 app connectors built into Plexon AI: Slack, Discord, Telegram, WhatsApp, Twilio, Instagram, X (Twitter), Unipile, Notion, Google Drive Suite, Google Workspace, Microsoft 365, Todoist, Asana, Trello, Dropbox, WordPress, Linear, Atlassian, Salesforce, HubSpot, Twenty, Zendesk, Intercom, Mailchimp, Keragon, GitHub, Vercel, Netlify, Cloudflare, Docker, Supabase, Sentry, GoDaddy, Brave Search, Perplexity, Exa, n8n, Zapier, Pipedream, Make, Desktop Automation, Home Assistant, Airtable, Database, BigQuery, PostHog, Stripe, Shopify Dev, WooCommerce, Product Search, Shopify Shopping, Affiliate Buy and Feed Hub, eBay, Figma, Meta Ads, Spotify, Reddit, Higgsfield, Agent Browser, Skyvern, Playwright, Browser MCP, and Chrome MCP" width="860" />
   </a>
 </div>
 
-Branded, pre-built integrations you turn on once with your own account, so the AI can work inside the software you already use: post to Slack, reply to mail, update your store, file issues, edit DNS. Sign-in matches each app (a browser sign-in, a key you paste, a server URL, or a one-time QR scan for personal WhatsApp), credentials are encrypted and stay on your machine, and activation is per workspace.
+Branded integrations you turn on once with your own account, so the AI works inside the software you already use: post to Slack, reply to mail, update your store, file issues, edit DNS. Sign-in matches each app (a browser sign-in, a key you paste, a server URL, or a one-time QR scan for personal WhatsApp). Credentials are encrypted and stay on your machine, and activation is per workspace.
 
 - **Messaging:** Slack, Discord, Telegram, WhatsApp, Twilio, Instagram, X (Twitter), Unipile
 - **Productivity:** Notion, Google Drive Suite, Google Workspace, Microsoft 365, Todoist, Asana, Trello, Dropbox, WordPress
-- **Project tracking:** Linear, Atlassian (Jira & Confluence)
-- **CRM & support:** Salesforce, HubSpot, Zendesk, Intercom
-- **Developer & cloud:** GitHub, Vercel, Netlify, Cloudflare, Docker, Supabase
+- **Project tracking:** Linear, Atlassian (Jira and Confluence)
+- **CRM and support:** Salesforce, HubSpot, Twenty, Zendesk, Intercom, Mailchimp
+- **Developer and cloud:** GitHub, Vercel, Netlify, Cloudflare, Docker, Supabase, Sentry
+- **Data:** Airtable, Database (PostgreSQL, MySQL, MariaDB, SQL Server, SQLite), BigQuery, PostHog
+- **Commerce:** Stripe, Shopify Dev, WooCommerce, Product Search, Shopify Shopping, Affiliate Buy and Feed Hub, eBay
 - **Search:** Brave Search, Perplexity, Exa
-- **Automation:** n8n, Zapier, Pipedream, Make
-- **Data & commerce:** Airtable, Database (PostgreSQL, MySQL, MariaDB, SQL Server, SQLite), Stripe, Shopify Dev, WooCommerce
-- **And more:** GoDaddy, Figma, Meta Ads, Spotify, Reddit, Higgsfield, Playwright
+- **Automation:** n8n, Zapier, Pipedream, Make, Desktop Automation
+- **Browser:** Agent Browser, Skyvern, Playwright, Browser MCP, Chrome MCP
+- **Media:** Spotify, Reddit, Higgsfield
+- **One apiece:** Keragon (healthcare), GoDaddy (domains), Figma (design), Meta Ads (advertising), Home Assistant (smart home)
 
-Every connector has its own page describing what it can do, example prompts, and how sign-in works: [plexon.ai/features/app-connectors](https://plexon.ai/features/app-connectors/).
+Anything without a tile still works: [API Connections](https://plexon.ai/features/api-connections/) turn any HTTP API into typed tools by OpenAPI import, Postman import, or by hand. Every connector has its own page with example prompts and how sign-in works, listed at [plexon.ai/features/app-connectors](https://plexon.ai/features/app-connectors/).
 
-## Feature highlights
+## Automation and memory
 
-| Feature | What it does |
-|---------|--------------|
-| [Five AI modes](https://plexon.ai/features/chat/) | Code, Plan, Ask, Auto, and Orchestrator, each built for a different kind of work |
-| [Self-improving skills](https://plexon.ai/features/self-improving-skills/) | A curator agent reviews each session and grows the skill library, so the AI gets smarter the more you use it |
-| [Schedule](https://plexon.ai/features/schedule/) | Run any sub-agent on a cron expression or simple interval, with OS notifications and a unified result inbox |
-| [Unified marketplace](https://plexon.ai/features/marketplace/) | 7,100+ skills, agents, plugins, personas, and tools in one browse-and-install dialog. Shareable `.plxm` files install with a double-click |
-| [Marketplace developer mode](https://plexon.ai/features/marketplace-developer-mode/) | Build and publish your own marketplace from inside the app |
-| [156 agents](https://plexon.ai/features/agents/) | Specialists across 8 professional domains; author your own from chat |
-| [200+ skills](https://plexon.ai/features/skills/) | Reusable instructions for standards, workflows, and domain knowledge |
-| [14 bundled plugins](https://plexon.ai/features/plugins/) | From office authoring and database toolkits to graph-aware code review |
-| [Orchestrator & parallel agents](https://plexon.ai/features/orchestrator/) | Complex tasks split across concurrent sub-agents; fan one prompt across isolated git worktrees |
-| [Team coordination](https://plexon.ai/features/teams/) | Persistent multi-agent teams with mailboxes and shared memory |
-| [Browser & desktop automation](https://plexon.ai/features/settings/) | Playwright-driven browsing (optionally with your real Chrome profile) plus cross-platform mouse, keyboard, and window control |
-| [Embedded browser](https://plexon.ai/features/embedded-browser/) | Point at any element on your local dev site and the AI gets the exact selector and screenshot |
-| [Voice](https://plexon.ai/features/voice-vision/) | Continuous hands-free conversation: local Whisper transcription, 400+ neural voices in 80+ languages |
-| [Word & Excel in chat](https://plexon.ai/features/office-integration/) | Read, create, and edit .docx and .xlsx files without Office installed |
-| [Dynamic UI widgets](https://plexon.ai/features/dynamic-ui-widgets/) | Responses render as interactive cards, tables, timelines, and forms instead of walls of text |
-| [Session sharing](https://plexon.ai/features/session-sharing/) | Export any session as an encrypted `.plexshare` file; recipients import it with a double-click |
-| [Telegram bot](https://plexon.ai/features/telegram/) | Chat with your Plexon from any device |
-| [API connections](https://plexon.ai/features/api-connections/) | Turn any HTTP API into AI-callable tools, by OpenAPI import or by hand |
-| [AutoDream memory](https://plexon.ai/features/autodream/) | Background consolidation keeps the AI's memory deduplicated and current |
+Plexon keeps working when you are not looking at it, and it remembers what happened.
 
-The full list lives at [plexon.ai/features](https://plexon.ai/features/).
+| | What it does |
+|---|---|
+| [Dashboards](https://plexon.ai/features/dashboards/) | Boards of live widgets fed by a connector, an AI query, a workflow, or static text. Connector and tool refreshes spend zero AI tokens |
+| [Dynamic workflows](https://plexon.ai/features/dynamic-workflows/) | A trigger wired to typed steps on a canvas, or described in chat and drafted for you. A local engine snapshots every run and sends at most once |
+| [Schedule](https://plexon.ai/features/schedule/) | Any sub-agent on a cron expression or interval, with OS notifications. It disables itself after 3 consecutive failures rather than failing quietly forever |
+| [Knowledge graph](https://plexon.ai/features/knowledge-graph/) | Ask about a person, a client, or a project and get every fact with the note and line it came from. Derived from your markdown, so forgetting it loses nothing |
+| [Self-improving skills](https://plexon.ai/features/self-improving-skills/) | A curator agent reviews each session and saves, refines, or retires skills. Off by default, because each run is a real AI call that costs tokens |
+| [Parallel agents](https://plexon.ai/features/parallel-agents/) | Fan one prompt across agents in isolated git worktrees, up to 3 at once, and merge per tile |
+| [Diff review queue](https://plexon.ai/features/diff-review-queue/) | Every tile waiting on review, in one panel, across sessions |
 
-## Models and providers
+The [Telegram](https://plexon.ai/features/telegram/) and [Slack](https://plexon.ai/features/slack/) bots put the same assistant on your phone, each locked to your own account. Slack connects over Socket Mode, so nothing is exposed to the internet. The full feature list is at [plexon.ai/features](https://plexon.ai/features/).
 
-**The Plexon model.** The [Plexon Provider](https://plexon.ai/features/plexon-provider/) is the one-subscription path: sign in and you get **Plexon 1.0** for chat and coding (1M-token context), **Plexon 1.0 Image**, **Plexon 1.0 Video**, **Plexon Voice**, and **Plexon Music**, with automatic model routing, key management, and rate-limit recovery handled for you.
+## Modes and providers
 
-**Bring your own provider.** Plexon is also compatible with the current flagship models through your own API keys:
+Six modes, each with different permissions:
 
-| Provider | Models include |
-|----------|----------------|
-| Anthropic | Claude Fable 5, Claude Opus 4.8, Claude Sonnet 4.6 |
-| OpenAI | GPT-5.4, GPT-5.3, Codex models |
-| Google | Gemini 3.1 Pro, Gemini 3 Flash |
-| Moonshot | Kimi K2.6, Kimi for Coding |
-| MiniMax | MiniMax M3, Hailuo video models |
-| Qwen | Qwen3 Coder family |
-| Z-AI | GLM 5, CogView 4 image, CogVideoX 3 video |
-| OpenRouter | 100+ models from every major lab |
-| Claude Desktop | Claude Fable 5, Opus 4.8, and Sonnet through your local app, no API key |
+- **Code** reads, writes, and runs. The default for hands-on work.
+- **Plan** explores read-only and writes one implementation plan. Approving it hands off inside the same conversation, with everything it read still in context.
+- **Ask** is read-only question answering. No file writes.
+- **Auto** runs long tasks without stopping to check in.
+- **Orchestrator** splits a task into 2 to 5 subtasks across parallel sub-agents, then synthesises.
+- **Spec** drives constitution, specify, plan, tasks, implement through living markdown contracts, compatible with GitHub Spec Kit.
 
-The model catalog ships from this repository (`catalog/`), so new models reach the app without an update. Premium adds [Custom Providers](https://plexon.ai/features/custom-providers/): any OpenAI-compatible or Anthropic-compatible endpoint, including local models via Ollama, LM Studio, or vLLM.
+Ten providers. Sign in to Plexon for a managed one, or bring your own key:
+
+| Provider | How you connect |
+|----------|-----------------|
+| Plexon | One subscription. Text, image, video, voice, and music, with no keys to manage |
+| Anthropic | Your API key |
+| OpenAI | Your API key |
+| Google Gemini | Your API key |
+| Moonshot | Your API key |
+| Fireworks AI | Your API key, for open-weight models |
+| OpenRouter | Your API key, 100+ models from every major lab |
+| Qwen | Your API key |
+| Z-AI | Your API key |
+| Claude Desktop | Your local app, no API key |
+
+The model list lives in [`catalog/`](catalog/) in this repository and the app syncs from it, so new models arrive without an app update. Premium adds [Custom Providers](https://plexon.ai/features/custom-providers/): any OpenAI-compatible or Anthropic-compatible endpoint, including local models through Ollama, LM Studio, or vLLM.
 
 ## Security and privacy
 
-- Your files and credentials stay on your machine; connector secrets are encrypted at rest
-- The server is stateless: it processes each request and immediately discards everything, with zero storage, logging, or retention
-- AES-256-GCM encryption for local session data
-- Approval prompts for shell commands, browser launches, and connector installs
+- Your files and credentials stay on your machine, and connector secrets are encrypted at rest
+- The server is stateless. It assembles the prompt, routes the request, and discards everything: no storage, no logging, no retention. It can also be self-hosted
+- AES-256-GCM for local session data, and shell commands, browser launches, and connector installs each ask first
+- [Session Lock](https://plexon.ai/features/session-lock/) encrypts one chat under a passcode, unlockable with Touch ID or Windows Hello. A forgotten passcode cannot be recovered by anyone, including us. Turning a lock on needs Premium; unlocking, changing, and removing one never do
+- [Live Share](https://plexon.ai/features/live-share/) connects two apps directly over WebRTC, with no Plexon server in the handshake. Because there is no relay, some network pairs cannot connect: the same network is the reliable case
+- [Moving to another machine](https://plexon.ai/features/transfer-bundles/) exports your whole setup as one encrypted file, under a passphrase stored nowhere. No cloud, no account sync
 
 Details: [plexon.ai/security](https://plexon.ai/security/).
 
 ## Platform support
 
-| Platform | Architectures |
-|----------|---------------|
-| Windows | x64, ARM64 |
-| macOS | Intel (x64), Apple Silicon (ARM64) |
-| Linux | x64, ARM64 |
+| Platform | Versions | Architectures |
+|----------|----------|---------------|
+| Windows | 10 and later | x64, ARM64 |
+| macOS | 12 and later | Intel (x64), Apple Silicon (ARM64) |
+| Linux | Ubuntu 22.04+, Fedora 38+ | x64, ARM64 |
+
+Minimum 4 GB RAM and 500 MB of disk. Auto-update is built in.
 
 ## Getting started
 
@@ -145,19 +175,26 @@ Details: [plexon.ai/security](https://plexon.ai/security/).
 3. **Sign in** with a Plexon plan, or paste your own provider API key
 4. **Pick a persona**, turn on the connectors you use, and ask
 
-Plans: Pro at $39/mo, Premium at $89/mo ([pricing](https://plexon.ai/pricing/)). Every provider also works with your own API key.
+Pro is $39/month and Premium is $110/month ([pricing](https://plexon.ai/pricing/)). There is no free tier. Both plans include bring-your-own-key access to every provider above.
+
+New to it? [plexon.ai/learn](https://plexon.ai/learn/) is an eight-step path from install to publishing your own marketplace, about two hours end to end.
 
 ## This repository
 
-This repository hosts **issue tracking, public releases, and the public model catalog** (`catalog/`, the provider and model definitions the app syncs from). The application source is maintained in a private repository.
+This repository hosts **issue tracking, public releases, and the public model catalog**. The application source is maintained privately.
+
+[`catalog/`](catalog/) holds the provider and model definitions the app syncs from, with its own README covering the format and how to contribute. A [weekly workflow](.github/workflows/catalog-sync.yml) syncs it against models.dev and opens a pull request.
 
 - Report bugs or request features via [Issues](https://github.com/hellenic-development/plexon.ai/issues)
+- Security reports go to contact@hellenic.dev
 
 ## Links
 
 - **Website:** [plexon.ai](https://plexon.ai)
 - **Download:** [plexon.ai/download](https://plexon.ai/download/)
 - **Features:** [plexon.ai/features](https://plexon.ai/features/)
+- **Pricing:** [plexon.ai/pricing](https://plexon.ai/pricing/)
+- **For business:** [plexon.ai/business](https://plexon.ai/business/)
 - **Community:** [plexon.ai/community](https://plexon.ai/community/)
 - **Changelog:** [plexon.ai/changelog](https://plexon.ai/changelog/)
 
