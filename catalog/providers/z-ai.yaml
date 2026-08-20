@@ -3,7 +3,7 @@ display_name: Z.AI
 compatibility: openai
 requires_api_key: true
 base_url: https://api.z.ai/api/paas/v4
-default_model: glm-5.2 (Subscription)
+default_model: glm-5.3 (Subscription)
 models:
     - id: cogvideox-3
       name: CogVideoX 3
@@ -24,28 +24,39 @@ models:
       generation_type: sync
       per_unit_cost: 0.015
       pricing: {}
-    - id: glm-5.2
-      name: GLM 5.2
-      limit: 1048576
+    - id: glm-5.3 (Subscription)
+      # Wire id per Z.AI's own docs: requests send plain "glm-5.3". The
+      # "glm-5.3[1m]" form in their Claude Code snippet is an env-var alias for
+      # that client only — probe-verified 2026-08-14, it comes back 400
+      # "[1214][modelCode: does not exist]" as a request model. Same shape as
+      # Kimi's "k3[1m]".
+      wire_id: glm-5.3
+      name: GLM 5.3 (Subscription)
+      # Anthropic-compat, on purpose: Z.AI serves GLM-5.3 to coding agents over
+      # https://api.z.ai/api/anthropic (their ANTHROPIC_BASE_URL), and that
+      # surface is the one they keep current — the OpenAI-compatible /paas/v4
+      # pricing table still has no GLM-5.3 row. Our anthropic client appends
+      # "/messages", so the base carries /v1. Auth is Authorization: Bearer,
+      # sent by setAnthropicAuth. Probe-verified 2026-08-14
+      # (_examples/zaiglm53/anthropic_check): standard "data: " SSE framing
+      # (with the space), thinking blocks stream ahead of both text and
+      # tool_use, and tool input_schema is accepted as-is.
+      compatibility: anthropic
+      base_url: https://api.z.ai/api/anthropic/v1
+      limit: 1000000
       reserved_tokens: 131072
       supports_streaming: true
+      # Thinking is not optional on GLM-5.3 and has three levels (low/high/max,
+      # default max). No supports_custom_temperature: the Anthropic path clears
+      # temperature whenever a thinking directive goes out, so on a model that
+      # always thinks the slider would be a control that does nothing.
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 1.4
-        output: 4.4
-        cache_read: 0.26
-    - id: glm-5.2 (Subscription)
-      name: GLM 5.2 (Subscription)
-      base_url: https://api.z.ai/api/coding/paas/v4
-      limit: 1048576
-      reserved_tokens: 131072
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
+      # Coding Plan only. Z.AI has published no per-token price for GLM-5.3 and
+      # models.dev lists it under zai-coding-plan alone, so there is no metered
+      # sibling to pair this with the way GLM 5.1 and GLM 5 Turbo each have one.
       default_selection: true
+      release_date: "2026-08-14"
       pricing:
         is_subscription: true
     - id: glm-5-turbo
@@ -137,8 +148,7 @@ sync:
     pinned:
         - cogvideox-3
         - cogview-4-250304
-        - glm-5.2
-        - glm-5.2 (Subscription)
+        - glm-5.3 (Subscription)
         - glm-5-turbo
         - glm-5-turbo (Subscription)
         - glm-5.1
@@ -146,3 +156,6 @@ sync:
         - glm-5v-turbo
         - glm-5v-turbo (Subscription)
         - glm-image
+    excluded:
+        - glm-5.2
+        - glm-5.2 (Subscription)

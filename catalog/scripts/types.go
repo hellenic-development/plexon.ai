@@ -111,7 +111,7 @@ type CatalogModel struct {
 	DefaultSelection          bool              `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
 	// FallbackModel names a sibling model of the same provider that the API
 	// retries on when this model's safety classifiers decline a request
-	// (Anthropic server-side fallback beta, e.g. Fable 5 → Opus 4.8).
+	// (Anthropic server-side fallback beta, e.g. Fable 5 → Opus 5).
 	FallbackModel string `json:"fallback_model,omitempty" yaml:"fallback_model,omitempty"`
 	ReleaseDate   string `json:"release_date,omitempty" yaml:"release_date,omitempty"`
 	LastUpdated               string            `json:"last_updated,omitempty" yaml:"last_updated,omitempty"`

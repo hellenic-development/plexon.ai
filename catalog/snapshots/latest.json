@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-08-04T14:57:13Z",
+  "generated": "2026-08-20T07:27:23Z",
   "providers": [
     {
       "name": "anthropic",
@@ -6624,7 +6624,7 @@
       "compatibility": "openai",
       "requires_api_key": true,
       "base_url": "https://api.z.ai/api/paas/v4",
-      "default_model": "glm-5.2 (Subscription)",
+      "default_model": "glm-5.3 (Subscription)",
       "models": [
         {
           "id": "cogvideox-3",
@@ -6646,31 +6646,18 @@
           "pricing": {}
         },
         {
-          "id": "glm-5.2",
-          "name": "GLM 5.2",
-          "limit": 1048576,
+          "id": "glm-5.3 (Subscription)",
+          "wire_id": "glm-5.3",
+          "name": "GLM 5.3 (Subscription)",
+          "base_url": "https://api.z.ai/api/anthropic/v1",
+          "compatibility": "anthropic",
+          "limit": 1000000,
           "reserved_tokens": 131072,
           "supports_streaming": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "pricing": {
-            "input": 1.4,
-            "output": 4.4,
-            "cache_read": 0.26
-          }
-        },
-        {
-          "id": "glm-5.2 (Subscription)",
-          "name": "GLM 5.2 (Subscription)",
-          "base_url": "https://api.z.ai/api/coding/paas/v4",
-          "limit": 1048576,
-          "reserved_tokens": 131072,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
           "default_selection": true,
+          "release_date": "2026-08-14",
           "pricing": {
             "is_subscription": true
           }
