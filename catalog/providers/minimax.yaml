@@ -30,7 +30,8 @@ models:
       # round trip. Empty would mean unmeasured, so never copy this onto another
       # model without measuring that model's output.
       implied_aspect_ratio: "16:9"
-      per_unit_cost: 0.21
+      # $0.28 per 768P/6s clip; also $0.56 at 768P/10s and $0.49 at 1080P/6s.
+      per_unit_cost: 0.28
       pricing: {}
     - id: hailuo-2.3-coding-plan
       # Coding Plan entries carry an internal "-coding-plan" suffix for key-pool
@@ -102,7 +103,7 @@ models:
       supports_streaming: true
       supports_image_generation: true
       generation_type: sync
-      per_unit_cost: 0.02
+      per_unit_cost: 0.0035
       pricing: {}
     - id: image-01-coding-plan
       # Unlike video, the image family DOES take the bare id: MiniMax rejects
@@ -265,8 +266,6 @@ models:
       # on a model that reads images perfectly well.
       supports_image: true
       supports_video: true
-      supports_image_generation: true
-      supports_video_generation: true
       # supports_tool_search is OFF: empirically, M3's /anthropic/v1 endpoint
       # validates EVERY tool as a function (name + parameters) and rejects the
       # parameterless tool_search server tool with 400 "function name or
@@ -287,12 +286,20 @@ models:
       # model. Re-run that two-request probe before flipping it — turning it on
       # while the gateway still rejects makes every M3 request 400.
       pricing:
-        # Pay-as-you-go standard tier. cache_write is unpublished by MiniMax;
-        # 1.5 mirrors the M2.7 1.25x-input ratio (0.3 -> 0.375). Confirm later.
-        input: 1.2
-        output: 4.8
-        cache_write: 1.5
-        cache_read: 0.24
+        # Pay-as-you-go standard tier, effective rates for inputs up to 512K,
+        # which is what nearly every request pays. MiniMax bills M3 in two input
+        # bands and shows a permanent 50% discount off list; above 512K each
+        # figure below exactly doubles (0.6 / 2.4 / 0.75 / 0.12).
+        #
+        # This row used to read 1.2 / 4.8 / 1.5 / 0.24. That was the
+        # struck-through PRE-discount >512K list column, so it overstated the
+        # cost of an ordinary request by 4x. cache_write stays unpublished by
+        # MiniMax; 0.375 is the same 1.25x-input ratio the old note derived from
+        # M2.7, now applied to the right input figure.
+        input: 0.3
+        output: 1.2
+        cache_write: 0.375
+        cache_read: 0.06
     - id: minimax-m3-coding-plan
       # See minimax-m3 above: pinned off on measured evidence. This is the model
       # behind the Plexon fallback and pro tiers.

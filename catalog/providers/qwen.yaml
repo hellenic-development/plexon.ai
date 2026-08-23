@@ -153,20 +153,6 @@ models:
         input: 0.05
         output: 0.15
         cache_write: 0.05
-    - id: qwen3.5-flash-02-23
-      name: Qwen3.5-Flash
-      limit: 1000000
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.07
-        output: 0.26
-        cache_write: 0.08
     - id: qwen3.5-flash-02-23 (Coding Plan)
       wire_id: qwen3.5-flash-02-23
       name: Qwen3.5-Flash (Coding Plan)
@@ -181,20 +167,6 @@ models:
       supports_custom_temperature: true
       pricing:
         is_subscription: true
-    - id: qwen3.6-plus
-      name: Qwen3.6 Plus
-      limit: 1000000
-      reserved_tokens: 65536
-      supports_streaming: true
-      supports_image: true
-      supports_video: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      pricing:
-        input: 0.28
-        output: 1.66
-        cache_write: 0.28
     - id: qwen3.6-plus (Coding Plan)
       wire_id: qwen3.6-plus
       name: Qwen3.6 Plus (Coding Plan)
@@ -209,6 +181,25 @@ models:
       supports_custom_temperature: true
       pricing:
         is_subscription: true
+    - id: qwen3.7-flash
+      name: Qwen3.7 Flash
+      limit: 1000000
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-07-15"
+      # Alibaba prices by input length. These are the International base band
+      # (<=32K); the 32K-256K and 256K-1M bands are ~3x and ~6x. CatalogPricing
+      # has one rate per field, so the base band is what gets authored.
+      pricing:
+        input: 0.028
+        output: 0.11
+        cache_write: 0.035
+        cache_read: 0.006
     - id: qwen3.7-max
       name: Qwen3.7 Max
       limit: 1000000
@@ -235,6 +226,42 @@ models:
       default_selection: true
       pricing:
         is_subscription: true
+    - id: qwen3.7-plus
+      name: Qwen3.7 Plus
+      limit: 1000000
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-05-26"
+      # International base band (0-256K). The 256K-1M band is 1.2 / 4.8.
+      pricing:
+        input: 0.4
+        output: 1.6
+        cache_write: 0.5
+        cache_read: 0.04
+    - id: qwen3.8-max
+      name: Qwen3.8 Max
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      # Alibaba lists qwen3.8-max on Model Studio but publishes no price for it.
+      # These are the models.dev / OpenRouter figures for the Singapore endpoint
+      # this provider defaults to; the other regions are ~17% cheaper. No
+      # release_date: the only date on the doc page is its "Last Updated" stamp.
+      pricing:
+        input: 2
+        output: 6
+        cache_write: 2.5
+        cache_read: 0.17
     - id: qwen3.8-max (Token Plan)
       wire_id: qwen3.8-max
       name: Qwen3.8 Max (Token Plan)
@@ -295,15 +322,18 @@ sync:
         - qwen3.5-35b-a3b
         - qwen3.5-397b-a17b
         - qwen3.5-9b
-        - qwen3.5-flash-02-23
         - qwen3.5-flash-02-23 (Coding Plan)
-        - qwen3.6-plus
         - qwen3.6-plus (Coding Plan)
+        - qwen3.7-flash
         - qwen3.7-max
         - qwen3.7-max (Coding Plan)
+        - qwen3.7-plus
+        - qwen3.8-max
         - qwen3.8-max (Token Plan)
         - qwen3.8-max-preview (Token Plan)
     excluded:
         - qwen3-max
         - qwen3-max-thinking
+        - qwen3.5-flash-02-23
         - qwen3.5-plus-02-15
+        - qwen3.6-plus

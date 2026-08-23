@@ -24,6 +24,33 @@ models:
       generation_type: sync
       per_unit_cost: 0.015
       pricing: {}
+    - id: glm-5.3
+      name: GLM 5.3
+      # Metered sibling of the Coding Plan entry below. When GLM-5.3 was added
+      # on 2026-08-14 Z.AI had published no per-token price, which is why only
+      # the subscription entry existed. docs.z.ai now lists one, and OpenRouter's
+      # own z-ai/glm-5.3 listing carries the identical 1.4 / 4.4 / 0.26, so two
+      # independent sources agree.
+      #
+      # No base_url and no compatibility override on purpose: this one runs on
+      # the provider's OpenAI-compatible /paas/v4 surface, unlike the Coding Plan
+      # entry which needs api.z.ai/api/anthropic/v1. That is also why it needs no
+      # criticalModels pin — VerifyCritical only demands one for a model-level
+      # compatibility override.
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      # Cache writes are "Limited-time Free" on Z.AI's table, so no cache_write:
+      # authoring a rate for a promotion that ends would overstate the cost, and
+      # a missing one only understates it while the promotion holds.
+      release_date: "2026-08-14"
+      pricing:
+        input: 1.4
+        output: 4.4
+        cache_read: 0.26
     - id: glm-5.3 (Subscription)
       # Wire id per Z.AI's own docs: requests send plain "glm-5.3". The
       # "glm-5.3[1m]" form in their Claude Code snippet is an env-var alias for
@@ -92,9 +119,9 @@ models:
       supports_include_reasoning: true
       supports_custom_temperature: true
       pricing:
-        input: 0.72
-        output: 2.3
-        cache_write: 0.72
+        input: 1.4
+        output: 4.4
+        cache_read: 0.26
     - id: glm-5.1 (Subscription)
       name: GLM 5.1 (Subscription)
       base_url: https://api.z.ai/api/coding/paas/v4
@@ -148,6 +175,7 @@ sync:
     pinned:
         - cogvideox-3
         - cogview-4-250304
+        - glm-5.3
         - glm-5.3 (Subscription)
         - glm-5-turbo
         - glm-5-turbo (Subscription)

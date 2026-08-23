@@ -3,19 +3,10 @@ display_name: OpenRouter
 compatibility: openai
 requires_api_key: true
 base_url: https://openrouter.ai/api/v1
+sync:
+    pinned:
+        - stealth/ox-alpha
 models:
-    - id: ai21/jamba-large-1.7
-      name: 'AI21: Jamba Large 1.7'
-      limit: 256000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-08-08"
-      last_updated: "2025-08-08"
-      pricing:
-        input: 2
-        output: 8
     - id: aion-labs/aion-3.0
       name: Aion-3.0
       limit: 131072
@@ -256,6 +247,37 @@ models:
         output: 50
         cache_write: 12.5
         cache_read: 1
+    - id: anthropic/claude-opus-5
+      name: Claude Opus 5
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-24"
+      last_updated: "2026-07-24"
+      pricing:
+        input: 5
+        output: 25
+        cache_write: 6.25
+        cache_read: 0.5
+    - id: anthropic/claude-opus-5-fast
+      name: Claude Opus 5 (Fast)
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      release_date: "2026-07-24"
+      last_updated: "2026-07-24"
+      pricing:
+        input: 10
+        output: 50
+        cache_write: 12.5
+        cache_read: 1
     - id: anthropic/claude-sonnet-4
       name: Claude Sonnet 4
       limit: 1000000
@@ -304,17 +326,6 @@ models:
         output: 10
         cache_write: 2.5
         cache_read: 0.2
-    - id: arcee-ai/coder-large
-      name: 'Arcee AI: Coder Large'
-      limit: 32768
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2025-05-05"
-      last_updated: "2025-05-05"
-      pricing:
-        input: 0.5
-        output: 0.8
     - id: arcee-ai/trinity-large-thinking
       name: 'Arcee AI: Trinity Large Thinking'
       limit: 262144
@@ -388,6 +399,36 @@ models:
       pricing:
         input: 0.07
         output: 0.3
+    - id: bytedance-seed/seed-2-1-turbo
+      name: Seed 2.1 Turbo
+      limit: 262144
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-12"
+      last_updated: "2026-08-12"
+      pricing:
+        input: 0.5
+        output: 2.5
+    - id: bytedance-seed/seed-2.0-code
+      name: Seed 2.0 Code
+      limit: 262144
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-02-14"
+      last_updated: "2026-02-14"
+      pricing:
+        input: 0.5
+        output: 3
     - id: bytedance-seed/seed-2.0-lite
       name: 'ByteDance Seed: Seed-2.0-Lite'
       limit: 262144
@@ -444,14 +485,6 @@ models:
       pricing:
         input: 0.2
         output: 0.9
-    - id: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
-      name: 'Venice: Uncensored (free)'
-      limit: 32768
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2025-07-09"
-      last_updated: "2025-07-09"
     - id: cohere/command-a
       name: 'Cohere: Command A'
       limit: 256000
@@ -508,19 +541,6 @@ models:
       supports_custom_temperature: true
       release_date: "2026-06-17"
       last_updated: "2026-06-17"
-    - id: deepcogito/cogito-v2.1-671b
-      name: 'Deep Cogito: Cogito v2.1 671B'
-      limit: 128000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      release_date: "2025-11-13"
-      last_updated: "2025-11-13"
-      pricing:
-        input: 1.25
-        output: 1.25
     - id: deepseek/deepseek-chat
       name: DeepSeek Chat
       limit: 131072
@@ -605,34 +625,60 @@ models:
       pricing:
         input: 0.27
         output: 0.41
-    - id: deepseek/deepseek-v4-flash
-      name: DeepSeek V4 Flash
+    - id: deepseek/deepseek-v4-flash-0731
+      name: DeepSeek V4 Flash 0731
+      limit: 1310720
+      reserved_tokens: 384000
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-31"
+      last_updated: "2026-07-31"
+      pricing:
+        input: 0.08
+        output: 0.18
+        cache_read: 0.016
+    - id: deepseek/deepseek-v4-flash-vision-exp
+      name: DeepSeek V4 Flash Vision Exp
+      limit: 1048576
+      reserved_tokens: 384000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-21"
+      last_updated: "2026-08-21"
+      pricing:
+        input: 0.22
+        output: 0.66
+        cache_read: 0.007
+    - id: deepseek/deepseek-v4-pro-0813
+      name: DeepSeek V4 Pro 0813
       limit: 1048576
       reserved_tokens: 384000
       supports_streaming: true
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
-      release_date: "2026-04-24"
-      last_updated: "2026-04-24"
+      release_date: "2026-08-12"
+      last_updated: "2026-08-22"
       pricing:
-        input: 0.077
-        output: 0.154
-        cache_read: 0.0154
-    - id: deepseek/deepseek-v4-pro
-      name: DeepSeek V4 Pro
-      limit: 1048576
-      reserved_tokens: 384000
+        input: 1.122
+        output: 3.366
+        cache_read: 0.0374
+    - id: dots-studio/dots-3-note-preview:free
+      name: Dots3-Note Preview (free)
+      limit: 512000
+      reserved_tokens: 512000
       supports_streaming: true
+      supports_image: true
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
-      release_date: "2026-04-24"
-      last_updated: "2026-04-24"
-      pricing:
-        input: 0.435
-        output: 0.87
-        cache_read: 0.003625
+      release_date: "2026-08-14"
+      last_updated: "2026-08-14"
     - id: google/gemini-2.5-flash
       name: 'Google: Gemini 2.5 Flash'
       limit: 1048576
@@ -829,6 +875,57 @@ models:
         output: 9
         cache_write: 0.083333
         cache_read: 0.15
+    - id: google/gemini-3.5-flash-lite
+      name: Gemini 3.5 Flash Lite
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-21"
+      last_updated: "2026-07-21"
+      pricing:
+        input: 0.3
+        output: 2.5
+        cache_write: 0.083333
+        cache_read: 0.03
+    - id: google/gemini-3.6-flash
+      name: Gemini 3.6 Flash
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-21"
+      last_updated: "2026-07-21"
+      pricing:
+        input: 0.75
+        output: 3.75
+        cache_write: 0.041667
+        cache_read: 0.075
+    - id: google/gemini-3.7-flash
+      name: Gemini 3.7 Flash
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-13"
+      last_updated: "2026-08-13"
+      pricing:
+        input: 0.375
+        output: 1.875
+        cache_write: 0.020833
+        cache_read: 0.0375
     - id: google/gemma-2-27b-it
       name: 'Google: Gemma 2 27B'
       limit: 8192
@@ -1043,6 +1140,20 @@ models:
         input: 0.01
         output: 0.03
         cache_read: 0.002
+    - id: inclusionai/ling-3.0-flash
+      name: Ling-3.0-flash
+      limit: 262144
+      reserved_tokens: 32768
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-23"
+      last_updated: "2026-07-23"
+      pricing:
+        input: 0.021
+        output: 0.063
+        cache_read: 0.0042
     - id: inclusionai/ring-2.6-1t
       name: Ring-2.6-1T
       limit: 262144
@@ -1057,28 +1168,19 @@ models:
         input: 0.075
         output: 0.625
         cache_read: 0.015
-    - id: inflection/inflection-3-pi
-      name: 'Inflection: Inflection 3 Pi'
-      limit: 8000
-      reserved_tokens: 4096
+    - id: kwaipilot/kat-coder-air-v2.5
+      name: KAT-Coder-Air V2.5
+      limit: 256000
+      reserved_tokens: 80000
       supports_streaming: true
+      supports_tool_search: true
       supports_custom_temperature: true
-      release_date: "2024-10-11"
-      last_updated: "2024-10-11"
+      release_date: "2026-07-10"
+      last_updated: "2026-07-10"
       pricing:
-        input: 2.5
-        output: 10
-    - id: inflection/inflection-3-productivity
-      name: 'Inflection: Inflection 3 Productivity'
-      limit: 8000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2024-10-11"
-      last_updated: "2024-10-11"
-      pricing:
-        input: 2.5
-        output: 10
+        input: 0.15
+        output: 0.6
+        cache_read: 0.03
     - id: kwaipilot/kat-coder-pro-v2
       name: 'Kwaipilot: KAT-Coder-Pro V2'
       limit: 256000
@@ -1092,25 +1194,29 @@ models:
         input: 0.3
         output: 1.2
         cache_read: 0.06
-    - id: liquid/lfm-2.5-1.2b-instruct:free
-      name: 'LiquidAI: LFM2.5-1.2B-Instruct (free)'
-      limit: 32768
-      reserved_tokens: 4096
+    - id: kwaipilot/kat-coder-pro-v2.5
+      name: KAT-Coder-Pro V2.5
+      limit: 256000
+      reserved_tokens: 80000
       supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2026-01-20"
-      last_updated: "2026-01-20"
-    - id: liquid/lfm-2.5-1.2b-thinking:free
-      name: 'LiquidAI: LFM2.5-1.2B-Thinking (free)'
-      limit: 32768
-      reserved_tokens: 4915
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
-      release_date: "2026-01-20"
-      last_updated: "2026-01-20"
+      release_date: "2026-07-10"
+      last_updated: "2026-07-10"
+      pricing:
+        input: 0.74
+        output: 2.96
+        cache_read: 0.15
+    - id: liquid/lfm-2.5-2.6b:free
+      name: LFM2.5-2.6B (free)
+      limit: 65536
+      reserved_tokens: 8192
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-11"
+      last_updated: "2026-08-11"
     - id: mancer/weaver
       name: 'Mancer: Weaver (alpha)'
       limit: 8000
@@ -1122,6 +1228,20 @@ models:
       pricing:
         input: 0.75
         output: 1
+    - id: meituan/longcat-2.0
+      name: LongCat 2.0
+      limit: 1048756
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-20"
+      last_updated: "2026-07-20"
+      pricing:
+        input: 0.3
+        output: 1.2
+        cache_read: 0.006
     - id: meta-llama/llama-3.1-70b-instruct
       name: 'Meta: Llama 3.1 70B Instruct'
       limit: 131072
@@ -1146,18 +1266,6 @@ models:
       pricing:
         input: 0.02
         output: 0.05
-    - id: meta-llama/llama-3.2-11b-vision-instruct
-      name: 'Meta: Llama 3.2 11B Vision Instruct'
-      limit: 131072
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_image: true
-      supports_custom_temperature: true
-      release_date: "2024-09-25"
-      last_updated: "2024-09-25"
-      pricing:
-        input: 0.24
-        output: 0.24
     - id: meta-llama/llama-3.2-1b-instruct
       name: 'Meta: Llama 3.2 1B Instruct'
       limit: 60000
@@ -1180,14 +1288,6 @@ models:
       pricing:
         input: 0.05
         output: 0.34
-    - id: meta-llama/llama-3.2-3b-instruct:free
-      name: 'Meta: Llama 3.2 3B Instruct (free)'
-      limit: 131072
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2024-09-25"
-      last_updated: "2024-09-25"
     - id: meta-llama/llama-3.3-70b-instruct
       name: 'Meta: Llama 3.3 70B Instruct'
       limit: 131072
@@ -1200,15 +1300,6 @@ models:
       pricing:
         input: 0.1
         output: 0.32
-    - id: meta-llama/llama-3.3-70b-instruct:free
-      name: 'Meta: Llama 3.3 70B Instruct (free)'
-      limit: 65536
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2024-12-06"
-      last_updated: "2024-12-06"
     - id: meta-llama/llama-4-maverick
       name: 'Meta: Llama 4 Maverick'
       limit: 1048576
@@ -1247,6 +1338,53 @@ models:
       pricing:
         input: 0.18
         output: 0.18
+    - id: meta/muse-glimmer-30b
+      name: Muse Glimmer 30B
+      limit: 131072
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-10"
+      last_updated: "2026-08-10"
+      pricing:
+        input: 0.35
+        output: 1.5
+        cache_read: 0.04
+    - id: meta/muse-spark-1.2
+      name: Muse Spark 1.2
+      limit: 1048576
+      reserved_tokens: 1048576
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-05"
+      last_updated: "2026-08-05"
+      pricing:
+        input: 1.25
+        output: 4.25
+        cache_read: 0.15
+    - id: meta/muse-spark-1.2-contributor
+      name: Muse Spark 1.2 Contributor
+      limit: 1048576
+      reserved_tokens: 1048576
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-21"
+      last_updated: "2026-08-21"
+      pricing:
+        input: 0.1
+        output: 0.2
+        cache_read: 0.002
     - id: microsoft/phi-4
       name: 'Microsoft: Phi 4'
       limit: 16384
@@ -1396,19 +1534,6 @@ models:
         input: 0.3
         output: 0.9
         cache_read: 0.03
-    - id: mistralai/devstral-2512
-      name: 'Mistral: Devstral 2 2512'
-      limit: 262144
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-12-09"
-      last_updated: "2025-12-09"
-      pricing:
-        input: 0.4
-        output: 2
-        cache_read: 0.04
     - id: mistralai/ministral-14b-2512
       name: 'Mistral: Ministral 3 14B 2512'
       limit: 262144
@@ -1674,6 +1799,7 @@ models:
       reserved_tokens: 262144
       supports_streaming: true
       supports_image: true
+      supports_video: true
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
@@ -1746,14 +1872,6 @@ models:
       pricing:
         input: 1
         output: 1
-    - id: nousresearch/hermes-3-llama-3.1-405b:free
-      name: 'Nous: Hermes 3 405B Instruct (free)'
-      limit: 131072
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2024-08-16"
-      last_updated: "2024-08-16"
     - id: nousresearch/hermes-3-llama-3.1-70b
       name: 'Nous: Hermes 3 70B Instruct'
       limit: 131072
@@ -1790,20 +1908,6 @@ models:
       last_updated: "2025-08-26"
       pricing:
         input: 0.13
-        output: 0.4
-    - id: nvidia/llama-3.3-nemotron-super-49b-v1.5
-      name: 'NVIDIA: Llama 3.3 Nemotron Super 49B V1.5'
-      limit: 131072
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-07-25"
-      last_updated: "2025-07-25"
-      pricing:
-        input: 0.1
         output: 0.4
     - id: nvidia/nemotron-3-nano-30b-a3b
       name: 'NVIDIA: Nemotron 3 Nano 30B A3B'
@@ -1902,6 +2006,30 @@ models:
       supports_custom_temperature: true
       release_date: "2026-06-04"
       last_updated: "2026-06-04"
+    - id: nvidia/nemotron-3.5-lightning
+      name: Nemotron 3.5 Lightning 30B A3B
+      limit: 262144
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-11"
+      last_updated: "2026-08-11"
+      pricing:
+        input: 0.08
+        output: 0.2
+        cache_read: 0.04
+    - id: nvidia/nemotron-3.5-lightning:free
+      name: Nemotron 3.5 Lightning (free)
+      limit: 1000000
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-11"
+      last_updated: "2026-08-11"
     - id: nvidia/nemotron-nano-12b-v2-vl:free
       name: 'NVIDIA: Nemotron Nano 12B 2 VL (free)'
       limit: 128000
@@ -2041,28 +2169,6 @@ models:
         input: 0.15
         output: 0.6
         cache_read: 0.07
-    - id: openai/gpt-4o-mini-search-preview
-      name: 'OpenAI: GPT-4o-mini Search Preview'
-      limit: 128000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2025-03-12"
-      last_updated: "2025-03-12"
-      pricing:
-        input: 0.15
-        output: 0.6
-    - id: openai/gpt-4o-search-preview
-      name: 'OpenAI: GPT-4o Search Preview'
-      limit: 128000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2025-03-12"
-      last_updated: "2025-03-12"
-      pricing:
-        input: 2.5
-        output: 10
     - id: openai/gpt-5
       name: GPT-5
       limit: 400000
@@ -2077,35 +2183,6 @@ models:
         input: 1.25
         output: 10
         cache_read: 0.125
-    - id: openai/gpt-5-chat
-      name: 'OpenAI: GPT-5 Chat'
-      limit: 128000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_image: true
-      supports_custom_temperature: true
-      release_date: "2025-08-07"
-      last_updated: "2025-08-07"
-      pricing:
-        input: 1.25
-        output: 10
-        cache_read: 0.12
-    - id: openai/gpt-5-codex
-      name: 'OpenAI: GPT-5 Codex'
-      limit: 400000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-09-15"
-      last_updated: "2025-09-15"
-      pricing:
-        input: 1.25
-        output: 10
-        cache_read: 0.12
     - id: openai/gpt-5-image
       name: 'OpenAI: GPT-5 Image'
       limit: 400000
@@ -2185,20 +2262,6 @@ models:
       pricing:
         input: 15
         output: 120
-    - id: openai/gpt-5.1-chat
-      name: 'OpenAI: GPT-5.1 Chat'
-      limit: 128000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_image: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-11-13"
-      last_updated: "2025-11-13"
-      pricing:
-        input: 1.25
-        output: 10
-        cache_read: 0.12
     - id: openai/gpt-5.1-codex
       name: 'OpenAI: GPT-5.1-Codex'
       limit: 400000
@@ -2292,20 +2355,6 @@ models:
       pricing:
         input: 21
         output: 168
-    - id: openai/gpt-5.3-chat
-      name: 'OpenAI: GPT-5.3 Chat'
-      limit: 128000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_image: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2026-03-03"
-      last_updated: "2026-03-03"
-      pricing:
-        input: 1.75
-        output: 14
-        cache_read: 0.17
     - id: openai/gpt-5.3-codex
       name: 'OpenAI: GPT-5.3-Codex'
       limit: 400000
@@ -2550,17 +2599,6 @@ models:
       pricing:
         input: 0.04
         output: 0.19
-    - id: openai/gpt-oss-120b:free
-      name: 'OpenAI: gpt-oss-120b (free)'
-      limit: 131072
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-08-05"
-      last_updated: "2025-08-05"
     - id: openai/gpt-oss-20b
       name: 'OpenAI: gpt-oss-20b'
       limit: 131072
@@ -2575,17 +2613,6 @@ models:
       pricing:
         input: 0.03
         output: 0.14
-    - id: openai/gpt-oss-20b:free
-      name: 'OpenAI: gpt-oss-20b (free)'
-      limit: 131072
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-08-05"
-      last_updated: "2025-08-05"
     - id: openai/gpt-oss-safeguard-20b
       name: 'OpenAI: gpt-oss-safeguard-20b'
       limit: 131072
@@ -2647,22 +2674,6 @@ models:
         input: 2
         output: 8
         cache_read: 0.5
-    - id: openai/o3-deep-research
-      name: 'OpenAI: o3 Deep Research'
-      limit: 200000
-      reserved_tokens: 30000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2024-06-26"
-      last_updated: "2024-06-26"
-      pricing:
-        input: 10
-        output: 40
-        cache_read: 2.5
     - id: openai/o3-mini
       name: 'OpenAI: o3 Mini'
       limit: 200000
@@ -2724,22 +2735,6 @@ models:
         input: 1.1
         output: 4.4
         cache_read: 0.28
-    - id: openai/o4-mini-deep-research
-      name: 'OpenAI: o4 Mini Deep Research'
-      limit: 200000
-      reserved_tokens: 30000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2024-06-26"
-      last_updated: "2024-06-26"
-      pricing:
-        input: 2
-        output: 8
-        cache_read: 0.5
     - id: openai/o4-mini-high
       name: 'OpenAI: o4 Mini High'
       limit: 200000
@@ -2880,30 +2875,30 @@ models:
       pricing:
         input: 2
         output: 8
-    - id: poolside/laguna-m.1
-      name: Laguna M.1
-      limit: 262144
-      reserved_tokens: 32768
+    - id: poolside/laguna-s-2.1
+      name: Laguna S 2.1
+      limit: 1048576
+      reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
-      release_date: "2026-04-28"
-      last_updated: "2026-06-13"
+      release_date: "2026-07-21"
+      last_updated: "2026-07-21"
       pricing:
-        input: 0.2
-        output: 0.4
-        cache_read: 0.1
-    - id: poolside/laguna-m.1:free
-      name: Laguna M.1 (free)
+        input: 0.09
+        output: 0.18
+        cache_read: 0.009
+    - id: poolside/laguna-s-2.1:free
+      name: Laguna S 2.1 (free)
       limit: 262144
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
-      release_date: "2026-04-28"
-      last_updated: "2026-06-13"
+      release_date: "2026-07-21"
+      last_updated: "2026-07-21"
     - id: poolside/laguna-xs-2.1
       name: Laguna XS 2.1
       limit: 262144
@@ -3182,15 +3177,6 @@ models:
         output: 3.25
         cache_write: 0.81
         cache_read: 0.13
-    - id: qwen/qwen3-coder:free
-      name: 'Qwen: Qwen3 Coder 480B A35B (free)'
-      limit: 262000
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-07-23"
-      last_updated: "2025-07-23"
     - id: qwen/qwen3-max
       name: 'Qwen: Qwen3 Max'
       limit: 262144
@@ -3231,15 +3217,6 @@ models:
       pricing:
         input: 0.09
         output: 1.1
-    - id: qwen/qwen3-next-80b-a3b-instruct:free
-      name: 'Qwen: Qwen3 Next 80B A3B Instruct (free)'
-      limit: 262144
-      reserved_tokens: 4096
-      supports_streaming: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: 2025-09
-      last_updated: 2025-09
     - id: qwen/qwen3-next-80b-a3b-thinking
       name: 'Qwen: Qwen3 Next 80B A3B Thinking'
       limit: 131072
@@ -3544,6 +3521,23 @@ models:
         input: 0.33
         output: 1.95
         cache_write: 0.41
+    - id: qwen/qwen3.7-flash
+      name: Qwen3.7 Flash
+      limit: 1000000
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-15"
+      last_updated: "2026-07-15"
+      pricing:
+        input: 0.03
+        output: 0.13
+        cache_write: 0.038
+        cache_read: 0.006
     - id: qwen/qwen3.7-max
       name: Qwen3.7 Max
       limit: 1000000
@@ -3575,6 +3569,53 @@ models:
         output: 1.28
         cache_write: 0.4
         cache_read: 0.064
+    - id: qwen/qwen3.8-2.4t-a95b
+      name: Qwen3.8 2.4T A95B
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-12"
+      last_updated: "2026-08-12"
+      pricing:
+        input: 2
+        output: 6
+        cache_read: 0.25
+    - id: qwen/qwen3.8-27b
+      name: Qwen3.8 27B
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-14"
+      last_updated: "2026-08-14"
+      pricing:
+        input: 0.4
+        output: 3
+        cache_read: 0.05
+    - id: qwen/qwen3.8-max
+      name: Qwen3.8 Max
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-03"
+      last_updated: "2026-08-03"
+      pricing:
+        input: 2
+        output: 6
+        cache_write: 2.5
+        cache_read: 0.25
     - id: rekaai/reka-edge
       name: Reka Edge
       limit: 16384
@@ -3639,6 +3680,20 @@ models:
         input: 5
         output: 30
         cache_read: 0.5
+    - id: sakana/sakana-namazu
+      name: Sakana Namazu
+      limit: 262144
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      release_date: "2026-08-03"
+      last_updated: "2026-08-03"
+      pricing:
+        input: 0.95
+        output: 4
+        cache_read: 0.15
     - id: sao10k/l3-lunaris-8b
       name: 'Sao10K: Llama 3 8B Lunaris'
       limit: 8192
@@ -3650,17 +3705,6 @@ models:
       pricing:
         input: 0.04
         output: 0.05
-    - id: sao10k/l3.1-70b-hanami-x1
-      name: 'Sao10K: Llama 3.1 70B Hanami x1'
-      limit: 16000
-      reserved_tokens: 2400
-      supports_streaming: true
-      supports_custom_temperature: true
-      release_date: "2025-01-08"
-      last_updated: "2025-01-08"
-      pricing:
-        input: 3
-        output: 3
     - id: sao10k/l3.1-euryale-70b
       name: 'Sao10K: Llama 3.1 Euryale 70B v2.2'
       limit: 131072
@@ -3684,6 +3728,19 @@ models:
       pricing:
         input: 0.65
         output: 0.75
+    - id: stealth/ox-alpha
+      name: Ox Alpha
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-20"
+      last_updated: "2026-08-20"
     - id: stepfun/step-3.5-flash
       name: 'StepFun: Step 3.5 Flash'
       limit: 262144
@@ -3727,6 +3784,39 @@ models:
       pricing:
         input: 0.14
         output: 0.57
+    - id: tencent/hy-mt2-1.8b
+      name: Hy-MT2-1.8B
+      limit: 8192
+      reserved_tokens: 4096
+      supports_streaming: true
+      supports_custom_temperature: true
+      release_date: "2026-08-20"
+      last_updated: "2026-08-20"
+      pricing:
+        input: 0.044
+        output: 0.177
+    - id: tencent/hy-mt2-30b-a3b
+      name: Hy-MT2-30B-A3B
+      limit: 8192
+      reserved_tokens: 4096
+      supports_streaming: true
+      supports_custom_temperature: true
+      release_date: "2026-08-20"
+      last_updated: "2026-08-20"
+      pricing:
+        input: 0.074
+        output: 0.295
+    - id: tencent/hy-mt2-7b
+      name: Hy-MT2-7B
+      limit: 8192
+      reserved_tokens: 4096
+      supports_streaming: true
+      supports_custom_temperature: true
+      release_date: "2026-08-19"
+      last_updated: "2026-08-19"
+      pricing:
+        input: 0.074
+        output: 0.295
     - id: tencent/hy3
       name: Hy3
       limit: 262144
@@ -3741,16 +3831,6 @@ models:
         input: 0.14
         output: 0.58
         cache_read: 0.035
-    - id: tencent/hy3:free
-      name: Hy3 (free)
-      limit: 262144
-      reserved_tokens: 262144
-      supports_streaming: true
-      supports_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2026-07-06"
-      last_updated: "2026-07-06"
     - id: thedrummer/cydonia-24b-v4.1
       name: 'TheDrummer: Cydonia 24B V4.1'
       limit: 131072
@@ -3799,6 +3879,58 @@ models:
       pricing:
         input: 0.4
         output: 0.4
+    - id: thinkingmachines/inkling
+      name: Inkling
+      limit: 1048576
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-15"
+      last_updated: "2026-07-15"
+      pricing:
+        input: 1
+        output: 4.05
+        cache_read: 0.17
+    - id: thinkingmachines/inkling-small
+      name: Inkling Small
+      limit: 1048576
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-30"
+      last_updated: "2026-07-30"
+      pricing:
+        input: 0.45
+        output: 1.2
+        cache_read: 0.1
+    - id: thinkingmachines/inkling-small:free
+      name: Inkling Small (free)
+      limit: 262144
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-30"
+      last_updated: "2026-07-30"
+    - id: thinkingmachines/inkling:free
+      name: Inkling (free)
+      limit: 262144
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-07-15"
+      last_updated: "2026-07-15"
     - id: undi95/remm-slerp-l2-13b
       name: ReMM SLERP 13B
       limit: 6144
@@ -3825,6 +3957,20 @@ models:
         input: 0.15
         output: 0.6
         cache_read: 0.01
+    - id: upstage/solar-pro4
+      name: Solar Pro 4
+      limit: 524288
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-10"
+      last_updated: "2026-08-10"
+      pricing:
+        input: 0.03
+        output: 0.12
+        cache_read: 0.006
     - id: writer/palmyra-x5
       name: 'Writer: Palmyra X5'
       limit: 1040000
@@ -3851,8 +3997,8 @@ models:
         input: 2
         output: 6
         cache_read: 0.2
-    - id: x-ai/grok-4.5
-      name: Grok 4.5
+    - id: x-ai/grok-4.6
+      name: Grok 4.6
       limit: 500000
       reserved_tokens: 500000
       supports_streaming: true
@@ -3860,8 +4006,8 @@ models:
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
-      release_date: "2026-07-08"
-      last_updated: "2026-07-08"
+      release_date: "2026-08-12"
+      last_updated: "2026-08-12"
       pricing:
         input: 2
         output: 6
@@ -4002,20 +4148,30 @@ models:
         input: 1.2
         output: 4
         cache_read: 0.24
-    - id: z-ai/glm-5.2
-      name: GLM-5.2
-      limit: 1048576
-      reserved_tokens: 131072
+    - id: z-ai/glm-5.2:free
+      name: GLM 5.2 (free)
+      limit: 256000
+      reserved_tokens: 256000
       supports_streaming: true
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-06-13"
       last_updated: "2026-06-13"
+    - id: z-ai/glm-5.3
+      name: GLM-5.3
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-14"
+      last_updated: "2026-08-14"
       pricing:
-        input: 0.42
-        output: 1.32
-        cache_read: 0.078
+        input: 1.4
+        output: 4.4
+        cache_read: 0.26
     - id: z-ai/glm-5v-turbo
       name: 'Z.ai: GLM 5V Turbo'
       limit: 202752
@@ -4095,6 +4251,20 @@ models:
         output: 10
         cache_write: 2.5
         cache_read: 0.2
+    - id: ~deepseek/deepseek-v4-flash-latest
+      name: DeepSeek V4 Flash Latest
+      limit: 1310720
+      reserved_tokens: 262144
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-01"
+      last_updated: "2026-08-01"
+      pricing:
+        input: 0.04
+        output: 0.13
+        cache_read: 0.01
     - id: ~google/gemini-flash-latest
       name: Google Gemini Flash Latest
       limit: 1048576
@@ -4135,6 +4305,7 @@ models:
       reserved_tokens: 262144
       supports_streaming: true
       supports_image: true
+      supports_video: true
       supports_reasoning: true
       supports_tool_search: true
       supports_custom_temperature: true
@@ -4188,3 +4359,17 @@ models:
         input: 2
         output: 6
         cache_read: 0.5
+    - id: ~z-ai/glm-latest
+      name: GLM Latest
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-08-19"
+      last_updated: "2026-08-19"
+      pricing:
+        input: 1.4
+        output: 4.4
+        cache_read: 0.26
