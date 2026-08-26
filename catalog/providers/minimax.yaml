@@ -285,6 +285,23 @@ models:
       # OpenAI-compatible endpoint. This flag describes the WIRE PATH, not the
       # model. Re-run that two-request probe before flipping it — turning it on
       # while the gateway still rejects makes every M3 request 400.
+      sampling:
+        # MiniMax publishes one pair for M3 with no thinking/non-thinking split:
+        # temperature 1.0 over [0, 2], top_p 0.95 over [0, 1]. Note the ceiling
+        # is 2, not Anthropic's 1.
+        #
+        # No stop: MiniMax's own Anthropic-endpoint reference marks
+        # stop_sequences "Ignored", and a probe on 2026-08-26 agreed - asked to
+        # halt at a marker, the model wrote the marker and counted on. Documented
+        # AND measured, so there is nothing to offer.
+        temperature:
+          default: 1
+          min: 0
+          max: 2
+        top_p:
+          default: 0.95
+          min: 0
+          max: 1
       pricing:
         # Pay-as-you-go standard tier, effective rates for inputs up to 512K,
         # which is what nearly every request pays. MiniMax bills M3 in two input
@@ -330,6 +347,23 @@ models:
       # falls back to. Both tiers therefore run Plexon's own managed deferral
       # rather than a provider-side tool search.
       default_selection: true
+      sampling:
+        # MiniMax publishes one pair for M3 with no thinking/non-thinking split:
+        # temperature 1.0 over [0, 2], top_p 0.95 over [0, 1]. Note the ceiling
+        # is 2, not Anthropic's 1.
+        #
+        # No stop: MiniMax's own Anthropic-endpoint reference marks
+        # stop_sequences "Ignored", and a probe on 2026-08-26 agreed - asked to
+        # halt at a marker, the model wrote the marker and counted on. Documented
+        # AND measured, so there is nothing to offer.
+        temperature:
+          default: 1
+          min: 0
+          max: 2
+        top_p:
+          default: 0.95
+          min: 0
+          max: 1
       pricing:
         is_subscription: true
 sync:

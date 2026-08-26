@@ -154,6 +154,11 @@ type CatalogRange struct {
 	Default *float64 `json:"default,omitempty" yaml:"default,omitempty"`
 	Min     float64  `json:"min" yaml:"min"`
 	Max     float64  `json:"max" yaml:"max"`
+	// Note is a per-model quirk shown beside the control, for behaviour a range
+	// cannot express. Qwen's Token Plan silently raises any temperature below
+	// 0.6 to 0.6, so a 0.2 there is not the 0.2 the operator asked for; without
+	// somewhere to say that, the only way to find out is to measure it.
+	Note string `json:"note,omitempty" yaml:"note,omitempty"`
 }
 
 // CatalogStopLimit is how many stop sequences this model's API accepts.

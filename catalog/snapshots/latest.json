@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-08-26T18:10:16Z",
+  "generated": "2026-08-26T19:55:37Z",
   "providers": [
     {
       "name": "anthropic",
@@ -850,6 +850,18 @@
           "supports_include_reasoning": true,
           "tool_deferral": "off",
           "supports_custom_temperature": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0,
+              "max": 1
+            }
+          },
           "pricing": {
             "input": 0.3,
             "output": 1.2,
@@ -871,6 +883,18 @@
           "supports_include_reasoning": true,
           "tool_deferral": "off",
           "supports_custom_temperature": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 2
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0,
+              "max": 1
+            }
+          },
           "default_selection": true,
           "pricing": {
             "is_subscription": true
@@ -949,6 +973,18 @@
           "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 1
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0,
+              "max": 1
+            }
+          },
           "pricing": {
             "is_subscription": true
           }
@@ -6919,6 +6955,22 @@
           "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "sampling": {
+            "temperature": {
+              "default": 0.6,
+              "min": 0,
+              "max": 2,
+              "note": "Values below 0.6 are raised to 0.6 by the endpoint."
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0,
+              "max": 1
+            },
+            "stop": {
+              "max_items": 4
+            }
+          },
           "pricing": {
             "is_subscription": true
           }
@@ -6935,6 +6987,22 @@
           "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "sampling": {
+            "temperature": {
+              "default": 0.6,
+              "min": 0,
+              "max": 2,
+              "note": "Values below 0.6 are raised to 0.6 by the endpoint."
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0,
+              "max": 1
+            },
+            "stop": {
+              "max_items": 4
+            }
+          },
           "pricing": {
             "is_subscription": true
           }
@@ -6977,6 +7045,21 @@
           "supports_reasoning": true,
           "supports_include_reasoning": true,
           "supports_custom_temperature": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 1
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0.01,
+              "max": 1
+            },
+            "stop": {
+              "max_items": 4
+            }
+          },
           "release_date": "2026-08-14",
           "pricing": {
             "input": 1.4,
@@ -6995,6 +7078,18 @@
           "supports_streaming": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 1
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0.01,
+              "max": 1
+            }
+          },
           "release_date": "2026-08-14",
           "pricing": {
             "is_subscription": true
@@ -7045,6 +7140,18 @@
           "supports_image": true,
           "supports_reasoning": true,
           "supports_include_reasoning": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 1
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0.01,
+              "max": 1
+            }
+          },
           "default_selection": true,
           "release_date": "2026-08-26",
           "pricing": {

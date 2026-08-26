@@ -290,6 +290,29 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
+      sampling:
+        # The hosted Token Plan differs from the open-weight card, and the hosted
+        # number is the one that applies here: thinking mode defaults to 0.6, and
+        # anything below 0.6 is silently RAISED to it, so a 0.2 set on this cell
+        # is not the 0.2 an operator asked for. That is what the note carries.
+        # The range really is [0, 2) - Alibaba flags it in their own migration
+        # guide as differing from Anthropic's [0, 1].
+        #
+        # stop IS authored here, and Qwen is the only one of the four Plexon
+        # backings that earns it: probed 2026-08-26, the marker cut generation
+        # where every other endpoint ignored it. Alibaba publishes no item cap,
+        # so 4 is the conservative number the vendors that do publish one use.
+        temperature:
+          default: 0.6
+          min: 0
+          max: 2
+          note: Values below 0.6 are raised to 0.6 by the endpoint.
+        top_p:
+          default: 0.95
+          min: 0
+          max: 1
+        stop:
+          max_items: 4
       pricing:
         is_subscription: true
     - id: qwen3.8-max-preview (Token Plan)
@@ -306,6 +329,29 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
+      sampling:
+        # The hosted Token Plan differs from the open-weight card, and the hosted
+        # number is the one that applies here: thinking mode defaults to 0.6, and
+        # anything below 0.6 is silently RAISED to it, so a 0.2 set on this cell
+        # is not the 0.2 an operator asked for. That is what the note carries.
+        # The range really is [0, 2) - Alibaba flags it in their own migration
+        # guide as differing from Anthropic's [0, 1].
+        #
+        # stop IS authored here, and Qwen is the only one of the four Plexon
+        # backings that earns it: probed 2026-08-26, the marker cut generation
+        # where every other endpoint ignored it. Alibaba publishes no item cap,
+        # so 4 is the conservative number the vendors that do publish one use.
+        temperature:
+          default: 0.6
+          min: 0
+          max: 2
+          note: Values below 0.6 are raised to 0.6 by the endpoint.
+        top_p:
+          default: 0.95
+          min: 0
+          max: 1
+        stop:
+          max_items: 4
       pricing:
         is_subscription: true
 sync:

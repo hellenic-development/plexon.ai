@@ -47,6 +47,21 @@ models:
       # authoring a rate for a promotion that ends would overstate the cost, and
       # a missing one only understates it while the promotion holds.
       release_date: "2026-08-14"
+      sampling:
+        # Same published numbers as GLM 5.3 Flash below; this one is on the
+        # OpenAI-compatible /paas/v4 surface where Z.AI documents them, so
+        # unlike the Coding Plan entries there is no shim between the values and
+        # the model. Not probed: a Coding Plan key cannot reach /paas/v4.
+        temperature:
+          default: 1
+          min: 0
+          max: 1
+        top_p:
+          default: 0.95
+          min: 0.01
+          max: 1
+        stop:
+          max_items: 4
       pricing:
         input: 1.4
         output: 4.4
@@ -91,6 +106,25 @@ models:
       # models.dev lists it under zai-coding-plan alone, so there is no metered
       # sibling to pair this with the way GLM 5.1 and GLM 5 Turbo each have one.
       release_date: "2026-08-14"
+      sampling:
+        # Z.AI publishes these for /paas/v4 and nothing at all for this Anthropic
+        # host, so the values are the vendor's and the behaviour here is ours to
+        # measure. Two probes disagreed and the second is the better one: at n=5
+        # on a low-entropy prompt temperature looked inert, but at n=8 on a
+        # wide-answer prompt 0.0 gave 4 distinct answers against 1.0's 7. That
+        # leans toward working and is NOT conclusive, which is why it is written
+        # down that way rather than tidied into a verdict.
+        #
+        # No stop: that half IS conclusive. Measured twice, on two prompts - the
+        # model writes the marker and keeps going, stop_reason end_turn.
+        temperature:
+          default: 1
+          min: 0
+          max: 1
+        top_p:
+          default: 0.95
+          min: 0.01
+          max: 1
       pricing:
         is_subscription: true
     - id: glm-5.3-flash
@@ -182,6 +216,25 @@ models:
       # does nothing.
       default_selection: true
       release_date: "2026-08-26"
+      sampling:
+        # Z.AI publishes these for /paas/v4 and nothing at all for this Anthropic
+        # host, so the values are the vendor's and the behaviour here is ours to
+        # measure. Two probes disagreed and the second is the better one: at n=5
+        # on a low-entropy prompt temperature looked inert, but at n=8 on a
+        # wide-answer prompt 0.0 gave 4 distinct answers against 1.0's 7. That
+        # leans toward working and is NOT conclusive, which is why it is written
+        # down that way rather than tidied into a verdict.
+        #
+        # No stop: that half IS conclusive. Measured twice, on two prompts - the
+        # model writes the marker and keeps going, stop_reason end_turn.
+        temperature:
+          default: 1
+          min: 0
+          max: 1
+        top_p:
+          default: 0.95
+          min: 0.01
+          max: 1
       pricing:
         is_subscription: true
     - id: glm-5-turbo
