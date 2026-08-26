@@ -3,7 +3,7 @@ display_name: Z.AI
 compatibility: openai
 requires_api_key: true
 base_url: https://api.z.ai/api/paas/v4
-default_model: glm-5.3 (Subscription)
+default_model: glm-5.3-flash (Subscription)
 models:
     - id: cogvideox-3
       name: CogVideoX 3
@@ -74,16 +74,114 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       # Thinking is not optional on GLM-5.3 and has three levels (low/high/max,
-      # default max). No supports_custom_temperature: the Anthropic path clears
-      # temperature whenever a thinking directive goes out, so on a model that
-      # always thinks the slider would be a control that does nothing.
+      # default max).
+      #
+      # No supports_custom_temperature. The reason first written here was that
+      # "the Anthropic path clears temperature whenever a thinking directive
+      # goes out" — which is WRONG about our own code: buildAnthropicRequest
+      # returns early for ServesEffortLevels models, before it reaches that
+      # clear, so temperature was being forwarded to this host all along. The
+      # conclusion survived its reasoning: probing the same host on GLM-5.3
+      # Flash (2026-08-26) showed temperature accepted and discarded, five
+      # distinct answers at 0.0 just as at 1.0. Same endpoint, same documented
+      # contract, so the flag stays off here too.
       supports_reasoning: true
       supports_include_reasoning: true
       # Coding Plan only. Z.AI has published no per-token price for GLM-5.3 and
       # models.dev lists it under zai-coding-plan alone, so there is no metered
       # sibling to pair this with the way GLM 5.1 and GLM 5 Turbo each have one.
-      default_selection: true
       release_date: "2026-08-14"
+      pricing:
+        is_subscription: true
+    - id: glm-5.3-flash
+      name: GLM 5.3 Flash
+      # Metered sibling of the Coding Plan entry below, on the OpenAI-compatible
+      # /paas/v4 surface. AUTHORED FROM Z.AI'S PUBLISHED TABLE, not measured: a
+      # Coding Plan key cannot reach /paas/v4 at all (probed 2026-08-26,
+      # _examples/zaiglm53/flash_metered, HTTP 429 with code 1113 "Insufficient
+      # balance or no resource package"), so nothing here has been exercised
+      # against the live endpoint the way the Subscription entry has.
+      #
+      # Do not carry the Subscription entry's measurements across to this one.
+      # The two surfaces are separate products: temperature is inert on the
+      # Anthropic host and documented as live here, and only one of those has
+      # been checked.
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      # Z.AI files GLM-5.3-Flash as a VISION-language model (its guide lives
+      # under docs.z.ai/guides/vlm/) and documents image, video and file input.
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      sampling:
+        # Ranges are Z.AI's API-wide documented bounds; the defaults are the
+        # ones its GLM-5.3-Flash guide names specifically. Note the temperature
+        # ceiling is 1.0, not OpenAI's 2.0 — a value that is ordinary on OpenAI
+        # is a 400 here, which is the whole reason the range is catalog data.
+        temperature:
+          default: 1.0
+          min: 0
+          max: 1
+        top_p:
+          default: 0.95
+          min: 0.01
+          max: 1
+        # Documented as max 4, with the caveat that only one is currently
+        # effective. Authored anyway: the cap is what the API enforces, and one
+        # working sequence is still a working sequence.
+        stop:
+          max_items: 4
+      release_date: "2026-08-26"
+      pricing:
+        # LIST price. Z.AI is running a 50% promotion (0.075 / 0.25 / 0.015)
+        # through 2026-09-09, and authoring a rate that expires would understate
+        # cost the moment it does. Same rule as the missing cache_write above.
+        input: 0.15
+        output: 0.5
+        cache_read: 0.03
+    - id: glm-5.3-flash (Subscription)
+      # Wire id probe-verified 2026-08-26 (_examples/zaiglm53/flash_check): the
+      # "glm-5.3-flash[1m]" form Z.AI's devpack docs tell you to use comes back
+      # 400 as a request model, exactly as "glm-5.3[1m]" did. It is an env-var
+      # alias for Claude Code and nothing else.
+      wire_id: glm-5.3-flash
+      name: GLM 5.3 Flash (Subscription)
+      # Anthropic-compat for the same reason as GLM-5.3 above: this is the
+      # surface Z.AI serves coding agents. Probe-verified 2026-08-26 — standard
+      # "data: " SSE framing, thinking blocks ahead of both text and tool_use,
+      # and tool input_schema accepted as-is.
+      compatibility: anthropic
+      base_url: https://api.z.ai/api/anthropic/v1
+      # MEASURED, not taken from the docs (_examples/zaiglm53/flash_window). The
+      # devpack page says the coding endpoint grants "other models" 200,000,
+      # which is stale: 960,020 input tokens were accepted and answered, while
+      # ~1.5M came back stop_reason "model_context_window_exceeded". 1,000,000
+      # sits inside the measured band and matches the GLM-5.3 sibling.
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      # Probe-verified: an Anthropic-shaped base64 image block is accepted on
+      # this shim and answered. This is what lets Flash back a Plexon text cell
+      # without the "cannot view images" warning that GLM-5.3 earns.
+      supports_image: true
+      # No supports_video: the Anthropic Messages protocol has no video content
+      # block, so there is no way to send one over this surface whatever the
+      # model can do. The metered entry above carries it.
+      supports_reasoning: true
+      supports_include_reasoning: true
+      # No supports_custom_temperature and no sampling block, and this time the
+      # reason is MEASURED rather than inferred (_examples/zaiglm53/flash_window,
+      # 2026-08-26). Five draws on a wide-open prompt at temperature 0.0 came
+      # back five distinct answers, the same spread as temperature 1.0 and as no
+      # temperature at all: the field is accepted and discarded. stop_sequences
+      # is ignored too — asked to stop at a marker, the model wrote the marker
+      # and kept going. Offering either control would be offering a control that
+      # does nothing.
+      default_selection: true
+      release_date: "2026-08-26"
       pricing:
         is_subscription: true
     - id: glm-5-turbo
@@ -177,6 +275,8 @@ sync:
         - cogview-4-250304
         - glm-5.3
         - glm-5.3 (Subscription)
+        - glm-5.3-flash
+        - glm-5.3-flash (Subscription)
         - glm-5-turbo
         - glm-5-turbo (Subscription)
         - glm-5.1

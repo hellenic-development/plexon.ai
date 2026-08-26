@@ -136,17 +136,17 @@ type upstreamProvider struct {
 }
 
 type upstreamModel struct {
-	ID          string              `json:"id"`
-	Name        string              `json:"name"`
-	Attachment  bool                `json:"attachment"`
-	Reasoning   bool                `json:"reasoning"`
-	ToolCall    bool                `json:"tool_call"`
-	Temperature bool                `json:"temperature"`
-	ReleaseDate string              `json:"release_date"`
-	LastUpdated string              `json:"last_updated"`
-	Modalities  upstreamModalities  `json:"modalities"`
-	Cost        upstreamCost        `json:"cost"`
-	Limit       upstreamLimit       `json:"limit"`
+	ID          string             `json:"id"`
+	Name        string             `json:"name"`
+	Attachment  bool               `json:"attachment"`
+	Reasoning   bool               `json:"reasoning"`
+	ToolCall    bool               `json:"tool_call"`
+	Temperature bool               `json:"temperature"`
+	ReleaseDate string             `json:"release_date"`
+	LastUpdated string             `json:"last_updated"`
+	Modalities  upstreamModalities `json:"modalities"`
+	Cost        upstreamCost       `json:"cost"`
+	Limit       upstreamLimit      `json:"limit"`
 }
 
 type upstreamModalities struct {
@@ -155,10 +155,10 @@ type upstreamModalities struct {
 }
 
 type upstreamCost struct {
-	Input     float64 `json:"input"`
-	Output    float64 `json:"output"`
-	Reasoning float64 `json:"reasoning"`
-	CacheRead float64 `json:"cache_read"`
+	Input      float64 `json:"input"`
+	Output     float64 `json:"output"`
+	Reasoning  float64 `json:"reasoning"`
+	CacheRead  float64 `json:"cache_read"`
 	CacheWrite float64 `json:"cache_write"`
 }
 
@@ -327,6 +327,13 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	}
 	if local.ToolDeferral != "" {
 		result.ToolDeferral = local.ToolDeferral
+	}
+	// Sampling is wholly hand-authored: models.dev publishes a temperature
+	// boolean and no ranges, defaults, top_p or stop limits at all, so upstream
+	// can only ever blank this. Copied as one pointer rather than field by field
+	// because a partial merge would invent guidance nobody wrote.
+	if local.Sampling != nil {
+		result.Sampling = local.Sampling
 	}
 	if local.BaseURL != "" {
 		result.BaseURL = local.BaseURL

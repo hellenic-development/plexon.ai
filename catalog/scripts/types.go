@@ -17,9 +17,9 @@ const SchemaVersion = 1
 
 // Catalog is the top-level container bundled in snapshots/latest.json.
 type Catalog struct {
-	Version   int                `json:"version" yaml:"version"`
-	Generated string             `json:"generated,omitempty" yaml:"generated,omitempty"`
-	Providers []CatalogProvider  `json:"providers" yaml:"providers,omitempty"`
+	Version   int               `json:"version" yaml:"version"`
+	Generated string            `json:"generated,omitempty" yaml:"generated,omitempty"`
+	Providers []CatalogProvider `json:"providers" yaml:"providers,omitempty"`
 }
 
 // CatalogProvider describes one provider and its models.
@@ -46,22 +46,22 @@ type CatalogModel struct {
 	// catalog entries (e.g. Qwen Coding Plan reuses `qwen3.7-max` on a different
 	// base URL — catalog id stays unique as `qwen3.7-max (Coding Plan)` while
 	// the wire id remains `qwen3.7-max`).
-	WireID                    string            `json:"wire_id,omitempty" yaml:"wire_id,omitempty"`
-	Name                      string            `json:"name,omitempty" yaml:"name,omitempty"`
-	BaseURL                   string            `json:"base_url,omitempty" yaml:"base_url,omitempty"`
+	WireID  string `json:"wire_id,omitempty" yaml:"wire_id,omitempty"`
+	Name    string `json:"name,omitempty" yaml:"name,omitempty"`
+	BaseURL string `json:"base_url,omitempty" yaml:"base_url,omitempty"`
 	// Compatibility overrides the provider's wire protocol ("openai"|"anthropic")
 	// for this model only; falls back to the provider's when empty.
-	Compatibility             string            `json:"compatibility,omitempty" yaml:"compatibility,omitempty"`
-	Headers                   map[string]string `json:"headers,omitempty" yaml:"headers,omitempty"`
-	Limit                     int               `json:"limit,omitempty" yaml:"limit,omitempty"`
-	ReservedTokens            int               `json:"reserved_tokens,omitempty" yaml:"reserved_tokens,omitempty"`
-	SupportsStreaming         bool              `json:"supports_streaming,omitempty" yaml:"supports_streaming,omitempty"`
-	SupportsImage             bool              `json:"supports_image,omitempty" yaml:"supports_image,omitempty"`
-	SupportsVideo             bool              `json:"supports_video,omitempty" yaml:"supports_video,omitempty"`
-	SupportsReasoning         bool              `json:"supports_reasoning,omitempty" yaml:"supports_reasoning,omitempty"`
-	SupportsAdaptiveThinking  bool              `json:"supports_adaptive_thinking,omitempty" yaml:"supports_adaptive_thinking,omitempty"`
-	SupportsIncludeReasoning  bool              `json:"supports_include_reasoning,omitempty" yaml:"supports_include_reasoning,omitempty"`
-	SupportsToolSearch        bool              `json:"supports_tool_search,omitempty" yaml:"supports_tool_search,omitempty"`
+	Compatibility            string            `json:"compatibility,omitempty" yaml:"compatibility,omitempty"`
+	Headers                  map[string]string `json:"headers,omitempty" yaml:"headers,omitempty"`
+	Limit                    int               `json:"limit,omitempty" yaml:"limit,omitempty"`
+	ReservedTokens           int               `json:"reserved_tokens,omitempty" yaml:"reserved_tokens,omitempty"`
+	SupportsStreaming        bool              `json:"supports_streaming,omitempty" yaml:"supports_streaming,omitempty"`
+	SupportsImage            bool              `json:"supports_image,omitempty" yaml:"supports_image,omitempty"`
+	SupportsVideo            bool              `json:"supports_video,omitempty" yaml:"supports_video,omitempty"`
+	SupportsReasoning        bool              `json:"supports_reasoning,omitempty" yaml:"supports_reasoning,omitempty"`
+	SupportsAdaptiveThinking bool              `json:"supports_adaptive_thinking,omitempty" yaml:"supports_adaptive_thinking,omitempty"`
+	SupportsIncludeReasoning bool              `json:"supports_include_reasoning,omitempty" yaml:"supports_include_reasoning,omitempty"`
+	SupportsToolSearch       bool              `json:"supports_tool_search,omitempty" yaml:"supports_tool_search,omitempty"`
 	// ToolDeferral pins how this model handles tool deferral, overriding the
 	// client's heuristic: "off", "native", "managed", or "" / "auto" to leave the
 	// decision alone. Mirrors common/catalog.CatalogModel.ToolDeferral.
@@ -70,19 +70,27 @@ type CatalogModel struct {
 	// build_snapshot unmarshals with plain yaml.Unmarshal (no KnownFields), so
 	// the key was silently dropped on every rebuild. Removing it here drops the
 	// pin from the published snapshot again.
-	ToolDeferral              string            `json:"tool_deferral,omitempty" yaml:"tool_deferral,omitempty"`
-	SupportsCustomTemperature bool              `json:"supports_custom_temperature,omitempty" yaml:"supports_custom_temperature,omitempty"`
-	SupportsImageGeneration   bool              `json:"supports_image_generation,omitempty" yaml:"supports_image_generation,omitempty"`
-	SupportsVideoGeneration   bool              `json:"supports_video_generation,omitempty" yaml:"supports_video_generation,omitempty"`
+	ToolDeferral              string `json:"tool_deferral,omitempty" yaml:"tool_deferral,omitempty"`
+	SupportsCustomTemperature bool   `json:"supports_custom_temperature,omitempty" yaml:"supports_custom_temperature,omitempty"`
+	// Sampling carries the vendor-DOCUMENTED range and default for each
+	// generation knob, so a control can offer the right number instead of a
+	// guess. Hand-authored: models.dev publishes a temperature boolean and
+	// nothing else, so this is the half of the answer the sync cannot supply and
+	// mergeModel preserves it wholesale.
+	//
+	// Mirrors common/catalog.CatalogSampling.
+	Sampling                *CatalogSampling `json:"sampling,omitempty" yaml:"sampling,omitempty"`
+	SupportsImageGeneration bool             `json:"supports_image_generation,omitempty" yaml:"supports_image_generation,omitempty"`
+	SupportsVideoGeneration bool             `json:"supports_video_generation,omitempty" yaml:"supports_video_generation,omitempty"`
 	// SupportsSpeechGeneration marks text-to-speech models (e.g. MiniMax T2A).
 	// Deliberately not part of the client's IsGenerationModel(): speech is
 	// served by the dedicated /api/v1/tts route, never the /chat generation fork.
-	SupportsSpeechGeneration  bool              `json:"supports_speech_generation,omitempty" yaml:"supports_speech_generation,omitempty"`
+	SupportsSpeechGeneration bool `json:"supports_speech_generation,omitempty" yaml:"supports_speech_generation,omitempty"`
 	// SupportsMusicGeneration marks music models (e.g. MiniMax Music 3.0).
 	// Deliberately not part of the client's IsGenerationModel(), for the same
 	// reason as speech: music is served by the dedicated /api/v1/music route.
-	SupportsMusicGeneration   bool              `json:"supports_music_generation,omitempty" yaml:"supports_music_generation,omitempty"`
-	GenerationType            string            `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
+	SupportsMusicGeneration bool   `json:"supports_music_generation,omitempty" yaml:"supports_music_generation,omitempty"`
+	GenerationType          string `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
 	// GenerationAPI names the vendor API surface this generation model speaks,
 	// when the vendor runs more than one and they are not interchangeable.
 	// Empty means the provider's original surface. "minimax-v2" is MiniMax's
@@ -92,7 +100,7 @@ type CatalogModel struct {
 	//
 	// The two MiniMax surfaces reject each other's models outright, so this is
 	// per-model data rather than a provider setting.
-	GenerationAPI             string            `json:"generation_api,omitempty" yaml:"generation_api,omitempty"`
+	GenerationAPI string `json:"generation_api,omitempty" yaml:"generation_api,omitempty"`
 	// ImpliedAspectRatio is the frame shape a video model produces when its API
 	// takes no aspect-ratio argument at all: the shape of the opening frame when
 	// one is supplied, and this value when there is none.
@@ -106,16 +114,51 @@ type CatalogModel struct {
 	//
 	// Ignored when generation_api names a surface that takes a ratio
 	// ("minimax-v2"), because there the caller's request is honoured directly.
-	ImpliedAspectRatio        string            `json:"implied_aspect_ratio,omitempty" yaml:"implied_aspect_ratio,omitempty"`
-	PerUnitCost               float64           `json:"per_unit_cost,omitempty" yaml:"per_unit_cost,omitempty"`
-	DefaultSelection          bool              `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
+	ImpliedAspectRatio string  `json:"implied_aspect_ratio,omitempty" yaml:"implied_aspect_ratio,omitempty"`
+	PerUnitCost        float64 `json:"per_unit_cost,omitempty" yaml:"per_unit_cost,omitempty"`
+	DefaultSelection   bool    `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
 	// FallbackModel names a sibling model of the same provider that the API
 	// retries on when this model's safety classifiers decline a request
 	// (Anthropic server-side fallback beta, e.g. Fable 5 → Opus 5).
-	FallbackModel string `json:"fallback_model,omitempty" yaml:"fallback_model,omitempty"`
-	ReleaseDate   string `json:"release_date,omitempty" yaml:"release_date,omitempty"`
-	LastUpdated               string            `json:"last_updated,omitempty" yaml:"last_updated,omitempty"`
-	Pricing                   CatalogPricing    `json:"pricing,omitempty" yaml:"pricing,omitempty"`
+	FallbackModel string         `json:"fallback_model,omitempty" yaml:"fallback_model,omitempty"`
+	ReleaseDate   string         `json:"release_date,omitempty" yaml:"release_date,omitempty"`
+	LastUpdated   string         `json:"last_updated,omitempty" yaml:"last_updated,omitempty"`
+	Pricing       CatalogPricing `json:"pricing,omitempty" yaml:"pricing,omitempty"`
+}
+
+// CatalogSampling is the per-model sampling guidance: which generation knobs
+// the vendor documents, over what range, and at what default.
+//
+// A knob is offered to an operator ONLY when its entry is present here, with one
+// deliberate exception: temperature is also offered on the older
+// supports_custom_temperature boolean alone, because models.dev sets that flag
+// for hundreds of models and dropping them all to "no knob" would be a
+// regression, not a cleanup. Absent temperature guidance means the generic
+// 0.0-1.0 range and no authored default.
+//
+// The ranges are not cosmetic. Temperature tops out at 1.0 on Z.AI and Anthropic
+// but at 2.0 on OpenAI, so a value that is valid on one vendor is a 400 on the
+// next; the range is what stops a control offering it.
+//
+// Mirrors common/catalog.CatalogSampling.
+type CatalogSampling struct {
+	Temperature *CatalogRange     `json:"temperature,omitempty" yaml:"temperature,omitempty"`
+	TopP        *CatalogRange     `json:"top_p,omitempty" yaml:"top_p,omitempty"`
+	Stop        *CatalogStopLimit `json:"stop,omitempty" yaml:"stop,omitempty"`
+}
+
+// CatalogRange is one numeric knob's documented bounds and default. Default is a
+// pointer because 0 is a legal temperature: a plain float could not tell "the
+// vendor documents 0.0" from "the vendor documents nothing".
+type CatalogRange struct {
+	Default *float64 `json:"default,omitempty" yaml:"default,omitempty"`
+	Min     float64  `json:"min" yaml:"min"`
+	Max     float64  `json:"max" yaml:"max"`
+}
+
+// CatalogStopLimit is how many stop sequences this model's API accepts.
+type CatalogStopLimit struct {
+	MaxItems int `json:"max_items" yaml:"max_items"`
 }
 
 // CatalogPricing is the per-1M-token rate card for a model.
