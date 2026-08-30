@@ -13,8 +13,8 @@
 <br />
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=Nr87tS4K_yk">
-    <img src="https://img.youtube.com/vi/Nr87tS4K_yk/maxresdefault.jpg" alt="Watch the Plexon AI walkthrough on YouTube" width="800" />
+  <a href="https://www.youtube.com/watch?v=GM5KiArTZWw">
+    <img src="https://img.youtube.com/vi/GM5KiArTZWw/maxresdefault.jpg" alt="Watch the Plexon AI walkthrough on YouTube" width="800" />
   </a>
   <p><em>A walkthrough of the desktop app: chat, personas, connectors, workflows, and dashboards.</em></p>
 </div>
