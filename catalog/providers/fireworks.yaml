@@ -17,7 +17,7 @@ compatibility: anthropic
 requires_api_key: true
 base_url: https://api.fireworks.ai/inference/v1
 # GLM is Fireworks' own agentic-coding default: their FireConnect CLI points Claude
-# Code's primary model slots at GLM routers and its subagent slot at deepseek-v4-flash.
+# Code's primary model slots at GLM routers.
 default_model: glm-5p2
 # supports_web_search stays OFF: Fireworks' Anthropic surface rejects server-side
 # tools (web search, code execution, memory).
@@ -101,52 +101,14 @@ models:
         output: 4.4
         cache_write: 1.4
         cache_read: 0.26
-    - id: deepseek-v4-pro
-      wire_id: accounts/fireworks/models/deepseek-v4-pro
-      name: DeepSeek V4 Pro
-      limit: 1000000
-      reserved_tokens: 131072
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      release_date: 2026-04-24
-      pricing:
-        input: 1.74
-        output: 3.48
-        cache_write: 1.74
-        cache_read: 0.145
-    - id: deepseek-v4-flash
-      # The cheapest capable entry in the catalog by a wide margin, and the model
-      # Fireworks itself assigns to subagent traffic.
-      #
-      # The serverless model moved to the dated id on 2026-07-31. The undated
-      # fireworks.ai/models/fireworks/deepseek-v4-flash page now reads
-      # "Serverless: Not supported" (deepseek-v4-pro beside it still reads
-      # "Supported"), while docs.fireworks.ai/serverless/pricing lists
-      # "DeepSeek V4 Flash (0731)" at the rates below. So the old path was
-      # already dead for this provider's serverless Anthropic surface, and the
-      # old 0.14 / 0.28 / 0.028 rates belonged to it rather than to what is
-      # actually being served.
-      wire_id: accounts/fireworks/models/deepseek-v4-flash-0731
-      name: DeepSeek V4 Flash
-      limit: 1000000
-      reserved_tokens: 131072
-      supports_streaming: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_custom_temperature: true
-      release_date: 2026-04-24
-      pricing:
-        input: 0.22
-        output: 0.66
-        cache_write: 0.22
-        cache_read: 0.007
+    # 2026-09-01: two model entries removed for Google OAuth Limited Use
+    # compliance. Archived in the private repo. Restoring requires lifting the
+    # catalog denylist in scripts/denylist.go.
     - id: kimi-k3
       wire_id: accounts/fireworks/models/kimi-k3
       name: Kimi K3
-      # Fireworks reports a 1040k window; held at a round 1,000,000 like the
-      # DeepSeek entries rather than inventing a precise figure from a rounded one.
+      # Fireworks reports a 1040k window; held at a round 1,000,000 rather than
+      # inventing a precise figure from a rounded one.
       limit: 1000000
       reserved_tokens: 131072
       supports_streaming: true
@@ -267,8 +229,6 @@ sync:
         - glm-5p2
         - glm-5p2-fast
         - glm-5p1
-        - deepseek-v4-pro
-        - deepseek-v4-flash
         - kimi-k3
         - kimi-k2p7-code
         - kimi-k2p7-code-fast

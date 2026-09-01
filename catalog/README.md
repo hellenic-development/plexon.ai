@@ -24,7 +24,8 @@ catalog/
 │   └── latest.json          # bundled by CI, fetched by Plexon clients
 ├── scripts/
 │   ├── sync_models_dev/     # go run ./scripts/sync_models_dev
-│   └── build_snapshot/      # go run ./scripts/build_snapshot
+│   ├── build_snapshot/      # go run ./scripts/build_snapshot
+│   └── denylist.go          # model vendors that must never be listed
 ├── .sync-exclude            # provider names the weekly sync must never touch
 └── README.md
 ```
@@ -67,8 +68,9 @@ mechanics in `docs/providers/DYNAMIC_CATALOG.md` inside the plexon repo.
 1. Fork this repo and edit `providers/<provider>.yaml`.
 2. Run `go run ./catalog/scripts/build_snapshot` (or wait for CI) — this
    refreshes `snapshots/latest.json`.
-3. Open a PR. The catalog sync workflow will validate the schema and block
-   merge on errors.
+3. Open a PR. The catalog sync workflow validates the schema, enforces the
+   vendor denylist, and checks that `snapshots/latest.json` was rebuilt. Any
+   of the three failing blocks the merge.
 
 ## Running the Go tools locally
 
@@ -207,3 +209,34 @@ Two providers are never touched by the weekly sync:
 
 Add more names to `.sync-exclude` (one per line) if you introduce further
 meta-providers.
+
+## Vendor denylist (`scripts/denylist.go`)
+
+Separate from `.sync-exclude`, and not the same idea. `.sync-exclude` protects
+hand-authored providers from being overwritten. The denylist blocks specific
+model **vendors** from appearing at all, whichever provider serves them.
+
+It exists because some vendors publish terms reserving the right to train their
+general models on submitted content. Listing one conflicts with the Limited Use
+requirement of the Google API Services User Data Policy, since a Plexon user can
+route Google user data (Gmail, Drive, Calendar) to whatever model they picked.
+Google's Third Party Data Safety team rejected OAuth verification on those
+grounds on 2026-09-01, citing DeepSeek.
+
+Two gates, on purpose:
+
+| Gate | Where | Effect |
+|---|---|---|
+| Ingest | `sync_models_dev` | Denied models are dropped before they reach a YAML, so the weekly sync cannot reintroduce them, including ids that do not exist yet |
+| Publish | `build_snapshot` | A denied model in a hand-edited YAML fails the build outright, so it can never reach `snapshots/latest.json` |
+
+Matching is a case-insensitive substring on both the model id and its display
+name, not an exact-id list. Vendors ship new ids constantly, and
+`SyncPolicy.Excluded` (which is exact-match, per provider) goes stale the week
+after you write it.
+
+**Removing a vendor from the denylist is a policy decision, not a build fix.**
+It needs a reviewed commit and the Google OAuth verification status re-checked
+first. The entries pulled in 2026-09 are archived verbatim at
+`docs/providers/DEEPSEEK_REMOVAL.md` in the private plexon repo, with
+restore steps.

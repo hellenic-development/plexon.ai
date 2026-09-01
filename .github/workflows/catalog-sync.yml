@@ -6,11 +6,19 @@ on:
     # the weekend's edits. Manual dispatch available via the Actions tab.
     - cron: '0 4 * * 1'
   workflow_dispatch:
+  # The validate job below is the vendor-denylist gate (catalog/scripts/denylist.go).
+  # It has to run on pull requests or a hand edit reintroducing a denied model
+  # merges unchecked — including the weekly sync's own PR.
+  pull_request:
+    paths:
+      - 'catalog/**'
 
 # Cancel in-flight runs when a newer one is queued; the latest upstream data
 # is always what we want.
 concurrency:
-  group: catalog-sync
+  # Keyed by ref so two open pull requests do not cancel each other's validation.
+  # The scheduled sync still collapses to one run, which is the original intent.
+  group: catalog-sync-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -19,6 +27,8 @@ permissions:
 
 jobs:
   sync:
+    # Never on pull_request: this job opens a PR, and doing that from a PR loops.
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -67,7 +77,20 @@ jobs:
           go-version: '1.26'
           cache: true
           cache-dependency-path: catalog/go.sum
-      # `build_snapshot` doubles as a schema validator: any YAML that fails
-      # to parse into the Go catalog types will fail the build.
-      - name: Validate provider YAMLs
+      # `build_snapshot` doubles as two validators: any YAML that fails to parse
+      # into the Go catalog types fails the build, and so does any model from a
+      # denied vendor (scripts/denylist.go). The second is a compliance gate,
+      # not a style check — read the godoc there before touching it.
+      - name: Validate provider YAMLs and enforce the vendor denylist
         run: go run ./scripts/build_snapshot -out /tmp/validate.json
+
+      # The snapshot is the artifact clients actually fetch, so a PR that edits
+      # a provider YAML without rebuilding it publishes stale data.
+      - name: Check snapshots/latest.json is up to date
+        run: |
+          go run ./scripts/build_snapshot
+          if ! git diff --quiet -- snapshots/latest.json; then
+            echo "::error::snapshots/latest.json is stale. Run 'go run ./scripts/build_snapshot' in catalog/ and commit the result."
+            git diff --stat -- snapshots/latest.json
+            exit 1
+          fi

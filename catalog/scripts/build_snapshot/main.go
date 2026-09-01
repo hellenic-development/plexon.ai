@@ -52,6 +52,16 @@ func main() {
 		if p.Name == "" {
 			log.Fatalf("%s: missing required field 'name'", path)
 		}
+		// A denied vendor reaching this point means a hand edit slipped past the
+		// sync-side filter, so fail the build rather than publish it. This is the
+		// gate the Google OAuth verification response points at, and CI runs it on
+		// every pull request touching catalog/.
+		for _, m := range p.Models {
+			if catalogtypes.DeniedVendor(m.ID, m.Name) {
+				log.Fatalf("%s: provider %q lists denied-vendor model %q (%q). "+
+					"See scripts/denylist.go before changing this.", path, p.Name, m.ID, m.Name)
+			}
+		}
 		// Strip per-provider sync policy from the snapshot; it's authoring-
 		// side metadata only and clients don't need to transmit it.
 		p.Sync = nil

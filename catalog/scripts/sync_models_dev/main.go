@@ -234,6 +234,12 @@ func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *c
 		if slices.Contains(policy.Excluded, id) {
 			continue
 		}
+		// Denied vendors never enter the catalog, whoever serves them. This is
+		// the gate that stops the weekly sync reintroducing a model that was
+		// pulled for policy reasons, including ids that did not exist then.
+		if catalogtypes.DeniedVendor(id, um.Name) {
+			continue
+		}
 		cm := convertUpstream(id, um)
 		// Make sync additive: every non-zero field from the hand-authored
 		// entry wins over upstream. Upstream only fills in where local is
