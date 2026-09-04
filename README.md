@@ -8,6 +8,7 @@
   <a href="https://github.com/hellenic-development/plexon.ai/releases"><img src="https://img.shields.io/github/v/release/hellenic-development/plexon.ai?style=flat-square&color=729ff0&label=Download" alt="Download" /></a>
   <a href="https://github.com/hellenic-development/plexon.ai/issues"><img src="https://img.shields.io/github/issues/hellenic-development/plexon.ai?style=flat-square&color=729ff0" alt="Issues" /></a>
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-729ff0?style=flat-square" alt="Platform" />
+  <a href="https://github.com/hellenic-development/plexon.ai/releases/latest"><img src="https://img.shields.io/badge/VirusTotal-scanned%20every%20release-brightgreen?style=flat-square&logo=virustotal" alt="VirusTotal" /></a>
 </div>
 
 <br />
@@ -155,6 +156,7 @@ The model list lives in [`catalog/`](catalog/) in this repository and the app sy
 - [Session Lock](https://plexon.ai/features/session-lock/) encrypts one chat under a passcode, unlockable with Touch ID or Windows Hello. A forgotten passcode cannot be recovered by anyone, including us. Turning a lock on needs Premium; unlocking, changing, and removing one never do
 - [Live Share](https://plexon.ai/features/live-share/) connects two apps directly over WebRTC, with no Plexon server in the handshake. Because there is no relay, some network pairs cannot connect: the same network is the reliable case
 - [Moving to another machine](https://plexon.ai/features/transfer-bundles/) exports your whole setup as one encrypted file, under a passphrase stored nowhere. No cloud, no account sync
+- Every installer is uploaded to VirusTotal when the release is published, and each [release page](https://github.com/hellenic-development/plexon.ai/releases/latest) carries the results per file with a link to the full report. The build fails if an installer is flagged. Windows and macOS builds are also code-signed, and the macOS disk images are notarized by Apple
 
 Details: [plexon.ai/security](https://plexon.ai/security/).
 
