@@ -389,6 +389,15 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	if local.SupportsMusicGeneration {
 		result.SupportsMusicGeneration = true
 	}
+	if local.SupportsSpeechRecognition {
+		result.SupportsSpeechRecognition = true
+	}
+	// models.dev carries no language list for a recogniser, so the authored one
+	// is the only one there is: an upstream sync must never blank it, or a
+	// routine refresh would silently return every client to its compiled list.
+	if len(local.SpeechRecognitionLanguages) > 0 {
+		result.SpeechRecognitionLanguages = local.SpeechRecognitionLanguages
+	}
 	if local.DefaultSelection {
 		result.DefaultSelection = true
 	}

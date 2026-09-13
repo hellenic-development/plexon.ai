@@ -169,6 +169,47 @@ models:
       generation_type: sync
       pricing:
         is_subscription: true
+    - id: asr-1.0
+      # MiniMax speech-to-text (the Plexon Voice transcription backing family).
+      # POST /v1/speech_to_text, multipart (model, file, response_format) with
+      # the language hint as an HTTP header; same plain /v1 base as image,
+      # video, speech and music. Unlike those, this surface answers real HTTP
+      # statuses (400/401/402/413/422/429/500) with an Anthropic-shaped error
+      # body rather than a 200 + base_resp envelope. Supported hints on
+      # 2026-09-13: zh yue en ja ko th vi id ms fil ar tr fr de es it pt pl ru
+      # uk; no Greek. Clips up to 500 s / 50 MB.
+      #
+      # per_unit_cost deliberately absent: minimax.io/price listed no ASR
+      # figure on 2026-09-13. Add it the day the page states one.
+      name: MiniMax ASR 1.0
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_speech_recognition: true
+      # The hints the recogniser accepts, as of 2026-09-13. The client reads this
+      # list to decide which engine transcribes a language: anything not here
+      # (Greek, and auto-detect) stays on the on-device model. MiniMax has no
+      # languages endpoint, so adding one is an edit here, merged to main, and
+      # every installed client picks it up within a day with no release.
+      speech_recognition_languages:
+        [zh, yue, en, ja, ko, th, vi, id, ms, fil, ar, tr, fr, de, es, it, pt, pl, ru, uk]
+      generation_type: sync
+      pricing: {}
+    - id: asr-1.0-coding-plan
+      # See the wire_id comment on hailuo-2.3-coding-plan above: the plan
+      # suffix is internal, the bare id goes on the wire. This is the compiled
+      # Plexon Transcribe backing, on every plan like Speech.
+      wire_id: asr-1.0
+      name: MiniMax ASR 1.0 (Subscription)
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_speech_recognition: true
+      speech_recognition_languages:
+        [zh, yue, en, ja, ko, th, vi, id, ms, fil, ar, tr, fr, de, es, it, pt, pl, ru, uk]
+      generation_type: sync
+      pricing:
+        is_subscription: true
     - id: music-3.0
       # MiniMax Music (the Plexon Music backing family). Text-to-song: a style
       # prompt plus optional lyrics with [verse]/[chorus] tags. Same plain /v1
@@ -378,6 +419,8 @@ sync:
         - speech-2.8-turbo-coding-plan
         - speech-2.8-hd
         - speech-2.8-hd-coding-plan
+        - asr-1.0
+        - asr-1.0-coding-plan
         - music-3.0
         - music-3.0-coding-plan
         - music-cover

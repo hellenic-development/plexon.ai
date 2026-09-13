@@ -89,8 +89,28 @@ type CatalogModel struct {
 	// SupportsMusicGeneration marks music models (e.g. MiniMax Music 3.0).
 	// Deliberately not part of the client's IsGenerationModel(), for the same
 	// reason as speech: music is served by the dedicated /api/v1/music route.
-	SupportsMusicGeneration bool   `json:"supports_music_generation,omitempty" yaml:"supports_music_generation,omitempty"`
-	GenerationType          string `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
+	SupportsMusicGeneration bool `json:"supports_music_generation,omitempty" yaml:"supports_music_generation,omitempty"`
+	// SupportsSpeechRecognition marks speech-to-text models (e.g. MiniMax
+	// asr-1.0). Deliberately not part of the client's IsGenerationModel(), for
+	// the same reason as speech and music: transcription is served by the
+	// dedicated /api/v1/transcribe route, never the /chat generation fork.
+	SupportsSpeechRecognition bool `json:"supports_speech_recognition,omitempty" yaml:"supports_speech_recognition,omitempty"`
+	// SpeechRecognitionLanguages is every language hint this recogniser accepts,
+	// as the vendor's own codes and in the vendor's documented order. Empty means
+	// unknown: the client falls back to the list compiled into its build
+	// (common/api.TranscribeLanguages) rather than reading an empty list as
+	// "none", which would move every user to the on-device engine.
+	//
+	// This is the field that decides which engine transcribes a given language in
+	// the desktop client. The vendor publishes no languages endpoint, so without
+	// it the list is a constant inside every shipped binary and the day MiniMax
+	// adds Greek nobody gets it until they take a release. Adding a language is
+	// an edit to this row here, merged to main; clients refresh the snapshot on
+	// their own schedule and pick it up within a day.
+	//
+	// Mirrors common/catalog.CatalogModel.SpeechRecognitionLanguages.
+	SpeechRecognitionLanguages []string `json:"speech_recognition_languages,omitempty" yaml:"speech_recognition_languages,omitempty"`
+	GenerationType             string   `json:"generation_type,omitempty" yaml:"generation_type,omitempty"`
 	// GenerationAPI names the vendor API surface this generation model speaks,
 	// when the vendor runs more than one and they are not interchangeable.
 	// Empty means the provider's original surface. "minimax-v2" is MiniMax's

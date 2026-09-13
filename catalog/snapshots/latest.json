@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-01T12:05:03Z",
+  "generated": "2026-09-13T18:37:48Z",
   "providers": [
     {
       "name": "anthropic",
@@ -751,6 +751,69 @@
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,
           "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "asr-1.0",
+          "name": "MiniMax ASR 1.0",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_speech_recognition": true,
+          "speech_recognition_languages": [
+            "zh",
+            "yue",
+            "en",
+            "ja",
+            "ko",
+            "th",
+            "vi",
+            "id",
+            "ms",
+            "fil",
+            "ar",
+            "tr",
+            "fr",
+            "de",
+            "es",
+            "it",
+            "pt",
+            "pl",
+            "ru",
+            "uk"
+          ],
+          "generation_type": "sync",
+          "pricing": {}
+        },
+        {
+          "id": "asr-1.0-coding-plan",
+          "wire_id": "asr-1.0",
+          "name": "MiniMax ASR 1.0 (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_speech_recognition": true,
+          "speech_recognition_languages": [
+            "zh",
+            "yue",
+            "en",
+            "ja",
+            "ko",
+            "th",
+            "vi",
+            "id",
+            "ms",
+            "fil",
+            "ar",
+            "tr",
+            "fr",
+            "de",
+            "es",
+            "it",
+            "pt",
+            "pl",
+            "ru",
+            "uk"
+          ],
           "generation_type": "sync",
           "pricing": {
             "is_subscription": true
@@ -6408,6 +6471,37 @@
           "name": "Plexon Music",
           "supports_streaming": true,
           "supports_music_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "plexon-1.0-transcribe",
+          "name": "Plexon Voice Transcription",
+          "supports_speech_recognition": true,
+          "speech_recognition_languages": [
+            "zh",
+            "yue",
+            "en",
+            "ja",
+            "ko",
+            "th",
+            "vi",
+            "id",
+            "ms",
+            "fil",
+            "ar",
+            "tr",
+            "fr",
+            "de",
+            "es",
+            "it",
+            "pt",
+            "pl",
+            "ru",
+            "uk"
+          ],
           "generation_type": "sync",
           "pricing": {
             "is_subscription": true

@@ -203,7 +203,8 @@ Two providers are never touched by the weekly sync:
 
 - `plexon` — the Plexon meta-provider. Its routing (key pool, tier-based
   model selection) lives in Plexon server code; the catalog entry only
-  describes the three virtual models it exposes.
+  describes the six virtual models it exposes (text, image, video, speech,
+  music, transcription).
 - `claude-desktop` — the local Claude Desktop CLI integration. Capabilities
   here track what the Claude Code binary supports, not models.dev data.
 

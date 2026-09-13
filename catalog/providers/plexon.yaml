@@ -56,3 +56,21 @@ models:
       generation_type: sync
       pricing:
         is_subscription: true
+    - id: plexon-1.0-transcribe
+      # The virtual model the client's dictation path (Plexon Voice, listening
+      # half) sends to /api/v1/transcribe. Never selectable in the chat model
+      # picker. Synchronous JSON: no streaming flag on purpose.
+      name: Plexon Voice Transcription
+      limit: 0
+      reserved_tokens: 0
+      supports_speech_recognition: true
+      # The hints the recogniser accepts, as of 2026-09-13. The client reads this
+      # list to decide which engine transcribes a language: anything not here
+      # (Greek, and auto-detect) stays on the on-device model. MiniMax has no
+      # languages endpoint, so adding one is an edit here, merged to main, and
+      # every installed client picks it up within a day with no release.
+      speech_recognition_languages:
+        [zh, yue, en, ja, ko, th, vi, id, ms, fil, ar, tr, fr, de, es, it, pt, pl, ru, uk]
+      generation_type: sync
+      pricing:
+        is_subscription: true
