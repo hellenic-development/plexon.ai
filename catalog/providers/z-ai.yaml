@@ -304,6 +304,15 @@ models:
       # Trap worth knowing before backing a Plexon cell with it: a plan without
       # FlashX access gets HTTP 429 code 1311 on every request, which reads as
       # rate limiting to anything that does not parse the code.
+      #
+      # The server reads it now. It happened on 2026-09-22, hours after this
+      # entry was written: the premium text cell was pointed here and every
+      # request was classified as a two-minute overload, re-probed forever, and
+      # charged as a rate limit against the shared z-ai key. classifyPlexonFailure
+      # has a no_access class for it since, the admin cell says "Not on this
+      # plan" with this sentence under it, and the mapping save probes a newly
+      # selected model once so the next one is caught while saving. See
+      # hellenic-ai-agent docs/keypool/PLEXON_PROVIDER.md section 2.
       compatibility: anthropic
       base_url: https://api.z.ai/api/anthropic/v1
       limit: 1000000
