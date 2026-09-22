@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-13T18:37:48Z",
+  "generated": "2026-09-21T23:51:31Z",
   "providers": [
     {
       "name": "anthropic",
@@ -7041,6 +7041,68 @@
           },
           "default_selection": true,
           "release_date": "2026-08-26",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "glm-5.3-flashx",
+          "name": "GLM 5.3 FlashX",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "supports_custom_temperature": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 1
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0.01,
+              "max": 1
+            },
+            "stop": {
+              "max_items": 4
+            }
+          },
+          "release_date": "2026-09-18",
+          "pricing": {
+            "input": 0.37,
+            "output": 1.25,
+            "cache_read": 0.075
+          }
+        },
+        {
+          "id": "glm-5.3-flashx (Subscription)",
+          "wire_id": "glm-5.3-flashx",
+          "name": "GLM 5.3 FlashX (Subscription)",
+          "base_url": "https://api.z.ai/api/anthropic/v1",
+          "compatibility": "anthropic",
+          "limit": 1000000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_include_reasoning": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 1
+            },
+            "top_p": {
+              "default": 0.95,
+              "min": 0.01,
+              "max": 1
+            }
+          },
+          "release_date": "2026-09-18",
           "pricing": {
             "is_subscription": true
           }

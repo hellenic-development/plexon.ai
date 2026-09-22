@@ -191,7 +191,7 @@ Eleven providers. Sign in to Plexon for a managed one, or bring your own key:
 | MiniMax | Your API key, including image, video, speech, and music models |
 | Claude Desktop | Your local app, no API key |
 
-The model list lives in [`catalog/`](catalog/) in this repository and the app syncs from it, so new models arrive without an app update. It holds 415 models today. Premium adds [Custom Providers](https://plexon.ai/features/custom-providers/): any OpenAI-compatible or Anthropic-compatible endpoint, including local models through Ollama, LM Studio, or vLLM.
+The model list lives in [`catalog/`](catalog/) in this repository and the app syncs from it, so new models arrive without an app update. It holds 413 models today. Premium adds [Custom Providers](https://plexon.ai/features/custom-providers/): any OpenAI-compatible or Anthropic-compatible endpoint, including local models through Ollama, LM Studio, or vLLM.
 
 ## Security and privacy
 
@@ -201,7 +201,7 @@ The model list lives in [`catalog/`](catalog/) in this repository and the app sy
 - [Session Lock and App Lock](https://plexon.ai/features/session-lock/) put a passcode on one chat or on the whole app, unlockable with Touch ID or Windows Hello. The app lock can come back after idle time, and you can cap wrong PINs so that reaching the limit wipes Plexon's local data. A forgotten chat passcode cannot be recovered by anyone, including us. Turning a lock on needs Pro; unlocking, changing, and removing one work on any plan
 - [Live Share](https://plexon.ai/features/live-share/) connects two apps directly over WebRTC, with no Plexon server in the handshake. Because there is no relay, some network pairs cannot connect: the same network is the reliable case. Premium plan
 - [Moving to another machine](https://plexon.ai/features/transfer-bundles/) exports your whole setup as one encrypted file, under a passphrase stored nowhere. No cloud, no account sync
-- Every installer is uploaded to VirusTotal when the release is published, and each [release page](https://github.com/hellenic-development/plexon.ai/releases/latest) carries the results per file with a link to the full report. The build fails if an installer is flagged. Windows and macOS builds are also code-signed, and the macOS disk images are notarized by Apple
+- Every installer is uploaded to VirusTotal when the release is published, and each [release page](https://github.com/hellenic-development/plexon.ai/releases/latest) carries the results per file with a link to the full report. macOS builds are code-signed and the disk images are notarized by Apple
 
 Details: [plexon.ai/security](https://plexon.ai/security/).
 
@@ -235,7 +235,7 @@ New to it? [plexon.ai/learn](https://plexon.ai/learn/) is an eight-step path fro
 
 This repository hosts **issue tracking, public releases, and the public model catalog**. The application source is maintained privately.
 
-[`catalog/`](catalog/) holds the provider and model definitions the app syncs from: 11 providers and 415 models across text, image, video, speech, transcription, and music. Its own README covers the format and how to contribute. A [weekly workflow](.github/workflows/catalog-sync.yml) syncs it against models.dev and opens a pull request, and every change is checked against a vendor denylist before it can merge.
+[`catalog/`](catalog/) holds the provider and model definitions the app syncs from: 11 providers and 413 models across text, image, video, speech, transcription, and music. Its own README covers the format and how to contribute. A [weekly workflow](.github/workflows/catalog-sync.yml) syncs it against models.dev and opens a pull request, and every change is checked against a vendor denylist before it can merge.
 
 - Report bugs or request features via [Issues](https://github.com/hellenic-development/plexon.ai/issues)
 - Security reports go to contact@plexon.ai

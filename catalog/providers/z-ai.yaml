@@ -237,6 +237,100 @@ models:
           max: 1
       pricing:
         is_subscription: true
+    - id: glm-5.3-flashx
+      name: GLM 5.3 FlashX
+      # The high-speed serving of GLM-5.3-Flash, launched 2026-09-21: Z.AI
+      # describes it as the same model on the same hybrid sparse/linear attention
+      # architecture, delivered at up to 200 tokens/s and priced at 2.5x Flash on
+      # both the metered API and the Coding Plan. Everything below is therefore a
+      # copy of the Flash entry above except the id, the name, the date and the
+      # price, and it is authored from the published table, not measured: a
+      # Coding Plan key cannot reach /paas/v4 (see the Flash entry).
+      #
+      # Window and reply length are OpenRouter's endpoint listing for
+      # z-ai/glm-5.3-flashx (1,048,576 / 131,072), which agrees with Flash.
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      # Same vision-language filing as Flash; OpenRouter lists text, image and
+      # video input modalities for this id.
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      sampling:
+        # Z.AI's API-wide bounds, same as Flash; nothing FlashX-specific is
+        # published and the vendor says the model is the same.
+        temperature:
+          default: 1.0
+          min: 0
+          max: 1
+        top_p:
+          default: 0.95
+          min: 0.01
+          max: 1
+        stop:
+          max_items: 4
+      # OpenRouter's created timestamp for the id; the public launch was three
+      # days later on 2026-09-21.
+      release_date: "2026-09-18"
+      pricing:
+        # docs.z.ai pricing table on 2026-09-22 (0.37 / 1.25 / 0.075), and
+        # OpenRouter's per-token rates for the same id agree. Exactly 2.5x the
+        # Flash LIST price, as announced. No cache_write for the same reason as
+        # Flash: "Limited-time Free" is a promotion, not a rate.
+        input: 0.37
+        output: 1.25
+        cache_read: 0.075
+    - id: glm-5.3-flashx (Subscription)
+      # Wire id probe-verified 2026-09-22 (_examples/zaiglm53/flash_check with
+      # ZAI_MODEL=glm-5.3-flashx): the bare id is KNOWN to the coding gateway
+      # (it answers code 1311, "your current subscription plan does not yet
+      # include access to GLM-5.3-FlashX"), while "glm-5.3-flashx[1m]" is 400
+      # code 1211 "Unknown Model", the same env-var-alias story as the two
+      # siblings above.
+      wire_id: glm-5.3-flashx
+      name: GLM 5.3 FlashX (Subscription)
+      # Same surface as the Flash Coding Plan entry: Z.AI announced FlashX on the
+      # Coding Plan at 2.5x the Flash quota draw, access by application. The
+      # probing key's plan had not been granted it yet, so UNLIKE the Flash entry
+      # nothing past the wire id is measured here. The window, the image block
+      # and the sampling behaviour are carried over from Flash on the vendor's
+      # word that it is the same model on the same shim; re-run flash_check with
+      # ZAI_MODEL=glm-5.3-flashx once a plan with access is at hand and replace
+      # this paragraph with what it says.
+      #
+      # Trap worth knowing before backing a Plexon cell with it: a plan without
+      # FlashX access gets HTTP 429 code 1311 on every request, which reads as
+      # rate limiting to anything that does not parse the code.
+      compatibility: anthropic
+      base_url: https://api.z.ai/api/anthropic/v1
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      # Carried over from Flash (measured there, unmeasured here): an
+      # Anthropic-shaped image block accepted on this shim.
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      # No default_selection: Flash stays the provider default. FlashX costs 2.5x
+      # the plan quota for the same answers, so it is a choice, not the default.
+      release_date: "2026-09-18"
+      sampling:
+        # Flash's block, for Flash's reasons (see above); no stop, since the shim
+        # ignores stop_sequences on the sibling and there is no reason to expect
+        # a different shim here.
+        temperature:
+          default: 1
+          min: 0
+          max: 1
+        top_p:
+          default: 0.95
+          min: 0.01
+          max: 1
+      pricing:
+        is_subscription: true
     - id: glm-5-turbo
       name: GLM 5 Turbo
       limit: 202752
@@ -330,6 +424,8 @@ sync:
         - glm-5.3 (Subscription)
         - glm-5.3-flash
         - glm-5.3-flash (Subscription)
+        - glm-5.3-flashx
+        - glm-5.3-flashx (Subscription)
         - glm-5-turbo
         - glm-5-turbo (Subscription)
         - glm-5.1
