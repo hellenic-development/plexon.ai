@@ -60,8 +60,20 @@ type CatalogModel struct {
 	SupportsVideo            bool              `json:"supports_video,omitempty" yaml:"supports_video,omitempty"`
 	SupportsReasoning        bool              `json:"supports_reasoning,omitempty" yaml:"supports_reasoning,omitempty"`
 	SupportsAdaptiveThinking bool              `json:"supports_adaptive_thinking,omitempty" yaml:"supports_adaptive_thinking,omitempty"`
-	SupportsIncludeReasoning bool              `json:"supports_include_reasoning,omitempty" yaml:"supports_include_reasoning,omitempty"`
-	SupportsToolSearch       bool              `json:"supports_tool_search,omitempty" yaml:"supports_tool_search,omitempty"`
+	// ThinkingAlwaysOn marks a model that reasons on every turn and answers
+	// thinking.type "disabled" with a 400 (Claude Opus 5.5). The server
+	// maps the user's Off to the lowest effort instead of omitting the thinking
+	// field, and the depth menus stop offering Off. It also decides the display:
+	// on Opus 5.5 the notes the model writes between tool calls arrive as
+	// thinking blocks, so omitting thinking (display "omitted") would silence
+	// the chat between tool calls.
+	ThinkingAlwaysOn bool `json:"thinking_always_on,omitempty" yaml:"thinking_always_on,omitempty"`
+	// RejectsForcedToolChoice marks a model whose API answers tool_choice "any"
+	// or a named tool with a 400 (Claude Opus 5.5). The server sends "auto"
+	// instead; every forcing caller already names the tool in its prompt.
+	RejectsForcedToolChoice  bool `json:"rejects_forced_tool_choice,omitempty" yaml:"rejects_forced_tool_choice,omitempty"`
+	SupportsIncludeReasoning bool `json:"supports_include_reasoning,omitempty" yaml:"supports_include_reasoning,omitempty"`
+	SupportsToolSearch       bool `json:"supports_tool_search,omitempty" yaml:"supports_tool_search,omitempty"`
 	// ToolDeferral pins how this model handles tool deferral, overriding the
 	// client's heuristic: "off", "native", "managed", or "" / "auto" to leave the
 	// decision alone. Mirrors common/catalog.CatalogModel.ToolDeferral.

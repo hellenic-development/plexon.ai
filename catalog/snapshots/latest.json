@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-21T23:51:31Z",
+  "generated": "2026-09-22T20:03:51Z",
   "providers": [
     {
       "name": "anthropic",
@@ -9,7 +9,7 @@
       "requires_api_key": true,
       "supports_web_search": true,
       "base_url": "https://api.anthropic.com/v1",
-      "default_model": "claude-opus-5",
+      "default_model": "claude-opus-5-5",
       "builtin_tools": {
         "web_search": [
           "max_uses",
@@ -60,24 +60,26 @@
           }
         },
         {
-          "id": "claude-opus-5",
-          "name": "Claude Opus 5",
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
           "supports_adaptive_thinking": true,
+          "thinking_always_on": true,
+          "rejects_forced_tool_choice": true,
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "default_selection": true,
-          "release_date": "2026-07-24",
-          "last_updated": "2026-07-24",
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
           "pricing": {
-            "input": 5,
-            "output": 25,
-            "cache_write": 6.25,
-            "cache_read": 0.5
+            "input": 4,
+            "output": 20,
+            "cache_write": 5,
+            "cache_read": 0.2
           }
         },
         {
@@ -106,7 +108,7 @@
       "name": "claude-desktop",
       "display_name": "Claude Desktop",
       "compatibility": "anthropic",
-      "default_model": "claude-opus-5",
+      "default_model": "claude-opus-5-5",
       "models": [
         {
           "id": "claude-fable-5",
@@ -120,8 +122,8 @@
           }
         },
         {
-          "id": "claude-opus-5",
-          "name": "Claude Opus 5",
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
