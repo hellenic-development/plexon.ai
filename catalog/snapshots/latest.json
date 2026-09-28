@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-28T08:38:01Z",
+  "generated": "2026-09-28T10:16:55Z",
   "providers": [
     {
       "name": "anthropic",
@@ -68,8 +68,6 @@
           "supports_image": true,
           "supports_reasoning": true,
           "supports_adaptive_thinking": true,
-          "thinking_always_on": true,
-          "rejects_forced_tool_choice": true,
           "supports_include_reasoning": true,
           "supports_tool_search": true,
           "default_selection": true,
@@ -641,6 +639,69 @@
       "default_model": "minimax-m3-coding-plan",
       "models": [
         {
+          "id": "asr-1.0",
+          "name": "MiniMax ASR 1.0",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_speech_recognition": true,
+          "speech_recognition_languages": [
+            "zh",
+            "yue",
+            "en",
+            "ja",
+            "ko",
+            "th",
+            "vi",
+            "id",
+            "ms",
+            "fil",
+            "ar",
+            "tr",
+            "fr",
+            "de",
+            "es",
+            "it",
+            "pt",
+            "pl",
+            "ru",
+            "uk"
+          ],
+          "generation_type": "sync",
+          "pricing": {}
+        },
+        {
+          "id": "asr-1.0-coding-plan",
+          "wire_id": "asr-1.0",
+          "name": "MiniMax ASR 1.0 (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_speech_recognition": true,
+          "speech_recognition_languages": [
+            "zh",
+            "yue",
+            "en",
+            "ja",
+            "ko",
+            "th",
+            "vi",
+            "id",
+            "ms",
+            "fil",
+            "ar",
+            "tr",
+            "fr",
+            "de",
+            "es",
+            "it",
+            "pt",
+            "pl",
+            "ru",
+            "uk"
+          ],
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
           "id": "hailuo-2.3",
           "wire_id": "MiniMax-Hailuo-2.3",
           "name": "MiniMax Hailuo-2.3",
@@ -711,155 +772,6 @@
           "base_url": "https://api.minimax.io/v1",
           "supports_streaming": true,
           "supports_image_generation": true,
-          "generation_type": "sync",
-          "pricing": {
-            "is_subscription": true
-          }
-        },
-        {
-          "id": "speech-2.8-turbo",
-          "name": "MiniMax Speech 2.8 Turbo",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_speech_generation": true,
-          "generation_type": "sync",
-          "pricing": {}
-        },
-        {
-          "id": "speech-2.8-turbo-coding-plan",
-          "wire_id": "speech-2.8-turbo",
-          "name": "MiniMax Speech 2.8 Turbo (Subscription)",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_speech_generation": true,
-          "generation_type": "sync",
-          "pricing": {
-            "is_subscription": true
-          }
-        },
-        {
-          "id": "speech-2.8-hd",
-          "name": "MiniMax Speech 2.8 HD",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_speech_generation": true,
-          "generation_type": "sync",
-          "pricing": {}
-        },
-        {
-          "id": "speech-2.8-hd-coding-plan",
-          "wire_id": "speech-2.8-hd",
-          "name": "MiniMax Speech 2.8 HD (Subscription)",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_speech_generation": true,
-          "generation_type": "sync",
-          "pricing": {
-            "is_subscription": true
-          }
-        },
-        {
-          "id": "asr-1.0",
-          "name": "MiniMax ASR 1.0",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_speech_recognition": true,
-          "speech_recognition_languages": [
-            "zh",
-            "yue",
-            "en",
-            "ja",
-            "ko",
-            "th",
-            "vi",
-            "id",
-            "ms",
-            "fil",
-            "ar",
-            "tr",
-            "fr",
-            "de",
-            "es",
-            "it",
-            "pt",
-            "pl",
-            "ru",
-            "uk"
-          ],
-          "generation_type": "sync",
-          "pricing": {}
-        },
-        {
-          "id": "asr-1.0-coding-plan",
-          "wire_id": "asr-1.0",
-          "name": "MiniMax ASR 1.0 (Subscription)",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_speech_recognition": true,
-          "speech_recognition_languages": [
-            "zh",
-            "yue",
-            "en",
-            "ja",
-            "ko",
-            "th",
-            "vi",
-            "id",
-            "ms",
-            "fil",
-            "ar",
-            "tr",
-            "fr",
-            "de",
-            "es",
-            "it",
-            "pt",
-            "pl",
-            "ru",
-            "uk"
-          ],
-          "generation_type": "sync",
-          "pricing": {
-            "is_subscription": true
-          }
-        },
-        {
-          "id": "music-3.0",
-          "name": "MiniMax Music 3.0",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_music_generation": true,
-          "generation_type": "sync",
-          "per_unit_cost": 0.15,
-          "pricing": {}
-        },
-        {
-          "id": "music-3.0-coding-plan",
-          "wire_id": "music-3.0",
-          "name": "MiniMax Music 3.0 (Subscription)",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_music_generation": true,
-          "generation_type": "sync",
-          "pricing": {
-            "is_subscription": true
-          }
-        },
-        {
-          "id": "music-cover",
-          "name": "MiniMax Music Cover",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_music_generation": true,
-          "generation_type": "sync",
-          "per_unit_cost": 0.15,
-          "pricing": {}
-        },
-        {
-          "id": "music-cover-coding-plan",
-          "wire_id": "music-cover",
-          "name": "MiniMax Music Cover (Subscription)",
-          "base_url": "https://api.minimax.io/v1",
-          "supports_streaming": true,
-          "supports_music_generation": true,
           "generation_type": "sync",
           "pricing": {
             "is_subscription": true
@@ -951,6 +863,92 @@
               "max": 2
             }
           },
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "music-3.0",
+          "name": "MiniMax Music 3.0",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
+          "generation_type": "sync",
+          "per_unit_cost": 0.15,
+          "pricing": {}
+        },
+        {
+          "id": "music-3.0-coding-plan",
+          "wire_id": "music-3.0",
+          "name": "MiniMax Music 3.0 (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "music-cover",
+          "name": "MiniMax Music Cover",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
+          "generation_type": "sync",
+          "per_unit_cost": 0.15,
+          "pricing": {}
+        },
+        {
+          "id": "music-cover-coding-plan",
+          "wire_id": "music-cover",
+          "name": "MiniMax Music Cover (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_music_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "speech-2.8-hd",
+          "name": "MiniMax Speech 2.8 HD",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {}
+        },
+        {
+          "id": "speech-2.8-hd-coding-plan",
+          "wire_id": "speech-2.8-hd",
+          "name": "MiniMax Speech 2.8 HD (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "speech-2.8-turbo",
+          "name": "MiniMax Speech 2.8 Turbo",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
+          "pricing": {}
+        },
+        {
+          "id": "speech-2.8-turbo-coding-plan",
+          "wire_id": "speech-2.8-turbo",
+          "name": "MiniMax Speech 2.8 Turbo (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_speech_generation": true,
+          "generation_type": "sync",
           "pricing": {
             "is_subscription": true
           }
@@ -1065,6 +1063,23 @@
           "pricing": {}
         },
         {
+          "id": "gpt-4o-2024-08-06",
+          "name": "GPT-4o (2024-08-06)",
+          "limit": 128000,
+          "reserved_tokens": 16384,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2024-08-06",
+          "last_updated": "2024-08-06",
+          "pricing": {
+            "input": 2.5,
+            "output": 10,
+            "cache_read": 1.25
+          }
+        },
+        {
           "id": "gpt-5-image",
           "name": "GPT-5 Image",
           "limit": 400000,
@@ -1098,6 +1113,23 @@
             "output": 2,
             "cache_write": 2.5,
             "cache_read": 0.25
+          }
+        },
+        {
+          "id": "gpt-5.2-chat-latest",
+          "name": "GPT-5.2 Chat",
+          "limit": 128000,
+          "reserved_tokens": 16384,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2025-12-11",
+          "last_updated": "2025-12-11",
+          "pricing": {
+            "input": 1.75,
+            "output": 14,
+            "cache_read": 0.175
           }
         },
         {
@@ -1201,42 +1233,6 @@
           }
         },
         {
-          "id": "gpt-5.6-luna",
-          "name": "GPT-5.6 Luna",
-          "limit": 1050000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "release_date": "2026-07-09",
-          "last_updated": "2026-07-09",
-          "pricing": {
-            "input": 0.2,
-            "output": 1.2,
-            "cache_write": 0.2,
-            "cache_read": 0.02
-          }
-        },
-        {
-          "id": "gpt-5.6-sol",
-          "name": "GPT-5.6 Sol",
-          "limit": 1050000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "release_date": "2026-07-09",
-          "last_updated": "2026-07-09",
-          "pricing": {
-            "input": 4,
-            "output": 20,
-            "cache_write": 4,
-            "cache_read": 0.4
-          }
-        },
-        {
           "id": "gpt-5.6-terra",
           "name": "GPT-5.6 Terra",
           "limit": 1050000,
@@ -1252,6 +1248,96 @@
             "output": 12,
             "cache_write": 2,
             "cache_read": 0.2
+          }
+        },
+        {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-04",
+          "last_updated": "2026-09-04",
+          "pricing": {
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
+          }
+        },
+        {
+          "id": "gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 0.1,
+            "output": 0.5,
+            "cache_write": 0.125,
+            "cache_read": 0.01
+          }
+        },
+        {
+          "id": "gpt-6-sol",
+          "name": "GPT-6 Sol",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 2,
+            "output": 10,
+            "cache_write": 2.5,
+            "cache_read": 0.2
+          }
+        },
+        {
+          "id": "gpt-daybreak-blue-latest",
+          "name": "Daybreak Blue",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-08-07",
+          "last_updated": "2026-08-07",
+          "pricing": {
+            "input": 4,
+            "output": 20,
+            "cache_write": 5,
+            "cache_read": 0.4
+          }
+        },
+        {
+          "id": "gpt-daybreak-red-latest",
+          "name": "Daybreak Red",
+          "limit": 400000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-08-07",
+          "last_updated": "2026-08-07",
+          "pricing": {
+            "input": 12.5,
+            "output": 75,
+            "cache_write": 15.625,
+            "cache_read": 1.25
           }
         },
         {
@@ -1301,23 +1387,6 @@
       "base_url": "https://openrouter.ai/api/v1",
       "models": [
         {
-          "id": "aion-labs/aion-3.0",
-          "name": "Aion-3.0",
-          "limit": 131072,
-          "reserved_tokens": 32768,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-07-07",
-          "last_updated": "2026-07-07",
-          "pricing": {
-            "input": 3,
-            "output": 6,
-            "cache_read": 0.75
-          }
-        },
-        {
           "id": "aion-labs/aion-3.0-mini",
           "name": "Aion-3.0-Mini",
           "limit": 131072,
@@ -1328,6 +1397,40 @@
           "supports_custom_temperature": true,
           "release_date": "2026-07-07",
           "last_updated": "2026-07-07",
+          "pricing": {
+            "input": 0.7,
+            "output": 1.4,
+            "cache_read": 0.18
+          }
+        },
+        {
+          "id": "aion-labs/aion-3.5",
+          "name": "Aion 3.5",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-23",
+          "last_updated": "2026-09-23",
+          "pricing": {
+            "input": 3,
+            "output": 6,
+            "cache_read": 0.75
+          }
+        },
+        {
+          "id": "aion-labs/aion-3.5-mini",
+          "name": "Aion 3.5 Mini",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-23",
+          "last_updated": "2026-09-23",
           "pricing": {
             "input": 0.7,
             "output": 1.4,
@@ -1346,22 +1449,6 @@
           "pricing": {
             "input": 0.8,
             "output": 1.6
-          }
-        },
-        {
-          "id": "allenai/olmo-3-32b-think",
-          "name": "AllenAI: Olmo 3 32B Think",
-          "limit": 65536,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-11-21",
-          "last_updated": "2025-11-21",
-          "pricing": {
-            "input": 0.15,
-            "output": 0.5
           }
         },
         {
@@ -1462,24 +1549,6 @@
           }
         },
         {
-          "id": "anthropic/claude-3-haiku",
-          "name": "Anthropic: Claude 3 Haiku",
-          "limit": 200000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2024-03-13",
-          "last_updated": "2024-03-13",
-          "pricing": {
-            "input": 0.25,
-            "output": 1.25,
-            "cache_write": 0.3,
-            "cache_read": 0.03
-          }
-        },
-        {
           "id": "anthropic/claude-fable-5",
           "name": "Claude Fable 5",
           "limit": 1000000,
@@ -1495,6 +1564,24 @@
             "output": 50,
             "cache_write": 12.5,
             "cache_read": 1
+          }
+        },
+        {
+          "id": "anthropic/claude-fable-5.1",
+          "name": "Claude Fable 5.1",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-01",
+          "last_updated": "2026-09-01",
+          "pricing": {
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 0.25
           }
         },
         {
@@ -1518,80 +1605,6 @@
           }
         },
         {
-          "id": "anthropic/claude-opus-4",
-          "name": "Claude Opus 4",
-          "limit": 200000,
-          "reserved_tokens": 32000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-05-22",
-          "last_updated": "2025-05-22",
-          "pricing": {
-            "input": 15,
-            "output": 75,
-            "cache_write": 18.75,
-            "cache_read": 1.5
-          }
-        },
-        {
-          "id": "anthropic/claude-opus-4.7-fast",
-          "name": "Claude Opus 4.7 (Fast)",
-          "limit": 1000000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "release_date": "2026-05-12",
-          "last_updated": "2026-05-12",
-          "pricing": {
-            "input": 30,
-            "output": 150,
-            "cache_write": 37.5,
-            "cache_read": 3
-          }
-        },
-        {
-          "id": "anthropic/claude-opus-4.8",
-          "name": "Claude Opus 4.8",
-          "limit": 1000000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-05-28",
-          "last_updated": "2026-05-28",
-          "pricing": {
-            "input": 5,
-            "output": 25,
-            "cache_write": 6.25,
-            "cache_read": 0.5
-          }
-        },
-        {
-          "id": "anthropic/claude-opus-4.8-fast",
-          "name": "Claude Opus 4.8 (Fast)",
-          "limit": 1000000,
-          "reserved_tokens": 128000,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "release_date": "2026-05-27",
-          "last_updated": "2026-05-27",
-          "pricing": {
-            "input": 10,
-            "output": 50,
-            "cache_write": 12.5,
-            "cache_read": 1
-          }
-        },
-        {
           "id": "anthropic/claude-opus-5",
           "name": "Claude Opus 5",
           "limit": 1000000,
@@ -1611,21 +1624,22 @@
           }
         },
         {
-          "id": "anthropic/claude-opus-5-fast",
-          "name": "Claude Opus 5 (Fast)",
+          "id": "anthropic/claude-opus-5.5",
+          "name": "Claude Opus 5.5",
           "limit": 1000000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
           "supports_tool_search": true,
-          "release_date": "2026-07-24",
-          "last_updated": "2026-07-24",
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
           "pricing": {
-            "input": 10,
-            "output": 50,
-            "cache_write": 12.5,
-            "cache_read": 1
+            "input": 4,
+            "output": 20,
+            "cache_write": 5,
+            "cache_read": 0.2
           }
         },
         {
@@ -1701,21 +1715,6 @@
             "input": 0.22,
             "output": 0.85,
             "cache_read": 0.06
-          }
-        },
-        {
-          "id": "arcee-ai/virtuoso-large",
-          "name": "Arcee AI: Virtuoso Large",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-05-05",
-          "last_updated": "2025-05-05",
-          "pricing": {
-            "input": 0.75,
-            "output": 1.2
           }
         },
         {
@@ -1892,6 +1891,24 @@
           }
         },
         {
+          "id": "cohere/command-a-plus",
+          "name": "Command A+",
+          "limit": 192000,
+          "reserved_tokens": 64000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 0.3,
+            "output": 1.5,
+            "cache_read": 0.15
+          }
+        },
+        {
           "id": "cohere/command-r-08-2024",
           "name": "Cohere: Command R (08-2024)",
           "limit": 128000,
@@ -1961,6 +1978,24 @@
           "release_date": "2026-08-14",
           "last_updated": "2026-08-14",
           "pricing": {}
+        },
+        {
+          "id": "fireworks/ember-1",
+          "name": "Ember-1",
+          "limit": 1048576,
+          "reserved_tokens": 943718,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-24",
+          "last_updated": "2026-09-24",
+          "pricing": {
+            "input": 3,
+            "output": 15,
+            "cache_read": 0.3
+          }
         },
         {
           "id": "google/gemini-2.5-flash",
@@ -2255,6 +2290,26 @@
           }
         },
         {
+          "id": "google/gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash",
+          "limit": 1048576,
+          "reserved_tokens": 65536,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-02",
+          "last_updated": "2026-09-02",
+          "pricing": {
+            "input": 0.75,
+            "output": 3.75,
+            "cache_write": 0.041667,
+            "cache_read": 0.075
+          }
+        },
+        {
           "id": "google/gemma-2-27b-it",
           "name": "Google: Gemma 2 27B",
           "limit": 8192,
@@ -2313,20 +2368,6 @@
           "pricing": {
             "input": 0.04,
             "output": 0.08
-          }
-        },
-        {
-          "id": "google/gemma-3n-e4b-it",
-          "name": "Google: Gemma 3n 4B",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-05-20",
-          "last_updated": "2025-05-20",
-          "pricing": {
-            "input": 0.06,
-            "output": 0.12
           }
         },
         {
@@ -2454,19 +2495,20 @@
           }
         },
         {
-          "id": "ibm-granite/granite-4.1-8b",
-          "name": "Granite 4.1 8B",
+          "id": "ibm-granite/granite-4.2-8b",
+          "name": "Granite 4.2 8B",
           "limit": 131072,
-          "reserved_tokens": 131072,
+          "reserved_tokens": 117964,
           "supports_streaming": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2026-04-30",
-          "last_updated": "2026-04-30",
+          "release_date": "2026-08-31",
+          "last_updated": "2026-08-31",
           "pricing": {
-            "input": 0.05,
-            "output": 0.1,
-            "cache_read": 0.05
+            "input": 0.06,
+            "output": 0.25,
+            "cache_read": 0.015
           }
         },
         {
@@ -2488,35 +2530,20 @@
           }
         },
         {
-          "id": "inclusionai/ling-2.6-1t",
-          "name": "Ling-2.6-1T",
-          "limit": 262144,
-          "reserved_tokens": 32768,
+          "id": "inception/mercury-2.5",
+          "name": "Mercury 2.5",
+          "limit": 260000,
+          "reserved_tokens": 65536,
           "supports_streaming": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2026-04-23",
-          "last_updated": "2026-04-23",
+          "release_date": "2026-09-08",
+          "last_updated": "2026-09-08",
           "pricing": {
-            "input": 0.075,
-            "output": 0.625,
-            "cache_read": 0.015
-          }
-        },
-        {
-          "id": "inclusionai/ling-2.6-flash",
-          "name": "Ling-2.6-flash",
-          "limit": 262144,
-          "reserved_tokens": 32768,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-04-21",
-          "last_updated": "2026-04-21",
-          "pricing": {
-            "input": 0.01,
-            "output": 0.03,
-            "cache_read": 0.002
+            "input": 0.04,
+            "output": 0.15,
+            "cache_read": 0.004
           }
         },
         {
@@ -2537,52 +2564,95 @@
           }
         },
         {
-          "id": "inclusionai/ring-2.6-1t",
-          "name": "Ring-2.6-1T",
+          "id": "inclusionai/ling-3.0-flash-fin",
+          "name": "Ling 3.0 Flash Fin",
           "limit": 262144,
-          "reserved_tokens": 65536,
+          "reserved_tokens": 235929,
           "supports_streaming": true,
           "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2026-05-08",
-          "last_updated": "2026-05-08",
+          "release_date": "2026-08-27",
+          "last_updated": "2026-08-27",
           "pricing": {
-            "input": 0.075,
-            "output": 0.625,
-            "cache_read": 0.015
+            "input": 0.06,
+            "output": 0.18,
+            "cache_read": 0.012
           }
         },
         {
-          "id": "kwaipilot/kat-coder-air-v2.5",
-          "name": "KAT-Coder-Air V2.5",
-          "limit": 256000,
-          "reserved_tokens": 80000,
+          "id": "inclusionai/ling-3.0-flash-fin:free",
+          "name": "Ling 3.0 Flash Fin (free)",
+          "limit": 262144,
+          "reserved_tokens": 32768,
           "supports_streaming": true,
+          "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2026-07-10",
-          "last_updated": "2026-07-10",
+          "release_date": "2026-08-27",
+          "last_updated": "2026-08-27",
+          "pricing": {}
+        },
+        {
+          "id": "inclusionai/ling-3.0-flash-sante:free",
+          "name": "Ling 3.0 Flash Sante (free)",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-04",
+          "last_updated": "2026-09-04",
+          "pricing": {}
+        },
+        {
+          "id": "inclusionai/ling-3.0-flash-vl",
+          "name": "Ling 3.0 Flash VL",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-10",
+          "last_updated": "2026-09-10",
           "pricing": {
-            "input": 0.15,
-            "output": 0.6,
-            "cache_read": 0.03
+            "input": 0.021,
+            "output": 0.0616,
+            "cache_read": 0.0042
           }
         },
         {
-          "id": "kwaipilot/kat-coder-pro-v2",
-          "name": "Kwaipilot: KAT-Coder-Pro V2",
-          "limit": 256000,
+          "id": "inference-net/schematron-v2-small",
+          "name": "Schematron V2 Small",
+          "limit": 128000,
           "reserved_tokens": 4096,
           "supports_streaming": true,
-          "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2026-03-27",
-          "last_updated": "2026-03-27",
+          "release_date": "2026-09-12",
+          "last_updated": "2026-09-12",
           "pricing": {
-            "input": 0.3,
-            "output": 1.2,
-            "cache_read": 0.06
+            "input": 0.05,
+            "output": 0.23,
+            "cache_read": 0.05
+          }
+        },
+        {
+          "id": "inference-net/schematron-v2-turbo",
+          "name": "Schematron V2 Turbo",
+          "limit": 128000,
+          "reserved_tokens": 8192,
+          "supports_streaming": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-12",
+          "last_updated": "2026-09-12",
+          "pricing": {
+            "input": 0.03,
+            "output": 0.15,
+            "cache_read": 0.03
           }
         },
         {
@@ -2784,25 +2854,6 @@
           }
         },
         {
-          "id": "meta/muse-spark-1.2",
-          "name": "Muse Spark 1.2",
-          "limit": 1048576,
-          "reserved_tokens": 1048576,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-08-05",
-          "last_updated": "2026-08-05",
-          "pricing": {
-            "input": 1.25,
-            "output": 4.25,
-            "cache_read": 0.15
-          }
-        },
-        {
           "id": "meta/muse-spark-1.2-contributor",
           "name": "Muse Spark 1.2 Contributor",
           "limit": 1048576,
@@ -2815,6 +2866,44 @@
           "supports_custom_temperature": true,
           "release_date": "2026-08-21",
           "last_updated": "2026-08-21",
+          "pricing": {
+            "input": 0.1,
+            "output": 0.2,
+            "cache_read": 0.002
+          }
+        },
+        {
+          "id": "meta/muse-spark-1.3",
+          "name": "Muse Spark 1.3",
+          "limit": 1048576,
+          "reserved_tokens": 943718,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-02",
+          "last_updated": "2026-09-02",
+          "pricing": {
+            "input": 1.25,
+            "output": 4.25,
+            "cache_read": 0.15
+          }
+        },
+        {
+          "id": "meta/muse-spark-1.3-contributor",
+          "name": "Muse Spark 1.3 Contributor",
+          "limit": 1048576,
+          "reserved_tokens": 943718,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-02",
+          "last_updated": "2026-09-02",
           "pricing": {
             "input": 0.1,
             "output": 0.2,
@@ -3004,6 +3093,22 @@
           }
         },
         {
+          "id": "mistralai/devstral-2512",
+          "name": "Devstral 2",
+          "limit": 262144,
+          "reserved_tokens": 209715,
+          "supports_streaming": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2025-12-09",
+          "last_updated": "2025-12-09",
+          "pricing": {
+            "input": 0.4,
+            "output": 2,
+            "cache_read": 0.04
+          }
+        },
+        {
           "id": "mistralai/ministral-14b-2512",
           "name": "Mistral: Ministral 3 14B 2512",
           "limit": 262144,
@@ -3055,19 +3160,20 @@
           }
         },
         {
-          "id": "mistralai/mistral-large-2407",
-          "name": "Mistral Large 2407",
-          "limit": 131072,
-          "reserved_tokens": 131072,
+          "id": "mistralai/mistral-large-2512",
+          "name": "Mistral Large 3",
+          "limit": 262144,
+          "reserved_tokens": 209715,
           "supports_streaming": true,
+          "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2024-11-19",
-          "last_updated": "2024-11-19",
+          "release_date": "2025-12-02",
+          "last_updated": "2025-12-02",
           "pricing": {
-            "input": 2,
-            "output": 6,
-            "cache_read": 0.2
+            "input": 0.5,
+            "output": 1.5,
+            "cache_read": 0.05
           }
         },
         {
@@ -3175,6 +3281,7 @@
           "reserved_tokens": 4096,
           "supports_streaming": true,
           "supports_image": true,
+          "supports_tool_search": true,
           "supports_custom_temperature": true,
           "release_date": "2025-03-17",
           "last_updated": "2025-03-17",
@@ -3367,42 +3474,6 @@
           }
         },
         {
-          "id": "nex-agi/nex-n2-mini",
-          "name": "Nex-N2-Mini",
-          "limit": 262144,
-          "reserved_tokens": 262144,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-06-24",
-          "last_updated": "2026-06-24",
-          "pricing": {
-            "input": 0.025,
-            "output": 0.1,
-            "cache_read": 0.0025
-          }
-        },
-        {
-          "id": "nex-agi/nex-n2-pro",
-          "name": "Nex-N2-Pro",
-          "limit": 262144,
-          "reserved_tokens": 262144,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-06-08",
-          "last_updated": "2026-06-08",
-          "pricing": {
-            "input": 0.25,
-            "output": 1,
-            "cache_read": 0.025
-          }
-        },
-        {
           "id": "nousresearch/hermes-3-llama-3.1-405b",
           "name": "Nous: Hermes 3 405B Instruct",
           "limit": 131072,
@@ -3447,22 +3518,6 @@
           }
         },
         {
-          "id": "nousresearch/hermes-4-70b",
-          "name": "Nous: Hermes 4 70B",
-          "limit": 131072,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-08-26",
-          "last_updated": "2025-08-26",
-          "pricing": {
-            "input": 0.13,
-            "output": 0.4
-          }
-        },
-        {
           "id": "nvidia/nemotron-3-nano-30b-a3b",
           "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
           "limit": 262144,
@@ -3478,20 +3533,6 @@
             "input": 0.05,
             "output": 0.2
           }
-        },
-        {
-          "id": "nvidia/nemotron-3-nano-30b-a3b:free",
-          "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
-          "limit": 256000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-12-15",
-          "last_updated": "2025-12-15",
-          "pricing": {}
         },
         {
           "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -3571,6 +3612,22 @@
           "pricing": {}
         },
         {
+          "id": "nvidia/nemotron-3.5-content-safety",
+          "name": "Nemotron 3.5 Content Safety",
+          "limit": 131072,
+          "reserved_tokens": 117964,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-06-04",
+          "last_updated": "2026-06-04",
+          "pricing": {
+            "input": 0.2,
+            "output": 0.2
+          }
+        },
+        {
           "id": "nvidia/nemotron-3.5-content-safety:free",
           "name": "Nemotron 3.5 Content Safety (free)",
           "limit": 128000,
@@ -3611,36 +3668,6 @@
           "supports_custom_temperature": true,
           "release_date": "2026-08-11",
           "last_updated": "2026-08-11",
-          "pricing": {}
-        },
-        {
-          "id": "nvidia/nemotron-nano-12b-v2-vl:free",
-          "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
-          "limit": 128000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_video": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-10-28",
-          "last_updated": "2025-10-28",
-          "pricing": {}
-        },
-        {
-          "id": "nvidia/nemotron-nano-9b-v2:free",
-          "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
-          "limit": 128000,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-08-18",
-          "last_updated": "2025-08-18",
           "pricing": {}
         },
         {
@@ -3703,15 +3730,16 @@
           }
         },
         {
-          "id": "openai/gpt-4-turbo-preview",
-          "name": "OpenAI: GPT-4 Turbo Preview",
+          "id": "openai/gpt-4-turbo",
+          "name": "GPT-4 Turbo",
           "limit": 128000,
           "reserved_tokens": 4096,
           "supports_streaming": true,
+          "supports_image": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2024-01-25",
-          "last_updated": "2024-01-25",
+          "release_date": "2023-11-06",
+          "last_updated": "2024-04-09",
           "pricing": {
             "input": 10,
             "output": 30
@@ -4240,6 +4268,114 @@
           }
         },
         {
+          "id": "openai/gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-04",
+          "last_updated": "2026-09-04",
+          "pricing": {
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
+          }
+        },
+        {
+          "id": "openai/gpt-6-astra-pro",
+          "name": "GPT-6 Astra Pro",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-04",
+          "last_updated": "2026-09-04",
+          "pricing": {
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
+          }
+        },
+        {
+          "id": "openai/gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 0.1,
+            "output": 0.5,
+            "cache_write": 0.125,
+            "cache_read": 0.01
+          }
+        },
+        {
+          "id": "openai/gpt-6-luna-pro",
+          "name": "GPT-6 Luna Pro",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 0.1,
+            "output": 0.5,
+            "cache_write": 0.125,
+            "cache_read": 0.01
+          }
+        },
+        {
+          "id": "openai/gpt-6-sol",
+          "name": "GPT-6 Sol",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 2,
+            "output": 10,
+            "cache_write": 2.5,
+            "cache_read": 0.2
+          }
+        },
+        {
+          "id": "openai/gpt-6-sol-pro",
+          "name": "GPT-6 Sol Pro",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 2,
+            "output": 10,
+            "cache_write": 2.5,
+            "cache_read": 0.2
+          }
+        },
+        {
           "id": "openai/gpt-audio",
           "name": "OpenAI: GPT Audio",
           "limit": 128000,
@@ -4562,6 +4698,24 @@
           }
         },
         {
+          "id": "perceptron/perceptron-mk1.5",
+          "name": "Perceptron Mk1.5",
+          "limit": 36864,
+          "reserved_tokens": 8192,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-25",
+          "last_updated": "2026-09-25",
+          "pricing": {
+            "input": 0.15,
+            "output": 1.5
+          }
+        },
+        {
           "id": "perplexity/sonar",
           "name": "Perplexity: Sonar",
           "limit": 127072,
@@ -4702,6 +4856,23 @@
           "pricing": {}
         },
         {
+          "id": "prism-ml/ternary-bonsai-2-27b",
+          "name": "Ternary Bonsai 2 27B",
+          "limit": 262144,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-18",
+          "last_updated": "2026-09-18",
+          "pricing": {
+            "input": 0.075,
+            "output": 0.5
+          }
+        },
+        {
           "id": "qwen/qwen-2.5-72b-instruct",
           "name": "Qwen2.5 72B Instruct",
           "limit": 32768,
@@ -4751,24 +4922,6 @@
           "limit": 1000000,
           "reserved_tokens": 4096,
           "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2025-09-08",
-          "last_updated": "2025-09-08",
-          "pricing": {
-            "input": 0.26,
-            "output": 0.78,
-            "cache_write": 0.33
-          }
-        },
-        {
-          "id": "qwen/qwen-plus-2025-07-28:thinking",
-          "name": "Qwen: Qwen Plus 0728 (thinking)",
-          "limit": 1000000,
-          "reserved_tokens": 32000,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_include_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
           "release_date": "2025-09-08",
@@ -5519,8 +5672,23 @@
           }
         },
         {
-          "id": "qwen/qwen3.8-max",
-          "name": "Qwen3.8 Max",
+          "id": "qwen/qwen3.8-27b:free",
+          "name": "Qwen3.8 27B (free)",
+          "limit": 262144,
+          "reserved_tokens": 235929,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-08-14",
+          "last_updated": "2026-08-14",
+          "pricing": {}
+        },
+        {
+          "id": "qwen/qwen3.8-flash",
+          "name": "Qwen3.8 Flash",
           "limit": 1000000,
           "reserved_tokens": 131072,
           "supports_streaming": true,
@@ -5529,13 +5697,71 @@
           "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2026-08-03",
-          "last_updated": "2026-08-03",
+          "release_date": "2026-08-26",
+          "last_updated": "2026-08-26",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.47,
+            "cache_write": 0.2,
+            "cache_read": 0.016
+          }
+        },
+        {
+          "id": "qwen/qwen3.8-max-0902",
+          "name": "Qwen3.8 Max 0902",
+          "limit": 1000000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-02",
+          "last_updated": "2026-09-02",
           "pricing": {
             "input": 2,
             "output": 6,
             "cache_write": 2.5,
             "cache_read": 0.25
+          }
+        },
+        {
+          "id": "qwen/qwen3.8-max-prime",
+          "name": "Qwen 3.8 Max Prime",
+          "limit": 1000000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-23",
+          "last_updated": "2026-09-23",
+          "pricing": {
+            "input": 4,
+            "output": 12,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "qwen/qwen3.8-omni-flash",
+          "name": "Qwen3.8 Omni Flash",
+          "limit": 1000000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-17",
+          "last_updated": "2026-09-17",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.47,
+            "cache_read": 0.016
           }
         },
         {
@@ -5601,6 +5827,23 @@
           }
         },
         {
+          "id": "sakana/fugu-max",
+          "name": "Fugu Max",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-11",
+          "last_updated": "2026-09-11",
+          "pricing": {
+            "input": 2,
+            "output": 6,
+            "cache_read": 0.25
+          }
+        },
+        {
           "id": "sakana/fugu-ultra",
           "name": "Fugu Ultra",
           "limit": 1000000,
@@ -5611,6 +5854,23 @@
           "supports_tool_search": true,
           "release_date": "2026-06-24",
           "last_updated": "2026-06-24",
+          "pricing": {
+            "input": 5,
+            "output": 30,
+            "cache_read": 0.5
+          }
+        },
+        {
+          "id": "sakana/fugu-ultra-v2",
+          "name": "Fugu Ultra v2",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-11",
+          "last_updated": "2026-09-11",
           "pricing": {
             "input": 5,
             "output": 30,
@@ -5691,6 +5951,21 @@
           "supports_custom_temperature": true,
           "release_date": "2026-08-20",
           "last_updated": "2026-08-20",
+          "pricing": {}
+        },
+        {
+          "id": "stealth/space-bunny-alpha",
+          "name": "Space Bunny Alpha",
+          "limit": 1000000,
+          "reserved_tokens": 524288,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-23",
+          "last_updated": "2026-09-23",
           "pricing": {}
         },
         {
@@ -5805,6 +6080,23 @@
           }
         },
         {
+          "id": "tencent/hy4-preview",
+          "name": "Hy4 preview",
+          "limit": 1048576,
+          "reserved_tokens": 64000,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-08-28",
+          "last_updated": "2026-08-28",
+          "pricing": {
+            "input": 0.834,
+            "output": 2.501,
+            "cache_read": 0.042
+          }
+        },
+        {
           "id": "thedrummer/cydonia-24b-v4.1",
           "name": "TheDrummer: Cydonia 24B V4.1",
           "limit": 131072,
@@ -5817,21 +6109,6 @@
             "input": 0.3,
             "output": 0.5,
             "cache_read": 0.15
-          }
-        },
-        {
-          "id": "thedrummer/rocinante-12b",
-          "name": "TheDrummer: Rocinante 12B",
-          "limit": 32768,
-          "reserved_tokens": 4096,
-          "supports_streaming": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2024-09-30",
-          "last_updated": "2024-09-30",
-          "pricing": {
-            "input": 0.17,
-            "output": 0.43
           }
         },
         {
@@ -5929,6 +6206,23 @@
           "pricing": {}
         },
         {
+          "id": "unbiased/pareto",
+          "name": "Pareto",
+          "limit": 262144,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-17",
+          "last_updated": "2026-09-17",
+          "pricing": {
+            "input": 2.5,
+            "output": 7.5,
+            "cache_read": 0.25
+          }
+        },
+        {
           "id": "undi95/remm-slerp-l2-13b",
           "name": "ReMM SLERP 13B",
           "limit": 6144,
@@ -5940,6 +6234,23 @@
           "pricing": {
             "input": 0.45,
             "output": 0.65
+          }
+        },
+        {
+          "id": "upstage/solar-mini4",
+          "name": "Solar Mini 4",
+          "limit": 524288,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-23",
+          "last_updated": "2026-09-23",
+          "pricing": {
+            "input": 0.05,
+            "output": 0.2,
+            "cache_read": 0.005
           }
         },
         {
@@ -6010,21 +6321,21 @@
           }
         },
         {
-          "id": "x-ai/grok-4.6",
-          "name": "Grok 4.6",
+          "id": "x-ai/grok-4.7",
+          "name": "Grok 4.7",
           "limit": 500000,
-          "reserved_tokens": 500000,
+          "reserved_tokens": 450000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
           "supports_tool_search": true,
           "supports_custom_temperature": true,
-          "release_date": "2026-08-12",
-          "last_updated": "2026-08-12",
+          "release_date": "2026-09-21",
+          "last_updated": "2026-09-21",
           "pricing": {
-            "input": 2,
-            "output": 6,
-            "cache_read": 0.5
+            "input": 1.6,
+            "output": 4.8,
+            "cache_read": 0.4
           }
         },
         {
@@ -6079,6 +6390,63 @@
             "input": 0.435,
             "output": 0.87,
             "cache_read": 0.0036
+          }
+        },
+        {
+          "id": "xiaomi/mimo-v2.6-flash",
+          "name": "MiMo-V2.6-Flash",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 0.14,
+            "output": 0.28,
+            "cache_read": 0.0028
+          }
+        },
+        {
+          "id": "xiaomi/mimo-v2.6-pro",
+          "name": "MiMo-V2.6-Pro",
+          "limit": 1050000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-22",
+          "last_updated": "2026-09-22",
+          "pricing": {
+            "input": 0.435,
+            "output": 0.87,
+            "cache_read": 0.0036
+          }
+        },
+        {
+          "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+          "name": "MiMo-V2.6-Pro-UltraSpeed",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-21",
+          "last_updated": "2026-09-21",
+          "pricing": {
+            "input": 4.35,
+            "output": 8.7,
+            "cache_read": 0.036
           }
         },
         {
@@ -6191,19 +6559,6 @@
           }
         },
         {
-          "id": "z-ai/glm-5.2:free",
-          "name": "GLM 5.2 (free)",
-          "limit": 256000,
-          "reserved_tokens": 256000,
-          "supports_streaming": true,
-          "supports_reasoning": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-06-13",
-          "last_updated": "2026-06-13",
-          "pricing": {}
-        },
-        {
           "id": "z-ai/glm-5.3",
           "name": "GLM-5.3",
           "limit": 1048576,
@@ -6218,6 +6573,61 @@
             "input": 1.4,
             "output": 4.4,
             "cache_read": 0.26
+          }
+        },
+        {
+          "id": "z-ai/glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "limit": 1310720,
+          "reserved_tokens": 943717,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-08-26",
+          "last_updated": "2026-08-26",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.5,
+            "cache_read": 0.03
+          }
+        },
+        {
+          "id": "z-ai/glm-5.3-flashx",
+          "name": "GLM 5.3 FlashX",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-18",
+          "last_updated": "2026-09-18",
+          "pricing": {
+            "input": 0.37,
+            "output": 1.25,
+            "cache_read": 0.09
+          }
+        },
+        {
+          "id": "z-ai/glm-5.3-prime",
+          "name": "GLM 5.3 Prime",
+          "limit": 1000000,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-09-23",
+          "last_updated": "2026-09-23",
+          "pricing": {
+            "input": 2.8,
+            "output": 8.8,
+            "cache_read": 0.56
           }
         },
         {
@@ -6374,21 +6784,39 @@
           }
         },
         {
-          "id": "~openai/gpt-latest",
-          "name": "OpenAI GPT Latest",
+          "id": "~openai/gpt-astra-latest",
+          "name": "GPT Astra Latest",
           "limit": 1050000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
           "supports_tool_search": true,
-          "release_date": "2026-04-27",
-          "last_updated": "2026-04-27",
+          "release_date": "2026-09-11",
+          "last_updated": "2026-09-11",
           "pricing": {
-            "input": 5,
-            "output": 30,
-            "cache_write": 6.25,
-            "cache_read": 0.5
+            "input": 10,
+            "output": 50,
+            "cache_write": 12.5,
+            "cache_read": 1
+          }
+        },
+        {
+          "id": "~openai/gpt-luna-latest",
+          "name": "GPT Luna Latest",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-11",
+          "last_updated": "2026-09-11",
+          "pricing": {
+            "input": 0.1,
+            "output": 0.5,
+            "cache_write": 0.125,
+            "cache_read": 0.01
           }
         },
         {
@@ -6409,6 +6837,42 @@
           }
         },
         {
+          "id": "~openai/gpt-sol-latest",
+          "name": "GPT Sol Latest",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-11",
+          "last_updated": "2026-09-11",
+          "pricing": {
+            "input": 2,
+            "output": 10,
+            "cache_write": 2.5,
+            "cache_read": 0.2
+          }
+        },
+        {
+          "id": "~openai/gpt-terra-latest",
+          "name": "GPT Terra Latest",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-09-11",
+          "last_updated": "2026-09-11",
+          "pricing": {
+            "input": 2,
+            "output": 12,
+            "cache_write": 2.5,
+            "cache_read": 0.2
+          }
+        },
+        {
           "id": "~x-ai/grok-latest",
           "name": "Grok Latest",
           "limit": 500000,
@@ -6424,6 +6888,25 @@
             "input": 2,
             "output": 6,
             "cache_read": 0.5
+          }
+        },
+        {
+          "id": "~z-ai/glm-flash-latest",
+          "name": "GLM Flash Latest",
+          "limit": 1310720,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-08-27",
+          "last_updated": "2026-08-27",
+          "pricing": {
+            "input": 0.045,
+            "output": 0.14,
+            "cache_read": 0.01
           }
         },
         {
