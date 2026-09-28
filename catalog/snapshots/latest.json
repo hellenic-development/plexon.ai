@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-22T20:03:51Z",
+  "generated": "2026-09-28T08:38:01Z",
   "providers": [
     {
       "name": "anthropic",
@@ -925,6 +925,32 @@
             }
           },
           "default_selection": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "minimax-m3.1-flash-preview-coding-plan",
+          "wire_id": "MiniMax-M3.1-Flash-Preview",
+          "name": "MiniMax M3.1 Flash Preview (Subscription)",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_adaptive_thinking": true,
+          "thinking_always_on": true,
+          "supports_include_reasoning": true,
+          "tool_deferral": "off",
+          "supports_custom_temperature": true,
+          "sampling": {
+            "temperature": {
+              "default": 1,
+              "min": 0,
+              "max": 2
+            }
+          },
           "pricing": {
             "is_subscription": true
           }
