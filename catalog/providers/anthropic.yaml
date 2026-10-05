@@ -68,8 +68,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_adaptive_thinking: true
-      thinking_always_on: true
-      rejects_forced_tool_choice: true
       supports_include_reasoning: true
       supports_tool_search: true
       default_selection: true
