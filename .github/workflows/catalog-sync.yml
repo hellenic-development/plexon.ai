@@ -46,7 +46,15 @@ jobs:
         run: go run ./scripts/sync_models_dev
 
       - name: Rebuild snapshot
-        run: go run ./scripts/build_snapshot
+        run: |
+          go run ./scripts/build_snapshot
+          # A week with no model change still re-stamps `generated`. Put the
+          # committed snapshot back in that case, so the step below has nothing
+          # to commit and opens no pull request over a timestamp alone (the
+          # 2026-10-17 dispatch refreshed PR #3 with exactly that one line).
+          if git diff --quiet -I '^\s*"generated":' -- snapshots/latest.json; then
+            git checkout -- snapshots/latest.json
+          fi
 
       - name: Open pull request
         uses: peter-evans/create-pull-request@v6
