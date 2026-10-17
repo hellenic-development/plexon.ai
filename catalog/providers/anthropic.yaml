@@ -4,6 +4,8 @@ compatibility: anthropic
 requires_api_key: true
 supports_web_search: true
 base_url: https://api.anthropic.com/v1
+# Anthropic's own guidance (models overview, 2026-10-17): start with Opus 5.5 for
+# most workloads, reach for Fable 5.1 when evals at higher effort still fall short.
 default_model: claude-opus-5-5
 builtin_tools:
     web_search:
@@ -13,21 +15,48 @@ builtin_tools:
         - user_location
 sync:
     family_strip: (-\d+)+
+    # A pin hides every unpinned sibling in its family, newer ones included, so a
+    # successor is a pin move: the new id here, the old one under excluded.
     pinned:
+        - claude-fable-5-1
+        - claude-haiku-5-5
+        - claude-opus-5-5
+        - claude-sonnet-5-5
+    excluded:
         - claude-fable-5
         - claude-haiku-4-5
-        - claude-opus-5-5
-        - claude-sonnet-5
-    excluded:
         - claude-opus-4-6-fast
         - claude-opus-4-7
         - claude-opus-4-8
         - claude-opus-5
         - claude-sonnet-4-5-20250929-1m
         - claude-sonnet-4-6
+        - claude-sonnet-5
 models:
-    - id: claude-fable-5
-      name: Claude Fable 5
+    - id: claude-fable-5-1
+      name: Claude Fable 5.1
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      # Thinking cannot be turned off (`disabled` is a 400) and tool_choice
+      # `any` / a named tool is a 400, same as Opus 5.5. Sampling knobs are
+      # rejected outright, so no supports_custom_temperature.
+      thinking_always_on: true
+      rejects_forced_tool_choice: true
+      supports_include_reasoning: true
+      supports_tool_search: true
+      release_date: "2026-09-01"
+      last_updated: "2026-09-01"
+      pricing:
+        input: 10
+        output: 50
+        cache_write: 12.5
+        cache_read: 0.25
+    - id: claude-haiku-5-5
+      name: Claude Haiku 5.5
       limit: 1000000
       reserved_tokens: 128000
       supports_streaming: true
@@ -36,30 +65,17 @@ models:
       supports_adaptive_thinking: true
       supports_include_reasoning: true
       supports_tool_search: true
-      release_date: "2026-06-09"
-      last_updated: "2026-06-09"
+      release_date: "2026-10-07"
+      last_updated: "2026-10-07"
+      # Anthropic prices Haiku 5.5 by prompt length. These are the rates for
+      # prompts up to 100K tokens; over 100K every rate is 5x (0.50 / 2.50,
+      # cache 0.625 / 0.05). CatalogPricing has one rate per field, so the base
+      # band is what gets authored, the same way qwen.yaml handles Alibaba's bands.
       pricing:
-        input: 10
-        output: 50
-        cache_write: 12.5
-        cache_read: 1
-    - id: claude-haiku-4-5
-      name: Claude Haiku 4.5
-      limit: 200000
-      reserved_tokens: 64000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2025-10-15"
-      last_updated: "2025-10-15"
-      pricing:
-        input: 1
-        output: 5
-        cache_write: 1.25
-        cache_read: 0.1
+        input: 0.1
+        output: 0.5
+        cache_write: 0.125
+        cache_read: 0.01
     - id: claude-opus-5-5
       name: Claude Opus 5.5
       limit: 1000000
@@ -80,20 +96,26 @@ models:
         output: 20
         cache_write: 5
         cache_read: 0.2
-    - id: claude-sonnet-5
-      name: Claude Sonnet 5
+    - id: claude-sonnet-5-5
+      name: Claude Sonnet 5.5
       limit: 1000000
       reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
       supports_adaptive_thinking: true
+      # `disabled` is a 400 on Sonnet 5.5. Its only off mode is
+      # thinking.type "between_tools", which the server does not send, so
+      # thinking_always_on is the honest flag: Off is served as the lowest
+      # effort, as on Opus 5.5. Forced tool_choice and sampling knobs are 400s.
+      thinking_always_on: true
+      rejects_forced_tool_choice: true
       supports_include_reasoning: true
       supports_tool_search: true
-      release_date: "2026-06-29"
-      last_updated: "2026-06-30"
+      release_date: "2026-09-28"
+      last_updated: "2026-09-28"
       pricing:
         input: 2
         output: 10
         cache_write: 2.5
-        cache_read: 0.2
+        cache_read: 0.1

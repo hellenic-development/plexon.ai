@@ -161,7 +161,14 @@ Per-provider `sync:` block supports four knobs:
 | `family_strip` | Regex removed from the model ID **before** grouping. Handles providers with mid-string versions: google uses `-\d+(?:\.\d+)?` so `gemini-2.5-flash` and `gemini-3-flash-preview` collapse to the same `gemini-flash` family; moonshot uses `-k\d+(?:\.\d+)?` so `kimi-k2.5-thinking` becomes `kimi-thinking`. |
 | `family_regex` | Override the default trailing-match regex (rarely needed). |
 | `pinned` | Model IDs always kept, even if older. Useful when you've hand-authored a model upstream hasn't indexed yet (e.g. Kimi K2.6 when Moonshot wasn't a models.dev provider). |
-| `excluded` | Model IDs always dropped. Curate these when a new flagship supersedes variant lineages — e.g. Kimi K2 Thinking/Turbo get excluded once K2.6 ships, until K2.6-thinking / K2.6-turbo ship. |
+| `excluded` | Model IDs always dropped. Curate these when a new flagship supersedes variant lineages — e.g. Kimi K2 Thinking/Turbo get excluded once K2.6 ships, until K2.6-thinking / K2.6-turbo ship. An entry ending in `*` drops every id with that prefix (`gpt-5*` retires the GPT-5 generation in one line); a pinned id is never excluded, so the survivors of a retired generation stay pinned inside it. A prefix also swallows a successor in the same family before the sync can warn about it, so keep exact ids for a line that is still alive. |
+
+A pin also hides its family. Once any member of a family is pinned, every
+unpinned sibling is dropped, newer ones included. That is what lets an undated
+hand-authored id beat a dated upstream variant, and it is also why a successor
+(Claude Fable 5.1 beside a pinned `claude-fable-5`) never shows up in the weekly
+diff. The sync prints `warn <provider> pinned <id> hides newer <id> (<date>)`
+for that case: move the pin to the successor and put the old id in `excluded`.
 
 ### Hand-authored models
 

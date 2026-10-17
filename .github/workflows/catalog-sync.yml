@@ -86,10 +86,15 @@ jobs:
 
       # The snapshot is the artifact clients actually fetch, so a PR that edits
       # a provider YAML without rebuilding it publishes stale data.
+      #
+      # build_snapshot stamps `generated` with the build time, so a rebuild
+      # always differs from the committed file on that one line. Without -I the
+      # check failed on every scheduled run from 2026-09-28 to 2026-10-12 while
+      # reporting "1 insertion, 1 deletion".
       - name: Check snapshots/latest.json is up to date
         run: |
           go run ./scripts/build_snapshot
-          if ! git diff --quiet -- snapshots/latest.json; then
+          if ! git diff --quiet -I '^\s*"generated":' -- snapshots/latest.json; then
             echo "::error::snapshots/latest.json is stale. Run 'go run ./scripts/build_snapshot' in catalog/ and commit the result."
             git diff --stat -- snapshots/latest.json
             exit 1

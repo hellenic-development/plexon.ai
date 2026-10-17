@@ -4,46 +4,33 @@ compatibility: openai
 requires_api_key: true
 supports_oauth: true
 base_url: https://api.openai.com/v1
-default_model: gpt-5.5-pro
+# OpenAI's models page (2026-10-17) lists three flagships: Astra for the most
+# demanding work, Sol to balance intelligence and cost, Luna for high-volume
+# work. The GPT-5 generation is retired by prefix (the pinned codex and image
+# rows are immune to exclusion); the Daybreak ids are an access programme, not
+# models for a picker.
+default_model: gpt-6-astra
 sync:
     family_strip: -\d+(?:\.\d+)?
     pinned:
         - gpt-5-image
         - gpt-5-image-mini
         - gpt-5.3-codex
-        - gpt-5.4-mini
-        - gpt-5.4-nano
-        - gpt-5.5
-        - gpt-5.5-pro
+        - gpt-6-astra
+        - gpt-6-luna
+        - gpt-6.1-sol
         - o4-mini-deep-research
     excluded:
-        - gpt-3.5-turbo
-        - gpt-4-turbo
-        - gpt-4o
-        - gpt-4o-2024-11-20
-        - gpt-4o-mini
-        - gpt-4o-mini-search-preview
-        - gpt-4o-search-preview
-        - gpt-5.1-codex-max
-        - gpt-5.1-codex-mini
-        - gpt-5.3-chat
-        - gpt-5.3-chat-latest
-        - gpt-5.3-codex-spark
-        - gpt-5.4
-        - gpt-5.4-pro
-        - o1
-        - o1-mini
-        - o1-preview
-        - o1-pro
-        - o3
-        - o3-deep-research
-        - o3-mini
-        - o3-pro
+        - gpt-3.5*
+        - gpt-4*
+        - gpt-5*
+        - gpt-6-sol
+        - gpt-daybreak*
+        - o1*
+        - o3*
         - o4-mini
         - o4-mini-high
-        - text-embedding-3-large
-        - text-embedding-3-small
-        - text-embedding-ada-002
+        - text-embedding*
 models:
     - id: chatgpt-image-latest
       name: chatgpt-image-latest
@@ -98,119 +85,52 @@ models:
         output: 14
         cache_write: 1.75
         cache_read: 0.175
-    - id: gpt-5.4-mini
-      name: GPT-5.4 Mini
-      limit: 400000
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2026-03-17"
-      last_updated: "2026-03-17"
-      pricing:
-        input: 0.75
-        output: 4.5
-        cache_write: 0.75
-        cache_read: 0.075
-    - id: gpt-5.4-nano
-      name: GPT-5.4 Nano
-      limit: 400000
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2026-03-17"
-      last_updated: "2026-03-17"
-      pricing:
-        input: 0.2
-        output: 1.25
-        cache_write: 0.2
-        cache_read: 0.02
-    - id: gpt-5.5
-      name: GPT-5.5
+    - id: gpt-6-astra
+      name: GPT-6 Astra
       limit: 1050000
       reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_include_reasoning: true
       supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2026-04-23"
-      last_updated: "2026-04-23"
-      pricing:
-        input: 5
-        output: 30
-        cache_write: 5
-        cache_read: 0.5
-    - id: gpt-5.5-pro
-      name: GPT-5.5 Pro
-      limit: 1050000
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
       default_selection: true
-      release_date: "2026-04-23"
-      last_updated: "2026-04-23"
+      release_date: "2026-09-04"
+      last_updated: "2026-09-04"
       pricing:
-        input: 30
-        output: 180
-        cache_write: 30
-    - id: gpt-5.6-luna
-      name: GPT-5.6 Luna
+        input: 10
+        output: 50
+        cache_write: 12.5
+        cache_read: 1
+    - id: gpt-6-luna
+      name: GPT-6 Luna
       limit: 1050000
       reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
       supports_tool_search: true
-      release_date: "2026-07-09"
-      last_updated: "2026-07-09"
+      release_date: "2026-09-22"
+      last_updated: "2026-09-22"
       pricing:
-        input: 0.2
-        output: 1.2
-        cache_write: 0.2
-        cache_read: 0.02
-    - id: gpt-5.6-sol
-      name: GPT-5.6 Sol
+        input: 0.1
+        output: 0.5
+        cache_write: 0.125
+        cache_read: 0.01
+    - id: gpt-6.1-sol
+      name: GPT-6.1 Sol
       limit: 1050000
       reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
       supports_tool_search: true
-      release_date: "2026-07-09"
-      last_updated: "2026-07-09"
-      pricing:
-        input: 4
-        output: 20
-        cache_write: 4
-        cache_read: 0.4
-    - id: gpt-5.6-terra
-      name: GPT-5.6 Terra
-      limit: 1050000
-      reserved_tokens: 128000
-      supports_streaming: true
-      supports_image: true
-      supports_reasoning: true
-      supports_tool_search: true
-      release_date: "2026-07-09"
-      last_updated: "2026-07-09"
+      release_date: "2026-09-29"
+      last_updated: "2026-09-29"
       pricing:
         input: 2
-        output: 12
-        cache_write: 2
-        cache_read: 0.2
+        output: 10
+        cache_write: 2.5
+        cache_read: 0.1
     - id: gpt-realtime-2.1
       name: GPT-Realtime-2.1
       limit: 128000

@@ -186,7 +186,12 @@ func mergeOne(path string, up upstreamProvider, dryRun bool) (bool, error) {
 		policy = &catalogtypes.SyncPolicy{Policy: "latest_per_family"}
 	}
 
-	next := applySync(prov, up, policy)
+	next, warnings := applySync(prov, up, policy)
+	// A pin that hides a newer sibling is the one case where "nothing changed"
+	// is the problem, so the warnings print before the no-change return.
+	for _, w := range warnings {
+		fmt.Printf("warn  %-16s %s\n", prov.Name, w)
+	}
 	if sameProvider(prov, next) {
 		return false, nil
 	}
@@ -196,7 +201,7 @@ func mergeOne(path string, up upstreamProvider, dryRun bool) (bool, error) {
 		return true, nil
 	}
 
-	out, err := yaml.Marshal(&next)
+	out, err := marshalKeepingComments(data, &next)
 	if err != nil {
 		return false, err
 	}
@@ -210,7 +215,9 @@ func mergeOne(path string, up upstreamProvider, dryRun bool) (bool, error) {
 // applySync returns a new CatalogProvider whose model list is derived from
 // upstream per the policy, while preserving hand-edited per-model overrides
 // (Headers / BaseURL) and provider-level fields models.dev doesn't supply.
-func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *catalogtypes.SyncPolicy) catalogtypes.CatalogProvider {
+// The second result lists every pin that hides a strictly newer sibling, the
+// signal that a vendor shipped a successor and the pin needs moving.
+func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *catalogtypes.SyncPolicy) (catalogtypes.CatalogProvider, []string) {
 	existingByID := make(map[string]catalogtypes.CatalogModel, len(prov.Models))
 	for _, m := range prov.Models {
 		existingByID[m.ID] = m
@@ -231,7 +238,7 @@ func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *c
 	// the same data representation).
 	converted := make([]catalogtypes.CatalogModel, 0, len(up.Models))
 	for id, um := range up.Models {
-		if slices.Contains(policy.Excluded, id) {
+		if isExcluded(policy, id) {
 			continue
 		}
 		// Denied vendors never enter the catalog, whoever serves them. This is
@@ -264,16 +271,40 @@ func applySync(prov catalogtypes.CatalogProvider, up upstreamProvider, policy *c
 
 	// Apply latest-per-family when requested.
 	kept := converted
+	var warnings []string
 	switch policy.Policy {
 	case "manual":
 		kept = filterToPinned(converted, policy.Pinned)
 	default: // "" | "latest_per_family"
-		kept = keepLatestPerFamily(converted, policy.Pinned, re, stripRe)
+		kept, warnings = keepLatestPerFamily(converted, policy.Pinned, re, stripRe)
 	}
 
-	sort.Slice(kept, func(i, j int) bool { return kept[i].ID < kept[j].ID })
-	prov.Models = kept
-	return prov
+	prov.Models = orderLike(prov.Models, kept)
+	return prov, warnings
+}
+
+// isExcluded reports whether the policy drops id. An entry ending in "*"
+// matches by prefix, and a pinned id is never excluded, so one line can retire
+// a whole generation (gpt-5*) while the pinned survivors in it (gpt-5.3-codex,
+// gpt-5-image) stay. Without the prefix form every retired family keeps
+// surfacing its newest remaining member the week after its pin moves on, and
+// the exact list grows by a dozen ids per vendor rename.
+func isExcluded(policy *catalogtypes.SyncPolicy, id string) bool {
+	if slices.Contains(policy.Pinned, id) {
+		return false
+	}
+	for _, ex := range policy.Excluded {
+		if prefix, ok := strings.CutSuffix(ex, "*"); ok {
+			if strings.HasPrefix(id, prefix) {
+				return true
+			}
+			continue
+		}
+		if ex == id {
+			return true
+		}
+	}
+	return false
 }
 
 func convertUpstream(id string, um upstreamModel) catalogtypes.CatalogModel {
@@ -334,6 +365,9 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	if local.ToolDeferral != "" {
 		result.ToolDeferral = local.ToolDeferral
 	}
+	if local.ImpliedAspectRatio != "" {
+		result.ImpliedAspectRatio = local.ImpliedAspectRatio
+	}
 	// Sampling is wholly hand-authored: models.dev publishes a temperature
 	// boolean and no ranges, defaults, top_p or stop limits at all, so upstream
 	// can only ever blank this. Copied as one pointer rather than field by field
@@ -367,6 +401,15 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	}
 	if local.SupportsAdaptiveThinking {
 		result.SupportsAdaptiveThinking = true
+	}
+	// Both describe what the vendor's API refuses, which models.dev does not
+	// record. Dropping them put Opus 5.5 back on the thinking "disabled" and
+	// forced tool_choice paths that 400 on it (sync runs 2026-09-28 to 10-12).
+	if local.ThinkingAlwaysOn {
+		result.ThinkingAlwaysOn = true
+	}
+	if local.RejectsForcedToolChoice {
+		result.RejectsForcedToolChoice = true
 	}
 	if local.SupportsIncludeReasoning {
 		result.SupportsIncludeReasoning = true
@@ -449,15 +492,25 @@ func filterToPinned(models []catalogtypes.CatalogModel, pinned []string) []catal
 // keepLatestPerFamily groups models by their family key and keeps only the
 // newest-dated one per group. Pinned IDs bypass the filter entirely.
 // stripRe (optional) is applied to each ID before family-key extraction.
-func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re *regexp.Regexp, stripRe *regexp.Regexp) []catalogtypes.CatalogModel {
+//
+// The warnings name every pin that hides a sibling with a strictly newer
+// release date. A dated variant of the same release or an undated sibling is
+// what the shadow rule exists for and stays quiet; a successor (Fable 5 pinned
+// while Fable 5.1 ships) is a lineup the catalog is missing, and the sync is
+// the only place that can see it, because the pin makes the diff empty.
+func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re *regexp.Regexp, stripRe *regexp.Regexp) ([]catalogtypes.CatalogModel, []string) {
 	pinSet := make(map[string]struct{}, len(pinned))
 	for _, id := range pinned {
 		pinSet[id] = struct{}{}
 	}
 
 	families := make(map[string][]modelWithMeta)
+	var familyOrder []string
 	for i, m := range models {
 		fam := familyKey(re, stripRe, m.ID)
+		if _, seen := families[fam]; !seen {
+			familyOrder = append(familyOrder, fam)
+		}
 		families[fam] = append(families[fam], modelWithMeta{
 			ID:          m.ID,
 			ReleaseDate: m.ReleaseDate,
@@ -465,22 +518,28 @@ func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re
 			Index:       i,
 		})
 	}
+	sort.Strings(familyOrder)
 
 	kept := make(map[string]struct{})
-	for _, group := range families {
+	var warnings []string
+	for _, fam := range familyOrder {
+		group := families[fam]
 		// Pinned IDs shadow their family: if any member of the group is
 		// pinned, every non-pinned sibling is dropped. This lets a hand-
 		// authored undated ID (e.g. `claude-haiku-4-5`) win over a dated
 		// upstream variant (e.g. `claude-haiku-4-5-20251001`) without
 		// needing an exhaustive `excluded` list.
-		anyPinned := false
+		var pinnedMembers []modelWithMeta
 		for _, m := range group {
 			if _, ok := pinSet[m.ID]; ok {
-				anyPinned = true
+				pinnedMembers = append(pinnedMembers, m)
 				kept[m.ID] = struct{}{}
 			}
 		}
-		if anyPinned {
+		if len(pinnedMembers) > 0 {
+			if w, ok := hiddenSuccessor(group, pinnedMembers, pinSet); ok {
+				warnings = append(warnings, w)
+			}
 			continue
 		}
 		best := pickLatest(group)
@@ -496,7 +555,37 @@ func keepLatestPerFamily(models []catalogtypes.CatalogModel, pinned []string, re
 			out = append(out, m)
 		}
 	}
-	return out
+	return out, warnings
+}
+
+// hiddenSuccessor reports the unpinned member of group whose release date is
+// strictly after the newest pinned member's, phrased as the warning line. A
+// pin with no release date (a hand-authored id models.dev has not indexed) is
+// newer than anything upstream knows, so it cannot be reported against.
+func hiddenSuccessor(group, pinnedMembers []modelWithMeta, pinSet map[string]struct{}) (string, bool) {
+	newestPinned := pickLatest(pinnedMembers)
+	pinnedDate, ok := parseDate(newestPinned.ReleaseDate)
+	if !ok {
+		return "", false
+	}
+	var hidden modelWithMeta
+	found := false
+	for _, m := range group {
+		if _, pinned := pinSet[m.ID]; pinned {
+			continue
+		}
+		d, ok := parseDate(m.ReleaseDate)
+		if !ok || !d.After(pinnedDate) {
+			continue
+		}
+		if !found || isNewer(m, hidden) {
+			hidden, found = m, true
+		}
+	}
+	if !found {
+		return "", false
+	}
+	return fmt.Sprintf("pinned %s hides newer %s (%s)", newestPinned.ID, hidden.ID, hidden.ReleaseDate), true
 }
 
 func sameProvider(a, b catalogtypes.CatalogProvider) bool {

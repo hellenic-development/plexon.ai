@@ -181,8 +181,8 @@ models:
       supports_custom_temperature: true
       pricing:
         is_subscription: true
-    - id: qwen3.7-flash
-      name: Qwen3.7 Flash
+    - id: qwen3.8-flash
+      name: Qwen3.8 Flash
       limit: 1000000
       reserved_tokens: 65536
       supports_streaming: true
@@ -191,15 +191,14 @@ models:
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
-      release_date: "2026-07-15"
-      # Alibaba prices by input length. These are the International base band
-      # (<=32K); the 32K-256K and 256K-1M bands are ~3x and ~6x. CatalogPricing
-      # has one rate per field, so the base band is what gets authored.
+      release_date: "2026-08-26"
+      # models.dev lists one flat band for 3.8 Flash (2026-10-17). Alibaba
+      # prices the other Qwen models by input length; see the band notes below.
       pricing:
-        input: 0.028
-        output: 0.11
-        cache_write: 0.035
-        cache_read: 0.006
+        input: 0.15
+        output: 0.47
+        cache_write: 0.2
+        cache_read: 0.016
     - id: qwen3.7-max
       name: Qwen3.7 Max
       limit: 1000000
@@ -370,7 +369,7 @@ sync:
         - qwen3.5-9b
         - qwen3.5-flash-02-23 (Coding Plan)
         - qwen3.6-plus (Coding Plan)
-        - qwen3.7-flash
+        - qwen3.8-flash
         - qwen3.7-max
         - qwen3.7-max (Coding Plan)
         - qwen3.7-plus
