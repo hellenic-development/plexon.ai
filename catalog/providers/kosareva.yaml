@@ -1,0 +1,658 @@
+name: kosareva
+display_name: Kosareva Cloud
+# Kosareva Cloud (Kosareva Cloud LLC, Republic of Armenia) is a gateway that resells
+# 100+ models from OpenAI, Anthropic, Google, xAI, Qwen, Moonshot, Z.ai, Mistral and
+# others behind one key, billed in rubles, for customers in Russia. One host serves
+# two wires: OpenAI Chat Completions at /v1/chat/completions and Anthropic Messages
+# at /v1/messages. The provider is `openai` because that surface covers every text
+# model (streaming, tools, image input, reasoning_effort, reasoning_content), and
+# the four Claude entries override it to `anthropic`: Plexon's OpenAI client flattens
+# the system prompt into one string (server/internal/api/openai.go flattenSystemBlocks),
+# so Claude over Chat Completions would lose all three cache breakpoints, while the
+# Anthropic client keeps them and Kosareva honours cache_control on /v1/messages.
+# Same base URL for both; each client appends its own path. Every model carrying
+# the override is pinned in common/catalog/critical.go (VerifyCritical demands it).
+#
+# Claude entries deliberately omit supports_custom_temperature: Plexon turns adaptive
+# thinking on for them, Anthropic rejects a temperature next to thinking, and the
+# clear that protects the first-party anthropic provider is host-gated
+# (servesRealAnthropic), so on a proxy the flag's absence is what strips the field.
+#
+# Prices are USD per 1M tokens, converted from Kosareva's fixed RUB list at the Bank
+# of Russia rate of 83.76 RUB per USD on 2026-10-16 (cbr.ru). They are approximate by
+# construction: the customer pays the RUB price and the rate moves. docs/REMINDERS.md
+# carries the date to refresh them. Limits and RUB figures come from the live
+# GET /v1/models (2026-10-16); capability flags from Kosareva's integration package of
+# 2026-09-30. cache_write is the 5-minute write price where Kosareva lists one;
+# cache_read equals input where its table says "no cache discount".
+#
+# What is NOT here, on purpose:
+#   - DeepSeek: scripts/denylist.go refuses the vendor (Google OAuth verification).
+#   - MiniMax: backs the managed Plexon tier; same rule as fireworks.yaml.
+#   - Perplexity Sonar: no tool calling, so it cannot drive an agent loop.
+#   - Sber GigaChat, Yandex, the Russia-only Qwen builds: Kosareva marks their
+#     streaming/tool flags unverified.
+#   - Meta, Amazon, Xiaomi, Tencent: the serving host behind the gateway and its
+#     training terms are not published, the class of finding that led to the denylist.
+#   - Superseded generations (Opus/Sonnet 4.x, Opus/Sonnet 5, Fable 5, Haiku 4.5,
+#     GPT-5.x flagships, GPT-4.x, Gemini 3.0 to 3.7 Flash, GLM 5.1/5.2, Kimi K2.6).
+#
+# supports_tool_search stays off everywhere: a gateway has no server-side tool-search
+# helper. Kosareva is not on models.dev, so the weekly sync reports "keep kosareva
+# (not in models.dev: leaving untouched)"; policy manual + pinned below is the defence
+# in depth fireworks.yaml and minimax.yaml use, since preferLocal can only ever turn a
+# boolean on and would flip supports_tool_search on for every entry it could reach.
+#
+# Model ids are Kosareva's own (lowercase, hyphens for dots) and go on the wire as-is.
+compatibility: openai
+requires_api_key: true
+base_url: https://api.kosareva.cloud/v1
+default_model: claude-sonnet-5-5
+models:
+    - id: claude-sonnet-5-5
+      name: Claude Sonnet 5.5
+      compatibility: anthropic
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      thinking_always_on: true
+      rejects_forced_tool_choice: true
+      supports_include_reasoning: true
+      default_selection: true
+      release_date: "2026-09-28"
+      pricing:
+        input: 2.5788
+        output: 12.894
+        cache_write: 3.2235
+        cache_read: 0.2579
+    - id: claude-opus-5-5
+      name: Claude Opus 5.5
+      compatibility: anthropic
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      thinking_always_on: true
+      rejects_forced_tool_choice: true
+      supports_include_reasoning: true
+      release_date: "2026-09-22"
+      pricing:
+        input: 5.1576
+        output: 25.788
+        cache_write: 6.447
+        cache_read: 0.2579
+    - id: claude-fable-5-1
+      name: Claude Fable 5.1
+      compatibility: anthropic
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      thinking_always_on: true
+      rejects_forced_tool_choice: true
+      supports_include_reasoning: true
+      release_date: "2026-09-01"
+      pricing:
+        input: 12.894
+        output: 64.4699
+        cache_write: 16.1175
+        cache_read: 0.3223
+    - id: claude-haiku-5-5
+      # Not in the 30 September package; it appeared on the live /v1/models list on 2026-10-16 at the
+      # price below, a tenth of Haiku 4.5's. Flags follow the first-party anthropic.yaml entry of
+      # 2026-10-17 (thinking optional, forced tool_choice accepted); a chat, a stream, a cache round
+      # trip and a tool call were run against it with the test key (kosareva_live_test.go).
+      name: Claude Haiku 5.5
+      compatibility: anthropic
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_adaptive_thinking: true
+      supports_include_reasoning: true
+      release_date: "2026-10-07"
+      pricing:
+        input: 0.1289
+        output: 0.6447
+        cache_write: 0.1612
+        cache_read: 0.0129
+    - id: gpt-6-1-sol
+      name: GPT-6.1 Sol
+      limit: 1050000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-09-29"
+      pricing:
+        input: 2.5788
+        output: 12.894
+        cache_write: 3.2235
+        cache_read: 0.1289
+    - id: gpt-6-1-sol-pro
+      name: GPT-6.1 Sol Pro
+      limit: 1050000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-09-29"
+      pricing:
+        input: 2.5788
+        output: 12.894
+        cache_write: 3.2235
+        cache_read: 0.1289
+    - id: gpt-6-luna
+      name: GPT-6 Luna
+      limit: 1050000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-09-22"
+      pricing:
+        input: 0.1289
+        output: 0.6447
+        cache_write: 0.1612
+        cache_read: 0.0129
+    - id: gpt-6-luna-pro
+      name: GPT-6 Luna Pro
+      limit: 1050000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-09-22"
+      pricing:
+        input: 0.1289
+        output: 0.6447
+        cache_write: 0.1612
+        cache_read: 0.0129
+    - id: gpt-6-astra
+      name: GPT-6 Astra
+      limit: 272000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-09-04"
+      pricing:
+        input: 12.894
+        output: 64.4699
+        cache_write: 16.1175
+        cache_read: 1.2894
+    - id: gpt-6-astra-pro
+      name: GPT-6 Astra Pro
+      limit: 1050000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-09-04"
+      pricing:
+        input: 12.894
+        output: 64.4699
+        cache_write: 16.1175
+        cache_read: 1.2894
+    - id: gpt-5-6-terra
+      name: GPT-5.6 Terra
+      limit: 272000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-07-09"
+      pricing:
+        input: 2.5788
+        output: 15.4728
+        cache_write: 3.2235
+        cache_read: 0.2579
+    - id: gpt-5-4-mini
+      name: GPT-5.4 Mini
+      limit: 400000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-03-17"
+      pricing:
+        input: 0.967
+        output: 5.8023
+        cache_write: 0.967
+        cache_read: 0.0967
+    - id: gpt-5-4-nano
+      name: GPT-5.4 Nano
+      limit: 400000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-03-17"
+      pricing:
+        input: 0.2579
+        output: 1.6117
+        cache_read: 0.0258
+    - id: gpt-5-3-codex
+      name: GPT-5.3 Codex
+      limit: 400000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-02-24"
+      pricing:
+        input: 2.2564
+        output: 18.0516
+        cache_read: 0.2256
+    - id: gemini-3-8-flash
+      name: Gemini 3.8 Flash
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-09-02"
+      pricing:
+        input: 0.967
+        output: 4.8352
+        cache_write: 0.967
+        cache_read: 0.1007
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: gemini-3-1-pro
+      name: Gemini 3.1 Pro
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-02-19"
+      pricing:
+        input: 2.5788
+        output: 15.4728
+        cache_write: 2.5788
+        cache_read: 0.2579
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: gemini-3-1-flash-lite
+      name: Gemini 3.1 Flash-Lite
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-05-07"
+      pricing:
+        input: 0.3223
+        output: 1.9341
+        cache_write: 0.3223
+        cache_read: 0.0322
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: grok-4-7
+      name: Grok 4.7
+      limit: 500000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-09-21"
+      pricing:
+        input: 2.5788
+        output: 7.7364
+        cache_read: 0.6447
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: grok-4-1-fast
+      name: Grok 4.1 Fast
+      limit: 128000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_custom_temperature: true
+      release_date: "2025-11-19"
+      pricing:
+        input: 0.2579
+        output: 0.6447
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: qwen3-8-max
+      name: Qwen3.8 Max
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-09-03"
+      pricing:
+        input: 2.5788
+        output: 7.7364
+        cache_write: 2.5788
+        cache_read: 0.2579
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: qwen3-8-flash
+      # No cache discount: cached tokens bill as input.
+      name: Qwen3.8 Flash
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-08-26"
+      pricing:
+        input: 0.1805
+        output: 0.5415
+        cache_write: 0.1805
+        cache_read: 0.1805
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: qwen3-7-plus
+      name: Qwen3.7 Plus
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-06-03"
+      pricing:
+        input: 0.4126
+        output: 1.6504
+        cache_write: 0.5158
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: kimi-k3
+      name: Kimi K3
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-07-16"
+      pricing:
+        input: 3.8682
+        output: 19.341
+        cache_read: 0.3868
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: kimi-k2-7-code
+      name: Kimi K2.7 Code
+      limit: 262144
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-06-12"
+      pricing:
+        input: 1.2249
+        output: 5.1576
+        cache_read: 0.245
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: kimi-k2-7-code-highspeed
+      # A faster serving path for the same model at the same price; Kosareva publishes no release date for it.
+      name: Kimi K2.7 Code HighSpeed
+      limit: 262144
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      pricing:
+        input: 1.2249
+        output: 5.1576
+        cache_read: 0.245
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: glm-5-3
+      name: GLM-5.3
+      limit: 1310720
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-08-18"
+      pricing:
+        input: 1.8052
+        output: 5.6734
+        cache_read: 0.3352
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: glm-5-3-flash
+      # No cache discount: cached tokens bill as input.
+      name: GLM-5.3 Flash
+      limit: 1310720
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-08-26"
+      pricing:
+        input: 0.0967
+        output: 0.3223
+        cache_write: 0.0967
+        cache_read: 0.0967
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: glm-5-turbo
+      # No cache discount: cached tokens bill as input.
+      name: GLM-5 Turbo
+      limit: 202752
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-03-15"
+      pricing:
+        input: 1.5473
+        output: 5.1576
+        cache_write: 1.5473
+        cache_read: 1.5473
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: mistral-large-4
+      # Live list only (not in the 30 September package), so only what the live probe showed is
+      # authored: streaming and a tool-call round trip. No image or reasoning flag until Kosareva
+      # confirms them.
+      name: Mistral Large 4
+      limit: 524288
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_custom_temperature: true
+      pricing:
+        input: 1.7536
+        output: 5.3897
+        cache_read: 0.1805
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: mistral-small-4
+      # No cache discount: cached tokens bill as input.
+      name: Mistral Small 4
+      limit: 262144
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-03-16"
+      pricing:
+        input: 0.1934
+        output: 0.7736
+        cache_write: 0.1934
+        cache_read: 0.1934
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+    - id: devstral-2
+      # No cache discount: cached tokens bill as input.
+      name: Devstral 2
+      limit: 262144
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_custom_temperature: true
+      release_date: "2025-12-09"
+      pricing:
+        input: 0.5158
+        output: 2.5788
+        cache_write: 0.5158
+        cache_read: 0.5158
+      sampling:
+        temperature:
+          min: 0
+          max: 2
+        top_p:
+          min: 0
+          max: 1
+sync:
+    policy: manual
+    pinned:
+        - claude-sonnet-5-5
+        - claude-opus-5-5
+        - claude-fable-5-1
+        - claude-haiku-5-5
+        - gpt-6-1-sol
+        - gpt-6-1-sol-pro
+        - gpt-6-luna
+        - gpt-6-luna-pro
+        - gpt-6-astra
+        - gpt-6-astra-pro
+        - gpt-5-6-terra
+        - gpt-5-4-mini
+        - gpt-5-4-nano
+        - gpt-5-3-codex
+        - gemini-3-8-flash
+        - gemini-3-1-pro
+        - gemini-3-1-flash-lite
+        - grok-4-7
+        - grok-4-1-fast
+        - qwen3-8-max
+        - qwen3-8-flash
+        - qwen3-7-plus
+        - kimi-k3
+        - kimi-k2-7-code
+        - kimi-k2-7-code-highspeed
+        - glm-5-3
+        - glm-5-3-flash
+        - glm-5-turbo
+        - mistral-large-4
+        - mistral-small-4
+        - devstral-2

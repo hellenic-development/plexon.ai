@@ -175,7 +175,7 @@ Five modes, each with different permissions:
 - **Auto** runs long tasks without stopping to check in.
 - **Spec** drives constitution, specify, plan, tasks, implement through living markdown contracts, compatible with GitHub Spec Kit.
 
-Eleven providers. Sign in to Plexon for a managed one, or bring your own key:
+Twelve providers. Sign in to Plexon for a managed one, or bring your own key:
 
 | Provider | How you connect |
 |----------|-----------------|
@@ -186,12 +186,13 @@ Eleven providers. Sign in to Plexon for a managed one, or bring your own key:
 | Moonshot AI | Your API key |
 | Fireworks AI | Your API key, for open-weight models |
 | OpenRouter | Your API key, 300+ models from every major lab |
+| Kosareva Cloud | Your API key, 31 models from eight vendors billed in rubles |
 | Alibaba Qwen | Your API key |
 | Z.AI | Your API key |
 | MiniMax | Your API key, including image, video, speech, and music models |
 | Claude Desktop | Your local app, no API key |
 
-The model list lives in [`catalog/`](catalog/) in this repository and the app syncs from it, so new models arrive without an app update. It holds 413 models today. Premium adds [Custom Providers](https://plexon.ai/features/custom-providers/): any OpenAI-compatible or Anthropic-compatible endpoint, including local models through Ollama, LM Studio, or vLLM.
+The model list lives in [`catalog/`](catalog/) in this repository and the app syncs from it, so new models arrive without an app update. It holds 466 models today. Premium adds [Custom Providers](https://plexon.ai/features/custom-providers/): any OpenAI-compatible or Anthropic-compatible endpoint, including local models through Ollama, LM Studio, or vLLM.
 
 ## Security and privacy
 
@@ -235,7 +236,7 @@ New to it? [plexon.ai/learn](https://plexon.ai/learn/) is an eight-step path fro
 
 This repository hosts **issue tracking, public releases, and the public model catalog**. The application source is maintained privately.
 
-[`catalog/`](catalog/) holds the provider and model definitions the app syncs from: 11 providers and 413 models across text, image, video, speech, transcription, and music. Its own README covers the format and how to contribute. A [weekly workflow](.github/workflows/catalog-sync.yml) syncs it against models.dev and opens a pull request, and every change is checked against a vendor denylist before it can merge.
+[`catalog/`](catalog/) holds the provider and model definitions the app syncs from: 12 providers and 466 models across text, image, video, speech, transcription, and music. Its own README covers the format and how to contribute. A [weekly workflow](.github/workflows/catalog-sync.yml) syncs it against models.dev and opens a pull request, and every change is checked against a vendor denylist before it can merge.
 
 - Report bugs or request features via [Issues](https://github.com/hellenic-development/plexon.ai/issues)
 - Security reports go to contact@plexon.ai
