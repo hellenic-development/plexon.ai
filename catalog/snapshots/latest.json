@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-17T10:13:07Z",
+  "generated": "2026-10-19T09:24:39Z",
   "providers": [
     {
       "name": "anthropic",
@@ -1670,6 +1670,24 @@
           },
           "pricing": {
             "is_subscription": true
+          }
+        },
+        {
+          "id": "MiniMax-M3.1-Flash",
+          "name": "MiniMax-M3.1-Flash",
+          "limit": 1000000,
+          "reserved_tokens": 512000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_video": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-10-19",
+          "last_updated": "2026-10-19",
+          "pricing": {
+            "input": 0.15,
+            "output": 0.6,
+            "cache_read": 0.015
           }
         }
       ]
@@ -7266,23 +7284,6 @@
           }
         },
         {
-          "id": "unbiased/pareto-26.9",
-          "name": "Pareto 26.9",
-          "limit": 262144,
-          "reserved_tokens": 131072,
-          "supports_streaming": true,
-          "supports_image": true,
-          "supports_tool_search": true,
-          "supports_custom_temperature": true,
-          "release_date": "2026-10-13",
-          "last_updated": "2026-10-13",
-          "pricing": {
-            "input": 2.5,
-            "output": 7.5,
-            "cache_read": 0.25
-          }
-        },
-        {
           "id": "upstage/solar-mini4",
           "name": "Solar Mini 4",
           "limit": 524288,
@@ -7548,6 +7549,23 @@
             "input": 0.0341,
             "output": 0.4182,
             "cache_read": 0.0109
+          }
+        },
+        {
+          "id": "unbiased/pareto-26.10",
+          "name": "Pareto 26.10",
+          "limit": 1048576,
+          "reserved_tokens": 131072,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_tool_search": true,
+          "supports_custom_temperature": true,
+          "release_date": "2026-10-15",
+          "last_updated": "2026-10-15",
+          "pricing": {
+            "input": 0.8,
+            "output": 3.2,
+            "cache_read": 0.03
           }
         }
       ]

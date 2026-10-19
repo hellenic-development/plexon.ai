@@ -4392,20 +4392,6 @@ models:
         input: 0.834
         output: 2.501
         cache_read: 0.042
-    - id: unbiased/pareto-26.9
-      name: Pareto 26.9
-      limit: 262144
-      reserved_tokens: 131072
-      supports_streaming: true
-      supports_image: true
-      supports_tool_search: true
-      supports_custom_temperature: true
-      release_date: "2026-10-13"
-      last_updated: "2026-10-13"
-      pricing:
-        input: 2.5
-        output: 7.5
-        cache_read: 0.25
     - id: upstage/solar-mini4
       name: Solar Mini 4
       limit: 524288
@@ -4629,3 +4615,17 @@ models:
         input: 0.0341
         output: 0.4182
         cache_read: 0.0109
+    - id: unbiased/pareto-26.10
+      name: Pareto 26.10
+      limit: 1048576
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_tool_search: true
+      supports_custom_temperature: true
+      release_date: "2026-10-15"
+      last_updated: "2026-10-15"
+      pricing:
+        input: 0.8
+        output: 3.2
+        cache_read: 0.03
