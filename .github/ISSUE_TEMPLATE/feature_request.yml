@@ -1,0 +1,23 @@
+name: Feature request
+description: Something Plexon should do that it does not do yet.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What should Plexon do
+    validations:
+      required: true
+  - type: textarea
+    id: when
+    attributes:
+      label: When would you use it
+      description: The task or moment where you would reach for it.
+    validations:
+      required: false
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else
+    validations:
+      required: false

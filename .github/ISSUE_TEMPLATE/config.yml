@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and help
+    url: https://join.slack.com/t/hellenicdevelopment/shared_invite/zt-3rc2hdimb-K2yt5zQgTYoxO_6UHHFkyQ
+    about: Ask in the Plexon Slack. Most questions get an answer in #support.
+  - name: Community
+    url: https://plexon.ai/community/
+    about: Every place to talk to us and other Plexon users.
