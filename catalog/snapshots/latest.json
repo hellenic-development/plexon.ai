@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-10-19T13:43:07Z",
+  "generated": "2026-11-01T10:49:13Z",
   "providers": [
     {
       "name": "anthropic",
@@ -829,20 +829,20 @@
           }
         },
         {
-          "id": "gpt-5-6-terra",
-          "name": "GPT-5.6 Terra",
-          "limit": 272000,
+          "id": "gpt-6-1-terra",
+          "name": "GPT-6.1 Terra",
+          "limit": 1050000,
           "reserved_tokens": 128000,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
           "thinking_always_on": true,
-          "release_date": "2026-07-09",
+          "release_date": "2026-10-26",
           "pricing": {
-            "input": 2.5788,
-            "output": 15.4728,
-            "cache_write": 3.2235,
-            "cache_read": 0.2579
+            "input": 1.2894,
+            "output": 6.447,
+            "cache_write": 1.6118,
+            "cache_read": 0.0645
           }
         },
         {
@@ -1739,25 +1739,45 @@
           }
         },
         {
-          "id": "kimi-k3",
-          "name": "Kimi K3",
+          "id": "kimi-k3.1-pro",
+          "name": "Kimi K3.1 Pro",
           "limit": 1048576,
           "reserved_tokens": 32768,
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
+          "thinking_always_on": true,
           "supports_include_reasoning": true,
-          "release_date": "2026-07-16",
+          "release_date": "2026-10-23",
           "pricing": {
-            "input": 3,
-            "output": 15,
-            "cache_read": 0.3
+            "input": 2,
+            "output": 10,
+            "cache_write": 2,
+            "cache_read": 0.2
           }
         },
         {
-          "id": "kimi-k3-coding-plan",
-          "wire_id": "k3",
-          "name": "Kimi K3 (Subscription)",
+          "id": "kimi-k3.1-pro-highspeed",
+          "name": "Kimi K3.1 Pro Highspeed",
+          "limit": 1048576,
+          "reserved_tokens": 32768,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "thinking_always_on": true,
+          "supports_include_reasoning": true,
+          "release_date": "2026-10-23",
+          "pricing": {
+            "input": 4,
+            "output": 20,
+            "cache_write": 4,
+            "cache_read": 0.2
+          }
+        },
+        {
+          "id": "kimi-k3.1-pro-coding-plan",
+          "wire_id": "k3.1-pro",
+          "name": "Kimi K3.1 Pro (Subscription)",
           "base_url": "https://api.kimi.com/coding/v1",
           "compatibility": "anthropic",
           "headers": {
@@ -1773,19 +1793,8 @@
           "supports_streaming": true,
           "supports_image": true,
           "supports_reasoning": true,
+          "thinking_always_on": true,
           "supports_include_reasoning": true,
-          "sampling": {
-            "temperature": {
-              "default": 1,
-              "min": 0,
-              "max": 1
-            },
-            "top_p": {
-              "default": 0.95,
-              "min": 0,
-              "max": 1
-            }
-          },
           "pricing": {
             "is_subscription": true
           }
@@ -1919,6 +1928,24 @@
             "output": 10,
             "cache_write": 2.5,
             "cache_read": 0.1
+          }
+        },
+        {
+          "id": "gpt-6.1-terra",
+          "name": "GPT-6.1 Terra",
+          "limit": 1050000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
+          "supports_image": true,
+          "supports_reasoning": true,
+          "supports_tool_search": true,
+          "release_date": "2026-10-26",
+          "last_updated": "2026-10-26",
+          "pricing": {
+            "input": 1,
+            "output": 5,
+            "cache_write": 1.25,
+            "cache_read": 0.05
           }
         },
         {

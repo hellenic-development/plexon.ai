@@ -208,20 +208,29 @@ models:
         output: 64.4699
         cache_write: 16.1175
         cache_read: 1.2894
-    - id: gpt-5-6-terra
-      name: GPT-5.6 Terra
-      limit: 272000
+    - id: gpt-6-1-terra
+      name: GPT-6.1 Terra
+      # Replaced GPT-5.6 Terra on 2026-10-26; Kosareva lists it (kosareva.cloud/prices).
+      # The figures below are DERIVED, not read from GET /v1/models: no Kosareva key
+      # was on the authoring machine on 2026-11-01. Kosareva's GPT-6 rows (Sol, Luna,
+      # Astra and their Pro twins) are the vendor's USD price times 1.2894 on all four
+      # fields (108 RUB per vendor dollar at the 83.76 rate), so Terra's $1 / $5 /
+      # $1.25 / $0.05 are derived the same way. Other vendors' rows do NOT follow one
+      # ratio (cache reads differ, some rows carry "no cache discount"), so this
+      # derivation is only sound inside the GPT-6 family. The 2027-01-16 refresh in
+      # docs/REMINDERS.md confirms the row against the live list.
+      limit: 1050000
       reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
       thinking_always_on: true
-      release_date: "2026-07-09"
+      release_date: "2026-10-26"
       pricing:
-        input: 2.5788
-        output: 15.4728
-        cache_write: 3.2235
-        cache_read: 0.2579
+        input: 1.2894
+        output: 6.447
+        cache_write: 1.6118
+        cache_read: 0.0645
     - id: gpt-5-4-mini
       name: GPT-5.4 Mini
       limit: 400000
@@ -635,7 +644,7 @@ sync:
         - gpt-6-luna-pro
         - gpt-6-astra
         - gpt-6-astra-pro
-        - gpt-5-6-terra
+        - gpt-6-1-terra
         - gpt-5-4-mini
         - gpt-5-4-nano
         - gpt-5-3-codex

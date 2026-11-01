@@ -27,24 +27,52 @@ models:
       default_selection: true
       pricing:
         is_subscription: true
-    - id: kimi-k3
-      name: Kimi K3
+    - id: kimi-k3.1-pro
+      name: Kimi K3.1 Pro
+      # K3.1 Pro (2026-10-23) is the post-trained successor to K3 on the same
+      # line at a lower price, so K3 left this file (sync.excluded). Thinking
+      # cannot be turned off (the vendor FAQ: always on; a disable is a 400), the
+      # depth is a top-level reasoning_effort of low/high/max with max as the
+      # platform's absent-field default, and temperature (1.0) and top_p (0.95)
+      # are fixed, hence no supports_custom_temperature and no sampling block.
+      # Authored from platform.kimi.com, not probed: no platform key is held.
       limit: 1048576
       reserved_tokens: 32768
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      release_date: "2026-07-16"
+      thinking_always_on: true
+      release_date: "2026-10-23"
       pricing:
-        input: 3
-        output: 15
-        cache_read: 0.3
-    - id: kimi-k3-coding-plan
-      # Wire id per kimi.com/code docs: API requests and third-party tools use
-      # plain "k3" ("k3[1m]" is a Claude Code env-var-only 1M-context alias).
-      wire_id: k3
-      name: Kimi K3 (Subscription)
+        input: 2
+        output: 10
+        cache_write: 2
+        cache_read: 0.2
+    - id: kimi-k3.1-pro-highspeed
+      name: Kimi K3.1 Pro Highspeed
+      # The same model served two to three times faster at twice the input and
+      # output price; cache hits stay at $0.20 on the vendor's pricing page.
+      # Same contract as the row above.
+      limit: 1048576
+      reserved_tokens: 32768
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      thinking_always_on: true
+      release_date: "2026-10-23"
+      pricing:
+        input: 4
+        output: 20
+        cache_write: 4
+        cache_read: 0.2
+    - id: kimi-k3.1-pro-coding-plan
+      # Wire id per kimi.com/code docs (Model Configuration): third-party tools
+      # send plain "k3.1-pro" ("k3.1-pro[1m]" is a Claude Code env-var-only
+      # 1M-context alias). A mistyped id is silently served by K2.8 Preview.
+      wire_id: k3.1-pro
+      name: Kimi K3.1 Pro (Subscription)
       # Anthropic-compat, on purpose: the premium->pro fallback re-resolves an
       # exhausted Kimi to MiniMax M3 (Anthropic-based), so keeping Kimi on the
       # SAME protocol keeps a premium session coherent across the fallback and
@@ -56,6 +84,10 @@ models:
       # carries /v1. Auth is Authorization: Bearer, sent by setAnthropicAuth.
       # (OpenAI variant of this same host/path works: /coding/v1/chat/completions.)
       compatibility: anthropic
+      # The coding host has two documented base URLs, api.kimi.com/coding (the
+      # China-region one) and api.kimi.ai/coding (overseas). This stays on .com:
+      # ServesKimiCoding keys on that host and the owner's key was probed there
+      # on 2026-08-26.
       base_url: https://api.kimi.com/coding/v1
       headers:
         HTTP-Referer: https://plexon.ai
@@ -77,38 +109,26 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      sampling:
-        # MEASURED, and it contradicts the vendor's own platform docs, so read
-        # this before changing it. platform.kimi.ai marks temperature and top_p
-        # FIXED for K3 and says passing any other value returns an error. That
-        # describes the standard API; this entry is the CODING host, which
-        # publishes no parameter documentation at all. Probed 2026-08-26 against
-        # api.kimi.com/coding: temperature 0.0 and 1.0 both answered 200, and 0.0
-        # collapsed the spread (3 distinct answers in 6 draws) where 1.0 did not
-        # (6 in 6). It lands here.
-        #
-        # The range is the Anthropic-compat nominal [0, 1] rather than a number
-        # Moonshot publishes for this host, because it publishes none.
-        #
-        # No stop: probed and ignored, same as MiniMax and Z.AI.
-        temperature:
-          default: 1
-          min: 0
-          max: 1
-        top_p:
-          default: 0.95
-          min: 0
-          max: 1
+      # Thinking cannot be turned off on K3.1 Pro: a disable is a 400 on the
+      # coding host too (K3's off switch used to re-route to K2.8 Preview), and
+      # the server already serves Off as the lowest effort on this host. No
+      # sampling block: the 2026-08-26 temperature probe on this host was run on
+      # K3, and the vendor fixes temperature at 1.0 for K3.1 Pro, so nothing
+      # about sampling here is measured.
+      thinking_always_on: true
       pricing:
         is_subscription: true
 sync:
     family_strip: -k\d+(?:\.\d+)?
     pinned:
         - kimi-for-coding
-        - kimi-k3
-        - kimi-k3-coding-plan
+        - kimi-k3.1-pro
+        - kimi-k3.1-pro-coding-plan
+        - kimi-k3.1-pro-highspeed
     excluded:
         - kimi-k2.6
         - kimi-k2-thinking
         - kimi-k2-thinking-turbo
         - kimi-k2-turbo
+        - kimi-k3
+        - kimi-k3-coding-plan

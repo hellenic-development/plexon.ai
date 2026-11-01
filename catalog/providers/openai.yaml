@@ -6,7 +6,8 @@ supports_oauth: true
 base_url: https://api.openai.com/v1
 # OpenAI's models page (2026-10-17) lists three flagships: Astra for the most
 # demanding work, Sol to balance intelligence and cost, Luna for high-volume
-# work. The GPT-5 generation is retired by prefix (the pinned codex and image
+# work; GPT-6.1 Terra (2026-10-26) sits between Sol and Luna and replaced GPT-5.6
+# Terra. The GPT-5 generation is retired by prefix (the pinned codex and image
 # rows are immune to exclusion); the Daybreak ids are an access programme, not
 # models for a picker.
 default_model: gpt-6-astra
@@ -19,6 +20,7 @@ sync:
         - gpt-6-astra
         - gpt-6-luna
         - gpt-6.1-sol
+        - gpt-6.1-terra
         - o4-mini-deep-research
     excluded:
         - gpt-3.5*
@@ -131,6 +133,23 @@ models:
         output: 10
         cache_write: 2.5
         cache_read: 0.1
+    - id: gpt-6.1-terra
+      name: GPT-6.1 Terra
+      # The tier between Sol and Luna (2026-10-26), replacing GPT-5.6 Terra,
+      # which the gpt-5* exclusion already retires.
+      limit: 1050000
+      reserved_tokens: 128000
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_tool_search: true
+      release_date: "2026-10-26"
+      last_updated: "2026-10-26"
+      pricing:
+        input: 1
+        output: 5
+        cache_write: 1.25
+        cache_read: 0.05
     - id: gpt-realtime-2.1
       name: GPT-Realtime-2.1
       limit: 128000
