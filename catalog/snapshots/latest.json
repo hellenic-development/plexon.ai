@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-11-01T10:49:13Z",
+  "generated": "2026-11-03T10:48:56Z",
   "providers": [
     {
       "name": "anthropic",
@@ -7621,6 +7621,16 @@
           "reserved_tokens": 128000,
           "supports_streaming": true,
           "default_selection": true,
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "plexon-1.0-code",
+          "name": "Plexon 1.0 Code",
+          "limit": 1000000,
+          "reserved_tokens": 128000,
+          "supports_streaming": true,
           "pricing": {
             "is_subscription": true
           }

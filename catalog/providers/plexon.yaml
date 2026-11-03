@@ -14,6 +14,17 @@ models:
       default_selection: true
       pricing:
         is_subscription: true
+    - id: plexon-1.0-code
+      # The virtual model a persona or an agent pins (`model: plexon-1.0-code`)
+      # to run on the Code cell of the admin mapping instead of the Text cell.
+      # Never the default and never offered in the picker; resolved to the
+      # Code cell in every mode, the way the image virtual ignores Plan mode.
+      name: Plexon 1.0 Code
+      limit: 1000000
+      reserved_tokens: 128000
+      supports_streaming: true
+      pricing:
+        is_subscription: true
     - id: plexon-1.0-image
       name: Plexon 1.0 Image
       limit: 0
