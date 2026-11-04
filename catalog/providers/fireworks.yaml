@@ -31,11 +31,11 @@ default_model: glm-5p3
 #                                2026-06-10.
 #
 # Those omissions have to survive the weekly models.dev sync, which is why this file
-# is shaped the way it is. The sync maps models.dev's `tool_call` onto our
-# SupportsToolSearch (scripts/sync_models_dev convertUpstream), every Fireworks model
-# reports tool_call:true, and preferLocal can only ever force a boolean ON — never
-# off. So an entry the sync can reach would get supports_tool_search:true and start
-# 400ing on every request.
+# is shaped the way it is. Until 2026-11-04 the sync mapped models.dev's `tool_call`
+# onto our SupportsToolSearch (scripts/sync_models_dev convertUpstream); it no longer
+# derives that flag, but preferLocal can still only ever force a boolean ON, never
+# off, so the adaptive-thinking and generation flags above would still come back on
+# any entry the sync can reach.
 #
 # Two things keep that from happening. Today the sync skips this provider outright,
 # because models.dev keys it `fireworks-ai` while we call it `fireworks`, so the name

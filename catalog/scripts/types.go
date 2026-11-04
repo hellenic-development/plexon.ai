@@ -49,7 +49,7 @@ type CatalogModel struct {
 	WireID  string `json:"wire_id,omitempty" yaml:"wire_id,omitempty"`
 	Name    string `json:"name,omitempty" yaml:"name,omitempty"`
 	BaseURL string `json:"base_url,omitempty" yaml:"base_url,omitempty"`
-	// Compatibility overrides the provider's wire protocol ("openai"|"anthropic")
+	// Compatibility overrides the provider's wire protocol ("openai"|"openai-responses"|"anthropic")
 	// for this model only; falls back to the provider's when empty.
 	Compatibility            string            `json:"compatibility,omitempty" yaml:"compatibility,omitempty"`
 	Headers                  map[string]string `json:"headers,omitempty" yaml:"headers,omitempty"`

@@ -1,6 +1,6 @@
 name: openai
 display_name: OpenAI
-compatibility: openai
+compatibility: openai-responses
 requires_api_key: true
 supports_oauth: true
 base_url: https://api.openai.com/v1
@@ -10,6 +10,24 @@ base_url: https://api.openai.com/v1
 # Terra. The GPT-5 generation is retired by prefix (the pinned codex and image
 # rows are immune to exclusion); the Daybreak ids are an access programme, not
 # models for a picker.
+#
+# Wire: openai-responses, that is /v1/responses, not /v1/chat/completions.
+# Measured against api.openai.com on 2026-11-04:
+# - chat/completions: GPT-6 Astra, GPT-6 Luna and GPT-6.1 Terra refuse any function
+#   tools ("Function tools with reasoning_effort are not supported ... use
+#   /v1/responses or set reasoning_effort to 'none'"); gpt-5.3-codex refuses the
+#   endpoint outright; max_tokens is refused (it wants max_completion_tokens); the
+#   tools array is capped at 128 entries; {"type":"tool_search"} is refused
+#   ("Supported values are: 'function' and 'custom'").
+# - /v1/responses: no tool cap (213 tools accepted); reasoning summaries and
+#   encrypted reasoning items come back with store:false; the effort vocabulary is
+#   none/minimal/low/medium/high/xhigh/max with medium the default on every GPT-6
+#   row; Astra and 6.1 Sol refuse effort none (they always think, hence
+#   thinking_always_on below), Luna and 6.1 Terra accept it; temperature is refused
+#   on every GPT-6 row and accepted on gpt-5.3-codex, whose default effort is none.
+# supports_tool_search is absent on every row on purpose: neither OpenAI surface has
+# the provider-side tool_search helper, and the desktop repo's VerifyCritical refuses
+# the flag on an openai or openai-responses wire.
 default_model: gpt-6-astra
 sync:
     family_strip: -\d+(?:\.\d+)?
@@ -48,7 +66,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       pricing:
         input: 10
@@ -63,7 +80,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       pricing:
         input: 2.5
@@ -78,7 +94,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-05"
       last_updated: "2026-02-05"
@@ -94,7 +109,7 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
+      thinking_always_on: true
       default_selection: true
       release_date: "2026-09-04"
       last_updated: "2026-09-04"
@@ -110,7 +125,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
       pricing:
@@ -125,7 +139,7 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
+      thinking_always_on: true
       release_date: "2026-09-29"
       last_updated: "2026-09-29"
       pricing:
@@ -142,7 +156,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-10-26"
       last_updated: "2026-10-26"
       pricing:
@@ -157,7 +170,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-07-06"
       last_updated: "2026-07-06"
       pricing:
@@ -172,8 +184,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
-      supports_custom_temperature: true
       release_date: "2024-06-26"
       last_updated: "2024-06-26"
       pricing:

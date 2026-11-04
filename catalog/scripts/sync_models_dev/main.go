@@ -136,10 +136,18 @@ type upstreamProvider struct {
 }
 
 type upstreamModel struct {
-	ID          string             `json:"id"`
-	Name        string             `json:"name"`
-	Attachment  bool               `json:"attachment"`
-	Reasoning   bool               `json:"reasoning"`
+	ID         string `json:"id"`
+	Name       string `json:"name"`
+	Attachment bool   `json:"attachment"`
+	Reasoning  bool   `json:"reasoning"`
+	// ToolCall is parsed but deliberately never mapped onto SupportsToolSearch.
+	// models.dev's tool_call means "does function calling"; our flag means
+	// "the endpoint accepts the provider-side {\"type\":\"tool_search\"} helper",
+	// which only Anthropic's wire does. Deriving one from the other put the
+	// flag on every OpenAI row and the desktop client then deferred all tools
+	// through a helper api.openai.com rejects with 400 (measured 2026-11-04).
+	// The flag is authored-only, and the desktop repo's VerifyCritical refuses
+	// it on any model whose wire is openai or openai-responses.
 	ToolCall    bool               `json:"tool_call"`
 	Temperature bool               `json:"temperature"`
 	ReleaseDate string             `json:"release_date"`
@@ -317,7 +325,6 @@ func convertUpstream(id string, um upstreamModel) catalogtypes.CatalogModel {
 		SupportsImage:             slices.Contains(um.Modalities.Input, "image"),
 		SupportsVideo:             slices.Contains(um.Modalities.Input, "video"),
 		SupportsReasoning:         um.Reasoning,
-		SupportsToolSearch:        um.ToolCall,
 		SupportsCustomTemperature: um.Temperature,
 		ReleaseDate:               um.ReleaseDate,
 		LastUpdated:               um.LastUpdated,

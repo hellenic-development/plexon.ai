@@ -13,7 +13,6 @@ models:
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-07"
       last_updated: "2026-07-07"
@@ -41,7 +40,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-02"
       last_updated: "2025-12-02"
@@ -54,7 +52,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-12-05"
       last_updated: "2024-12-05"
@@ -66,7 +63,6 @@ models:
       limit: 128000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-12-05"
       last_updated: "2024-12-05"
@@ -79,7 +75,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-31"
       last_updated: "2025-10-31"
@@ -93,7 +88,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-12-05"
       last_updated: "2024-12-05"
@@ -118,7 +112,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-06-09"
       last_updated: "2026-06-09"
       pricing:
@@ -133,7 +126,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-24"
       last_updated: "2026-07-24"
@@ -149,7 +141,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-06-30"
       last_updated: "2026-06-30"
       pricing:
@@ -164,7 +155,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-01"
       last_updated: "2026-04-01"
@@ -181,7 +171,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-23"
       last_updated: "2025-12-23"
@@ -197,7 +186,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-23"
       last_updated: "2025-12-23"
@@ -212,7 +200,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-12"
       last_updated: "2026-08-12"
@@ -227,7 +214,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-14"
       last_updated: "2026-02-14"
@@ -243,7 +229,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-10"
       last_updated: "2026-03-10"
@@ -259,7 +244,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-26"
       last_updated: "2026-02-26"
@@ -306,7 +290,6 @@ models:
       limit: 128000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-08-30"
       last_updated: "2024-08-30"
@@ -318,7 +301,6 @@ models:
       limit: 128000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-08-30"
       last_updated: "2024-08-30"
@@ -342,7 +324,6 @@ models:
       reserved_tokens: 64000
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-06-17"
       last_updated: "2026-06-17"
@@ -356,7 +337,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-14"
       last_updated: "2026-08-14"
@@ -369,7 +349,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-06-17"
       last_updated: "2025-06-17"
@@ -400,7 +379,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-06-17"
       last_updated: "2025-06-17"
@@ -417,7 +395,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-06-17"
       last_updated: "2025-06-17"
@@ -435,7 +412,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-17"
       last_updated: "2025-12-17"
@@ -451,7 +427,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-05-28"
       last_updated: "2026-05-28"
@@ -481,7 +456,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-05-07"
       last_updated: "2026-05-07"
@@ -512,7 +486,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-19"
       last_updated: "2026-02-19"
@@ -530,7 +503,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-19"
       last_updated: "2026-02-19"
@@ -547,7 +519,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-05-19"
       last_updated: "2026-05-19"
@@ -564,7 +535,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-21"
       last_updated: "2026-07-21"
@@ -581,7 +551,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-21"
       last_updated: "2026-07-21"
@@ -598,7 +567,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-13"
       last_updated: "2026-08-13"
@@ -624,7 +592,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-03-13"
       last_updated: "2025-03-13"
@@ -637,7 +604,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-03-12"
       last_updated: "2025-03-12"
@@ -665,7 +631,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-02"
       last_updated: "2026-04-02"
@@ -682,7 +647,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-02"
       last_updated: "2026-04-02"
@@ -695,7 +659,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-02"
       last_updated: "2026-04-02"
@@ -712,7 +675,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-02"
       last_updated: "2026-04-02"
@@ -763,7 +725,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-04"
       last_updated: "2026-03-04"
@@ -777,7 +738,6 @@ models:
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-23"
       last_updated: "2026-07-23"
@@ -791,7 +751,6 @@ models:
       reserved_tokens: 8192
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-11"
       last_updated: "2026-08-11"
@@ -812,7 +771,6 @@ models:
       reserved_tokens: 262144
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-20"
       last_updated: "2026-07-20"
@@ -825,7 +783,6 @@ models:
       limit: 131072
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-07-23"
       last_updated: "2024-07-23"
@@ -837,7 +794,6 @@ models:
       limit: 16384
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-07-23"
       last_updated: "2024-07-23"
@@ -871,7 +827,6 @@ models:
       limit: 131072
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-12-06"
       last_updated: "2024-12-06"
@@ -884,7 +839,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-05"
       last_updated: "2025-04-05"
@@ -897,7 +851,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-05"
       last_updated: "2025-04-05"
@@ -923,7 +876,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-10"
       last_updated: "2026-08-10"
@@ -939,7 +891,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-21"
       last_updated: "2026-08-21"
@@ -988,7 +939,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-06-17"
       last_updated: "2025-06-17"
@@ -1002,7 +952,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-27"
       last_updated: "2025-10-27"
@@ -1029,7 +978,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-23"
       last_updated: "2025-12-23"
@@ -1044,7 +992,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-12"
       last_updated: "2026-02-12"
@@ -1059,7 +1006,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-18"
       last_updated: "2026-03-18"
@@ -1075,7 +1021,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-06-01"
       last_updated: "2026-06-01"
@@ -1088,7 +1033,6 @@ models:
       limit: 256000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-08-01"
       last_updated: "2025-08-01"
@@ -1102,7 +1046,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-02"
       last_updated: "2025-12-02"
@@ -1116,7 +1059,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-02"
       last_updated: "2025-12-02"
@@ -1130,7 +1072,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-02"
       last_updated: "2025-12-02"
@@ -1144,7 +1085,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-05-07"
       last_updated: "2025-05-07"
@@ -1159,7 +1099,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-30"
       last_updated: "2026-04-30"
@@ -1171,7 +1110,6 @@ models:
       limit: 131072
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-07-01"
       last_updated: "2024-07-01"
@@ -1183,7 +1121,6 @@ models:
       limit: 32768
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-02-17"
       last_updated: "2025-02-17"
@@ -1210,7 +1147,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-16"
       last_updated: "2026-03-16"
@@ -1224,7 +1160,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-03-17"
       last_updated: "2025-03-17"
@@ -1237,7 +1172,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-06-20"
       last_updated: "2025-06-20"
@@ -1249,7 +1183,6 @@ models:
       limit: 65536
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-04-17"
       last_updated: "2024-04-17"
@@ -1262,7 +1195,6 @@ models:
       limit: 32000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-30"
       last_updated: "2025-10-30"
@@ -1275,7 +1207,6 @@ models:
       limit: 262144
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-09-04"
       last_updated: "2025-09-04"
@@ -1289,7 +1220,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-11-06"
       last_updated: "2025-11-06"
@@ -1305,7 +1235,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: 2026-01
       last_updated: 2026-01
@@ -1320,7 +1249,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-21"
       last_updated: "2026-04-21"
@@ -1335,7 +1263,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-06-12"
       last_updated: "2026-06-12"
@@ -1351,7 +1278,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-16"
       last_updated: "2026-07-16"
@@ -1423,7 +1349,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-15"
       last_updated: "2025-12-15"
@@ -1438,7 +1363,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-28"
       last_updated: "2026-04-28"
@@ -1449,7 +1373,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-11"
       last_updated: "2026-03-11"
@@ -1464,7 +1387,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-11"
       last_updated: "2026-03-11"
@@ -1474,7 +1396,6 @@ models:
       reserved_tokens: 16384
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-06-04"
       last_updated: "2026-06-04"
@@ -1488,7 +1409,6 @@ models:
       reserved_tokens: 65536
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-06-04"
       last_updated: "2026-06-04"
@@ -1508,7 +1428,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-11"
       last_updated: "2026-08-11"
@@ -1522,7 +1441,6 @@ models:
       reserved_tokens: 65536
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-11"
       last_updated: "2026-08-11"
@@ -1531,7 +1449,6 @@ models:
       limit: 4095
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-01-25"
       last_updated: "2024-01-25"
@@ -1543,7 +1460,6 @@ models:
       limit: 16385
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2023-08-28"
       last_updated: "2023-08-28"
@@ -1566,7 +1482,6 @@ models:
       limit: 8191
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2023-11-06"
       last_updated: "2024-04-09"
@@ -1579,7 +1494,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-14"
       last_updated: "2025-04-14"
@@ -1593,7 +1507,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-14"
       last_updated: "2025-04-14"
@@ -1607,7 +1520,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-11-20"
       last_updated: "2024-11-20"
@@ -1621,7 +1533,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-07-18"
       last_updated: "2024-07-18"
@@ -1636,7 +1547,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2025-08-07"
       last_updated: "2025-08-07"
       pricing:
@@ -1651,7 +1561,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-14"
       last_updated: "2025-10-14"
@@ -1667,7 +1576,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-16"
       last_updated: "2025-10-16"
@@ -1683,7 +1591,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-08-07"
       last_updated: "2025-08-07"
@@ -1699,7 +1606,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-08-07"
       last_updated: "2025-08-07"
@@ -1715,7 +1621,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-06"
       last_updated: "2025-10-06"
@@ -1730,7 +1635,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-11-13"
       last_updated: "2025-11-13"
@@ -1746,7 +1650,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-11-13"
       last_updated: "2025-11-13"
@@ -1762,7 +1665,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-11-13"
       last_updated: "2025-11-13"
@@ -1776,7 +1678,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-10"
       last_updated: "2025-12-10"
@@ -1792,7 +1693,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-11"
       last_updated: "2025-12-11"
@@ -1808,7 +1708,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-11"
       last_updated: "2025-12-11"
@@ -1823,7 +1722,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-05"
       last_updated: "2026-02-05"
@@ -1852,7 +1750,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-17"
       last_updated: "2026-03-17"
@@ -1868,7 +1765,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-17"
       last_updated: "2026-03-17"
@@ -1884,7 +1780,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-05"
       last_updated: "2026-03-05"
@@ -1898,7 +1793,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-04-23"
       last_updated: "2026-04-23"
       pricing:
@@ -1912,7 +1806,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-04-23"
       last_updated: "2026-04-23"
       pricing:
@@ -1925,7 +1818,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-07-09"
       last_updated: "2026-07-09"
       pricing:
@@ -1940,7 +1832,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-07-09"
       last_updated: "2026-07-09"
       pricing:
@@ -1955,7 +1846,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-07-09"
       last_updated: "2026-07-09"
       pricing:
@@ -1970,7 +1860,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-07-09"
       last_updated: "2026-07-09"
       pricing:
@@ -1985,7 +1874,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-07-09"
       last_updated: "2026-07-09"
       pricing:
@@ -2000,7 +1888,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-07-09"
       last_updated: "2026-07-09"
       pricing:
@@ -2013,7 +1900,6 @@ models:
       limit: 128000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-01-19"
       last_updated: "2026-01-19"
@@ -2025,7 +1911,6 @@ models:
       limit: 128000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-01-19"
       last_updated: "2026-01-19"
@@ -2038,7 +1923,6 @@ models:
       reserved_tokens: 128000
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       release_date: "2026-05-05"
       last_updated: "2026-05-05"
       pricing:
@@ -2052,7 +1936,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-08-05"
       last_updated: "2025-08-05"
@@ -2066,7 +1949,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-08-05"
       last_updated: "2025-08-05"
@@ -2080,7 +1962,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-29"
       last_updated: "2025-10-29"
@@ -2096,7 +1977,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-12-05"
       last_updated: "2024-12-05"
@@ -2126,7 +2006,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-16"
       last_updated: "2025-04-16"
@@ -2141,7 +2020,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-12-20"
       last_updated: "2025-01-29"
@@ -2156,7 +2034,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-02-12"
       last_updated: "2025-02-12"
@@ -2172,7 +2049,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-06-10"
       last_updated: "2025-06-10"
@@ -2187,7 +2063,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-16"
       last_updated: "2025-04-16"
@@ -2203,7 +2078,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-16"
       last_updated: "2025-04-16"
@@ -2219,7 +2093,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2023-11-08"
       last_updated: "2023-11-08"
@@ -2238,7 +2111,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-01"
       last_updated: "2026-02-01"
@@ -2341,7 +2213,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-21"
       last_updated: "2026-07-21"
@@ -2355,7 +2226,6 @@ models:
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-21"
       last_updated: "2026-07-21"
@@ -2365,7 +2235,6 @@ models:
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-02"
       last_updated: "2026-07-02"
@@ -2379,7 +2248,6 @@ models:
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-02"
       last_updated: "2026-07-02"
@@ -2388,7 +2256,6 @@ models:
       limit: 32768
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-09-19"
       last_updated: "2024-09-19"
@@ -2400,7 +2267,6 @@ models:
       limit: 32768
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-10-16"
       last_updated: "2024-10-16"
@@ -2437,7 +2303,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-28"
       last_updated: "2025-04-28"
@@ -2451,7 +2316,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-07-21"
       last_updated: "2025-07-21"
@@ -2465,7 +2329,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-07-25"
       last_updated: "2025-07-25"
@@ -2479,7 +2342,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-04-28"
       last_updated: "2025-04-28"
@@ -2491,7 +2353,6 @@ models:
       limit: 262144
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-07-29"
       last_updated: "2025-07-29"
@@ -2505,7 +2366,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: 2025-04
       last_updated: 2025-04
@@ -2518,7 +2378,6 @@ models:
       limit: 262144
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-07-23"
       last_updated: "2025-07-23"
@@ -2531,7 +2390,6 @@ models:
       limit: 160000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: 2025-04
       last_updated: 2025-04
@@ -2543,7 +2401,6 @@ models:
       limit: 1000000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-07-28"
       last_updated: "2025-07-28"
@@ -2557,7 +2414,6 @@ models:
       limit: 262144
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-04"
       last_updated: "2026-02-04"
@@ -2570,7 +2426,6 @@ models:
       limit: 262144
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: 2025-09
       last_updated: 2025-09
@@ -2584,7 +2439,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: 2025-09
       last_updated: 2025-09
@@ -2597,7 +2451,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-09-23"
       last_updated: "2025-09-23"
@@ -2611,7 +2464,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-06"
       last_updated: "2025-10-06"
@@ -2626,7 +2478,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-06"
       last_updated: "2025-10-06"
@@ -2639,7 +2490,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-10-14"
       last_updated: "2025-10-14"
@@ -2655,7 +2505,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-23"
       last_updated: "2026-02-23"
@@ -2671,7 +2520,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-23"
       last_updated: "2026-02-23"
@@ -2687,7 +2535,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-23"
       last_updated: "2026-02-23"
@@ -2703,7 +2550,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-15"
       last_updated: "2026-02-15"
@@ -2720,7 +2566,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-23"
       last_updated: "2026-02-23"
@@ -2736,7 +2581,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-25"
       last_updated: "2026-02-25"
@@ -2752,7 +2596,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
@@ -2768,7 +2611,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-22"
       last_updated: "2026-04-22"
@@ -2784,7 +2626,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-17"
       last_updated: "2026-04-17"
@@ -2799,7 +2640,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
@@ -2816,7 +2656,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-02"
       last_updated: "2026-04-02"
@@ -2832,7 +2671,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-15"
       last_updated: "2026-07-15"
@@ -2847,7 +2685,6 @@ models:
       reserved_tokens: 65536
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-05-21"
       last_updated: "2026-05-21"
@@ -2863,7 +2700,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-06-02"
       last_updated: "2026-06-02"
@@ -2878,7 +2714,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-12"
       last_updated: "2026-08-12"
@@ -2894,7 +2729,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-14"
       last_updated: "2026-08-14"
@@ -2909,7 +2743,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_video: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-20"
       last_updated: "2026-03-20"
@@ -2945,7 +2778,6 @@ models:
       limit: 256000
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-08"
       last_updated: "2025-12-08"
@@ -2959,7 +2791,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-06-24"
       last_updated: "2026-06-24"
       pricing:
@@ -2973,7 +2804,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-08-03"
       last_updated: "2026-08-03"
       pricing:
@@ -2996,7 +2826,6 @@ models:
       limit: 131072
       reserved_tokens: 19660
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-08-28"
       last_updated: "2024-08-28"
@@ -3023,7 +2852,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-20"
       last_updated: "2026-08-20"
@@ -3034,7 +2862,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-01-29"
       last_updated: "2026-02-13"
@@ -3049,7 +2876,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-05-29"
       last_updated: "2026-05-29"
@@ -3109,7 +2935,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-06"
       last_updated: "2026-07-06"
@@ -3146,7 +2971,6 @@ models:
       limit: 32768
       reserved_tokens: 4096
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-11-08"
       last_updated: "2024-11-08"
@@ -3160,7 +2984,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-15"
       last_updated: "2026-07-15"
@@ -3175,7 +2998,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-30"
       last_updated: "2026-07-30"
@@ -3190,7 +3012,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-30"
       last_updated: "2026-07-30"
@@ -3201,7 +3022,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-15"
       last_updated: "2026-07-15"
@@ -3223,7 +3043,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-01-27"
       last_updated: "2026-01-27"
@@ -3237,7 +3056,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-10"
       last_updated: "2026-08-10"
@@ -3278,7 +3096,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-16"
       last_updated: "2026-04-16"
@@ -3294,7 +3111,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-22"
       last_updated: "2026-04-22"
@@ -3308,7 +3124,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-22"
       last_updated: "2026-04-22"
@@ -3323,7 +3138,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-07-28"
       last_updated: "2025-07-28"
@@ -3339,7 +3153,6 @@ models:
       supports_image: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-08-11"
       last_updated: "2025-08-11"
@@ -3356,7 +3169,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-08"
       last_updated: "2025-12-08"
@@ -3370,7 +3182,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-01-19"
       last_updated: "2026-01-19"
@@ -3384,7 +3195,6 @@ models:
       reserved_tokens: 128000
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-02-12"
       last_updated: "2026-02-12"
@@ -3399,7 +3209,6 @@ models:
       supports_streaming: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-03-16"
       last_updated: "2026-03-16"
@@ -3413,7 +3222,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-14"
       last_updated: "2026-08-14"
@@ -3430,7 +3238,6 @@ models:
       supports_video: true
       supports_reasoning: true
       supports_include_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-01"
       last_updated: "2026-04-01"
@@ -3445,7 +3252,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-06-09"
       last_updated: "2026-06-09"
       pricing:
@@ -3460,7 +3266,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
@@ -3476,7 +3281,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-21"
       last_updated: "2026-04-21"
@@ -3492,7 +3296,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
       pricing:
@@ -3508,7 +3311,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
@@ -3525,7 +3327,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
@@ -3542,7 +3343,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
@@ -3557,7 +3357,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-04-27"
       last_updated: "2026-04-27"
       pricing:
@@ -3571,7 +3370,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-07-08"
       last_updated: "2026-07-08"
@@ -3585,7 +3383,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-19"
       last_updated: "2026-08-19"
@@ -3599,7 +3396,6 @@ models:
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-23"
       last_updated: "2026-09-23"
@@ -3613,7 +3409,6 @@ models:
       reserved_tokens: 32768
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-23"
       last_updated: "2026-09-23"
@@ -3628,7 +3423,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-01"
       last_updated: "2026-09-01"
       pricing:
@@ -3643,7 +3437,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-10-07"
       last_updated: "2026-10-07"
       pricing:
@@ -3658,7 +3451,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
       pricing:
@@ -3673,7 +3465,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-28"
       last_updated: "2026-09-28"
       pricing:
@@ -3688,7 +3479,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
@@ -3704,7 +3494,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-17"
       last_updated: "2026-10-17"
@@ -3719,7 +3508,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-24"
       last_updated: "2026-09-24"
@@ -3735,7 +3523,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-02"
       last_updated: "2026-09-02"
@@ -3752,7 +3539,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-13"
       last_updated: "2026-10-13"
@@ -3768,7 +3554,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-06"
       last_updated: "2026-10-06"
@@ -3781,7 +3566,6 @@ models:
       reserved_tokens: 117964
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-31"
       last_updated: "2026-08-31"
@@ -3795,7 +3579,6 @@ models:
       reserved_tokens: 65536
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-08"
       last_updated: "2026-09-08"
@@ -3811,7 +3594,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-10"
       last_updated: "2026-09-10"
@@ -3825,7 +3607,6 @@ models:
       reserved_tokens: 235929
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-02"
       last_updated: "2026-10-02"
@@ -3863,7 +3644,6 @@ models:
       reserved_tokens: 8192
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-13"
       last_updated: "2026-10-13"
@@ -3879,7 +3659,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-02"
       last_updated: "2026-09-02"
@@ -3895,7 +3674,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-02"
       last_updated: "2026-09-02"
@@ -3911,7 +3689,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-15"
       last_updated: "2026-10-15"
@@ -3927,7 +3704,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-12"
       last_updated: "2026-10-12"
@@ -3940,7 +3716,6 @@ models:
       limit: 262144
       reserved_tokens: 209715
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2025-12-09"
       last_updated: "2025-12-09"
@@ -3955,7 +3730,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-06"
       last_updated: "2026-10-06"
@@ -4010,7 +3784,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-08"
       last_updated: "2026-09-08"
@@ -4039,7 +3812,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-15"
       last_updated: "2026-10-15"
@@ -4055,7 +3827,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-15"
       last_updated: "2026-10-15"
@@ -4065,7 +3836,6 @@ models:
       reserved_tokens: 4096
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2023-11-06"
       last_updated: "2024-04-09"
@@ -4079,7 +3849,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-04"
       last_updated: "2026-09-04"
       pricing:
@@ -4094,7 +3863,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-04"
       last_updated: "2026-09-04"
       pricing:
@@ -4109,7 +3877,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
       pricing:
@@ -4124,7 +3891,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
       pricing:
@@ -4139,7 +3905,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
       pricing:
@@ -4154,7 +3919,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
       pricing:
@@ -4169,7 +3933,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-29"
       last_updated: "2026-09-29"
       pricing:
@@ -4184,7 +3947,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-29"
       last_updated: "2026-09-29"
       pricing:
@@ -4200,7 +3962,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-25"
       last_updated: "2026-09-25"
@@ -4214,7 +3975,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-18"
       last_updated: "2026-09-18"
@@ -4227,7 +3987,6 @@ models:
       limit: 1000000
       reserved_tokens: 32768
       supports_streaming: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2024-01-25"
       last_updated: "2025-09-11"
@@ -4244,7 +4003,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-26"
       last_updated: "2026-08-26"
@@ -4260,7 +4018,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-02"
       last_updated: "2026-09-02"
@@ -4276,7 +4033,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-23"
       last_updated: "2026-09-23"
@@ -4292,7 +4048,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-17"
       last_updated: "2026-09-17"
@@ -4306,7 +4061,6 @@ models:
       reserved_tokens: 943718
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-16"
       last_updated: "2026-10-16"
@@ -4321,7 +4075,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-11"
       last_updated: "2026-09-11"
       pricing:
@@ -4335,7 +4088,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-11"
       last_updated: "2026-09-11"
       pricing:
@@ -4370,7 +4122,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-16"
       last_updated: "2026-09-20"
@@ -4384,7 +4135,6 @@ models:
       reserved_tokens: 64000
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-28"
       last_updated: "2026-08-28"
@@ -4398,7 +4148,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-13"
       last_updated: "2026-10-13"
@@ -4412,7 +4161,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-23"
       last_updated: "2026-09-23"
@@ -4427,7 +4175,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-21"
       last_updated: "2026-09-21"
@@ -4443,7 +4190,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
@@ -4459,7 +4205,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
@@ -4475,7 +4220,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-21"
       last_updated: "2026-09-21"
@@ -4489,7 +4233,6 @@ models:
       reserved_tokens: 235929
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-16"
       last_updated: "2026-10-16"
@@ -4501,7 +4244,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-26"
       last_updated: "2026-08-26"
@@ -4517,7 +4259,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-18"
       last_updated: "2026-09-18"
@@ -4531,7 +4272,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-09-23"
       last_updated: "2026-09-23"
@@ -4546,7 +4286,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-11"
       last_updated: "2026-09-11"
       pricing:
@@ -4561,7 +4300,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-11"
       last_updated: "2026-09-11"
       pricing:
@@ -4576,7 +4314,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-11"
       last_updated: "2026-09-11"
       pricing:
@@ -4591,7 +4328,6 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
-      supports_tool_search: true
       release_date: "2026-09-11"
       last_updated: "2026-09-11"
       pricing:
@@ -4605,7 +4341,6 @@ models:
       reserved_tokens: 131072
       supports_streaming: true
       supports_image: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-10-13"
       last_updated: "2026-10-13"
@@ -4621,7 +4356,6 @@ models:
       supports_image: true
       supports_video: true
       supports_reasoning: true
-      supports_tool_search: true
       supports_custom_temperature: true
       release_date: "2026-08-27"
       last_updated: "2026-08-27"

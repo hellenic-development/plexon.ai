@@ -69,6 +69,22 @@ func TestPreferLocalKeepsEveryAuthoredField(t *testing.T) {
 	}
 }
 
+// TestConvertUpstreamNeverDerivesToolSearch: models.dev's tool_call says a model
+// does function calling; supports_tool_search says the endpoint accepts the
+// provider-side tool_search helper, which only Anthropic's wire does. Mapping
+// one onto the other set the flag on every OpenAI row, and with it the desktop
+// client deferred all 213 tools through a helper api.openai.com answers 400 to
+// (2026-11-04). The flag is authored-only; the sync must never derive it.
+func TestConvertUpstreamNeverDerivesToolSearch(t *testing.T) {
+	got := convertUpstream("gpt-x", upstreamModel{ID: "gpt-x", Name: "GPT X", ToolCall: true, Reasoning: true})
+	if got.SupportsToolSearch {
+		t.Fatalf("convertUpstream derived supports_tool_search from tool_call; the flag is authored-only")
+	}
+	if !got.SupportsReasoning {
+		t.Fatalf("convertUpstream dropped reasoning; the test model should still convert normally")
+	}
+}
+
 // TestPinWarnsWhenItHidesANewerSibling: a pinned model shadows its whole family,
 // which is how an undated hand-authored id beats a dated upstream variant. The
 // same rule silently hid claude-fable-5-1 behind pinned claude-fable-5 for six
