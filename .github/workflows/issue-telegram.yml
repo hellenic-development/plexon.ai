@@ -1,0 +1,33 @@
+name: Issue to Telegram
+
+# One Telegram message to the owner's phone for every issue opened here.
+# The bot token and the chat id are repo secrets (TELEGRAM_BOT_TOKEN,
+# TELEGRAM_CHAT_ID); nothing in this file identifies either.
+
+on:
+  issues:
+    types: [opened]
+
+# The job only reads the event payload. It needs no GITHUB_TOKEN scope at all.
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      # Pinned to the exact release, never a moving branch.
+      - uses: appleboy/telegram-action@v1.1.1
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          disable_web_page_preview: true
+          # No `format:` on purpose. Markdown or HTML makes Telegram reject the
+          # whole message (HTTP 400) when a title carries `_`, `*`, `<` or `&`,
+          # which reporters type freely. Plain text never fails and the URL is
+          # still tappable. The expressions stay inside `with:` and never reach a
+          # `run:` script, so a crafted title cannot inject shell.
+          message: |
+            New issue #${{ github.event.issue.number }} in ${{ github.repository }}
+            ${{ github.event.issue.title }}
+            by ${{ github.event.issue.user.login }}${{ github.event.issue.labels[0] && format(' ({0})', github.event.issue.labels[0].name) || '' }}
+            ${{ github.event.issue.html_url }}
