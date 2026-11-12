@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-11-04T16:28:19Z",
+  "generated": "2026-11-12T15:12:43Z",
   "providers": [
     {
       "name": "anthropic",
@@ -1385,7 +1385,20 @@
           "supports_video_generation": true,
           "generation_type": "async",
           "generation_api": "minimax-v2",
-          "per_unit_cost": 0.78,
+          "per_second_cost": {
+            "resolutions": {
+              "2K": {
+                "output": 0.13,
+                "input": 0.13
+              },
+              "768P": {
+                "output": 0.08,
+                "input": 0.08
+              }
+            },
+            "input_image": 0.04,
+            "free_input_images": 5
+          },
           "pricing": {}
         },
         {
@@ -1420,6 +1433,20 @@
           "supports_streaming": true,
           "supports_image_generation": true,
           "generation_type": "sync",
+          "pricing": {
+            "is_subscription": true
+          }
+        },
+        {
+          "id": "h3-image-coding-plan",
+          "wire_id": "MiniMax-H3-Image",
+          "name": "MiniMax H3-Image (Subscription)",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_image_generation": true,
+          "supports_image_reference": true,
+          "generation_type": "sync",
+          "generation_api": "minimax-image-edit",
           "pricing": {
             "is_subscription": true
           }

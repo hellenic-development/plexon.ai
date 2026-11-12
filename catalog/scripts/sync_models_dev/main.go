@@ -430,6 +430,12 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	if local.SupportsImageGeneration {
 		result.SupportsImageGeneration = true
 	}
+	// models.dev has no notion of reference pictures, so upstream can only
+	// blank this, and without it the Plexon server refuses every request that
+	// carries a photo.
+	if local.SupportsImageReference {
+		result.SupportsImageReference = true
+	}
 	if local.SupportsVideoGeneration {
 		result.SupportsVideoGeneration = true
 	}
@@ -456,6 +462,11 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	}
 	if local.PerUnitCost != 0 {
 		result.PerUnitCost = local.PerUnitCost
+	}
+	// models.dev has no per-second price card, so upstream can only blank it,
+	// and a blanked card leaves a metered video model with no price at all.
+	if local.PerSecondCost != nil {
+		result.PerSecondCost = local.PerSecondCost
 	}
 	if local.ReleaseDate != "" {
 		result.ReleaseDate = local.ReleaseDate

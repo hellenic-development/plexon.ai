@@ -73,9 +73,16 @@ models:
       supports_video_generation: true
       generation_type: async
       generation_api: minimax-v2
-      # H3 bills per second of output (~$0.13/s at 2K), so this flat per-video
-      # field can only approximate it. Priced here for the 6s default.
-      per_unit_cost: 0.78
+      # The card is the vendor's per-second price list, read on 2026-11-12:
+      # output and reference-clip input are billed per second at the output
+      # resolution, audio input is free, and the first 5 input images are free
+      # with each one past that at $0.04.
+      per_second_cost:
+        free_input_images: 5
+        input_image: 0.04
+        resolutions:
+          2K:   {output: 0.13, input: 0.13}
+          768P: {output: 0.08, input: 0.08}
       pricing: {}
     - id: hailuo-3-coding-plan
       # Present so the Plexon Video backing can be flipped to H3 as admin data
@@ -117,6 +124,37 @@ models:
       supports_streaming: true
       supports_image_generation: true
       generation_type: sync
+      pricing:
+        is_subscription: true
+    - id: h3-image-coding-plan
+      # H3-Image renders from reference pictures: POST /v1/images/edits with
+      # the prompt and 1 to 16 images (a public URL or a data URI each), an
+      # area of 1K, 2K or 4K, and no mask. It is the backing of the Plexon
+      # image_edit cell, which serves a plexon_generate_image call that
+      # carries a photo.
+      #
+      # The wire id is the qualified "MiniMax-H3-Image". A coding-plan (Token
+      # Plan) key is accepted for it: measured 2026-11-11, HTTP 200 in 15.6 s,
+      # unlike H3 video, which the same key family refuses.
+      #
+      # The id carries neither "hailuo" nor "video" on purpose.
+      # quotawatch.minimaxScope sends an id with either word to the clip
+      # family, and an edit draws on the plan's shared allowance like
+      # image-01 does.
+      #
+      # There is no metered h3-image sibling yet: H3-Image bills by usage
+      # tokens and its prices are not confirmed, so a per_unit_cost here would
+      # be an invented number.
+      wire_id: MiniMax-H3-Image
+      name: MiniMax H3-Image (Subscription)
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image_generation: true
+      supports_image_reference: true
+      generation_type: sync
+      generation_api: minimax-image-edit
       pricing:
         is_subscription: true
     - id: speech-2.8-turbo
@@ -495,6 +533,7 @@ sync:
         - hailuo-3-coding-plan
         - image-01
         - image-01-coding-plan
+        - h3-image-coding-plan
         - speech-2.8-turbo
         - speech-2.8-turbo-coding-plan
         - speech-2.8-hd

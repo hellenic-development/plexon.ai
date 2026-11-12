@@ -69,6 +69,28 @@ func TestPreferLocalKeepsEveryAuthoredField(t *testing.T) {
 	}
 }
 
+// TestPreferLocalKeepsPerSecondCost: models.dev knows a flat price per item at
+// most, never a per-second card, so an upstream entry can only blank it. A
+// blanked card leaves the metered video model with no price, and the server
+// then refuses to debit a clip it has already paid the vendor for.
+func TestPreferLocalKeepsPerSecondCost(t *testing.T) {
+	card := &catalogtypes.CatalogPerSecondCost{
+		FreeInputImages: 5,
+		InputImage:      0.04,
+		Resolutions: map[string]catalogtypes.CatalogSecondRate{
+			"2K":   {Output: 0.13, Input: 0.13},
+			"768P": {Output: 0.08, Input: 0.08},
+		},
+	}
+	local := catalogtypes.CatalogModel{ID: "hailuo-3", PerSecondCost: card}
+	upstream := catalogtypes.CatalogModel{ID: "hailuo-3", PerUnitCost: 0.78}
+
+	got := preferLocal(upstream, local)
+	if !reflect.DeepEqual(got.PerSecondCost, card) {
+		t.Fatalf("preferLocal per_second_cost = %#v, want the authored card %#v", got.PerSecondCost, card)
+	}
+}
+
 // TestConvertUpstreamNeverDerivesToolSearch: models.dev's tool_call says a model
 // does function calling; supports_tool_search says the endpoint accepts the
 // provider-side tool_search helper, which only Anthropic's wire does. Mapping

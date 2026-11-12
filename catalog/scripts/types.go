@@ -93,7 +93,15 @@ type CatalogModel struct {
 	// Mirrors common/catalog.CatalogSampling.
 	Sampling                *CatalogSampling `json:"sampling,omitempty" yaml:"sampling,omitempty"`
 	SupportsImageGeneration bool             `json:"supports_image_generation,omitempty" yaml:"supports_image_generation,omitempty"`
-	SupportsVideoGeneration bool             `json:"supports_video_generation,omitempty" yaml:"supports_video_generation,omitempty"`
+	// SupportsImageReference marks an image model that takes reference
+	// pictures and renders from them (MiniMax H3-Image), as opposed to one
+	// that only reads a text prompt. The Plexon server sends a request that
+	// carries references to such a model only, and refuses it otherwise rather
+	// than rendering from the words alone.
+	//
+	// Mirrors common/catalog.CatalogModel.SupportsImageReference.
+	SupportsImageReference  bool `json:"supports_image_reference,omitempty" yaml:"supports_image_reference,omitempty"`
+	SupportsVideoGeneration bool `json:"supports_video_generation,omitempty" yaml:"supports_video_generation,omitempty"`
 	// SupportsSpeechGeneration marks text-to-speech models (e.g. MiniMax T2A).
 	// Deliberately not part of the client's IsGenerationModel(): speech is
 	// served by the dedicated /api/v1/tts route, never the /chat generation fork.
@@ -132,6 +140,10 @@ type CatalogModel struct {
 	//
 	// The two MiniMax surfaces reject each other's models outright, so this is
 	// per-model data rather than a provider setting.
+	//
+	// "minimax-image-edit" is MiniMax's /v1/images/edits (H3-Image): a JSON
+	// body with the prompt and one to sixteen reference pictures, answered in
+	// one long request with no task to poll.
 	GenerationAPI string `json:"generation_api,omitempty" yaml:"generation_api,omitempty"`
 	// ImpliedAspectRatio is the frame shape a video model produces when its API
 	// takes no aspect-ratio argument at all: the shape of the opening frame when
@@ -148,7 +160,15 @@ type CatalogModel struct {
 	// ("minimax-v2"), because there the caller's request is honoured directly.
 	ImpliedAspectRatio string  `json:"implied_aspect_ratio,omitempty" yaml:"implied_aspect_ratio,omitempty"`
 	PerUnitCost        float64 `json:"per_unit_cost,omitempty" yaml:"per_unit_cost,omitempty"`
-	DefaultSelection   bool    `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
+	// PerSecondCost is the price card of a video model the vendor bills by the
+	// second and by resolution. It replaces PerUnitCost on that model; the two
+	// never sit on one entry. Hand-authored: models.dev has no such notion.
+	//
+	// Mirrors common/catalog.CatalogModel.PerSecondCost. A YAML key missing
+	// from this struct is dropped silently by build_snapshot, so the model
+	// would ship with no price at all.
+	PerSecondCost    *CatalogPerSecondCost `json:"per_second_cost,omitempty" yaml:"per_second_cost,omitempty"`
+	DefaultSelection bool                  `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
 	// FallbackModel names a sibling model of the same provider that the API
 	// retries on when this model's safety classifiers decline a request
 	// (Anthropic server-side fallback beta, e.g. Fable 5 → Opus 5).
@@ -196,6 +216,22 @@ type CatalogRange struct {
 // CatalogStopLimit is how many stop sequences this model's API accepts.
 type CatalogStopLimit struct {
 	MaxItems int `json:"max_items" yaml:"max_items"`
+}
+
+// CatalogPerSecondCost is a video model's per-second price list: one rate pair
+// per output resolution the vendor bills, plus the charge for reference
+// images past the free allowance. Mirrors common/catalog.CatalogPerSecondCost.
+type CatalogPerSecondCost struct {
+	Resolutions     map[string]CatalogSecondRate `json:"resolutions" yaml:"resolutions"`
+	InputImage      float64                      `json:"input_image,omitempty" yaml:"input_image,omitempty"`
+	FreeInputImages int                          `json:"free_input_images,omitempty" yaml:"free_input_images,omitempty"`
+}
+
+// CatalogSecondRate is the USD price of one second at one resolution: of the
+// generated clip (Output) and of a reference clip read as input (Input).
+type CatalogSecondRate struct {
+	Output float64 `json:"output" yaml:"output"`
+	Input  float64 `json:"input" yaml:"input"`
 }
 
 // CatalogPricing is the per-1M-token rate card for a model.
