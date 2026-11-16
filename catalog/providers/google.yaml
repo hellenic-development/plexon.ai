@@ -276,3 +276,33 @@ models:
       supports_reasoning: true
       supports_include_reasoning: true
       supports_custom_temperature: true
+    - id: gemini-4-carbon
+      name: Gemini 4 Carbon
+      limit: 1048576
+      reserved_tokens: 32768
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-11-10"
+      last_updated: "2026-11-10"
+      pricing:
+        input: 2
+        output: 10
+        cache_read: 0.1
+    - id: gemini-4-hydrogen
+      name: Gemini 4 Hydrogen
+      limit: 1048576
+      reserved_tokens: 65536
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_custom_temperature: true
+      release_date: "2026-11-12"
+      last_updated: "2026-11-12"
+      pricing:
+        input: 1.5
+        output: 7.5
+        cache_read: 0.075

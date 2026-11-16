@@ -58,6 +58,10 @@ models:
       supports_image: true
       release_date: "2025-12-16"
       last_updated: "2025-12-16"
+      pricing:
+        input: 5
+        output: 10
+        cache_read: 1.25
     - id: gpt-5-image
       name: GPT-5 Image
       limit: 400000
@@ -125,6 +129,7 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
+      supports_custom_temperature: true
       release_date: "2026-09-22"
       last_updated: "2026-09-22"
       pricing:
@@ -156,6 +161,7 @@ models:
       supports_streaming: true
       supports_image: true
       supports_reasoning: true
+      supports_custom_temperature: true
       release_date: "2026-10-26"
       last_updated: "2026-10-26"
       pricing:
