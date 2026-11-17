@@ -353,6 +353,110 @@ models:
           max_items: 4
       pricing:
         is_subscription: true
+    - id: qwen4-max
+      name: Qwen4 Max
+      limit: 1000000
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_video: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      supports_custom_temperature: true
+      # Alibaba's qwen4-max page (read 2026-11-17): context 1,000,000, output
+      # 131,072 (262,144 with thinking), text, image and video in. One price
+      # band for the whole window: 1.5 / 4.5 on the Singapore endpoint this
+      # provider defaults to, 1.413 / 4.24 in the other regions. No
+      # release_date: the page carries only its "Last Updated" stamp.
+      #
+      # The cache prices are NOT Alibaba's printed figures. Its context-cache
+      # page says qwen4-max follows none of the generic ratios and sends the
+      # reader to the console; these are the numbers third-party price trackers
+      # list (read 0.075, 5-minute write 1.875). Confirm them in the Model
+      # Studio console before trusting a cost view to the cent.
+      pricing:
+        input: 1.5
+        output: 4.5
+        cache_write: 1.875
+        cache_read: 0.075
+    - id: qwen4-max (Token Plan)
+      wire_id: qwen4-max
+      name: Qwen4 Max (Token Plan)
+      # Same surface, protocol and window as qwen3.8-max (Token Plan) above, for
+      # the same reason: a premium session must keep one wire protocol across a
+      # mid-chain downgrade. Probed on this id 2026-11-17
+      # (_examples/qwentokenplan/anthropic_check): Bearer auth, "data:{" SSE
+      # framing, a tool call with and without thinking, an image block.
+      #
+      # Thinking is ON when the field is absent. thinking.type "disabled" stops
+      # it and budget_tokens caps it (1024 gave 1,031 and 1,032 output tokens
+      # where nothing sent gave about 3,000). output_config.effort, which
+      # Alibaba documents for this model, did not separate low from high in the
+      # same run, so nothing is sent through it.
+      compatibility: anthropic
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/apps/anthropic/v1
+      # 983,616 is Alibaba's own max input for qwen4-max in thinking mode, and
+      # the window the 3.8 rows already carry, so a conversation that fits this
+      # rung fits every rung a downgrade can land on.
+      limit: 983616
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      sampling:
+        # Defaults are Alibaba's for thinking mode (temperature 1.0, top_p
+        # 0.95). Measured 2026-11-17 with _examples/samplingprobe, 8 draws per
+        # arm: temperature 0.0 gave 2 distinct answers, 1.0 gave 5, absent gave
+        # 4, and top_p 0.01 gave 3. The fields move the output without
+        # collapsing it, which is what the note carries. The 0.6 floor on the
+        # 3.8 rows is that model's documented behaviour and was not assumed
+        # here. stop was honoured (stop_reason stop_sequence).
+        temperature:
+          default: 1
+          min: 0
+          max: 2
+          note: At 0 the answers narrow but still vary.
+        top_p:
+          default: 0.95
+          min: 0
+          max: 1
+        stop:
+          max_items: 4
+      pricing:
+        is_subscription: true
+    - id: qwen4-max-preview (Token Plan)
+      wire_id: qwen4-max-preview
+      name: Qwen4 Max Preview (Token Plan)
+      # Same surface as qwen4-max (Token Plan) above; see that entry's comments.
+      # The preview id exists because the Token Plan meters it separately: its
+      # Credits are 20% of the standard rate until 2026-11-25 24:00 UTC+8, with
+      # a further night discount. Probed on this id 2026-11-17 for auth,
+      # framing, tools, an image block and thinking.type "disabled".
+      compatibility: anthropic
+      base_url: https://token-plan.ap-southeast-1.maas.aliyuncs.com/apps/anthropic/v1
+      limit: 983616
+      reserved_tokens: 131072
+      supports_streaming: true
+      supports_image: true
+      supports_reasoning: true
+      supports_include_reasoning: true
+      sampling:
+        # Authored from the qwen4-max (Token Plan) measurement above; the
+        # sampling probe was not repeated on the preview id.
+        temperature:
+          default: 1
+          min: 0
+          max: 2
+          note: At 0 the answers narrow but still vary.
+        top_p:
+          default: 0.95
+          min: 0
+          max: 1
+        stop:
+          max_items: 4
+      pricing:
+        is_subscription: true
 sync:
     family_strip: -\d+(?:\.\d+)?
     pinned:
@@ -376,6 +480,9 @@ sync:
         - qwen3.8-max
         - qwen3.8-max (Token Plan)
         - qwen3.8-max-preview (Token Plan)
+        - qwen4-max
+        - qwen4-max (Token Plan)
+        - qwen4-max-preview (Token Plan)
     excluded:
         - qwen3-max
         - qwen3-max-thinking
