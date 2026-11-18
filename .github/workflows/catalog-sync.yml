@@ -1,10 +1,12 @@
 name: Catalog Sync
 
 on:
-  schedule:
-    # Every Monday at 04:00 UTC — when models.dev has usually settled after
-    # the weekend's edits. Manual dispatch available via the Actions tab.
-    - cron: '0 4 * * 1'
+  # The weekly schedule is switched off (2026-11-18). The sync job now runs only
+  # when someone starts it by hand from the Actions tab. To bring the schedule
+  # back, uncomment the two lines below (every Monday at 04:00 UTC, when
+  # models.dev has usually settled after the weekend's edits).
+  # schedule:
+  #   - cron: '0 4 * * 1'
   workflow_dispatch:
   # The validate job below is the vendor-denylist gate (catalog/scripts/denylist.go).
   # It has to run on pull requests or a hand edit reintroducing a denied model
