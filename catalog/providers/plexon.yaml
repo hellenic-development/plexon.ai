@@ -6,19 +6,18 @@ models:
     - id: plexon-1.0
       name: Plexon 1.0
       limit: 1000000
-      # M3 (the model Plexon resolves to) has a 1M context. 128000 output
-      # tokens fits a one-shot ~200 KB file write (~57K tokens) PLUS reasoning
-      # headroom. 8192 capped single writes at ~30 KB and forced append-chunking.
+      # 128000 output tokens fits a one-shot ~200 KB file write (~57K tokens)
+      # PLUS reasoning headroom. 8192 capped single writes at ~30 KB and forced
+      # append-chunking.
       reserved_tokens: 128000
       supports_streaming: true
       default_selection: true
       pricing:
         is_subscription: true
     - id: plexon-1.0-code
-      # The virtual model a persona or an agent pins (`model: plexon-1.0-code`)
-      # to run on the Code cell of the admin mapping instead of the Text cell.
-      # Never the default and never offered in the picker; resolved to the
-      # Code cell in every mode, the way the image virtual ignores Plan mode.
+      # The model a persona or an agent pins (`model: plexon-1.0-code`) for
+      # coding work. Never the default and never offered in the picker, and
+      # it stays the same in every mode, Plan included.
       name: Plexon 1.0 Code
       limit: 1000000
       reserved_tokens: 128000
