@@ -142,9 +142,7 @@ models:
       # family, and an edit draws on the plan's shared allowance like
       # image-01 does.
       #
-      # There is no metered h3-image sibling yet: H3-Image bills by usage
-      # tokens and its prices are not confirmed, so a per_unit_cost here would
-      # be an invented number.
+      # The pay-as-you-go siblings are h3-image and h3-image-highspeed below.
       wire_id: MiniMax-H3-Image
       name: MiniMax H3-Image (Subscription)
       base_url: https://api.minimax.io/v1
@@ -157,6 +155,55 @@ models:
       generation_api: minimax-image-edit
       pricing:
         is_subscription: true
+    - id: h3-image
+      # H3-Image on a pay-as-you-go key: the Ultra backing of the Plexon image
+      # and image_edit cells, paid from the account's credits.
+      #
+      # One model, two surfaces, which is what generation_api says: a prompt
+      # alone goes to POST /v1/images/generations, a prompt with reference
+      # pictures to POST /v1/images/edits. Same body but for the images list,
+      # same answer.
+      #
+      # The vendor bills it by tokens, with three rates per million (read off
+      # platform.minimax.io/docs/pricing/overview on 2026-11-22): text in,
+      # picture in, picture out. Measured the same day on a pay-as-you-go
+      # key: a 1K or 2K picture is about 4,100 output tokens, a reference
+      # picture of four megapixels about 5,900 input tokens, and the prompt
+      # with the vendor's own rewrite 2,200 to 7,200.
+      #
+      # The id carries neither "hailuo" nor "video", for the reason the
+      # coding-plan row gives.
+      wire_id: MiniMax-H3-Image
+      name: MiniMax H3-Image
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image_generation: true
+      supports_image_reference: true
+      generation_type: sync
+      generation_api: minimax-h3-image
+      pricing:
+        input: 2.3
+        output: 3.8
+        input_image: 1.5
+    - id: h3-image-highspeed
+      # The faster H3-Image, same parameters and limits, at about twice the
+      # price for pictures in and out (same source and date as h3-image).
+      wire_id: MiniMax-H3-Image-Highspeed
+      name: MiniMax H3-Image Highspeed
+      base_url: https://api.minimax.io/v1
+      limit: 0
+      reserved_tokens: 0
+      supports_streaming: true
+      supports_image_generation: true
+      supports_image_reference: true
+      generation_type: sync
+      generation_api: minimax-h3-image
+      pricing:
+        input: 2.3
+        output: 7.6
+        input_image: 3
     - id: speech-2.8-turbo
       # MiniMax T2A text-to-speech (the Plexon Voice backing family). Speech
       # lives on the plain /v1 base like image/video, not /anthropic/v1.
@@ -534,6 +581,8 @@ sync:
         - image-01
         - image-01-coding-plan
         - h3-image-coding-plan
+        - h3-image
+        - h3-image-highspeed
         - speech-2.8-turbo
         - speech-2.8-turbo-coding-plan
         - speech-2.8-hd

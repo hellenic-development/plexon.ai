@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-11-17T09:46:27Z",
+  "generated": "2026-11-22T19:26:08Z",
   "providers": [
     {
       "name": "anthropic",
@@ -1449,6 +1449,38 @@
           "generation_api": "minimax-image-edit",
           "pricing": {
             "is_subscription": true
+          }
+        },
+        {
+          "id": "h3-image",
+          "wire_id": "MiniMax-H3-Image",
+          "name": "MiniMax H3-Image",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_image_generation": true,
+          "supports_image_reference": true,
+          "generation_type": "sync",
+          "generation_api": "minimax-h3-image",
+          "pricing": {
+            "input": 2.3,
+            "output": 3.8,
+            "input_image": 1.5
+          }
+        },
+        {
+          "id": "h3-image-highspeed",
+          "wire_id": "MiniMax-H3-Image-Highspeed",
+          "name": "MiniMax H3-Image Highspeed",
+          "base_url": "https://api.minimax.io/v1",
+          "supports_streaming": true,
+          "supports_image_generation": true,
+          "supports_image_reference": true,
+          "generation_type": "sync",
+          "generation_api": "minimax-h3-image",
+          "pricing": {
+            "input": 2.3,
+            "output": 7.6,
+            "input_image": 3
           }
         },
         {

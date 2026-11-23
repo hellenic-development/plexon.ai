@@ -144,6 +144,11 @@ type CatalogModel struct {
 	// "minimax-image-edit" is MiniMax's /v1/images/edits (H3-Image): a JSON
 	// body with the prompt and one to sixteen reference pictures, answered in
 	// one long request with no task to poll.
+	//
+	// "minimax-h3-image" is the same model on both of its surfaces: the edit
+	// one above for a request with reference pictures, and
+	// /v1/images/generations for a prompt alone. The pay-as-you-go H3-Image
+	// rows carry it; the coding-plan row keeps "minimax-image-edit".
 	GenerationAPI string `json:"generation_api,omitempty" yaml:"generation_api,omitempty"`
 	// ImpliedAspectRatio is the frame shape a video model produces when its API
 	// takes no aspect-ratio argument at all: the shape of the opening frame when
@@ -236,10 +241,15 @@ type CatalogSecondRate struct {
 
 // CatalogPricing is the per-1M-token rate card for a model.
 type CatalogPricing struct {
-	Input          float64 `json:"input,omitempty" yaml:"input,omitempty"`
-	Output         float64 `json:"output,omitempty" yaml:"output,omitempty"`
-	CacheWrite     float64 `json:"cache_write,omitempty" yaml:"cache_write,omitempty"`
-	CacheRead      float64 `json:"cache_read,omitempty" yaml:"cache_read,omitempty"`
+	Input      float64 `json:"input,omitempty" yaml:"input,omitempty"`
+	Output     float64 `json:"output,omitempty" yaml:"output,omitempty"`
+	CacheWrite float64 `json:"cache_write,omitempty" yaml:"cache_write,omitempty"`
+	CacheRead  float64 `json:"cache_read,omitempty" yaml:"cache_read,omitempty"`
+	// InputImage is the rate for input tokens that are pictures, on an image
+	// model the vendor bills by tokens with a separate rate for them
+	// (MiniMax H3-Image: text in, picture in and picture out each have one).
+	// Zero means pictures are billed at Input like every other input token.
+	InputImage     float64 `json:"input_image,omitempty" yaml:"input_image,omitempty"`
 	IsSubscription bool    `json:"is_subscription,omitempty" yaml:"is_subscription,omitempty"`
 }
 
