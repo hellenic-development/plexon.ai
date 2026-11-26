@@ -1,0 +1,166 @@
+name: Vendor Balance
+
+# Asks the Plexon server once an hour whether a prepaid vendor account is
+# running low, and sends the owner one Telegram message when it is. The server
+# decides whether a message is owed and writes its words. This file only
+# carries them.
+#
+# Why a workflow and not a timer inside the server: the server's CPU is
+# throttled between requests, so a ticker there fires late or never. A request
+# from here runs with the CPU on.
+#
+# This repository is public, and so is every run log. The script prints
+# nothing the server answered: no figure, no level, no name. It writes the
+# answer to a file, posts the text from that file with curl, and prints only
+# "sent", "nothing to send" or a status code. Never pass the text through an
+# action's `with:` (inputs are printed in the log) and never add `set -x`.
+#
+# Secrets: VENDOR_BALANCE_TOKEN (the server's vendor_balance.token), plus the
+# TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID that issue-telegram.yml already uses.
+# While VENDOR_BALANCE_TOKEN is not set the run does nothing and stays green.
+#
+# One trap of the host: GitHub switches a scheduled workflow off after 60 days
+# without a commit to a public repository, and says so only by email. If this
+# repository ever goes quiet that long, the check stops in silence. Any commit
+# starts the clock again, and the Actions tab has a button to turn it back on.
+
+on:
+  schedule:
+    # Every hour at :23, away from the top of the hour where GitHub's queue is
+    # slowest. GitHub may still run it late or skip it. The server counts time
+    # since the last message it was told about, so a late run repeats nothing
+    # and a skipped one costs an hour.
+    - cron: '23 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Check, send nothing and record nothing'
+        type: boolean
+        default: false
+      force:
+        description: 'Send the report even when nothing is owed (the test message)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: vendor-balance
+  cancel-in-progress: false
+
+# The job reads no repository content and calls no GitHub API.
+permissions: {}
+
+jobs:
+  check:
+    name: Check and tell
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check and tell
+        env:
+          SERVER_URL: ${{ vars.PLEXON_SERVER_URL || 'https://server.plexon.ai' }}
+          TELEGRAM_API_URL: https://api.telegram.org
+          VENDOR_BALANCE_TOKEN: ${{ secrets.VENDOR_BALANCE_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+          umask 077
+
+          if [ -z "${VENDOR_BALANCE_TOKEN}" ]; then
+            echo "not configured: VENDOR_BALANCE_TOKEN is not set"
+            exit 0
+          fi
+
+          # Every file below is named relative to this folder, so curl opens
+          # the same path the shell wrote.
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+          cd "$work"
+
+          # tell FILE posts the file's text to the owner's chat and prints the
+          # HTTP status, nothing else. Plain text on purpose: with a format,
+          # Telegram rejects a message that carries `_` or `*`.
+          tell() {
+            local code
+            code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 \
+              --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+              --data-urlencode "disable_web_page_preview=true" \
+              --data-urlencode "text@$1" \
+              "${TELEGRAM_API_URL}/bot${TELEGRAM_BOT_TOKEN}/sendMessage" 2>/dev/null || true)"
+            echo "${code:-000}"
+          }
+
+          # Three tries, because a deploy or a cold start can drop one.
+          status=000
+          for try in 1 2 3; do
+            status="$(curl -s -o report.json -w '%{http_code}' --max-time 90 \
+              -H "Authorization: Bearer ${VENDOR_BALANCE_TOKEN}" \
+              "${SERVER_URL}/internal/vendors/balance" 2>/dev/null || true)"
+            status="${status:-000}"
+            if [ "$status" = "200" ] && jq -e 'has("notify") and has("text") and has("ack")' report.json >/dev/null 2>&1; then
+              break
+            fi
+            [ "$status" = "200" ] && status=unreadable
+            [ "$try" = "3" ] || sleep $((try * 20))
+          done
+
+          if [ "$status" != "200" ]; then
+            case "$status" in
+              000) why="no answer" ;;
+              unreadable) why="an answer that could not be read" ;;
+              *) why="HTTP $status" ;;
+            esac
+            echo "no report from the server ($why)"
+            if [ "${DRY_RUN}" != "true" ]; then
+              printf 'Plexon: the vendor balance check got no report from the server (%s).' "$why" > failed.txt
+              echo "telegram answered $(tell failed.txt)"
+            fi
+            exit 1
+          fi
+
+          notify="$(jq -r '.notify' report.json)"
+          if [ "$notify" != "true" ] && [ "${FORCE}" != "true" ]; then
+            echo "nothing to send"
+            exit 0
+          fi
+          if [ "${DRY_RUN}" = "true" ]; then
+            echo "dry run: nothing sent, nothing recorded"
+            exit 0
+          fi
+
+          # Telegram refuses a message over 4096 characters outright, and a
+          # refused message would be owed again every hour.
+          jq -j '.text[0:4000]' report.json > text.txt
+          sent="$(tell text.txt)"
+          if [ "$sent" != "200" ]; then
+            echo "telegram answered $sent, nothing recorded"
+            exit 1
+          fi
+          echo "sent"
+
+          # Only now tell the server, so a message Telegram refused is owed
+          # again on the next run instead of being lost.
+          if [ "$notify" = "true" ]; then
+            jq -c '.ack' report.json > ack.json
+            # Three tries here too. The record is the same row whichever try
+            # lands, and a record that never lands costs a second copy of the
+            # message an hour later.
+            recorded=000
+            for try in 1 2 3; do
+              recorded="$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -X POST \
+                -H "Authorization: Bearer ${VENDOR_BALANCE_TOKEN}" \
+                -H 'Content-Type: application/json' \
+                --data-binary "@ack.json" \
+                "${SERVER_URL}/internal/vendors/balance/notified" 2>/dev/null || true)"
+              recorded="${recorded:-000}"
+              [ "$recorded" = "200" ] && break
+              [ "$try" = "3" ] || sleep $((try * 5))
+            done
+            if [ "$recorded" != "200" ]; then
+              echo "the server did not record the message (HTTP $recorded)"
+              exit 1
+            fi
+            echo "recorded"
+          fi
