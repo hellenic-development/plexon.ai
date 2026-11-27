@@ -172,8 +172,18 @@ type CatalogModel struct {
 	// Mirrors common/catalog.CatalogModel.PerSecondCost. A YAML key missing
 	// from this struct is dropped silently by build_snapshot, so the model
 	// would ship with no price at all.
-	PerSecondCost    *CatalogPerSecondCost `json:"per_second_cost,omitempty" yaml:"per_second_cost,omitempty"`
-	DefaultSelection bool                  `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
+	PerSecondCost *CatalogPerSecondCost `json:"per_second_cost,omitempty" yaml:"per_second_cost,omitempty"`
+	// PerMillionCharacters is the USD price of one million characters on a
+	// speech model the vendor bills by the character, and PerAudioHour the USD
+	// price of one hour of audio on a speech recognition model. Each replaces
+	// PerUnitCost on its model. Hand-authored, like PerSecondCost.
+	//
+	// Mirrors common/catalog.CatalogModel.PerMillionCharacters and
+	// PerAudioHour. A YAML key missing from this struct is dropped silently by
+	// build_snapshot, so the model would ship with no price at all.
+	PerMillionCharacters float64 `json:"per_million_characters,omitempty" yaml:"per_million_characters,omitempty"`
+	PerAudioHour         float64 `json:"per_audio_hour,omitempty" yaml:"per_audio_hour,omitempty"`
+	DefaultSelection     bool    `json:"default_selection,omitempty" yaml:"default_selection,omitempty"`
 	// FallbackModel names a sibling model of the same provider that the API
 	// retries on when this model's safety classifiers decline a request
 	// (Anthropic server-side fallback beta, e.g. Fable 5 → Opus 5).

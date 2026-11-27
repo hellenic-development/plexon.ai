@@ -205,8 +205,13 @@ models:
         output: 7.6
         input_image: 3
     - id: speech-2.8-turbo
-      # MiniMax T2A text-to-speech (the Plexon Voice backing family). Speech
+      # MiniMax T2A text-to-speech. Speech
       # lives on the plain /v1 base like image/video, not /anthropic/v1.
+      #
+      # Billed by the character the vendor
+      # counts (extra_info.usage_characters): $60 per 1M characters, sync and
+      # async alike, read off platform.minimax.io/docs/pricing/overview on
+      # 2026-11-26.
       name: MiniMax Speech 2.8 Turbo
       base_url: https://api.minimax.io/v1
       limit: 0
@@ -214,6 +219,7 @@ models:
       supports_streaming: true
       supports_speech_generation: true
       generation_type: sync
+      per_million_characters: 60
       pricing: {}
     - id: speech-2.8-turbo-coding-plan
       # See the wire_id comment on hailuo-2.3-coding-plan above. One more note
@@ -233,6 +239,8 @@ models:
       pricing:
         is_subscription: true
     - id: speech-2.8-hd
+      # The pay-as-you-go Speech HD backing: $100 per 1M characters (same
+      # source and date as speech-2.8-turbo).
       name: MiniMax Speech 2.8 HD
       base_url: https://api.minimax.io/v1
       limit: 0
@@ -240,6 +248,7 @@ models:
       supports_streaming: true
       supports_speech_generation: true
       generation_type: sync
+      per_million_characters: 100
       pricing: {}
     - id: speech-2.8-hd-coding-plan
       # Quality sibling of the turbo plan entry: same wire_id rule, same 2.8+
@@ -264,8 +273,9 @@ models:
       # 2026-09-13: zh yue en ja ko th vi id ms fil ar tr fr de es it pt pl ru
       # uk; no Greek. Clips up to 500 s / 50 MB.
       #
-      # per_unit_cost deliberately absent: minimax.io/price listed no ASR
-      # figure on 2026-09-13. Add it the day the page states one.
+      # Billed by the second of audio the recogniser measures
+      # (duration_seconds) at $0.38 an hour, read off
+      # platform.minimax.io/docs/pricing/overview on 2026-11-26.
       name: MiniMax ASR 1.0
       base_url: https://api.minimax.io/v1
       limit: 0
@@ -279,6 +289,7 @@ models:
       speech_recognition_languages:
         [zh, yue, en, ja, ko, th, vi, id, ms, fil, ar, tr, fr, de, es, it, pt, pl, ru, uk]
       generation_type: sync
+      per_audio_hour: 0.38
       pricing: {}
     - id: asr-1.0-coding-plan
       # See the wire_id comment on hailuo-2.3-coding-plan above: the plan
@@ -306,7 +317,10 @@ models:
       supports_streaming: true
       supports_music_generation: true
       generation_type: sync
-      # Flat rate per song up to five minutes.
+      # Flat rate per track up to five minutes: $0.15, read off
+      # platform.minimax.io/docs/pricing/overview on 2026-11-26, which also
+      # says music is closed to accounts that were not paying for it before
+      # 2026-08-20.
       per_unit_cost: 0.15
       pricing: {}
     - id: music-3.0-coding-plan
@@ -329,6 +343,10 @@ models:
       # Cover generation: re-sings a reference recording in a new style. The
       # server swaps to this wire id when a request carries reference audio, so
       # it is never mapped as its own admin task.
+      #
+      # Unpriced on purpose: the vendor's pay-as-you-go page (read 2026-11-26)
+      # lists no cover price, so no figure is carried here. A cover made
+      # through the Music cell is priced by that cell's own row.
       name: MiniMax Music Cover
       base_url: https://api.minimax.io/v1
       limit: 0
@@ -336,7 +354,6 @@ models:
       supports_streaming: true
       supports_music_generation: true
       generation_type: sync
-      per_unit_cost: 0.15
       pricing: {}
     - id: music-cover-coding-plan
       wire_id: music-cover

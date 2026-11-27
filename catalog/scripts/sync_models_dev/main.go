@@ -468,6 +468,14 @@ func preferLocal(upstream, local catalogtypes.CatalogModel) catalogtypes.Catalog
 	if local.PerSecondCost != nil {
 		result.PerSecondCost = local.PerSecondCost
 	}
+	// Nor a rate per character or per hour of audio: the same reason, for a
+	// speech model and a recogniser.
+	if local.PerMillionCharacters != 0 {
+		result.PerMillionCharacters = local.PerMillionCharacters
+	}
+	if local.PerAudioHour != 0 {
+		result.PerAudioHour = local.PerAudioHour
+	}
 	if local.ReleaseDate != "" {
 		result.ReleaseDate = local.ReleaseDate
 	}
